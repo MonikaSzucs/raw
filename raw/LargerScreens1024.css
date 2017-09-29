@@ -543,6 +543,7 @@ hambuger menu
         width: 200px;
     }
     #m-main-pagesettings {
+        height: 100vh;
         background-color: white;
     }
     #m-rnb {
