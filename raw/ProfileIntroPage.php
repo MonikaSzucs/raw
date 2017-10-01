@@ -34,7 +34,7 @@
     <div class="track-player"></div>
     <div class="main-page">
 
-        <a href="ProfilePage.html"><div class="m-profile-box" >
+        <a href="ProfilePage.php"><div class="m-profile-box" >
             <div id="m-profile-pic-intro"></div>
             <div id="m-view-profile-div">
                 <p id="name">Name</p>

@@ -14,7 +14,7 @@
         <nav>
             <div class="header">
                 <div class="toggle-logo"> </div>
-                <a href="MobileUploadPage.html">
+                <a href="MobileUploadPage.php">
                     <div class="m-upload-button"></div>
                 </a>
                       <div id="hamb" onclick="myFunction(this)">
@@ -25,10 +25,10 @@
             </div>
 
             <ul class="nav-bar">
-           <a href="MobileExplorePage.html"><li>Explore</li></a>
-                <a href="MobileIGenresTemplate.html"><li>Genres</li></a>
-                <a href="MobileMoodsTemplate.html"><li>Moods</li></a>
-                <a href="MobileInsturmentsTemplate.html"><li>Instruments</li></a>
+           <a href="MobileExplorePage.php"><li>Explore</li></a>
+                <a href="MobileIGenresTemplate.php"><li>Genres</li></a>
+                <a href="MobileMoodsTemplate.php"><li>Moods</li></a>
+                <a href="MobileInsturmentsTemplate.php"><li>Instruments</li></a>
             </ul>
 
             <div class="logo-spot"></div>
@@ -98,11 +98,11 @@
     </div>
     <div class="cmenu"></div>
     <nav class="container">
-        <a class="buttons" href="ProfileIntroPagevers2.html" tooltip="Profile"></a>
-        <a class="buttons" href="MobileInsturmentsTemplate.html" tooltip="Instruments"></a>
+        <a class="buttons" href="ProfileIntroPagevers2.php" tooltip="Profile"></a>
+        <a class="buttons" href="MobileInsturmentsTemplate.php" tooltip="Instruments"></a>
         <a class="buttons" href="#" tooltip="Explore"></a>
-        <a class="buttons" href="MobileIGenresTemplate.html" tooltip="Genres"></a>
-        <a class="buttons" href="MobileMoodsTemplate.html" tooltip="Moods"></a><a class="buttons" href="#" tooltip="Compose"><span><span class="rotate"></span></span></a></nav>
+        <a class="buttons" href="MobileIGenresTemplate.php" tooltip="Genres"></a>
+        <a class="buttons" href="MobileMoodsTemplate.php" tooltip="Moods"></a><a class="buttons" href="#" tooltip="Compose"><span><span class="rotate"></span></span></a></nav>
 
 <script src="cmenuscript.js"></script>
 
