@@ -72,7 +72,9 @@
 			<button id="CreateGroupProfile">Create Group</button>
 			<div class="Profile-sub-container">
 				<div class="ProfileIconGroups"></div>
+				
 				<div class="GroupsInformation"></div>
+				
 			</div>
         </div>
 
