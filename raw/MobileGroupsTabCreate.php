@@ -76,16 +76,22 @@
 				<div class="vertical-space"></div>
 				<div class="GroupsInformation">
 					<div class="GroupsInformation-Title">
-						test</br>
+						Title:</br>
+						<textarea maxlength="50"></textarea>
 					</div>
 					<div class="horizontal-GroupSpace">
 					</div>
-					
-						
+					<div class="GroupsInformation-Description">
+						Description:</br>
+						<textarea maxlength="500"></textarea>
+					</div>	
 				</div>
 				<input id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
 			</div>
-        </div>
+			<div id="buttonAreaCreate">
+				<a href=""><button id="CreateGroupProfileSubmit">Create</button></a>
+			</div>
+		</div>
 
     </div>
     <nav class="container">
