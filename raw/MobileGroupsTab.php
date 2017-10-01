@@ -69,12 +69,29 @@
 
         <div class="m-profile-main">
 			<div class="spaceContainerTop"><p>Groups</p></div>
-			<button id="CreateGroupProfile">Create Group</button>
+			
+			<a href="MobileGroupsTabCreate.php"><button id="CreateGroupProfile">Create Group</button></a>
 			<div class="Profile-sub-container">
+				<div class="TopSpace-ProfileGroupSub"></div>
 				<div class="ProfileIconGroups"></div>
-				
-				<div class="GroupsInformation"></div>
-				
+				<div class="vertical-space"></div>
+				<div class="GroupsInformation">
+					<div class="GroupsInformation-Title">
+						Title</br>
+					</div>
+					<div class="horizontal-GroupSpace">
+					</div>
+					<div class="GroupsInformation-Description">
+						Description</br>
+					</div>	
+						<!--
+						<svg height="150" width="150">
+						  <polygon points="20,10 20,50 50,30" style="fill:grey;stroke:black;stroke-width:1" />
+						  Sorry, your browser does not support inline SVG.
+						</svg>
+						-->
+						
+				</div>
 			</div>
         </div>
 
