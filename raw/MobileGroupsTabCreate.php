@@ -84,6 +84,7 @@
 					<div class="GroupsInformation-Description">
 						Description:</br>
 						<textarea maxlength="500"></textarea>
+						
 					</div>	
 				</div>
 				<input id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />

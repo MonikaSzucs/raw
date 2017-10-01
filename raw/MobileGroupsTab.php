@@ -76,6 +76,7 @@
 				<div class="ProfileIconGroups"></div>
 				<div class="vertical-space"></div>
 				<div class="GroupsInformation">
+				
 					<div class="GroupsInformation-Title">
 						Title</br>
 					</div>
