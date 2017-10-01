@@ -111,9 +111,15 @@ hambuger menu
         transition: 60ms ease-in-out;
         background-size: 40px 40px;
     }
-    a {
+    .mainpage a {
         color: white;
     }
+	
+	.main-header a{
+		color: white;
+	}
+	
+	
     .main-page {
         margin: 0 auto;
         position: absolute;
@@ -702,4 +708,11 @@ hambuger menu
         background-size: contain;
         background-repeat: no-repeat;
     }
+	
+	.m-settings-box a{
+		text-decoration: none;
+		color: black;
+	}
 }
+
+

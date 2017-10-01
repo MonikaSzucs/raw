@@ -54,11 +54,17 @@
                 Notifications
                 <div id="m-noticon" class="m-sicon"></div>
             </div>
+			
             
             <div class="m-center-text" id="m-settings-button">
-                Settings
+                <a href="SettingsPage.php">Settings</a>
                 <div id="m-seticon" class="m-sicon"></div>
             </div>
+			<div class="m-center-text" id="m-settings-button">
+                <a href="MobileGroupsTab.php">Groups</a>
+                <div id="m-seticon" class="m-sicon"></div>
+            </div>
+			<div style="height: 50px; width: 100%;"></div>
             
         </div>
 
