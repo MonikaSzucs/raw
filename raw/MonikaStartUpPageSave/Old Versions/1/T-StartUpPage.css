@@ -1,0 +1,9 @@
+@media (max-width: 1023px) {
+    .mobileScreen {
+        display: block;
+    }
+    body {
+        background-color: skyblue;
+        margin: 0 auto;
+    }
+ 

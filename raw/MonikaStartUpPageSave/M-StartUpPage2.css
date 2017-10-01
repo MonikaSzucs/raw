@@ -1,0 +1,215 @@
+@media (max-width: 500px) {
+    
+	
+	
+	@font-face {
+	font-family: Coco Gothic Fat;
+    src: url(Font/CocoGothic-Fat_trial.ttf);
+    font-weight: fat;
+}
+	
+     body {
+
+			background: url(Images/record.jpeg) no-repeat center center fixed;
+			 -webkit-background-size: cover;
+			  -moz-background-size: cover;
+			  -o-background-size: cover;
+			  background-size: cover;
+			
+			}
+		
+			
+			@-moz-keyframes myfirst /* Firefox */
+			{
+			0%   {background: rgba(51,97,115,.9);}
+			50%  {background: rgba(38,38,38,.9);}
+			100%   {background: rgba(51,97,115,.9);}
+			}
+			 
+				@-webkit-keyframes myfirst /* Firefox */
+			{
+			0%   {background: rgba(51,97,115,.9);}
+			50%  {background:rgba(38,38,38,.9);}
+			100%   {background: rgba(51,97,115,.9);}
+			}
+	}
+			
+			
+	body #Color {
+	
+			bottom: 0;
+			display: block;
+			left: 0;
+			opacity: 0.7;
+			position: absolute;
+			right: 0;
+			top: 0;
+			z-index: 1;
+			
+			animation:myfirst 10s;
+				  -moz-animation:myfirst 10s infinite; /* Firefox */
+				-webkit-animation:myfirst 10s infinite; /* Safari and Chrome */			
+		}
+
+   
+    
+	
+    #container{
+
+        width: 220px;
+        height: 600px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin:auto;
+		z-index: 1;
+    }
+    
+    #logoIcon{
+        width: 164px;
+        height: 145px;
+        left: 0;
+        right: 0;
+        margin: auto;
+		background-color:orange;
+        background: url(SVG/MLogo.png) no-repeat center center;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+			  
+		font-family: Coco Gothic Fat, Ariel,sans serif;
+    }
+    
+    
+
+    .space{
+        width: 100%;
+        height: 35px;
+    }
+    
+    .space2{
+        width: 100%;
+        height: 20px;
+    }
+    
+    .space3{
+        width: 100%;
+        height: 30px;
+    }
+    
+    .space4{
+        width: 100%;
+        height: 10px;
+    }
+    
+    
+    form{
+        width: 100%;
+        height: 90px;
+    }
+    
+    form input{
+        width: 90%;
+        height: 30px;
+        background-color: ghostwhite;
+        display: block;
+        margin: 0 auto;
+        border-radius: 7px;
+        background-color: #FFFFFF;
+        border: none;
+    }
+    
+    button {
+        width: 80%;
+        height: 45px;
+        display: block;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 50px;
+        background-color: #DF0000;
+        color:white;
+        font-size: 20px;
+        border: none;
+    }
+	
+	
+	
+	#PasswordResetMessage{
+		left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align: center;
+	}
+    
+    #SignUp {
+
+        width: 50%;
+        height: 28px;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: block;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 20px;
+        font-size: 20px;
+        border: 2px solid white;
+        margin-top: 20px;
+        padding-top: 5px;
+        color: white;
+		
+
+    }
+    
+    #BackLogIn {
+        width: 100%;
+        height: 20px;
+        text-align: center;
+        color: white;
+    }
+    
+    #BackLoginButton{
+        width: 50%;
+        height: 35px;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: block;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 50px;
+        font-size: 20px;
+        border: 2px solid white;
+
+    }
+	
+	
+    
+    form span{
+        width: 200px;
+        height: 25px;
+        left:0;
+        right:0;
+        margin: 0 auto;
+        position:absolute;
+        text-align: center;
+        color: white;
+        text-decoration: 1px underline;
+    }
+    
+    form h3{
+        color:white;
+        width: 200px;
+        padding-bottom: 20px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+	
+}

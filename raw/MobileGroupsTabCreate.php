@@ -1,3 +1,8 @@
+<?php 
+ echo "Title: " . $_POST["TitleGroups"]; 
+ ?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -74,23 +79,25 @@
 				<div class="TopSpace-ProfileGroupSub"></div>
 				<div class="ProfileIconGroups" id="list"></div>
 				<div class="vertical-space"></div>
-				<div class="GroupsInformation">
-					<div class="GroupsInformation-Title">
-						Title:</br>
-						<textarea maxlength="50"></textarea>
+				<form name="form" action="" method="post">
+					<div class="GroupsInformation">
+						<div class="GroupsInformation-Title">
+							Title:</br>
+							<textarea maxlength="50" name="TitleGroups"></textarea>
+						</div>
+						<div class="horizontal-GroupSpace">
+						</div>
+						<div class="GroupsInformation-Description">
+							Description:</br>
+							<textarea maxlength="500" name="TextAreaGroups"></textarea>
+							
+						</div>	
 					</div>
-					<div class="horizontal-GroupSpace">
-					</div>
-					<div class="GroupsInformation-Description">
-						Description:</br>
-						<textarea maxlength="500"></textarea>
-						
-					</div>	
-				</div>
+				</form>
 				<input id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
 			</div>
 			<div id="buttonAreaCreate">
-				<a href=""><button id="CreateGroupProfileSubmit">Create</button></a>
+				<a href=""><button id="CreateGroupProfileSubmit" type="submit">Create</button></a>
 			</div>
 		</div>
 

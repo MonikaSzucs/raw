@@ -1,0 +1,13 @@
+@media (max-width: 768px) {
+		.mobileScreen{
+			display:block;
+		}
+		.desktopScreen{
+			display:none;
+		}
+    
+    .header {
+        width: 100%;
+        height: 200px;
+        background-color: pink;
+    }

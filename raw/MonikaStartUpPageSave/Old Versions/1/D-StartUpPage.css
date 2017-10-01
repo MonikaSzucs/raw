@@ -1,0 +1,12 @@
+@media (min-width: 1024px) {
+    .mobileScreen {
+        display: block;
+    }
+    body {
+        background-color: lightpink;
+        margin: 0 auto;
+    }
+    .desktopScreen {
+        display: none;
+    }
+   
