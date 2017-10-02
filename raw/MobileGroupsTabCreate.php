@@ -1,5 +1,79 @@
 <?php 
- echo "Title: " . $_POST["TitleGroups"]; 
+$formErrorMessage = "";
+$formSuccessfullMessage = "";
+
+	//MySQLi Procedural
+
+	if(isset($_POST['TitleGroups'])){
+		//Step1 connect to database
+		define('DB_SERVER', 'localhost');
+		define('DB_USERNAME', 'root');
+		define('DB_PASSWORD', '');
+		define('DB_DATABASE', 'raw');
+		$conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
+
+		///$email = $_POST['email'];
+		//$password = $_POST['password'];
+		//step 2 to make the SQL query
+		$TitleGroups = $_POST["TitleGroups"]; 
+		$TextAreaGroups = $_POST["TextAreaGroups"];
+		
+		//step 2
+		$query = "SELECT * FROM groups ";
+		$query .= "WHERE group_title = '" . $TitleGroups . "' ";
+		
+		//step 3
+		if($result = mysqli_query($conn, $query))
+		{
+			$rows = mysqli_fetch_array($result);
+			
+			//if the group title exist in database warn the user_error
+			if(sizeof($rows)>0)
+			{
+				$formErrorMessage = "group title already taken!" ;
+
+			}
+			//else let them to create the record(insert)
+			else{
+				$query = "INSERT INTO groups (group_title, group_description, group_photo) ";
+				$query .= " VALUES ( '" . $TitleGroups . "', '" . $TextAreaGroups . "', '')";
+
+				///echo $query;
+			
+				//Step 3 run the sql query
+				if($result = mysqli_query($conn, $query)){
+					if(sizeof($result)>0)
+					{
+						$group_id = mysqli_insert_id($conn);
+						echo "the last primary key of group is : ". $group_id;
+						
+						$user_id=1;
+						
+						$query = "INSERT INTO group_user(group_id, user_id) ";
+						$query .= "VALUES ( '" . $group_id . "', '" .  $user_id . "') ";
+						
+						if($result = mysqli_query($conn, $query) )
+						{
+							$formSuccessfullMessage = "Groups is created!";
+						}
+						else{
+							echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+						}
+					}
+				} 
+				else{
+					echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+				}
+			}
+		}
+		else{
+			 echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		}
+		//Step 4 Close the conenction
+		mysqli_close($conn);
+		
+		
+	}	
  ?>
 
 
@@ -81,24 +155,27 @@
 				<div class="ProfileIconGroups" id="list"></div>
 				<div class="vertical-space"></div>
 				<form name="form" action="" method="post">
+					<span style='color:red; font-weight:bold'> <?php echo $formErrorMessage; ?> </span>
+					<span style='color:Green; font-weight:bold'> <?php echo $formSuccessfullMessage; ?> </span>
+					
 					<div class="GroupsInformation">
 						<div class="GroupsInformation-Title">
 							Title:<br/>
-							<textarea maxlength="50" name="TitleGroups"></textarea>
+							<textarea maxlength="50" name="TitleGroups"><?php echo $TitleGroups; ?></textarea>
 						</div>
 						<div class="horizontal-GroupSpace">
 						</div>
 						<div class="GroupsInformation-Description">
 							Description:<br/>
-							<textarea maxlength="500" name="TextAreaGroups"></textarea>
+							<textarea maxlength="500" name="TextAreaGroups"><?php echo $TextAreaGroups; ?></textarea>
 							
 						</div>	
 					</div>
+					<div id="buttonAreaCreate">
+						<a href=""><button id="CreateGroupProfileSubmit" type="submit">Create</button></a>
+					</div>
 				</form>
-				<input id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
-			</div>
-			<div id="buttonAreaCreate">
-				<a href=""><button id="CreateGroupProfileSubmit" type="submit">Create</button></a>
+				<!--input id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" /-->
 			</div>
 		</div>
 
