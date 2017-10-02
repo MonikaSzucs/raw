@@ -99,6 +99,7 @@
     <div class="cmenu"></div>
     <nav class="container">
         <a class="buttons" href="ProfileIntroPagevers2.php" tooltip="Profile"></a>
+         <a class="buttons" href="MobileGroupsTab.php" tooltip="Groups"></a>
         <a class="buttons" href="MobileInsturmentsTemplate.php" tooltip="Instruments"></a>
         <a class="buttons" href="#" tooltip="Explore"></a>
         <a class="buttons" href="MobileIGenresTemplate.php" tooltip="Genres"></a>
