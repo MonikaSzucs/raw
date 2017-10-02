@@ -82,13 +82,13 @@
 				<form name="form" action="" method="post">
 					<div class="GroupsInformation">
 						<div class="GroupsInformation-Title">
-							Title:</br>
+							Title:<br/>
 							<textarea maxlength="50" name="TitleGroups"></textarea>
 						</div>
 						<div class="horizontal-GroupSpace">
 						</div>
 						<div class="GroupsInformation-Description">
-							Description:</br>
+							Description:<br/>
 							<textarea maxlength="500" name="TextAreaGroups"></textarea>
 							
 						</div>	
@@ -104,6 +104,7 @@
     </div>
     <nav class="container">
         <a class="buttons" href="ProfileIntroPagevers2.php" tooltip="Profile"></a>
+         <a class="buttons" href="MobileGroupsTab.php" tooltip="Groups"></a>
         <a class="buttons" href="MobileInsturmentsTemplate.php" tooltip="Instruments"></a>
         <a class="buttons" href="MobileExplorePage.php" tooltip="Explore"></a>
         <a class="buttons" href="MobileIGenresTemplate.php" tooltip="Genres"></a>

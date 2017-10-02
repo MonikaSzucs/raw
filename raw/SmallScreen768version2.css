@@ -106,6 +106,9 @@
     .buttons:nth-last-of-type(6) {
         transition-delay: 100ms;
     }
+    .buttons:nth-last-of-type(7) {
+        transition-delay: 120ms;
+    }
     .buttons:nth-last-of-type(1) {
         width: 80px;
         height: 80px;
@@ -139,7 +142,17 @@
         background-repeat: no-repeat;
         background-position: center;
         background-color: #713232;
+        
     }
+    
+        .buttons:nth-last-of-type(7) {
+        background-image: url("imgs/profileicon.svg");
+        background-size: 28px 28px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #713232;
+    }
+    
     .buttons:hover {
         box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
     }
