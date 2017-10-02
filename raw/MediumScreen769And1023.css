@@ -155,6 +155,7 @@ hambuger menu
         left: 150px;
     }
     nav li {
+        font-size: 12px;
         display: inline-block;
         margin-left: 20px;
     }
