@@ -45,6 +45,23 @@
         <div id="next-button" class="m-player"></div>
     </div>
     <div class="main-page">
+        
+                        
+<!--
+        hamburger menu
+        
+-->
+        <div id="hamburger"> 
+            <ul id="hambul">
+                <li class="hamclass">
+                Profile
+                </li>  
+                <li class="hamclass">
+                Sign Out
+                </li>               
+            </ul>
+        </div>
+        
         <h1 id="m-genresh">Moods</h1>
         <div class="row1">
             <div id="m-happy" class="mood-divs">

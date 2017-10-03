@@ -33,6 +33,22 @@
 
     <div class="track-player"></div>
     <div class="main-page">
+        
+                        
+<!--
+        hamburger menu
+        
+-->
+        <div id="hamburger"> 
+            <ul id="hambul">
+                <li class="hamclass">
+                Profile
+                </li>  
+                <li class="hamclass">
+                Sign Out
+                </li>               
+            </ul>
+        </div>
 
         <a href="ProfilePage.php"><div class="m-profile-box" >
             <div id="m-profile-pic-intro"></div>

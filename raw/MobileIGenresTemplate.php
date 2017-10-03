@@ -47,6 +47,22 @@
     
     </div>
     <div class="main-page">
+        
+                        
+<!--
+        hamburger menu
+        
+-->
+        <div id="hamburger"> 
+            <ul id="hambul">
+                <li class="hamclass">
+                Profile
+                </li>  
+                <li class="hamclass">
+                Sign Out
+                </li>               
+            </ul>
+        </div>
 
         <h1 id="m-genresh">Genres</h1>
 

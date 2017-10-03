@@ -46,6 +46,22 @@
 
     </div>
     <div id="m-main-pagesettings" class="main-page">
+        
+                        
+<!--
+        hamburger menu
+        
+-->
+        <div id="hamburger"> 
+            <ul id="hambul">
+                <li class="hamclass">
+                Profile
+                </li>  
+                <li class="hamclass">
+                Sign Out
+                </li>               
+            </ul>
+        </div>
 
         <h1 id="m-settings-h">Settings</h1>
         <p class="m-settings-info">Email Address</p>
