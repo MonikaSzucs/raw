@@ -125,6 +125,22 @@ $formSuccessfullMessage = "";
     </div>
     <div class="m-ivisfoot"></div>
     <div class="main-page">
+        
+        <!--
+        hamburger menu
+        
+-->
+        <div id="hamburger"> 
+            <ul id="hambul">
+                <li class="hamclass">
+                Profile
+                </li>  
+                <li class="hamclass">
+                Sign Out
+                </li>               
+            </ul>
+        </div>
+        
 
         <div class="m-profile-box">
             <div class="m-profile-buttons">
