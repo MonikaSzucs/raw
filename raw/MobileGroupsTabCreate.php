@@ -1,4 +1,52 @@
 <?php 
+$target_file = "";
+echo "xxx:".  $_FILES["myImage"]["name"];
+if( isset($_FILES["myImage"]["name"])) {
+	echo "1<br//>";
+	$target_file .= "UserPictures/". basename($_FILES["myImage"]["name"]);
+	$uploadOk = 1;
+	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+    $check = getimagesize($_FILES["myImage"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+		echo "1<br//>";
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+	// Check if file already exists
+	if (file_exists($target_file)) {
+		echo "Sorry, file already exists.";
+		$uploadOk = 0;
+	}
+	// Check file size
+	if ($_FILES["myImage"]["size"] > 500000) {
+		echo "Sorry, your file is too large.";
+		$uploadOk = 0;
+	}
+	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"&& $imageFileType != "gif" ) {
+		echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+		$uploadOk = 0;
+	}
+
+	// Check if $uploadOk is set to 0 by an error
+	if ($uploadOk == 0) {
+		echo "Sorry, your file was not uploaded.";
+	// if everything is ok, try to upload file
+	} else {
+		if (move_uploaded_file($_FILES["myImage"]["tmp_name"], $target_file)) {
+			echo "The file ". basename( $_FILES["myImage"]["name"]). " has been uploaded.";
+		} else {
+			$target_file = "";
+			echo "Sorry, there was an error uploading your file.";
+		}
+	}
+}
+
+
+
+
 $formErrorMessage = "";
 $formSuccessfullMessage = "";
 
@@ -36,7 +84,7 @@ $formSuccessfullMessage = "";
 			//else let them to create the record(insert)
 			else{
 				$query = "INSERT INTO groups (group_title, group_description, group_photo) ";
-				$query .= " VALUES ( '" . $TitleGroups . "', '" . $TextAreaGroups . "', '')";
+				$query .= " VALUES ( '" . $TitleGroups . "', '" . $TextAreaGroups . "', '".$target_file."')";
 
 				///echo $query;
 			
@@ -50,7 +98,7 @@ $formSuccessfullMessage = "";
 						$user_id=1;
 						
 						$query = "INSERT INTO group_user(group_id, user_id) ";
-						$query .= "VALUES ( '" . $group_id . "', '" .  $user_id . "') ";
+						$query .= "VALUES ( '" . $group_id . "', '" .  $user_id . "' ) ";
 						
 						if($result = mysqli_query($conn, $query) )
 						{
@@ -86,6 +134,7 @@ $formSuccessfullMessage = "";
     <link rel="stylesheet" href="SmallScreen768version2.css">
     <link rel="stylesheet" href="SmallScreen768version2device.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 
 <body>
@@ -170,29 +219,38 @@ $formSuccessfullMessage = "";
 				<div class="TopSpace-ProfileGroupSub"></div>
 				<div class="ProfileIconGroups" id="list"></div>
 				<div class="vertical-space"></div>
-				<form name="form" action="" method="post">
-					<span style='color:red; font-weight:bold'> <?php echo $formErrorMessage; ?> </span>
-					<span style='color:Green; font-weight:bold'> <?php echo $formSuccessfullMessage; ?> </span>
+				<form id="contactForm" name="form" action="" method="post" enctype="multipart/form-data">
+					<span style='color:red; font-weight:bold'> <?php if(isset($formErrorMessage)){echo $formErrorMessage;} ?> </span>
+					<span style='color:Green; font-weight:bold'> <?php if(isset($formSuccessfullMessage)){echo $formSuccessfullMessage;} ?> </span>
 					
 					<div class="GroupsInformation">
 						<div class="GroupsInformation-Title">
 							Title:<br/>
-							<textarea maxlength="50" name="TitleGroups"><?php echo $TitleGroups; ?></textarea>
+							<textarea maxlength="50" name="TitleGroups"><?php if(isset($TitleGroups)){echo $TitleGroups; }?></textarea>
 						</div>
 						<div class="horizontal-GroupSpace">
 						</div>
 						<div class="GroupsInformation-Description">
 							Description:<br/>
-							<textarea maxlength="500" name="TextAreaGroups"><?php echo $TextAreaGroups; ?></textarea>
+							<textarea maxlength="500" name="TextAreaGroups"><?php if(isset($TextAreaGroups)){echo $TextAreaGroups; }?></textarea>
 							
 						</div>	
 					</div>
+						
+						<input id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
+						
+						
 					<div id="buttonAreaCreate">
-						<a href=""><button id="CreateGroupProfileSubmit" type="submit">Create</button></a>
+						<input id="CreateGroupProfileSubmit" type="submit" />
 					</div>
+
 				</form>
-				<!--input id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" /-->
 			</div>
+		</div>
+		
+		<div id="form_output">
+
+
 		</div>
 
     </div>

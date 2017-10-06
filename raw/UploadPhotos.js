@@ -2,10 +2,8 @@ var files = document.getElementById("files");
 
 
 
-
-
-
 function handleFileSelect(evt) {
+	//console.log(files.value);
     var files = evt.target.files;
 
     // Loop through the FileList and render image files as thumbnails.
@@ -43,4 +41,53 @@ function handleFileSelect(evt) {
   document.getElementById('files').addEventListener('change', handleFileSelect, false);
   
   
-  
+ /* 
+$('#contactForm').submit(function () {
+ console.log("submitting");
+		var form_data = new FormData();                  
+		form_data.append('file', files.value);
+		console.log($(this).serialize());
+        $.ajax({
+            url : $(this).attr('action') || window.location.pathname,
+            type: "POST",
+            data: form_data,
+            success: function (data) {
+                $("#form_output").html(data);
+				console.log("SUCCESS: " + data);
+            },
+            error: function (jXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+				console.log("FAIL: " + errorThrown);
+            }
+        });
+		console.log("submitted");
+		return false;
+});
+*/
+
+/*function submitForm() {
+ console.log("submitting");
+		var form_data = new FormData();                  
+		form_data.append('file', files.value);
+		console.log($(this).serialize());
+        $.ajax({
+            url : $(this).attr('action') || window.location.pathname,
+            type: "POST",
+            data: form_data,
+            success: function (data) {
+                $("#form_output").html(data);
+				console.log("SUCCESS: " + data);
+            },
+            error: function (jXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+				console.log("FAIL: " + errorThrown);
+            }
+        });
+		console.log("submitted");
+		return false;
+}*/
+
+function sendContactForm(){
+    $("#messageSent").slideDown("slow");
+    setTimeout('$("#messageSent").slideUp();$("#contactForm").slideUp("slow")', 2000);
+}
