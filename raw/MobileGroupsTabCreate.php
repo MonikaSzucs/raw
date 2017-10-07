@@ -174,7 +174,7 @@ $formSuccessfullMessage = "";
     </div>
     <div class="m-ivisfoot"></div>
     <div class="main-page">
-        
+   
         <!--
         hamburger menu
         
@@ -237,6 +237,7 @@ $formSuccessfullMessage = "";
 						</div>	
 					</div>
 						
+                    
 						<input id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
 						
 						

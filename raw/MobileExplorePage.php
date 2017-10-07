@@ -47,6 +47,8 @@
         <div id="next-button" class="m-player"></div>
     </div>
     <div class="main-page">
+             <div class="main-feed"></div>
+        
                 
 <!--
         hamburger menu

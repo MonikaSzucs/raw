@@ -53,6 +53,8 @@
 hambuger menu
     
 */
+    
+    
     .genre-tags {
         font-family: helvetica;
         font-size: 14px;
@@ -771,11 +773,12 @@ hambuger menu
 		height: 60px;
 	}
 	
-	.spaceContainerTop p {
+	.spaceContainerTop h1 {
 		left: 70px;
 		top: 20px;
 		position: relative;
         font-family: helvetica;
+    
 	}
 	
 	
@@ -824,6 +827,7 @@ hambuger menu
 		height: 40%;
 		background-color: white;
 		border-bottom: 2px solid grey;
+        
 	}
 	
 	.horizontal-GroupSpace{
@@ -844,7 +848,7 @@ hambuger menu
         border: none;
     
 	}
-	
+
 	#CreateGroupProfileSubmit{
 		width: 200px;
 		height: 50px;
