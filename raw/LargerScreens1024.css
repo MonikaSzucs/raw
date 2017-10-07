@@ -296,8 +296,10 @@ hambuger menu
         background-color: white;
         box-shadow: 0px 5px 5px #888888;
     }
+    
+    
     #m-profile-pic-intro {
-        background-color: aquamarine;
+         box-shadow: 0px 5px 5px #888888;
         width: 100px;
         height: 100px;
         border-radius: 100%;
@@ -757,7 +759,7 @@ hambuger menu
 	.Profile-sub-container{
 		width: 90%;
 		height: 200px;
-		background-color:grey;
+		background-color: white;
 		left: 0;
 		right: 0;
 		margin: 0 auto;
@@ -773,18 +775,21 @@ hambuger menu
 		left: 70px;
 		top: 20px;
 		position: relative;
+        font-family: helvetica;
 	}
 	
 	
 	#CreateGroupProfile{
 		width: 200px;
 		height: 50px;
-		border-color: grey;
+		border: 2px solid darkgray;
 		background-color: #ffffff;
 		border-radius: 25px;
 		position: absolute;
 		top: 10px;
 		right: 40px;
+        font-size: 18px;
+        color: darkgray
 	}
 	
 	.ProfileIconGroups{
@@ -794,13 +799,14 @@ hambuger menu
 		top: 0;
 		bottom: 0;
 		margin: auto;
-		background-color:orange;
+        border-radius: 100%;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
 	}
 	.GroupsInformation{
 		float: left;
 		width: 70%;
 		height: 150px;
-		background-color: red;
+		
 	}
 	.TopSpace-ProfileGroupSub{
 		height: 25px;
@@ -823,33 +829,39 @@ hambuger menu
 	.horizontal-GroupSpace{
 		height: 10px;
 		width: 100%;
-		background-color: yellow;
+	
 	}
 	
 	.GroupsInformation-Description{
-		background-color: aqua;
-		height: 75px
+		background-color: white;
+		height: 75px;
+    
 	}
 	
 	.GroupsInformation-Title textarea{
 		width: 99%;
 		height: 30px;
+        border: none;
+    
 	}
 	
 	#CreateGroupProfileSubmit{
 		width: 200px;
 		height: 50px;
-		border-color: grey;
+		  border: 2px solid darkgray;
 		background-color: #ffffff;
 		border-radius: 25px;
 		position: absolute;
 		left: 0;
 		right: 0;
 		margin: 0 auto;
+        font-size: 18px;
+        color: darkgray;
 	}
 	.GroupsInformation-Description textarea{
 		width: 99%;
 		height: 60px;
+        border: none;
 	}
 	
 	#buttonAreaCreate{
