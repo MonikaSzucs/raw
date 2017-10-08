@@ -1,0 +1,850 @@
+@media (max-width: 1023px) {
+    .mobileScreen {
+        display: block;
+    }
+    body {
+        background-color: darkgrey;
+        margin: 0 auto;
+        max-width: 100vw;
+    }
+    .desktopScreen {
+        display: none;
+    }
+    .header {
+        margin: 0 auto;
+        width: 100%;
+        height: 80px;
+        background-color: #19313A;
+        position: fixed;
+        z-index: 9999;
+    }
+    /*    hamber menu*/
+    #hamb {
+        right: 190px;
+        top: 10px;
+        margin: 15px;
+        display: inline-block;
+        cursor: pointer;
+        position: fixed;
+        z-index: 9999;
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+        border-radius: 100px;
+        width: 35px;
+        height: 5px;
+        background-color: white;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    .change .bar3 {
+
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
+    /*
+hambuger menu
+    
+*/
+    
+    
+    
+  /*    feed page*/
+    
+        .invisdiv4 {
+        margin: 0 auto;
+        position: relative;
+        height: 30px;
+        width: 100%;
+        
+    }
+    .main-songDiv {
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        position: absolute;
+    }
+    
+    .songpic {
+         width: 150px;
+        height: 150px;
+        background-color: aquamarine;
+        border-radius: 150px;
+        box-shadow: 0px 5px 5px #888888;
+        z-index: 9997;
+        position: absolute;
+    }
+    
+    .first-song {
+        width: 80%;
+        position: relative;
+        height: 200px;
+        margin: 0 auto;
+        
+        
+        
+    }
+    
+    #FeedSongName { 
+        margin: 0 auto;
+        font-family: helvetica;
+        font-weight: 600;
+        margin-left: 150px;
+        
+    }
+    
+    .song-buttons {
+        height: 40px;
+        width: 600px;
+        
+    }
+    
+    .song-buttons li {
+       float: right;
+       
+        font-family: helvetica;
+        color: dimgray;
+    }
+    
+    .song-buttons li:nth-child(1) {
+        list-style-image: url('/imgs/likebutton_2.png');
+        
+    }
+    .song-buttons li:nth-child(2) {
+         margin-right: 50px;  
+        list-style-image: url('/imgs/sharebutton_2.png');
+    }
+    
+    #FeedArtistsName{
+        color: dimgray;
+        font-size: 12px;
+        font-weight: 600;
+        margin: 0 auto;
+        margin-left: 150px;
+        font-family: helvetica;
+    }
+    
+    .track-display {
+        width: 600px;
+        height: 70px;
+        background-color: red;
+        position: relative;
+        left: 40px;
+        box-shadow: 2px 5px 5px #888888;
+        border-radius: 20px;
+
+    }
+    
+/*
+    
+    feed page
+    
+*/
+    .genre-tags {
+        font-family: helvetica;
+        font-size: 14px;
+        margin: 0 auto;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        width: 180px;
+        height: 120px;
+        position: absolute;
+        color: white;
+        line-height: 180px;
+    }
+    .m-player {
+        vertical-align: middle;
+        display: inline-block;
+        margin-top: 16px;
+        margin-left: 8px;
+    }
+    #next-button {
+        width: 24px;
+        height: 24px;
+        background-image: url(imgs/next.svg);
+        background-repeat: no-repeat;
+    }
+    #play-button {
+        width: 32px;
+        height: 32px;
+        background-image: url(imgs/play.svg);
+        background-repeat: no-repeat;
+    }
+    #last-button {
+        margin-left: 30px;
+        width: 24px;
+        height: 24px;
+        background-image: url(imgs/previous.svg);
+        background-repeat: no-repeat;
+    }
+    .genre-tags:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    .m-upload-button {
+        width: 55px;
+        height: 55px;
+        background-size: 35px 35px;
+        position: fixed;
+        top: 12px;
+        right: 140px;
+        background-image: url(imgs/uploadicon.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 40px;
+    }
+    .m-upload-button:hover {
+        transition: 60ms ease-in-out;
+        background-size: 40px 40px;
+    }
+    .main-page {
+        margin: 0 auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: #E5E5E5;
+        width: 100%;
+        height: auto;
+    }
+    a {
+        color: white;
+    }
+    .toggle-logo {
+        position: fixed;
+        width: 90px;
+        height: 90px;
+        background-size: 80px 80px;
+        top: 25px;
+        right: 35px;
+        background-image: url(imgs/togglelogo.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .toggle-logo:hover {
+        cursor: pointer;
+        transition: 60ms ease-in-out;
+        background-size: 85px 85px;
+    }
+    .nav-bar {
+
+        z-index: 9999;
+        position: fixed;
+        color: white;
+        font-family: helvetica;
+        top: 20px;
+        left: 150px;
+    }
+    nav li {
+        display: inline-block;
+        margin-left: 20px;
+    }
+    nav li:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    .logo-spot {
+        width: 150px;
+        height: 80px;
+        z-index: 9999;
+        position: fixed;
+        left: 20px;
+        top: 0;
+        background-image: url(imgs/rawlogo.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .track-player {
+        z-index: 9998;
+        height: 65px;
+        width: 100%;
+        position: fixed;
+        background-color: #19313A;
+        bottom: 0;
+    }
+    #m-wrench {
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+        display: block;
+        width: 65px;
+        height: 65px;
+        right: 50px;
+        bottom: 20px;
+        z-index: 9999;
+        border-radius: 65px;
+        background-position: center;
+        background-size: 32px 32px;
+        background-repeat: no-repeat;
+        background-image: url(imgs/cmenuicon.svg);
+    }
+    #invisdiv3 {
+        height: 80px;
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .invisdiv {
+        margin: 0 auto;
+        position: relative;
+        height: 80px;
+        width: 100%;
+    }
+    .invisdiv2 {
+        margin: 0 auto;
+        position: relative;
+        height: 80px;
+        width: 100%;
+    }
+    .row1 {
+        margin: 0 auto;
+        width: 50%;
+        height: 150px;
+        position: relative;
+        text-align: center;
+    }
+    .row2 {
+        margin: 0 auto;
+        width: 100%;
+        height: 150px;
+        position: relative;
+        text-align: center;
+    }
+    .row3 {
+        margin: 0 auto;
+        width: 50%;
+        height: 150px;
+        position: relative;
+        text-align: center;
+    }
+    .row4 {
+        margin: 0 auto;
+        width: 50%;
+        height: 150px;
+        position: relative;
+        text-align: center;
+    }
+    .row5 {
+        margin: 0 auto;
+        width: 100%;
+        height: 150px;
+        position: relative;
+        text-align: center;
+    }
+    .mood-divs {
+        width: 180px;
+        height: 120px;
+        position: relative;
+        display: inline-block;
+    }
+
+
+    /*    hamburger menu*/
+    #hamburger {
+
+        height: 350px;
+        width: 300px;
+        position: fixed;
+        z-index: 9998;
+        top: -280px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+        background-color: white;
+        right: 0;
+        transition: 400ms ease-in-out; 
+
+    }
+
+    .hamclass {
+        margin: 0 auto;
+        width: 100%;
+        margin-top: 80px;
+        font-family: helvetica;
+        font-size: 30px;
+        left: 0;
+        
+        padding: 10px;
+    }
+
+    #hambul {
+        position: absolute;
+        width: 100%;
+        list-style: none;
+        top: 20px;
+
+    }
+
+    /*    hamburger menu*/
+    .m-profile-box {
+        width: 100vw;
+        height: 200px;
+        position: relative;
+        background-color: white;
+        box-shadow: 0px 5px 5px #888888;
+    }
+    #m-profile-pic-intro {
+        box-shadow: 0px 5px 5px #888888;
+        border: solid 1px;
+        background-color: white;
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 20%;
+        left: 25px;
+        z-index: 9997;
+    }
+    #name {
+        position: relative;
+        font-family: Helvetica;
+        margin-top: 50px;
+    }
+    #view-profile {
+        font-family: Helvetica;
+        margin-top: -100px;
+    }
+    #m-view-profile-div {
+        color: black;
+        background-color: white;
+        width: 100vw;
+        height: 200px;
+        position: absolute;
+        margin: auto 0;
+        align-items: center;
+        justify-content: center;
+        display: inline-grid;
+        z-index: 9996;
+    }
+    .m-settings-box {
+        width: 100vw;
+        height: auto;
+        position: relative;
+        top: 30px;
+    }
+    #m-genresh {
+        font-family: Helvetica;
+        text-align: center;
+    }
+    #m-message-button {
+        margin: 0 auto;
+        position: relative;
+        width: 100vw;
+        height: 75px;
+        background-color: white;
+        border-bottom: solid #cbcbcb .50px;
+        border-top: solid #cbcbcb .50px;
+    }
+    #m-notifications-button {
+        position: relative;
+        width: 100vw;
+        height: 75px;
+        background-color: white;
+        border-bottom: solid #cbcbcb .50px;
+    }
+    #m-settings-button {
+        text-decoration: none;
+        color: black;
+        position: relative;
+        width: 100vw;
+        height: 75px;
+        background-color: white;
+        border-bottom: solid #cbcbcb .50px;
+    }
+    #m-signout-box {
+        position: relative;
+        width: 100vw;
+        height: 75px;
+        background-color: white;
+        margin: 0 auto;
+        border-top: solid #cbcbcb .50px;
+        border-bottom: solid #cbcbcb .50px;
+    }
+    #m-messicon {
+        background-image: url(imgs/messagesicon.svg);
+    }
+    #m-seticon {
+        background-image: url(imgs/settingicon.svg);
+    }
+    #m-noticon {
+        background-image: url(imgs/noticon.svg);
+    }
+    #m-signicon {
+        background-image: url(imgs/signouticon.svg)
+    }
+    .m-sicon {
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 15%;
+        left: 20px;
+    }
+    .m-center-text {
+        font-family: Helvetica;
+        position: relative;
+        text-align: center;
+        line-height: 75px;
+    }
+    .m-profile-buttons {
+        width: 100vw;
+        height: 50px;
+        bottom: 0px;
+        position: absolute;
+        background-color: white;
+        box-shadow: 0px 5px 5px #888888;
+    }
+    #m-list-buttons {
+        list-style: none;
+        width 100%;
+        height: 35px;
+        z-index: 9997;
+        position: relative;
+    }
+    #m-list-buttons li {
+        font-family: helvetica;
+        display: inline-block;
+        margin-left: 25px;
+        margin-right: 45px;
+    }
+    #m-list-buttons li:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    .m-profile-main {
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        position: absolute;
+        top: 220px;
+    }
+    #lname {
+        color: gray;
+        font-size: 12px;
+    }
+    #fname {
+        color: gray;
+        font-size: 12px;
+    }
+    #m-settings-h {
+        font-family: Helvetica;
+        position: relative;
+        margin-left: 30px;
+    }
+    .m-settings-info {
+        font-family: Helvetica;
+        position: relative;
+        margin-left: 30px;
+    }
+    #reladiv {
+        width: 100%;
+        height: 260px;
+        position: relative;
+    }
+    #m-album-title {
+        position: relative;
+        left: 30px;
+        border-radius: 5px;
+        width: 80%;
+        height: 30px;
+    }
+    #m-genre-title {
+        position: relative;
+        left: 30px;
+        border-radius: 5px;
+        width: 80%;
+        height: 30px;
+    }
+    .upload-inputs {
+        background-color: #ebebeb;
+        border-style: none;
+    }
+    #m-description-title {
+        position: relative;
+        left: 30px;
+        border-radius: 5px;
+        width: 80%;
+        height: 70px;
+    }
+    #uldiv {
+        margin-top: 20px;
+    }
+    .upload-head {
+        font-family: Helvetica;
+        padding-left: 30px;
+        margin: 0 auto;
+        margin-top: 30px
+    }
+    #m-email-input {
+        background-color: #ebebeb;
+        border-style: none;
+        position: absolute;
+        left: 30px;
+        border-radius: 5px;
+        width: 70%;
+        height: 30px;
+    }
+    #m-reset-button {
+        background: rgba(247, 247, 247, 1);
+        background: -moz-linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(247, 247, 247, 1) 38%, rgba(251, 251, 251, 1) 50%, rgba(255, 255, 255, 1) 64%, rgba(255, 255, 255, 1) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(247, 247, 247, 1)), color-stop(38%, rgba(247, 247, 247, 1)), color-stop(50%, rgba(251, 251, 251, 1)), color-stop(64%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
+        background: -webkit-linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(247, 247, 247, 1) 38%, rgba(251, 251, 251, 1) 50%, rgba(255, 255, 255, 1) 64%, rgba(255, 255, 255, 1) 100%);
+        background: -o-linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(247, 247, 247, 1) 38%, rgba(251, 251, 251, 1) 50%, rgba(255, 255, 255, 1) 64%, rgba(255, 255, 255, 1) 100%);
+        background: -ms-linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(247, 247, 247, 1) 38%, rgba(251, 251, 251, 1) 50%, rgba(255, 255, 255, 1) 64%, rgba(255, 255, 255, 1) 100%);
+        background: linear-gradient(to bottom, rgba(247, 247, 247, 1) 0%, rgba(247, 247, 247, 1) 38%, rgba(251, 251, 251, 1) 50%, rgba(255, 255, 255, 1) 64%, rgba(255, 255, 255, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#ffffff', GradientType=0);
+        border-style: none;
+        position: absolute;
+        left: 35px;
+        border-radius: 5px;
+        width: 70%;
+        height: 35px;
+        color: black;
+        text-transform: capitalize;
+        box-shadow: 0px 7px 8px -3px rgba(0, 0, 0, 0.50);
+    }
+    .uplbuttons {
+        margin-top: 10px;
+        border-radius: 5px;
+        font-size: 18px;
+        color: white;
+        font-family: Helvetica;
+        margin-left: 30px;
+        border: none;
+        height: 40px;
+        width: 100px;
+        box-shadow: 0px 7px 8px -3px rgba(0, 0, 0, 0.50);
+    }
+    #cancel-up {
+        background-color: grey;
+    }
+    #save-up {
+        background-color: #5C9FAD;
+    }
+    #m-firstname {
+        background-color: #ebebeb;
+        border-style: none;
+        position: absolute;
+        left: 30px;
+        border-radius: 5px;
+        width: 70%;
+        height: 30px;
+    }
+    #m-lastname {
+        background-color: #ebebeb;
+        border-style: none;
+        position: absolute;
+        left: 30px;
+        border-radius: 5px;
+        width: 70%;
+        height: 30px;
+    }
+    #m-save {
+        border: none;
+        font-size: 18px;
+        position: relative;
+        left: 30px;
+        border-radius: 5px;
+        width: 40%;
+        height: 50px;
+        background-color: #5C9FAD;
+        color: white;
+        box-shadow: 0px 7px 8px -3px rgba(0, 0, 0, 0.50);
+    }
+    .m-upload-div {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        background-color: white;
+    }
+    #upload-text {
+        text-align: center;
+        position: absolute;
+        height: 200px;
+        width: 200px;
+        line-height: 200px;
+        margin: 0 auto;
+    }
+    #album-art-div {
+        cursor: pointer;
+        border-style: dashed;
+        border-width: 2px;
+        border-color: darkgrey;
+        top: 30px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        position: absolute;
+        height: 200px;
+        width: 200px;
+    }
+    #m-main-pagesettings {
+        background-color: white;
+    }
+    #m-rnb {
+        background-image: url(imgs/rnb.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-punk {
+        background-image: url(imgs/punk.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-rock {
+        background-image: url(imgs/rock.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-pop {
+        background-image: url(imgs/pop.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-jazz {
+        background-image: url(imgs/jazz.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-metal {
+        background-image: url(imgs/metal.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-funk {
+        background-image: url(imgs/funk.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-edm {
+        background-image: url(imgs/edm.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-hiphop {
+        background-image: url(imgs/hiphop.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-country {
+        background-image: url(imgs/country.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-classical {
+        background-image: url(imgs/classical.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-guitar {
+        background-image: url(imgs/guitar.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-bass {
+        background-image: url(imgs/bass.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-drums {
+        background-image: url(imgs/drums.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-woodwind {
+        background-image: url(imgs/woodwind.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-brass {
+        background-image: url(imgs/brass.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-synth {
+        background-image: url(imgs/synth.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-pad {
+        background-image: url(imgs/pads.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-strings {
+        background-image: url(imgs/strings.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-sad {
+        background-image: url(imgs/sad.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-happy {
+        background-image: url(imgs/happy.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-angry {
+        background-image: url(imgs/angry.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-chill {
+        background-image: url(imgs/chill.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-focus {
+        background-image: url(imgs/focus.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-workout {
+        background-image: url(imgs/workout.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-travel {
+        background-image: url(imgs/travel.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
