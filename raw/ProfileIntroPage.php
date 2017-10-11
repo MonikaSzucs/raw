@@ -18,11 +18,12 @@
                 <div class = "m-upload-button"></div>
             </div>
 
-            <ul class="nav-bar">
-                <li>Explore</li>
-                <li>Genes</li>
-                <li>Moods</li>
-                <li>Instruments</li>
+          <ul class="nav-bar">
+              <a href="MobileExplorePage.php"><li>Explore</li></a>
+                <a href="MobileGroupsTab.php"><li>Groups</li></a>
+                <a href="MobileIGenresTemplate.php"><li>Genres</li></a>
+                <a href="MobileMoodsTemplate.php"><li>Moods</li></a>
+                <a href="MobileInsturmentsTemplate.php"><li>Instruments</li></a>
             </ul>
 
             <div class="logo-spot"></div>
@@ -89,6 +90,8 @@
             Sign Out
              <div id="m-signicon" class="m-sicon"></div>
         </div>
+        
+        <div id="invisdiv3"></div>
 
     </div>
    <nav class="container">
