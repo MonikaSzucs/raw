@@ -25,8 +25,9 @@
                 </div>
             </div>
 
-           <ul class="nav-bar">
+        <ul class="nav-bar">
               <a href="MobileExplorePage.php"><li>Explore</li></a>
+                <a href="MobileGroupsTab.php"><li>Groups</li></a>
                 <a href="MobileIGenresTemplate.php"><li>Genres</li></a>
                 <a href="MobileMoodsTemplate.php"><li>Moods</li></a>
                 <a href="MobileInsturmentsTemplate.php"><li>Instruments</li></a>
@@ -53,9 +54,9 @@
 -->
         <div id="hamburger"> 
             <ul id="hambul">
-                <li class="hamclass">
+                <a href="ProfileIntroPage.php"> <li class="hamclass">
                 Profile
-                </li>  
+                   </li> </a>   
                 <li class="hamclass">
                 Sign Out
                 </li>               

@@ -16,6 +16,12 @@
             <div class="header">
                 <div class="toggle-logo"> </div>
                 <div class = "m-upload-button"></div>
+            
+                  <div id="hamb" onclick="myFunction(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
             </div>
 
           <ul class="nav-bar">
@@ -33,7 +39,11 @@
     <div class="invisdiv"></div>
 
 
-    <div class="track-player"></div>
+    <div class="track-player">
+        <div id="last-button" class="m-player"></div>
+        <div id="play-button" class="m-player"></div>
+        <div id="next-button" class="m-player"></div>
+    </div>
     <div class="main-page">
         
                         
@@ -43,9 +53,9 @@
 -->
         <div id="hamburger"> 
             <ul id="hambul">
-                <li class="hamclass">
+               <a href="ProfileIntroPage.php"> <li class="hamclass">
                 Profile
-                </li>  
+                   </li> </a> 
                 <li class="hamclass">
                 Sign Out
                 </li>               

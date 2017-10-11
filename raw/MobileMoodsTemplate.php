@@ -53,9 +53,9 @@
 -->
         <div id="hamburger"> 
             <ul id="hambul">
-                <li class="hamclass">
+                <a href="ProfileIntroPage.php"> <li class="hamclass">
                 Profile
-                </li>  
+                   </li> </a> 
                 <li class="hamclass">
                 Sign Out
                 </li>               
