@@ -2,6 +2,7 @@
 
 //the session_start() should always be at the top
 session_start();
+echo "session_user_id" .$_SESSION["user_id"];
 if(!isset($_SESSION["user_id"]))
 {
 	session_destroy(); 
@@ -19,7 +20,7 @@ if(isset($_POST['toDo'])){
 	print_r($_POST);
 
 	
-	$query = "INSERT INTO group_user (group_id, user_id)";
+	$query = "INSERT INTO group_users (group_id, user_id)";
 	$query .= " VALUES (" . $_POST['group_id'] . ", " . $_SESSION['user_id'] . ")";
 	
 	echo $query;
@@ -102,19 +103,28 @@ if(isset($_POST['toDo'])){
     </div>
 
     <nav class="container">
-	
 	<?php
+	//get group?_user from data base where user id equal to session user ID
+	$query = "SELECT * FROM group_users WHERE user_id =" . $_SESSION['user_id'];
+	$result = mysqli_query($db, $query) or die('Error querying database.');
+	
+	$group_users = array(); 
+	while ($row = mysqli_fetch_array($result)){
+		$group_users[] = $row['group_id'];
+	}
+	
 	//Step2 get data from database
-$query = "SELECT * FROM groups";
-$result = mysqli_query($db, $query) or die('Error querying database.');
+	$query = "SELECT * FROM groups";
+	$result = mysqli_query($db, $query) or die('Error querying database.');
 //Step3 Display the result
 
-echo "<table style='width:800px; margin:0 auto;'>";
+echo "<table border='1' style='width:800px; margin:0 auto;'>";
 echo "<tr>";
 		echo "<th  width='120px'> group_title </th>";
 		echo "<th  width='420px'> group_description </th>";
 		echo "<th> group_photo </th>";
 		echo "<th> Interested </th>";
+		echo "<th> Tracks </th>";
 echo "</tr>";
 
 while ($row = mysqli_fetch_array($result)) 
@@ -128,15 +138,40 @@ while ($row = mysqli_fetch_array($result))
 		else{
 			echo "<td> <img src='" . $row['group_photo'] . "' style='width:100px;height:100px;' > </td>";
 		}
+
 		//join
 		//condition if they are in the group then don't show the button
+		
 		echo "<td>";
-			echo "<form action='' method='POST'>";
+			//if $row['group_id'] exit in $group_users['group_id'] do not show form;
+			//else shows join form;
+			
+			/*echo '$row[group_id]'. $row['group_id'];
+
+			echo '<BR/>$group_id THAT THIS PERSON ALREADY JOINED';
+			echo "<pre>";
+			print_r($group_users);
+			echo "</pre>";	*/		
+			
+			if(in_array($row['group_id'], $group_users))
+			{
+				echo "already Joined";
+			}
+			else{
+				echo "<form action='' method='POST'>";
+					echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+					echo "<input type='hidden' name='toDo' value='join'>";
+					echo "<input type='submit' value='join'>";
+				echo "</form>";
+			}
+		echo "</td>";
+		
+		echo "<td >";
+			echo "<form action ='GroupMusic.php' method='GET'>";
 				echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
-				echo "<input type='hidden' name='toDo' value='join'>";
-				echo "<input type='submit' value='join'>";
+				echo "<input type='submit' value='Enter'>";
 			echo "</form>";
-		echo "</td>"; 
+		echo "</td>";
 		
 	echo "</tr>";
 	

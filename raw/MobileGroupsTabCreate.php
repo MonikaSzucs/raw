@@ -1,6 +1,7 @@
 <?php 
 $target_file = "";
-echo "xxx:".  $_FILES["myImage"]["name"];
+
+//group picture
 if( isset($_FILES["myImage"]["name"])) {
 	echo "1<br//>";
 	$target_file .= "UserPictures/". basename($_FILES["myImage"]["name"]);
@@ -44,6 +45,49 @@ if( isset($_FILES["myImage"]["name"])) {
 	}
 }
 
+//music files
+if( isset($_FILES["myMusic"]["name"])) {
+	echo "1<br//>";
+	$target_file .= "UsersSongs/". basename($_FILES["myMusic"]["name"]);
+	$uploadOk = 1;
+	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+    $check = getimagesize($_FILES["myMusic"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an audio file - " . $check["mime"] . ".";
+        $uploadOk = 1;
+		echo "1<br//>";
+    } else {
+        echo "File is not an audio file.";
+        $uploadOk = 0;
+    }
+	// Check if file already exists
+	if (file_exists($target_file)) {
+		echo "Sorry, file already exists.";
+		$uploadOk = 0;
+	}
+	// Check file size
+	if ($_FILES["myMusic"]["size"] > 500000000) {
+		echo "Sorry, your file is too large.";
+		$uploadOk = 0;
+	}
+	if($imageFileType != "mp3" && $imageFileType != "aac" && $imageFileType != "wma"&& $imageFileType != "wav" ) {
+		echo "Sorry, mp3, aac, wma, and wav files only.";
+		$uploadOk = 0;
+	}
+
+	// Check if $uploadOk is set to 0 by an error
+	if ($uploadOk == 0) {
+		echo "Sorry, your file was not uploaded.";
+	// if everything is ok, try to upload file
+	} else {
+		if (move_uploaded_file($_FILES["myMusic"]["tmp_name"], $target_file)) {
+			echo "The file " . basename( $_FILES["myMusic"]["name"]). " has been uploaded.";
+		} else {
+			$target_file = "";
+			echo "Sorry, there was an error uploading your audio file.";
+		}
+	}
+}
 
 
 
@@ -83,8 +127,8 @@ $formSuccessfullMessage = "";
 			}
 			//else let them to create the record(insert)
 			else{
-				$query = "INSERT INTO groups (group_title, group_description, group_photo) ";
-				$query .= " VALUES ( '" . $TitleGroups . "', '" . $TextAreaGroups . "', '".$target_file."')";
+				$query = "INSERT INTO groups (group_title, group_description, group_photo, group_music_files) ";
+				$query .= " VALUES ( '" . $TitleGroups . "', '" . $TextAreaGroups . "', '".$target_file."', '".$target_file."')";
 
 				///echo $query;
 			
@@ -192,68 +236,70 @@ $formSuccessfullMessage = "";
         
 
         <div class="m-profile-box">
-            <div class="m-profile-buttons">
-                <ul id="m-list-buttons">
-                    <li>Sounds</li>
-                    <li>Info</li>
-                    <li>Groups</li>
-                </ul>
-            </div>
-            <div id="m-profile-pic-intro"></div>
-            <div id="m-view-profile-div">
-                <p id="name">Name</p>
-                <ul id="view-profile">
-                    <li id="m-followers-list">
-                    </li>
-                </ul>
-            </div>
+			<div id="m-profile-inner">
+				<div class="m-profile-buttons">
+					<ul id="m-list-buttons">
+						<li>Sounds</li>
+						<li>Info</li>
+						<li>Groups</li>
+					</ul>
+				</div>
+				<div id="m-profile-pic-intro"></div>
+				<div id="m-view-profile-div">
+					<p id="name">Name</p>
+					<ul id="view-profile">
+						<li id="m-followers-list">
+						</li>
+					</ul>
+				</div>
+			</div>
         </div>
 
 		
 		
 
         <div class="m-profile-main">
-			<div class="spaceContainerTop"><p>Create and Add Group Information</p></div>
-			<a href="MobileGroupsTab.php"><button id="CreateGroupProfile">Back</button></a>
-			<div class="Profile-sub-container">
-				<div class="TopSpace-ProfileGroupSub"></div>
-				<div class="ProfileIconGroups" id="list"></div>
-				<div class="vertical-space"></div>
-				<form id="contactForm" name="form" action="" method="post" enctype="multipart/form-data">
-					<span style='color:red; font-weight:bold'> <?php if(isset($formErrorMessage)){echo $formErrorMessage;} ?> </span>
-					<span style='color:Green; font-weight:bold'> <?php if(isset($formSuccessfullMessage)){echo $formSuccessfullMessage;} ?> </span>
-					
-					<div class="GroupsInformation">
-						<div class="GroupsInformation-Title">
-							Title:<br/>
-							<textarea maxlength="50" name="TitleGroups"><?php if(isset($TitleGroups)){echo $TitleGroups; }?></textarea>
+			<div id="m-profile-main-inner">
+				<div class="spaceContainerTop"><p>Create and Add Group Information</p></div>
+				<a href="MobileGroupsTab.php"><button id="CreateGroupProfile">Back</button></a>
+				<div class="Profile-sub-container">
+					<div class="TopSpace-ProfileGroupSub"></div>
+					<div class="ProfileIconGroups" id="list"></div>
+					<div class="vertical-space"></div>
+					<form id="contactForm" name="form" action="" method="post" enctype="multipart/form-data">
+						<span style='color:red; font-weight:bold'> <?php if(isset($formErrorMessage)){echo $formErrorMessage;} ?> </span>
+						<span style='color:Green; font-weight:bold'> <?php if(isset($formSuccessfullMessage)){echo $formSuccessfullMessage;} ?> </span>
+						
+						<div class="GroupsInformation">
+							<div class="GroupsInformation-Title">
+								Title:<br/>
+								<textarea maxlength="50" name="TitleGroups"><?php if(isset($TitleGroups)){echo $TitleGroups; }?></textarea>
+							</div>
+							<div class="horizontal-GroupSpace">
+							</div>
+							<div class="GroupsInformation-Description">
+								Description:<br/>
+								<textarea maxlength="500" name="TextAreaGroups"><?php if(isset($TextAreaGroups)){echo $TextAreaGroups; }?></textarea>
+								
+							</div>	
 						</div>
-						<div class="horizontal-GroupSpace">
-						</div>
-						<div class="GroupsInformation-Description">
-							Description:<br/>
-							<textarea maxlength="500" name="TextAreaGroups"><?php if(isset($TextAreaGroups)){echo $TextAreaGroups; }?></textarea>
 							
-						</div>	
-					</div>
-						
-                    
-						<input id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
-						
-						
-					<div id="buttonAreaCreate">
-						<input id="CreateGroupProfileSubmit" type="submit" />
-					</div>
+							<input id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
+							<br/>
+							<input id="files" type="file" name="myMusic" accept="audio/*" />
+						<div id="buttonAreaCreate">
+							<input id="CreateGroupProfileSubmit" type="submit" />
+						</div>
 
-				</form>
+					</form>
+				</div>
+			</div>
+			
+			<div id="form_output">
+
+
 			</div>
 		</div>
-		
-		<div id="form_output">
-
-
-		</div>
-
     </div>
     <nav class="container">
         <a class="buttons" href="ProfileIntroPagevers2.php" tooltip="Profile"></a>

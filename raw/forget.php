@@ -15,17 +15,27 @@ if( isset($_POST['EmailForgot']) ) {
 	//Step2 get data from database
 	$query = "SELECT * FROM user ";
 	$query .=" where email='".$EmailForgot."' ";
+	
 
 	$result = mysqli_query($db, $query) or die('Error querying database.');
 
 	$rows = mysqli_fetch_array($result);
+	
+
 	if(sizeof($rows)>0)
 	{
 		$message = "Email sent" ;
 		
 		$db_selected = mysqli_select_db($db,$EmailForgot);
 		$sql = "SELECT $EmailForgot FROM user";
-		echo $db_selected;
+		
+		$to = $EmailForgot;
+		$subject = "Your Forgotten Password";
+		$txt = "Here is your Forgotten Password" . $EmailForgot;
+		$headers = "From: webmaster@example.com"; 
+
+		mail($to,$subject,$txt,$headers);
+
 		
 	}
 	else 

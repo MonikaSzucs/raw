@@ -302,6 +302,7 @@ hambuger menu
         background-color: white;
         box-shadow: 0px 5px 5px #888888;
     }
+	
     #m-profile-pic-intro {
         background-color: aquamarine;
         width: 100px;
@@ -311,7 +312,9 @@ hambuger menu
         top: 20%;
         left: 25px;
         z-index: 9997;
+		margin-left: 20px;
     }
+	
     #name {
         position: relative;
         font-family: Helvetica;
@@ -332,7 +335,9 @@ hambuger menu
         justify-content: center;
         display: inline-grid;
         z-index: 9996;
+
     }
+	
     .m-settings-box {
         width: 100vw;
         height: auto;
@@ -436,6 +441,15 @@ hambuger menu
         position: absolute;
         top: 220px;
     }
+	
+	#m-profile-main-inner{
+		width: 700px;
+		background-color:red;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+	
     #lname {
         color: gray;
         font-size: 12px;
