@@ -4,7 +4,8 @@
 <head>
     <link rel="stylesheet" href="LargerScreens1024.css">
     <link rel="stylesheet" href="MediumScreen769And1023.css">
-    <link rel="stylesheet" href="SmallScreen768.css">
+    <link rel="stylesheet" href="SmallScreen768version2.css">
+    <link rel="stylesheet" href="SmallScreen768version2device.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -90,9 +91,14 @@
         </div>
 
     </div>
-    <div id="cmenu">
-        <div id="m-wrench"></div>
-    </div>
+   <nav class="container">
+        <a class="buttons" href="ProfileIntroPage.php" tooltip="Profile"></a>
+         <a class="buttons" href="MobileGroupsTab.php" tooltip="Groups"></a>
+        <a class="buttons" href="MobileInsturmentsTemplate.php" tooltip="Instruments"></a>
+        <a class="buttons" href="MobileExplorePage.php" tooltip="Explore"></a>
+        <a class="buttons" href="MobileIGenresTemplate.php" tooltip="Genres"></a>
+        <a class="buttons" href="MobileMoodsTemplate.php" tooltip="Moods"></a><a class="buttons" href="#" tooltip="Compose"><span><span class="rotate"></span></span></a></nav>
+    <div class="cmenu"></div>
     
     <script src="cmenuscript.js"></script>
 
