@@ -126,9 +126,13 @@ hambuger menu
         width: 100%;
         height: auto;
     }
-    a {
+   .m-settings-box a {
         color: black;
     }
+    .nav-bar a {
+        color: white;
+    }
+    
     .toggle-logo {
         position: fixed;
         width: 90px;
@@ -444,7 +448,7 @@ hambuger menu
 	
 	#m-profile-main-inner{
 		width: 700px;
-		background-color:red;
+		background-color:white;
 		left: 0;
 		right: 0;
 		margin: auto;
@@ -769,4 +773,141 @@ hambuger menu
         background-size: contain;
         background-repeat: no-repeat;
     }
+/*  groups page css start*/
+    
+    .Profile-sub-container{
+		width: 90%;
+		height: 200px;
+		background-color: white;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		position: absolute;
+	}
+	
+	.spaceContainerTop{
+		width: 100%;
+		height: 60px;
+	}
+	
+	.spaceContainerTop h1 {
+		left: 70px;
+		top: 10px;
+		position: relative;
+        font-family: helvetica;
+    
+	}
+	
+	
+	#CreateGroupProfile{
+		width: 200px;
+		height: 50px;
+		border: 2px solid darkgray;
+		background-color: #ffffff;
+		border-radius: 25px;
+		position: absolute;
+		top: 10px;
+		right: 40px;
+        font-size: 18px;
+        color: darkgray
+	}
+	
+	.ProfileIconGroups{
+		float: left;
+		width: 150px;
+		height: 150px;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+        border-radius: 100%;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+	}
+	.GroupsInformation{
+		float: left;
+		width: 70%;
+		height: 150px;
+		
+	}
+	.TopSpace-ProfileGroupSub{
+		height: 25px;
+		width: 100%;
+	}
+	
+	.vertical-space{
+		float: left;
+		width: 5%;
+		height: 150px;
+	}
+	
+	.GroupsInformation-Title{
+		width: 100%;
+		height: 40%;
+		background-color: white;
+		border-bottom: 2px solid grey;
+        
+	}
+	
+	.horizontal-GroupSpace{
+		height: 10px;
+		width: 100%;
+	
+	}
+	
+	.GroupsInformation-Description{
+		background-color: white;
+		height: 75px;
+    
+	}
+	
+	.GroupsInformation-Title textarea{
+		width: 99%;
+		height: 30px;
+        border: none;
+    
+	}
+
+	#CreateGroupProfileSubmit{
+		width: 200px;
+		height: 50px;
+		  border: 2px solid darkgray;
+		background-color: #ffffff;
+		border-radius: 25px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+        font-size: 18px;
+        color: darkgray;
+	}
+	.GroupsInformation-Description textarea{
+		width: 99%;
+		height: 60px;
+        border: none;
+	}
+	
+	#buttonAreaCreate{
+		width: 100%;
+		height: 50px;
+		position: absolute;
+		top: 300px;
+	}
+	
+	input{
+		margin-top: 30px;
+	}
+	
+}
+
+    
+    
+    
+    
+
+    
+/*  groups page css  end*/
+    
+    
+    
+    
+    
 }
