@@ -260,7 +260,7 @@ $formSuccessfullMessage = "";
 
         <div class="m-profile-main">
 			<div id="m-profile-main-inner">
-				<div class="spaceContainerTop"><p>Create and Add Group Information</p></div>
+				<div class="spaceContainerTop"><h1>Create Group</h1></div>
 				<a href="MobileGroupsTab.php"><button id="CreateGroupProfile">Back</button></a>
 				<div class="Profile-sub-container">
 					<div class="TopSpace-ProfileGroupSub"></div>

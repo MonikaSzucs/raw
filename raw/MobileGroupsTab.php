@@ -86,7 +86,7 @@
 		
 
         <div class="m-profile-main">
-			<div class="spaceContainerTop"><p>Groups</p></div>
+			<div class="spaceContainerTop"><h1>Groups</h1></div>
 			
 			<a href="MobileGroupsTabCreate.php"><button id="CreateGroupProfile">Create Group</button></a>
 			<div class="Profile-sub-container">
