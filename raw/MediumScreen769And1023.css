@@ -1,3 +1,22 @@
+/*FONTS ---------------------------------------------------------------------------------*/
+
+@font-face {
+  font-family: "Avenir-Medium";
+  src: url(./Font/Avenir/avenir/Avenir-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Avenir-Black";
+  src: url(./Font/Avenir/avenir/Avenir-Black.ttf);
+}
+
+@font-face {
+  font-family: "Avenir-Light";
+  src: url(./Font/Avenir/avenir/Avenir-Light.ttf);
+}
+
+/*MEDIA ------------------------------------------------------------------------------*/
+
 @media (max-width: 1023px) {
     .mobileScreen {
         display: block;
@@ -19,7 +38,7 @@
         z-index: 9999;
     }
     /*    hamber menu*/
-    
+
     #hamb {
         right: 190px;
         top: 10px;
@@ -29,7 +48,7 @@
         position: fixed;
         z-index: 9999;
     }
-    
+
     .bar1,
     .bar2,
     .bar3 {
@@ -40,24 +59,24 @@
         margin: 5px 0;
         transition: 0.4s;
     }
-    
+
     .change .bar1 {
         -webkit-transform: rotate(-45deg) translate(-9px, 6px);
         transform: rotate(-45deg) translate(-9px, 6px);
     }
-    
+
     .change .bar2 {
         opacity: 0;
     }
-    
+
     .change .bar3 {
-        
+
         -webkit-transform: rotate(45deg) translate(-8px, -8px);
         transform: rotate(45deg) translate(-8px, -8px);
     }
     /*
 hambuger menu
-    
+
 */
     .genre-tags {
         font-family: helvetica;
@@ -132,7 +151,7 @@ hambuger menu
     .nav-bar a {
         color: white;
     }
-    
+
     .toggle-logo {
         position: fixed;
         width: 90px;
@@ -150,7 +169,7 @@ hambuger menu
         background-size: 85px 85px;
     }
     .nav-bar {
-        
+
         z-index: 9999;
         position: fixed;
         color: white;
@@ -158,8 +177,8 @@ hambuger menu
         top: 20px;
         left: 150px;
     }
-    
-    
+
+
     /*    hamburger menu*/
     #hamburger {
 
@@ -171,7 +190,7 @@ hambuger menu
         box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
         background-color: white;
         right: 0;
-        transition: 400ms ease-in-out; 
+        transition: 400ms ease-in-out;
 
     }
 
@@ -182,7 +201,7 @@ hambuger menu
         font-family: helvetica;
         font-size: 30px;
         left: 0;
-        
+
         padding: 10px;
     }
 
@@ -195,8 +214,8 @@ hambuger menu
     }
 
     /*    hamburger menu*/
-    
-    
+
+
     nav li {
         font-size: 12px;
         display: inline-block;
@@ -306,7 +325,7 @@ hambuger menu
         background-color: white;
         box-shadow: 0px 5px 5px #888888;
     }
-	
+
     #m-profile-pic-intro {
         box-shadow: 0px 5px 5px #888888;
         background-color: white;
@@ -319,7 +338,7 @@ hambuger menu
         z-index: 9997;
 		margin-left: 20px;
     }
-	
+
     #name {
         position: relative;
         font-family: Helvetica;
@@ -342,7 +361,7 @@ hambuger menu
         z-index: 9996;
 
     }
-	
+
     .m-settings-box {
         width: 100vw;
         height: auto;
@@ -446,7 +465,7 @@ hambuger menu
         position: absolute;
         top: 220px;
     }
-	
+
 	#m-profile-main-inner{
 		width: 700px;
 		background-color:white;
@@ -454,7 +473,7 @@ hambuger menu
 		right: 0;
 		margin: auto;
 	}
-	
+
     #lname {
         color: gray;
         font-size: 12px;
@@ -775,7 +794,7 @@ hambuger menu
         background-repeat: no-repeat;
     }
 /*  groups page css start*/
-    
+
     .Profile-sub-container{
 		width: 90%;
 		height: 200px;
@@ -785,21 +804,21 @@ hambuger menu
 		margin: 0 auto;
 		position: absolute;
 	}
-	
+
 	.spaceContainerTop{
 		width: 100%;
 		height: 60px;
 	}
-	
+
 	.spaceContainerTop h1 {
 		left: 70px;
 		top: 10px;
 		position: relative;
         font-family: helvetica;
-    
+
 	}
-	
-	
+
+
 	#CreateGroupProfile{
 		width: 200px;
 		height: 50px;
@@ -812,7 +831,7 @@ hambuger menu
         font-size: 18px;
         color: darkgray
 	}
-	
+
 	.ProfileIconGroups{
 		float: left;
 		width: 150px;
@@ -827,44 +846,44 @@ hambuger menu
 		float: left;
 		width: 70%;
 		height: 150px;
-		
+
 	}
 	.TopSpace-ProfileGroupSub{
 		height: 25px;
 		width: 100%;
 	}
-	
+
 	.vertical-space{
 		float: left;
 		width: 5%;
 		height: 150px;
 	}
-	
+
 	.GroupsInformation-Title{
 		width: 100%;
 		height: 40%;
 		background-color: white;
 		border-bottom: 2px solid grey;
-        
+
 	}
-	
+
 	.horizontal-GroupSpace{
 		height: 10px;
 		width: 100%;
-	
+
 	}
-	
+
 	.GroupsInformation-Description{
 		background-color: white;
 		height: 75px;
-    
+
 	}
-	
+
 	.GroupsInformation-Title textarea{
 		width: 99%;
 		height: 30px;
         border: none;
-    
+
 	}
 
 	#CreateGroupProfileSubmit{
@@ -885,30 +904,30 @@ hambuger menu
 		height: 60px;
         border: none;
 	}
-	
+
 	#buttonAreaCreate{
 		width: 100%;
 		height: 50px;
 		position: absolute;
 		top: 300px;
 	}
-	
+
 	input{
 		margin-top: 30px;
 	}
-	
+
 }
 
-    
-    
-    
-    
 
-    
+
+
+
+
+
 /*  groups page css  end*/
-    
-    
-    
-    
-    
+
+
+
+
+
 }

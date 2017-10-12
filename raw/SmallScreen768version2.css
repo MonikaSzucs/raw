@@ -1,3 +1,22 @@
+/*FONTS ---------------------------------------------------------------------------------*/
+
+@font-face {
+  font-family: "Avenir-Medium";
+  src: url(./Font/Avenir/avenir/Avenir-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Avenir-Black";
+  src: url(./Font/Avenir/avenir/Avenir-Black.ttf);
+}
+
+@font-face {
+  font-family: "Avenir-Light";
+  src: url(./Font/Avenir/avenir/Avenir-Light.ttf);
+}
+
+/*MEDIA ------------------------------------------------------------------------------*/
+
 @media (max-width: 769px) {
     .mobileScreen {
         display: block;
@@ -18,7 +37,7 @@
         position: fixed;
         z-index: 9999;
     }
-    
+
     #hamb {display: none;}
     .genre-tags {
         font-family: helvetica;
@@ -142,9 +161,9 @@
         background-repeat: no-repeat;
         background-position: center;
         background-color: #713232;
-        
+
     }
-    
+
         .buttons:nth-last-of-type(7) {
         background-image: url("imgs/profileicon.svg");
         background-size: 28px 28px;
@@ -152,7 +171,7 @@
         background-position: center;
         background-color: #713232;
     }
-    
+
     .buttons:hover {
         box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
     }
@@ -235,7 +254,7 @@
         color: white;
         display: none;
     }
-    
+
     a {color: black; }
     nav li {
         display: inline-block;
@@ -335,7 +354,7 @@
         background-color: white;
         box-shadow: 0px 5px 5px #888888;
     }
-    
+
     #m-profile-pic-intro {
         box-shadow: 0px 5px 5px #888888;
         background-color: white;
@@ -770,7 +789,7 @@
         background-size: contain;
         background-repeat: no-repeat;
     }
-    
+
     #m-focus {
         background-image: url(imgs/focus.png);
         background-position: center;
@@ -782,8 +801,8 @@
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
-    } 
-    
+    }
+
     #m-travel {
         background-image: url(imgs/travel.png);
         background-position: center;
