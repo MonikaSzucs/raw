@@ -1,3 +1,20 @@
+/*FONTS ---------------------------------------------------------------------------------*/
+
+@font-face {
+  font-family: "Avenir-Medium";
+  src: url(./Font/Avenir/avenir/Avenir-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Avenir-Black";
+  src: url(./Font/Avenir/avenir/Avenir-Black.ttf);
+}
+
+@font-face {
+  font-family: "Avenir-Light";
+  src: url(./Font/Avenir/avenir/Avenir-Light.ttf);
+}
+
 @media (max-device-width: 700px) {
     .mobileScreen {
         display: block;
@@ -369,7 +386,7 @@
     }
     #m-settings-button {
         text-decoration: none;
-        color: black; 
+        color: black;
         position: relative;
         width: 100vw;
         height: 75px;
@@ -408,6 +425,7 @@
     }
     .m-center-text {
         position: relative;
+        font-family: Avenir-Medium;
         text-align: center;
         line-height: 75px;
     }
@@ -441,11 +459,11 @@
         color: gray;
         font-size: 12px;
     }
-    #fname { 
+    #fname {
          color: gray;
           font-size: 12px;
     }
-    
+
     #m-settings-h {
         font-family: Helvetica;
         position: relative;
@@ -456,7 +474,7 @@
         position: relative;
         margin-left: 30px;
     }
-    
+
     #m-settings-h {
         position: relative;
         margin-left: 30px;

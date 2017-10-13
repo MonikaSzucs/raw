@@ -40,27 +40,27 @@
     <div class="invisdiv"></div>
 
     <div class="track-player">
-        
+
         <div id="last-button" class="m-player"></div>
         <div id="play-button" class="m-player"></div>
         <div id="next-button" class="m-player"></div>
-    
+
     </div>
     <div class="main-page">
-        
-                        
+
+
 <!--
         hamburger menu
-        
+
 -->
-        <div id="hamburger"> 
+        <div id="hamburger">
             <ul id="hambul">
                 <a href="ProfileIntroPage.php"> <li class="hamclass">
                 Profile
-                   </li> </a>  
+                   </li> </a>
                 <li class="hamclass">
                 Sign Out
-                </li>               
+                </li>
             </ul>
         </div>
 
@@ -112,7 +112,7 @@
 
         <div class="row5">
             <div id="m-edm" class="mood-divs">
-                <p class="genre-tags">Edm
+                <p class="genre-tags">EDM
                 </p>
             </div>
             <div id="m-classical" class="mood-divs">

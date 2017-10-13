@@ -198,7 +198,7 @@ hambuger menu
         margin: 0 auto;
         width: 100%;
         margin-top: 80px;
-        font-family: helvetica;
+        font-family: Avenir-Medium;
         font-size: 30px;
         left: 0;
 
@@ -220,6 +220,8 @@ hambuger menu
         font-size: 12px;
         display: inline-block;
         margin-left: 20px;
+        font-family: Avenir-Medium;
+        font-size: large;
     }
     nav li:hover {
         cursor: pointer;
@@ -341,11 +343,11 @@ hambuger menu
 
     #name {
         position: relative;
-        font-family: Helvetica;
+        font-family: Avenir-Medium;
         margin-top: 50px;
     }
     #view-profile {
-        font-family: Helvetica;
+        font-family: Avenir-medium;
         margin-top: -100px;
     }
     #m-view-profile-div {
@@ -428,7 +430,7 @@ hambuger menu
         left: 20px;
     }
     .m-center-text {
-        font-family: Helvetica;
+        font-family: Avenir-Medium;
         position: relative;
         text-align: center;
         line-height: 75px;
@@ -453,6 +455,8 @@ hambuger menu
         display: inline-block;
         margin-left: 25px;
         margin-right: 45px;
+        font-family: Avenir-Medium;
+
     }
     #m-list-buttons li:hover {
         cursor: pointer;
@@ -828,8 +832,9 @@ hambuger menu
 		position: absolute;
 		top: 10px;
 		right: 40px;
-        font-size: 18px;
-        color: darkgray
+    font-family: Avenir-Medium;
+    font-size: 18px;
+    color: darkgray
 	}
 
 	.ProfileIconGroups{
@@ -846,6 +851,8 @@ hambuger menu
 		float: left;
 		width: 70%;
 		height: 150px;
+    font-family: Avenir-Medium;
+
 
 	}
 	.TopSpace-ProfileGroupSub{
