@@ -70,22 +70,24 @@
                     <p id="upload-text">Upload Album Cover</p>
                 </div>
             </div>
-            <p class="upload-head">Title</p>
-            <br />
-            <input class="upload-inputs" id="m-album-title" type="text" name="albumname">
-            <br />
-            <p class="upload-head">Genre</p>
-            <br />
-            <input class="upload-inputs" id="m-genre-title" type="text" name="albumname">
-            <br />
-            <p class="upload-head">Description</p>
-            <br />
-            <input class="upload-inputs" id="m-description-title" type="text" name="albumname">
-
-            <div id="uldiv">
-                <button id="cancel-up" class="uplbuttons">cancel</button>
-                <button id="save-up" class="uplbuttons">save</button>
+            <div id="upload-info">
+                <p class="upload-head">Title</p>
+                <br />
+                <input class="upload-inputs" id="m-album-title" type="text" name="albumname">
+                <br />
+                <p class="upload-head">Genre</p>
+                <br />
+                <input class="upload-inputs" id="m-genre-title" type="text" name="albumname">
+                <br />
+                <p class="upload-head">Description</p>
+                <br />
+                <input class="upload-inputs" id="m-description-title" type="text" name="albumname">
             </div>
+
+                <div id="uldiv">
+                    <button id="cancel-up" class="uplbuttons">cancel</button>
+                    <button id="save-up" class="uplbuttons">save</button>
+                </div>
 
             <div id="invisdiv3"></div>
 
