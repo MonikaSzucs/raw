@@ -168,6 +168,77 @@ hambuger menu
         transition: 60ms ease-in-out;
         background-size: 85px 85px;
     }
+    
+    
+/*Chatstyle*//*Chatstyle*//*Chatstyle*//*Chatstyle*//*Chatstyle*//*Chatstyle*/
+ 
+    
+        #mchat {
+        height: 66vh;
+        bottom: 0;
+        width: 100%;
+        position: relative;
+        background-color:  white;
+        
+    }
+    #mform {
+        height: auto;
+        bottom: 0;
+        margin: 0 auto;
+        background-color: white;
+    }
+    
+    form {
+        
+        margin: 0 auto;
+      
+        position: relative;
+        width: 100%;
+    }
+    form input {
+        margin: 20px;
+        padding: 15px;
+        border: .5px solid darkgray;
+        width: 60%;
+        border-radius: 10px;
+    }
+    form input [type=text] {
+        padding: 1px;
+    }
+    form button {
+        float: right;
+        margin: 20px;
+        font-family: helvetica;
+        font-size: 12px;
+        width: 20%;
+        background-color: #A53433;
+        color: white;
+        padding: 15px;
+        border: none;
+        border-radius: 10px;
+
+    }
+    
+    #messages {
+        background-color: white;
+        position: relative;
+        width: 100%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    #messages li {
+        padding: 5px 10px;
+    }
+    #messages li:nth-child(odd) {
+        background: #eee;
+    }
+
+
+
+/*Chatstyle*//*Chatstyle*//*Chatstyle*//*Chatstyle*//*Chatstyle*//*Chatstyle*/
+    
+    
     .nav-bar {
 
         z-index: 9999;
