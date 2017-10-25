@@ -1,20 +1,23 @@
 <?php 
 //the session_start() should always be at the top
+
 session_start();
 
 
 
    if( isset($_POST['email']) && isset($_POST['password']) ) {
 		//Step1 connect to database
-		define('DB_SERVER', 'localhost');
-		define('DB_USERNAME', 'root');
-		define('DB_PASSWORD', '');
-		define('DB_DATABASE', 'raw');
-		$db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
+		define("DB_HOST", "localhost");
+        define("DB_USER", "root");
+        define("DB_PASSWORD", "root");
+        define("DB_DATABASE", "raw");
+
+        $db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
 
 		$email = $_POST['email'];
 		$password = $_POST['password'];
-
+        
+       
 		//Step2 get data from database
 		$query = "SELECT * FROM user ";
 		//these two queries check to make sure it is in the database and if not you cant go through
@@ -24,9 +27,11 @@ session_start();
 		//echo $query;
 		$result = mysqli_query($db, $query) or die('Error querying database.');
 		$rows = mysqli_fetch_array($result);
+       
+       
 		if(sizeof($rows)>0)
 		{
-			session_unset();
+			//session_unset();
 			$_SESSION["user_id"] = $rows['user_id'];
 			$_SESSION["name"] = $rows['first_name'];
 			header( 'Location: Streaming.php' ) ;
@@ -35,13 +40,29 @@ session_start();
 		{
 			$message = "Wrong credential";
 		}
+        
+       
 		mysqli_close($db);
-		echo "<br/><br/><br/>";
 		
    }
 
+/*
+//connect to database
+    define("DB_HOST", "localhost");
+    define("DB_USER", "root");
+    define("DB_PASSWORD", "root");
+    define("DB_DATABASE", "raw");
 
-
+    $db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
+  // you could test connection eventually using a if and else conditional statement, 
+  // feel free to take out the code below once you see Connected!
+  if (isset($_POST['email']) && isset($_POST['password']) ) {
+    echo "Connected!";
+  } else {
+    echo "Connection Failed";
+  }
+*/
+       
 ?>
 
 <!DOCTYPE html>

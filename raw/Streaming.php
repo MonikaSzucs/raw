@@ -2,19 +2,24 @@
 
 //the session_start() should always be at the top
 session_start();
-echo "session_user_id" .$_SESSION["user_id"];
+
+echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
+
+/*
 if(!isset($_SESSION["user_id"]))
 {
 	session_destroy(); 
 	header( 'Location: signout.php' ); 
-}
+};
+*/
 
 //Step1 connect to database
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASSWORD', 'root');
 define('DB_DATABASE', 'raw');
-$db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
+
+$db = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
 
 if(isset($_POST['toDo'])){
 	print_r($_POST);
@@ -32,6 +37,9 @@ if(isset($_POST['toDo'])){
 ///I need to put a condition to make sure they aren't in that group already because if they are then don't show the join button.
 //then put the output in the array
 
+
+
+mysqli_close($db);
 ?>
 
 
@@ -120,11 +128,11 @@ if(isset($_POST['toDo'])){
 
 echo "<table border='1' style='width:800px; margin:0 auto;'>";
 echo "<tr>";
-		echo "<th  width='120px'> group_title </th>";
-		echo "<th  width='420px'> group_description </th>";
-		echo "<th> group_photo </th>";
-		echo "<th> Interested </th>";
-		echo "<th> Tracks </th>";
+echo "<th  width='120px'> group_title </th>";
+echo "<th  width='420px'> group_description </th>";
+echo "<th> group_photo </th>";
+echo "<th> Interested </th>";
+echo "<th> Tracks </th>";
 echo "</tr>";
 
 while ($row = mysqli_fetch_array($result)) 
