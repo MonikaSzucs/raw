@@ -7,17 +7,15 @@ session_start();
 
    if( isset($_POST['email']) && isset($_POST['password']) ) {
 		//Step1 connect to database
-		define("DB_HOST", "localhost");
-        define("DB_USER", "root");
-        define("DB_PASSWORD", "root");
-        define("DB_DATABASE", "raw");
-
-        $db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
+		define('DB_HOST', 'localhost');
+		define('DB_USER', 'root');
+		define('DB_PASSWORD', '');
+		define('DB_DATABASE', 'raw');
+		$db = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
 
 		$email = $_POST['email'];
 		$password = $_POST['password'];
-        
-       
+
 		//Step2 get data from database
 		$query = "SELECT * FROM user ";
 		//these two queries check to make sure it is in the database and if not you cant go through

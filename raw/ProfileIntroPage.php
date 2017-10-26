@@ -1,3 +1,38 @@
+<?php
+
+//the session_start() should always be at the top
+session_start();
+
+if (sizeof($_SESSION)===2){
+	echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
+
+	/*
+	if(!isset($_SESSION["user_id"]))
+	{
+		session_destroy(); 
+		header( 'Location: signout.php' ); 
+	};
+	*/
+
+	//Step1 connect to database
+	define('DB_HOST', 'localhost');
+	define('DB_USER', 'root');
+	define('DB_PASSWORD', '');
+	define('DB_DATABASE', 'raw');
+
+	$db = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
+
+	
+}
+else{
+	session_start();
+	session_destroy();
+	header( 'Location: index.php' ) ;
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -109,7 +144,9 @@ $(document).ready(function(){
         </div>
 
         <div  class="m-center-text" id="m-signout-box">
-            Sign Out
+			<a href="logout.php">
+				Sign Out
+			</a>
              <div id="m-signicon" class="m-sicon"></div>
         </div>
         
@@ -132,4 +169,10 @@ $(document).ready(function(){
 
 </body>
 
+<?php
+	//Step 4 close the connection
+	mysqli_close($db);
+	echo "<br/><br/><br/>";
+	?>
+	
 </html>

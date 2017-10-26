@@ -1,3 +1,54 @@
+<?php 
+
+//the session_start() should always be at the top
+session_start();
+
+if (sizeof($_SESSION)===2){
+	echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
+
+	/*
+	if(!isset($_SESSION["user_id"]))
+	{
+		session_destroy(); 
+		header( 'Location: signout.php' ); 
+	};
+	*/
+
+	//Step1 connect to database
+	define('DB_HOST', 'localhost');
+	define('DB_USER', 'root');
+	define('DB_PASSWORD', '');
+	define('DB_DATABASE', 'raw');
+
+	$db = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
+
+	if(isset($_POST['toDo'])){
+		print_r($_POST);
+
+		
+		$query = "INSERT INTO group_users (group_id, user_id)";
+		$query .= " VALUES (" . $_POST['group_id'] . ", " . $_SESSION['user_id'] . ")";
+		
+		echo $query;
+		$result = mysqli_query($db, $query) or die('Error querying database.');
+
+	}
+
+	//SELECT * FROM `group_user` WHERE `user_id` = 1
+	///I need to put a condition to make sure they aren't in that group already because if they are then don't show the join button.
+	//then put the output in the array
+
+	//mysqli_close($db);
+	
+}
+else{
+	session_start();
+	session_destroy();
+	header( 'Location: index.php' ) ;
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -62,72 +113,148 @@
                 </li>               
             </ul>
         </div>
-        
 
         <div class="m-profile-box">
-            <div class="m-profile-buttons">
-                <ul id="m-list-buttons">
-                    <li>Sounds</li>
-                    <li>Info</li>
-                    <li>Groups</li>
-                </ul>
-            </div>
-            <div id="m-profile-pic-intro"></div>
-            <div id="m-view-profile-div">
-                <p id="name">Name</p>
-                <ul id="view-profile">
-                    <li id="m-followers-list">
-                    </li>
-                </ul>
-            </div>
+            
         </div>
-
-		
-		
-
         <div class="m-profile-main">
-			<div class="spaceContainerTop"><h1>Groups</h1></div>
 			
-			<a href="MobileGroupsTabCreate.php"><button id="CreateGroupProfile">Create Group</button></a>
-			<div class="Profile-sub-container">
-				<div class="TopSpace-ProfileGroupSub"></div>
-				<div class="ProfileIconGroups"></div>
-				<div class="vertical-space"></div>
-				<div class="GroupsInformation">
-				
-					<div class="GroupsInformation-Title">
-						Title<br/>
-					</div>
-					<div class="horizontal-GroupSpace">
-					</div>
-					<div class="GroupsInformation-Description">
-						Description<br/>
-					</div>	
-						<!--
-						<svg height="150" width="150">
-						  <polygon points="20,10 20,50 50,30" style="fill:grey;stroke:black;stroke-width:1" />
-						  Sorry, your browser does not support inline SVG.
-						</svg>
-						-->
-						
-				</div>
-			</div>
-        </div>
+        
+	
+	<?php
+	
+
+	
+	
+	
+	//get group?_user from data base where user id equal to session user ID
+	$query = "SELECT * FROM group_users WHERE user_id =" . $_SESSION['user_id'];
+	$result = mysqli_query($db, $query) or die('Error querying database.');
+	
+	$group_users = array(); 
+	while ($row = mysqli_fetch_array($result)){
+		$group_users[] = $row['group_id'];
+	}
+	
+	//Step2 get data from database
+	$query = "SELECT * FROM groups";
+	$result = mysqli_query($db, $query) or die('Error querying database.');
+//Step3 Display the result
+
+/*
+	echo "<table border='1' style='width:800px; margin:0 auto;'>";
+	echo "<tr>";
+		echo "<th  width='120px'> group_title </th>";
+		echo "<th  width='420px'> group_description </th>";
+		echo "<th> group_photo </th>";
+		echo "<th> Interested </th>";
+		echo "<th> Tracks </th>";
+	echo "</tr>";
+*/
+
+while ($row = mysqli_fetch_array($result)) 
+{
+	
+	////the styling of the groups
+	echo "<div class='TopSpace-ProfileGroupSub'></div>";
+	echo "<div class='ProfileIconGroups'>";
+		if(empty($row['group_photo'] )){
+			echo "<img src='./SVG/EmptyPicture.svg' style='width:100px;height:100px;' /> ";
+		}
+		else{
+			echo "<td> <img src='" . $row['group_photo'] . "' style='width:100px;height:100px;' > </td>";
+		}
+	echo "</div>";
+	echo "<div class='vertical-space'></div>";
+	echo "<div class='GroupsInformation'>";
+		echo "<div class='GroupsInformation-Title'>test" . $row['group_title'] . "<br/></div>";
+		echo "<div class='horizontal-GroupSpace'></div>";
+		echo "<div class='GroupsInformation-Description'>" . $row['group_description'] . "<br/></div>";	
+	echo "</div>";
+
+	
+	
+	
+/*
+	echo "<tr>";
+		echo "<td>" . $row['group_title'] . "</td>";  
+		echo "<td>" . $row['group_description'] . "</td>"; 
+		if(empty($row['group_photo'] )){
+			echo "<td></td>";
+		}
+		else{
+			echo "<td> <img src='" . $row['group_photo'] . "' style='width:100px;height:100px;' > </td>";
+		}
+
+		//join
+		//condition if they are in the group then don't show the button
+		
+		echo "<td>";
+			//if $row['group_id'] exit in $group_users['group_id'] do not show form;
+			//else shows join form;
+			*/
+			
+			/*echo '$row[group_id]'. $row['group_id'];
+
+			echo '<BR/>$group_id THAT THIS PERSON ALREADY JOINED';
+			echo "<pre>";
+			print_r($group_users);
+			echo "</pre>";	*/		
+			/*
+			if(in_array($row['group_id'], $group_users))
+			{
+				echo "already Joined";
+			}
+			else{
+				echo "<form action='' method='POST'>";
+					echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+					echo "<input type='hidden' name='toDo' value='join'>";
+					echo "<input type='submit' value='join'>";
+				echo "</form>";
+			}
+		echo "</td>";
+		
+		echo "<td >";
+			echo "<form action ='GroupMusic.php' method='GET'>";
+				echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+				echo "<input type='submit' value='Enter'>";
+			echo "</form>";
+		echo "</td>";
+		
+	echo "</tr>";
+	*/
+	
+} 
+
+/*
+	echo "</table>";
+	*/
+	?>
+	
+	</div>
 
     </div>
     <nav class="container">
-        <a class="buttons" href="ProfileIntroPage.php" tooltip="Profile"></a>
-         <a class="buttons" href="MobileGroupsTab.php" tooltip="Groups"></a>
-        <a class="buttons" href="MobileInsturmentsTemplate.php" tooltip="Instruments"></a>
-        <a class="buttons" href="MobileExplorePage.php" tooltip="Explore"></a>
-        <a class="buttons" href="MobileIGenresTemplate.php" tooltip="Genres"></a>
-        <a class="buttons" href="MobileMoodsTemplate.php" tooltip="Moods"></a><a class="buttons" href="#" tooltip="Compose"><span><span class="rotate"></span></span></a></nav>
-
-    <script src="cmenuscript.js"></script>
-
-
+	
+			<a class="buttons" href="ProfileIntroPagevers2.php" tooltip="Profile"></a>
+			<a class="buttons" href="MobileGroupsTab.php" tooltip="Groups"></a>
+			<a class="buttons" href="MobileInsturmentsTemplate.php" tooltip="Instruments"></a>
+			<a class="buttons" href="MobileExplorePage.php" tooltip="Explore"></a>
+			<a class="buttons" href="MobileIGenresTemplate.php" tooltip="Genres"></a>
+			<a class="buttons" href="MobileMoodsTemplate.php" tooltip="Moods"></a><a class="buttons" href="#" tooltip="Compose"><span><span class="rotate"></span></span></a></nav>
+		<div class="cmenu"></div>
 
 
-</body>
+	<script src="cmenuscript.js"></script>
+
+	</body>
+
+
+	<?php
+	//Step 4 close the connection
+	mysqli_close($db);
+	echo "<br/><br/><br/>";
+	?>
 
 </html>
+
