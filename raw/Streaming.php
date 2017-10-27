@@ -7,13 +7,13 @@ var_dump($_SESSION);
 
 echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
 
-/*
+
 if(!isset($_SESSION["user_id"]))
 {
 	session_destroy(); 
 	header( 'Location: signout.php' ); 
 };
-*/
+ 
 
 //Step1 connect to database
 define('DB_HOST', 'localhost');

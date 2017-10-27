@@ -1,12 +1,24 @@
 <?php 
-$target_file = "";
 
+session_start();
+//this is to make sure people can't access the pages unless they log in
+if(!isset($_SESSION["user_id"]))
+{
+	session_destroy(); 
+	header( 'Location: signout.php' ); 
+};
+
+$target_file_photo = "";
+$target_file_music = "";
+print_r($_FILES);
+	echo "TTTTTTT<br//>";
+	
 //group picture
-if( isset($_FILES["myImage"]["name"])) {
+if( isset($_FILES["myImage"]["name"]) && !empty($_FILES["myImage"]["name"])) {
 	echo "1<br//>";
-	$target_file .= "UserPictures/". basename($_FILES["myImage"]["name"]);
+	$target_file_photo .= "UserPictures/".time().basename($_FILES["myImage"]["name"]);
 	$uploadOk = 1;
-	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+	$imageFileType = pathinfo($target_file_photo,PATHINFO_EXTENSION);
     $check = getimagesize($_FILES["myImage"]["tmp_name"]);
     if($check !== false) {
         echo "File is an image - " . $check["mime"] . ".";
@@ -17,12 +29,12 @@ if( isset($_FILES["myImage"]["name"])) {
         $uploadOk = 0;
     }
 	// Check if file already exists
-	if (file_exists($target_file)) {
+	if (file_exists($target_file_photo)) {
 		echo "Sorry, file already exists.";
 		$uploadOk = 0;
 	}
 	// Check file size
-	if ($_FILES["myImage"]["size"] > 500000) {
+	if ($_FILES["myImage"]["size"] > 5000000) {
 		echo "Sorry, your file is too large.";
 		$uploadOk = 0;
 	}
@@ -36,54 +48,40 @@ if( isset($_FILES["myImage"]["name"])) {
 		echo "Sorry, your file was not uploaded.";
 	// if everything is ok, try to upload file
 	} else {
-		if (move_uploaded_file($_FILES["myImage"]["tmp_name"], $target_file)) {
+		if (move_uploaded_file($_FILES["myImage"]["tmp_name"], $target_file_photo)) {
 			echo "The file ". basename( $_FILES["myImage"]["name"]). " has been uploaded.";
 		} else {
-			$target_file = "";
-			echo "Sorry, there was an error uploading your file.";
+			$target_file_photo = "";
+			echo "Sorry, there was an error uploading your photo file.";
 		}
 	}
 }
 
 //music files
-if( isset($_FILES["myMusic"]["name"])) {
+if( isset($_FILES["myMusic"]["name"]) && !empty($_FILES["myMusic"]["name"])) {
 	echo "1<br//>";
-	$target_file .= "UsersSongs/". basename($_FILES["myMusic"]["name"]);
+	$target_file_music .= "UsersSongs/". time().basename($_FILES["myMusic"]["name"]);
 	$uploadOk = 1;
-	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-    $check = getimagesize($_FILES["myMusic"]["tmp_name"]);
-    if($check !== false) {
-        echo "File is an audio file - " . $check["mime"] . ".";
+	$valid_extension = array('.mp3', '.mp4', '.wav');
+	$file_extension = strtolower( strrchr( $_FILES["myMusic"]["name"], "." ) );
+
+	if( in_array( $file_extension, $valid_extension ) &&  $_FILES["myMusic"]["size"] < 50000000 ){
         $uploadOk = 1;
 		echo "1<br//>";
     } else {
         echo "File is not an audio file.";
         $uploadOk = 0;
     }
-	// Check if file already exists
-	if (file_exists($target_file)) {
-		echo "Sorry, file already exists.";
-		$uploadOk = 0;
-	}
-	// Check file size
-	if ($_FILES["myMusic"]["size"] > 500000000) {
-		echo "Sorry, your file is too large.";
-		$uploadOk = 0;
-	}
-	if($imageFileType != "mp3" && $imageFileType != "aac" && $imageFileType != "wma"&& $imageFileType != "wav" ) {
-		echo "Sorry, mp3, aac, wma, and wav files only.";
-		$uploadOk = 0;
-	}
 
 	// Check if $uploadOk is set to 0 by an error
 	if ($uploadOk == 0) {
 		echo "Sorry, your file was not uploaded.";
 	// if everything is ok, try to upload file
 	} else {
-		if (move_uploaded_file($_FILES["myMusic"]["tmp_name"], $target_file)) {
+		if(move_uploaded_file($_FILES["myMusic"]["tmp_name"], $target_file_music)){
 			echo "The file " . basename( $_FILES["myMusic"]["name"]). " has been uploaded.";
 		} else {
-			$target_file = "";
+			$target_file_music = "";
 			echo "Sorry, there was an error uploading your audio file.";
 		}
 	}
@@ -127,8 +125,8 @@ $formSuccessfullMessage = "";
 			}
 			//else let them to create the record(insert)
 			else{
-				$query = "INSERT INTO groups (group_title, group_description, group_photo, group_music_files) ";
-				$query .= " VALUES ( '" . $TitleGroups . "', '" . $TextAreaGroups . "', '".$target_file."', '".$target_file."')";
+				$query = "INSERT INTO groups (group_title, group_description, group_photo) ";
+				$query .= " VALUES ( '" . $TitleGroups . "', '" . $TextAreaGroups . "', '".$target_file_photo."')";
 
 				///echo $query;
 			
@@ -136,30 +134,60 @@ $formSuccessfullMessage = "";
 				if($result = mysqli_query($conn, $query)){
 					if(sizeof($result)>0)
 					{
+						$formSuccessfullMessage = "Groups is created!";
 						$group_id = mysqli_insert_id($conn);
 						echo "the last primary key of group is : ". $group_id;
 						
-						$user_id=1;
+						$user_id= $_SESSION["user_id"];
 						
-						$query = "INSERT INTO group_user(group_id, user_id) ";
+						
+						//add current user to the group
+						$query = "INSERT INTO group_users(group_id, user_id) ";
 						$query .= "VALUES ( '" . $group_id . "', '" .  $user_id . "' ) ";
 						
 						if($result = mysqli_query($conn, $query) )
 						{
-							$formSuccessfullMessage = "Groups is created!";
+							$formSuccessfullMessage .= ",use is added to group";
 						}
 						else{
-							echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+							echo "Error: " . $query . "<br>" . mysqli_error($conn);
+						}
+						
+						//add music to the group
+						$g_rnb = isset($_POST['g_rnb']) ?  $_POST['g_rnb'] :  "";
+						$g_rock = isset($_POST['g_rock']) ?$_POST['g_rock'] : "";
+						$g_pop = isset($_POST['g_pop']) ? $_POST['g_pop']: "";
+						$g_punk = isset($_POST['g_punk']) ? $_POST['g_punk']: "";
+						$g_jazz = isset($_POST['g_jazz']) ? $_POST['g_jazz']: "";
+						$g_metal = isset($_POST['g_metal']) ?$_POST['g_metal']: "";
+						$g_funk = isset($_POST['g_funk']) ? $_POST['g_funk']: "";
+						$g_country = isset($_POST['g_country']) ? $_POST['g_country']: "";
+						$g_edm = isset($_POST['g_edm']) ? $_POST['g_edm']: "";
+						$g_classical = isset($_POST['g_classical']) ? $_POST['g_classical']: "";
+					
+								
+						if(isset($target_file_music))
+						{
+							$query = "INSERT INTO music_group(group_id, music_file, music, g_rnb, g_rock, g_pop, g_punk, g_jazz, g_metal, g_funk, g_country, g_edm, g_classical) ";
+							$query .= "VALUES ( '" . $group_id . "', '" .  $target_file_music . "', '" . $_POST['music_check']. "', '".$g_rnb."' , '".$g_rock."', '".$g_pop."', '".$g_punk."', '".$g_jazz."', '".$g_metal."', '".$g_funk."', '".$g_country."', '".$g_edm."', '".$g_classical."') ";
+							
+							if($result = mysqli_query($conn, $query) )
+							{
+								$formSuccessfullMessage .= ",music is added to group";
+							}
+							else{
+								echo "Error: " . $query . "<br>" . mysqli_error($conn);
+							}
 						}
 					}
 				} 
 				else{
-					echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+					echo "Error: " . $query . "<br>" . mysqli_error($conn);
 				}
 			}
 		}
 		else{
-			 echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			 echo "Error: " . $query . "<br>" . mysqli_error($conn);
 		}
 		//Step 4 Close the conenction
 		mysqli_close($conn);
@@ -295,11 +323,22 @@ $formSuccessfullMessage = "";
 							Is this a song or sample?
 							
 							<div class="checkbox">
-							  <label><input type="checkbox" value="">Song</label>
+							  <label><input type="radio" value="1" name="music_check" checked>Music</label>
+							  <label><input type="radio" value="0" name="music_check">Sample</label>
 							</div>
-							<div class="checkbox">
-							  <label><input type="checkbox" value="">Sample</label>
-							</div>
+							
+							<div>
+								<input type="checkbox" name="g_rnb" value="1">RNB<br>
+								<input type="checkbox" name="g_rock" value="1">Rock<br>
+								<input type="checkbox" name="g_pop" value="1">Pop<br>
+								<input type="checkbox" name="g_punk" value="1">Punk<br>
+								<input type="checkbox" name="g_jazz" value="1">Jazz<br>
+								<input type="checkbox" name="g_metal" value="1">Metal<br>
+								<input type="checkbox" name="g_funk" value="1">Funk<br>
+								<input type="checkbox" name="g_country" value="1">Country<br>
+								<input type="checkbox" name="g_edm" value="1">EDM<br>
+								<input type="checkbox" name="g_classical" value="1">Classical<br>
+							<div>
 						
 						<div id="buttonAreaCreate">
 							<input id="CreateGroupProfileSubmit" type="submit" />

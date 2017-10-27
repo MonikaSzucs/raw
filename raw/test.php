@@ -1,10 +1,9 @@
 <?php
-$xxx = "MONIKA";
-$query1 = ' VALUES =  $xxx ';
-$query2 = " VALUES =  $xxx ";
-echo "with single quote". $query1;
+$xxx = "MONIKA.mp3.pdf";
 echo "<br/>---------<br/>";
-echo  "with double quote". $query2;
+$t=time();
+echo($t . "<br>");
+echo(date("Y-m-d",$t));
 	
 ?>
 	
