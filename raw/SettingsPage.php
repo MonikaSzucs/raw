@@ -25,10 +25,11 @@
             </div>
 
             <ul class="nav-bar">
-                <li>Explore</li>
-                <li>Genes</li>
-                <li>Moods</li>
-                <li>Instruments</li>
+                <a href="MobileExplorePage.php"><li>Explore</li></a>
+				<a href="MobileGroupsTab.php"><li>Groups</li></a>
+				<a href="MobileIGenresTemplate.php"><li>Genres</li></a>
+				<a href="MobileMoodsTemplate.php"><li>Moods</li></a>
+                <a href="MobileInsturmentsTemplate.php"><li>Instruments</li></a>
             </ul>
 
             <div class="logo-spot"></div>

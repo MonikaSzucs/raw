@@ -130,15 +130,23 @@ $(document).ready(function(){
                 <div id="m-noticon" class="m-sicon"></div>
             </div>
 			
-            
+            <div class="m-center-text" id="m-settings-button">
+                <a href="UsersSounds.php">My Sounds</a>
+                <div id="m-seticon" class="m-sicon"></div>
+            </div>
+			<div class="m-center-text" id="m-settings-button">
+                <a href="UserInfo.php">My Information</a>
+                <div id="m-seticon" class="m-sicon"></div>
+            </div>
+			<div class="m-center-text" id="m-settings-button">
+                <a href="GroupsCurrentlyIn.php">My Groups</a>
+                <div id="m-seticon" class="m-sicon"></div>
+            </div>
             <div class="m-center-text" id="m-settings-button">
                 <a href="SettingsPage.php">Settings</a>
                 <div id="m-seticon" class="m-sicon"></div>
             </div>
-			<div class="m-center-text" id="m-settings-button">
-                <a href="MobileGroupsTab.php">Groups</a>
-                <div id="m-seticon" class="m-sicon"></div>
-            </div>
+		
 			<div style="height: 50px; width: 100%;"></div>
             
         </div>
