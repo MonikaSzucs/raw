@@ -286,7 +286,7 @@ $formSuccessfullMessage = "";
 		
 		
 
-        <div class="m-profile-main">
+        <div class="m-profile-main" id="CreateGroupsForm">
 			<div id="m-profile-main-inner">
 				<div class="spaceContainerTop"><h1>Create Group</h1></div>
 				<a href="MobileGroupsTab.php"><button id="CreateGroupProfile">Back</button></a>
@@ -315,30 +315,78 @@ $formSuccessfullMessage = "";
 							Upload a profile Image:
 							<br/>
 							<input id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
-							<br/><br/>
+							<br/>
+							<hr>
+							<br/>
 							Song or Samples Upload:
 							<br/>
 							<input id="files" type="file" name="myMusic" accept="audio/*" />
 							<br/>
 							Is this a song or sample?
-							
 							<div class="checkbox">
 							  <label><input type="radio" value="1" name="music_check" checked>Music</label>
 							  <label><input type="radio" value="0" name="music_check">Sample</label>
 							</div>
+							<br/>
+							<hr/>
+							<br/>
 							
-							<div>
-								<input type="checkbox" name="g_rnb" value="1">RNB<br>
-								<input type="checkbox" name="g_rock" value="1">Rock<br>
-								<input type="checkbox" name="g_pop" value="1">Pop<br>
-								<input type="checkbox" name="g_punk" value="1">Punk<br>
-								<input type="checkbox" name="g_jazz" value="1">Jazz<br>
-								<input type="checkbox" name="g_metal" value="1">Metal<br>
-								<input type="checkbox" name="g_funk" value="1">Funk<br>
-								<input type="checkbox" name="g_country" value="1">Country<br>
-								<input type="checkbox" name="g_edm" value="1">EDM<br>
-								<input type="checkbox" name="g_classical" value="1">Classical<br>
-							<div>
+							Genre(s)
+							<table style="left: 0; right: 0; margin: 0 auto;">
+								<tr>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_rnb" value="1">RNB </td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_rock" value="1">Rock</td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_pop" value="1">Pop</td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_punk" value="1">Punk</td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_jazz" value="1">Jazz</td>
+								</tr>
+								<tr>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_metal" value="1">Metal</td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_funk" value="1">Funk</td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_country" value="1">Country</td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_edm" value="1">EDM</td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_classical" value="1">Classical</td>
+								</tr>
+							<table>
+							<br/>
+							<br/>
+							<hr>
+							<br/>
+							<br/>
+							Mood(s)
+							<table style="left: 0; right: 0; margin: 0 auto;">
+								<tr>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_happy" value="1">Happy</td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_sad" value="1">Sad</td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_angry" value="1">Angry</td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_chill" value="1">Chill</td>
+								</tr>
+								<tr>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_focus" value="1">Focus</td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_workout" value="1">Workout</td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_travel" value="1">Travel</td>
+								</tr>
+							</table>
+							<br/>
+							<br/>
+							<hr>
+							<br/>
+							<br/>
+							Instrument(s)
+							<table style="left: 0; right: 0; margin: 0 auto;">
+								<tr>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_guitar" value="1">Guitar</td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_bass" value="1">Bass</td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_synth" value="1">Synth</td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_pads" value="1">Pads</td>
+								</tr>
+								<tr>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_woodwind" value="1">Woodwind</td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_drums" value="1">Drums</td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_strings" value="1">Strings</td>
+									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_brass" value="1">Brass</td>
+								</tr>
+							</table>
 						
 						<div id="buttonAreaCreate">
 							<input id="CreateGroupProfileSubmit" type="submit" />

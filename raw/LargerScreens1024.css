@@ -416,13 +416,13 @@ hambuger menu
     }
     #m-view-profile-div {
         color: black;
-        background-color: white;
-        width: 100%;
-        height: 200px;
+        background-color: red;
+        width: 300px;
+        height: 100px;
         position: absolute;
         margin: auto 0;
-        align-items: center;
-        justify-content: center;
+        left: 150px;
+		top: 30px;
         display: inline-grid;
         z-index: 9996;
     }
@@ -529,6 +529,11 @@ hambuger menu
         position: absolute;
         top: 220px;
     }
+	
+	#CreateGroupsForm{
+		height: 1650px !important;
+	}
+	
     #lname {
         color: gray;
         font-size: 12px;
@@ -957,7 +962,7 @@ hambuger menu
 		left: 0;
 		right: 0;
 		margin: 0 auto;
-    font-family: Avenir-Medium;
+		font-family: Avenir-Medium;
         font-size: 18px;
         color: darkgray;
 	}
@@ -971,7 +976,7 @@ hambuger menu
 		width: 100%;
 		height: 50px;
 		position: absolute;
-		top: 650px;
+		top: 1370px;
 	}
 
 	input{
@@ -1036,5 +1041,7 @@ hambuger menu
 	.slider.round:before {
 	  border-radius: 50%;
 	}
+	
+	
 
 }
