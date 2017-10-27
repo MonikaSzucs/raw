@@ -108,9 +108,9 @@ else{
                   <a href="ProfileIntroPage.php"> <li class="hamclass">
                 Profile
                    </li> </a> 
-                <li class="hamclass">
+                <a href="logout.php"><li class="hamclass">
                 Sign Out
-                </li>               
+                </li></a>               
             </ul>
         </div>
 
@@ -118,7 +118,9 @@ else{
             
         </div>
         <div class="m-profile-main">
+			<div class="spaceContainerTop"><p>Groups</p></div>
 			
+			<a href="MobileGroupsTabCreate.php"><button id="CreateGroupProfile">Create Group</button></a>
         
 	
 	<?php

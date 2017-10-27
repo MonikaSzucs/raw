@@ -228,9 +228,9 @@ $formSuccessfullMessage = "";
               <a href="ProfileIntroPage.php"> <li class="hamclass">
                 Profile
                    </li> </a> 
-                <li class="hamclass">
+                <a href="logout.php"><li class="hamclass">
                 Sign Out
-                </li>               
+                </li></a>               
             </ul>
         </div>
         
@@ -240,7 +240,7 @@ $formSuccessfullMessage = "";
 				<div class="m-profile-buttons">
 					<ul id="m-list-buttons">
 						<li>Sounds</li>
-						<li>Info</li>
+						<li><a href="UserInfo.php">Info</a></li>
 						<li>Groups</li>
 					</ul>
 				</div>
@@ -283,10 +283,24 @@ $formSuccessfullMessage = "";
 								
 							</div>	
 						</div>
-							
+							<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+							Upload a profile Image:
+							<br/>
 							<input id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
+							<br/><br/>
+							Song or Samples Upload:
 							<br/>
 							<input id="files" type="file" name="myMusic" accept="audio/*" />
+							<br/>
+							Is this a song or sample?
+							
+							<div class="checkbox">
+							  <label><input type="checkbox" value="">Song</label>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="">Sample</label>
+							</div>
+						
 						<div id="buttonAreaCreate">
 							<input id="CreateGroupProfileSubmit" type="submit" />
 						</div>

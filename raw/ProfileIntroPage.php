@@ -103,9 +103,9 @@ $(document).ready(function(){
                <a href="ProfileIntroPage.php"> <li class="hamclass">
                 Profile
                    </li> </a> 
-                <li class="hamclass">
+                <a href="logout.php"><li class="hamclass">
                 Sign Out
-                </li>               
+                </li></a>               
             </ul>
         </div>
 

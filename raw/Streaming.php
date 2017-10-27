@@ -98,12 +98,12 @@ if(isset($_POST['toDo'])){
 -->
         <div id="hamburger"> 
             <ul id="hambul">
-                <li class="hamclass">
+                <a href="ProfileIntroPage.php"><li class="hamclass">
                 Profile
-                </li>  
-                <li class="hamclass">
+                </li></a>  
+                <a href="logout.php"><li class="hamclass">
                 Sign Out
-                </li>               
+                </li></a>               
             </ul>
         </div>
 

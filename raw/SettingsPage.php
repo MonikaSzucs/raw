@@ -57,50 +57,56 @@
                 <li class="hamclass">
                 Profile
                 </li>  
-                <li class="hamclass">
+                <a href="logout.php"><li class="hamclass">
                 Sign Out
-                </li>               
+                </li></a>               
             </ul>
         </div>
 
         <h1 id="m-settings-h">Settings</h1>
+		
+		<p class="m-settings-info">Add Profile  Image</p>
+		<input id="files" type="file" name="UserProfilePicture" accept="image/x-png,image/gif,image/jpeg" />
+
+        <hr>
+		<br/>
+		<br/>
         <p class="m-settings-info">Email Address</p>
 
         <hr>
-        <br>
 
         <input id="m-email-input" type="text" name="email">
 
-        <br>
-        <br>
-        <br>
-        <br>
+        <br//>
+        <br//>
+        <br/>
+        <br/>
 
         <p class="m-settings-info">Password</p>
         <hr>
-        <br>
-        <button id="m-reset-button">Send password-reset Link</button>
-        <br>
-        <br>
-        <br>
-        <br>
+        <br/>
+        <button id="m-reset-button">Send Password to Email</button>
+        <br/>
+        <br/>
+        <br/>
+        <br//>
 
         <p class="m-settings-info">Name</p>
         <hr>
-        <br>
+        <br//>
         <p id="fname" class="m-settings-info">First Name</p>
         <input id="m-firstname" type="text" name="bday">
-        <br>
-        <br>
-        <br>
+        <br/>
+        <br/>
+        <br/>
         <p id="lname"class="m-settings-info">Last Name</p>
         <input id="m-lastname" type="text" name="bday">
 
-        <br>
-        <br>
-        <br>
-        <br>
-  
+        <br/>
+        <br/>
+        <br/>
+        <br//>
+		<br/>
         
 
         <button id="m-save">SAVE</button>
