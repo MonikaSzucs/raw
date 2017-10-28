@@ -109,7 +109,7 @@ $(document).ready(function(){
             </ul>
         </div>
 
-        <a href="ProfilePage.php"><div class="m-profile-box" >
+        <a href="UsersSounds.php"><div class="m-profile-box" >
             <div id="m-profile-pic-intro"></div>
             <div id="m-view-profile-div">
                 <p id="name">Name</p>
@@ -128,15 +128,6 @@ $(document).ready(function(){
             <div class="m-center-text" id="m-notifications-button">
                 Notifications
                 <div id="m-noticon" class="m-sicon"></div>
-            </div>
-			
-            <div class="m-center-text" id="m-settings-button">
-                <a href="UsersSounds.php">My Sounds</a>
-                <div id="m-seticon" class="m-sicon"></div>
-            </div>
-			<div class="m-center-text" id="m-settings-button">
-                <a href="UserInfo.php">My Information</a>
-                <div id="m-seticon" class="m-sicon"></div>
             </div>
 			<div class="m-center-text" id="m-settings-button">
                 <a href="GroupsCurrentlyIn.php">My Groups</a>

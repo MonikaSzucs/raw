@@ -113,10 +113,6 @@ else{
                 </li></a>               
             </ul>
         </div>
-
-        <div class="m-profile-box">
-            
-        </div>
         <div class="m-profile-main">
 			<div class="spaceContainerTop"><p>Groups</p></div>
 			
@@ -158,23 +154,45 @@ while ($row = mysqli_fetch_array($result))
 {
 	
 	////the styling of the groups
+	/*
+	echo "<div style='width: 100%; height: 100px; background-color:red'></div>";
 	echo "<div class='TopSpace-ProfileGroupSub'></div>";
-	echo "<div class='ProfileIconGroups'>";
-		if(empty($row['group_photo'] )){
-			echo "<img src='./SVG/EmptyPicture.svg' style='width:100px;height:100px;' /> ";
-		}
-		else{
-			echo "<td> <img src='" . $row['group_photo'] . "' style='width:100px;height:100px;' > </td>";
-		}
+	echo "<div class='group_container'>";
+		
+		echo "<div class='ProfileIconGroups'>";
+			if(empty($row['group_photo'] )){
+				echo "<img src='./SVG/EmptyPicture.svg' class='circlePhotoAuto' /> ";
+			}
+			else{
+				echo "<td> <img src='" . $row['group_photo'] . "' class='circlePhotoUploaded' > </td>";
+			}
+		echo "</div>";
+		echo "<div class='vertical-space'></div>";
+		echo "<div class='GroupsInformation'>";
+			echo "<div class='GroupsInformation-Title'>test" . $row['group_title'] . "<br/></div>";
+			echo "<div class='horizontal-GroupSpace'></div>";
+			echo "<div class='GroupsInformation-Description'>" . $row['group_description'] . "<br/></div>";	
+		echo "</div>";
+		
 	echo "</div>";
-	echo "<div class='vertical-space'></div>";
-	echo "<div class='GroupsInformation'>";
-		echo "<div class='GroupsInformation-Title'>test" . $row['group_title'] . "<br/></div>";
-		echo "<div class='horizontal-GroupSpace'></div>";
-		echo "<div class='GroupsInformation-Description'>" . $row['group_description'] . "<br/></div>";	
-	echo "</div>";
-
+	*/
 	
+	echo "<div style='height: 30px; width: 960px;'></div>";
+	echo "<div class='group_container_create'>";
+		echo "<div class='group_photo_Area'>";
+			if(empty($row['group_photo'] )){
+				echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
+			}
+			else{
+				echo "<td> <img src='" . $row['group_photo'] . "' class='circlePhotoUploaded' > </td>";
+			}
+			echo "</div>";
+		echo "<div class='vertical_space_group'>";
+			echo"<div class='groups_title_generate'>" . $row['group_title'] . "</div>";
+			echo "<hr/>";
+			echo "<div class='groups_descrition_generate'>" . substr($row['group_description'],0,300) . "...</div>";
+		echo "</div>";
+	echo "</div>";
 	
 	
 /*
