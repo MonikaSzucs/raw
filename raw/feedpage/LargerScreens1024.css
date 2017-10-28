@@ -110,7 +110,103 @@ hambuger menu
     
     
     
-/*    feed page*/
+/*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*/
+    
+    
+    
+    .personfollow{
+        height: 60px;
+    
+    }
+    .follbut{
+        float: right;
+        margin-top: 20px;
+        background-color: white;
+        border-radius: 3px;
+        font-size: 10px;
+        border: 1px solid #a8a8a8;
+    }
+    
+       
+    .followpic{
+        height: 60px;
+        width: 60px;
+        background-color: aquamarine;
+        border-radius: 60px;
+        border: 1px solid #e8e8e8;
+        position: absolute;
+        
+    }
+    .followpic2{
+        height: 60px;
+        width: 60px;
+        background-color: aquamarine;
+        border: 1px solid #e8e8e8;
+        position: absolute;
+        
+    }
+    
+    .whotofollowdiv {
+        margin: 25px;
+        width: 200px;
+        height: 300px;
+    } 
+    
+    .listeninghdiv {
+        margin: 25px;
+        width: 200px;
+        height: 300px;
+    } 
+    
+    #follname {
+        position:absolute;
+        font-size: 12px;
+        margin-left: 80px;
+        color: #808080;
+        font-family: helvetica;
+    }
+
+    #follname2{
+        position: absolute;
+        margin: 28px;
+        font-size: 12px;
+        margin-left: 80px;
+        color: #808080;
+        font-family: helvetica;
+    }
+
+    
+    .wtftext {
+        padding: 5px;
+        border-bottom: .5px solid #e8e8e8;
+        font-family: helvetica;
+        color: #a8a8a8;
+        font-weight: 300;
+        font-size: 14px;
+        
+    }
+ 
+    
+        .wtftext {
+        padding: 5px;
+        border-bottom: .5px solid #e8e8e8;
+        font-family: helvetica;
+        color: #a8a8a8;
+        font-weight: 300;
+        font-size: 14px;
+        
+    }
+    
+    
+    .feedsidebar{
+        
+        float: right;
+        border-left: .5px solid #e8e8e8; 
+        width: 250px;
+        height: 100%;
+        position: relative;
+        
+    }
     
     .main-songDiv {
         width: 100%;
@@ -119,9 +215,13 @@ hambuger menu
         position: absolute;
     }
     
+    
+    
+    
     .songpic {
-         width: 150px;
-        height: 150px;
+        margin-top: 20px;
+         width: 120px;
+        height: 120px;
         background-color: aquamarine;
         border-radius: 150px;
         box-shadow: 0px 5px 5px #888888;
@@ -130,8 +230,10 @@ hambuger menu
     }
     
     .first-song {
-        width: 80%;
-        position: relative;
+        left: 0;
+        padding-left: 50px;
+        width: 60%;
+        position: absolute;
         height: 200px;
         margin: 0 auto;
         
@@ -142,20 +244,21 @@ hambuger menu
     #FeedSongName { 
         margin: 0 auto;
         font-family: helvetica;
-        font-weight: 600;
+        font-weight: 300;
+        font-size: 16px;
         margin-left: 150px;
         
     }
     
     .song-buttons {
-        height: 40px;
-        width: 600px;
+        margin-top: 0 auto;
+        height: 20px;
+        width: 500px;
         
     }
     
     .song-buttons li {
-       float: right;
-       
+        float: right;
         font-family: helvetica;
         color: dimgray;
     }
@@ -171,16 +274,17 @@ hambuger menu
     
     #FeedArtistsName{
         color: dimgray;
-        font-size: 12px;
-        font-weight: 600;
+        font-size: 14px;
+        font-weight: 400;
         margin: 0 auto;
         margin-left: 150px;
         font-family: helvetica;
     }
     
     .track-display {
-        width: 600px;
-        height: 70px;
+        margin: 20px;
+        width: 440px;
+        height: 60px;
         background-color: red;
         position: relative;
         left: 40px;
@@ -189,11 +293,11 @@ hambuger menu
 
     }
     
-/*
     
-    feed page
     
-*/
+/*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*//*    feed page*/
+    
+    
     .m-upload-button:hover {
         transition: 60ms ease-in-out;
         background-size: 40px 40px;
