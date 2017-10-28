@@ -413,6 +413,7 @@ hambuger menu
     #view-profile {
         font-family: Avenir-Medium;
         margin-top: -100px;
+		
     }
     #m-view-profile-div {
         color: black;
@@ -527,8 +528,12 @@ hambuger menu
         height: 100vh;
         background-color: white;
         position: absolute;
-        top: 220px;
     }
+	
+	.spaceContainerTop p{
+		font-size:30px;
+		padding-left: 50px;
+	}
 	
 	#CreateGroupsForm{
 		height: 1650px !important;
@@ -891,11 +896,11 @@ hambuger menu
 		background-color: #ffffff;
 		border-radius: 25px;
 		position: absolute;
-		top: 10px;
+		top: 30px;
 		right: 40px;
-    font-family: Avenir-Medium;
-    font-size: 18px;
-    color: darkgray
+		font-family: Avenir-Medium;
+		font-size: 18px;
+		color: darkgray
 	}
 
 	.ProfileIconGroups{
@@ -907,6 +912,7 @@ hambuger menu
 		margin: auto;
         border-radius: 100%;
         box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+
 	}
 	.GroupsInformation{
 		float: left;
@@ -917,6 +923,7 @@ hambuger menu
 	.TopSpace-ProfileGroupSub{
 		height: 25px;
 		width: 100%;
+		
 	}
 
 	.vertical-space{
@@ -931,6 +938,13 @@ hambuger menu
 		background-color: white;
 		border-bottom: 2px solid grey;
 
+	}
+	
+	.group_container{
+		width: 90%;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
 	}
 
 	.horizontal-GroupSpace{
@@ -1042,6 +1056,73 @@ hambuger menu
 	  border-radius: 50%;
 	}
 	
+	.circlePhotoAuto{
+		min-width: 100%;
+		min-height: 100%; 
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		-ms-border-radius: 50%;
+		-o-border-radius: 50%;
+		border-radius: 50%; 
+	}
 	
-
+	.circlePhotoUploaded{
+		width:100%;
+		height:100%;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		-ms-border-radius: 50%;
+		-o-border-radius: 50%;
+		border-radius: 50%;'
+	}
+	
+	.group_container_create {
+			width: 950px; 
+			height: 150px; 
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
+		
+		.group_photo_Area {
+			width: 150px;
+			height: 150px;
+			float: left;
+			border-radius: 100%;
+			box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+		}
+		
+		.circlePhoto_group_Auto {
+			width: 130px;
+			height: 130px;
+			margin-top: 10px;
+			margin-left: 10px;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			-ms-border-radius: 50%;
+			-o-border-radius: 50%;
+			border-radius: 50%; 
+		}
+		.vertical_space_group {
+			width: 770px;
+			height: 115px;
+			margin-top: 20px;
+			margin-right: 10px;
+			float: right;
+			border-radius: 15px;
+			box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+		}
+		.groups_title_generate{
+			width: 95%;
+			height: 30px;
+			margin-left: 15px;
+			margin-top: 5px;
+			line-height: 30px;
+		}
+		
+		.groups_descrition_generate{
+			width: 95%;
+			height: 50px;
+			margin-left: 15px;
+		}
 }
