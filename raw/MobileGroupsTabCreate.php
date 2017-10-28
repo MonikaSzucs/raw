@@ -153,7 +153,7 @@ $formSuccessfullMessage = "";
 							echo "Error: " . $query . "<br>" . mysqli_error($conn);
 						}
 						
-						//add music to the group
+						//add genre to the group
 						$g_rnb = isset($_POST['g_rnb']) ?  $_POST['g_rnb'] :  "";
 						$g_rock = isset($_POST['g_rock']) ?$_POST['g_rock'] : "";
 						$g_pop = isset($_POST['g_pop']) ? $_POST['g_pop']: "";
@@ -165,11 +165,30 @@ $formSuccessfullMessage = "";
 						$g_edm = isset($_POST['g_edm']) ? $_POST['g_edm']: "";
 						$g_classical = isset($_POST['g_classical']) ? $_POST['g_classical']: "";
 					
-								
+						//add Moods to the group
+						$g_happy = isset($_POST['g_happy']) ?  $_POST['g_happy'] :  "";
+						$g_sad = isset($_POST['g_sad']) ?$_POST['g_sad'] : "";
+						$g_angry = isset($_POST['g_angry']) ? $_POST['g_angry']: "";
+						$g_chill = isset($_POST['g_chill']) ? $_POST['g_chill']: "";
+						$g_focus = isset($_POST['g_focus']) ? $_POST['g_focus']: "";
+						$g_workout = isset($_POST['g_workout']) ?$_POST['g_workout']: "";
+						$g_travel = isset($_POST['g_travel']) ? $_POST['g_travel']: "";
+						
+						//add instruments to the group
+						$g_guitar = isset($_POST['g_guitar']) ?  $_POST['g_guitar'] :  "";
+						$g_bass = isset($_POST['g_bass']) ?$_POST['g_bass'] : "";
+						$g_synth = isset($_POST['g_synth']) ? $_POST['g_synth']: "";
+						$g_pads = isset($_POST['g_pads']) ? $_POST['g_pads']: "";
+						$g_woodwind = isset($_POST['g_woodwind']) ? $_POST['g_woodwind']: "";
+						$g_drums = isset($_POST['g_drums']) ?$_POST['g_drums']: "";
+						$g_strings = isset($_POST['g_strings']) ? $_POST['g_strings']: "";
+						$g_brass = isset($_POST['g_brass']) ? $_POST['g_brass']: "";
+						
+						
 						if(isset($target_file_music))
 						{
-							$query = "INSERT INTO music_group(group_id, music_file, music, g_rnb, g_rock, g_pop, g_punk, g_jazz, g_metal, g_funk, g_country, g_edm, g_classical) ";
-							$query .= "VALUES ( '" . $group_id . "', '" .  $target_file_music . "', '" . $_POST['music_check']. "', '".$g_rnb."' , '".$g_rock."', '".$g_pop."', '".$g_punk."', '".$g_jazz."', '".$g_metal."', '".$g_funk."', '".$g_country."', '".$g_edm."', '".$g_classical."') ";
+							$query = "INSERT INTO music_group(group_id, music_file, music, g_rnb, g_rock, g_pop, g_punk, g_jazz, g_metal, g_funk, g_country, g_edm, g_classical, g_happy, g_sad, g_angry, g_chill, g_focus, g_workout, g_travel, g_guitar, g_bass, g_synth, g_pads, g_woodwind, g_drums, g_strings, g_brass) ";
+							$query .= "VALUES ( '" . $group_id . "', '" .  $target_file_music . "', '" . $_POST['music_check']. "', '".$g_rnb."' , '".$g_rock."', '".$g_pop."', '".$g_punk."', '".$g_jazz."', '".$g_metal."', '".$g_funk."', '".$g_country."', '".$g_edm."', '".$g_classical."', '".$g_happy."', '".$g_sad."', '".$g_angry."', '".$g_chill."', '".$g_focus."', '".$g_workout."', '".$g_travel."', '".$g_guitar."', '".$g_bass."', '".$g_synth."', '".$g_pads."', '".$g_woodwind."', '".$g_drums."', '".$g_strings."', '".$g_brass."') ";
 							
 							if($result = mysqli_query($conn, $query) )
 							{
@@ -301,26 +320,26 @@ $formSuccessfullMessage = "";
 						<div class="GroupsInformation">
 							<div class="GroupsInformation-Title">
 								Title:<br/>
-								<textarea maxlength="50" name="TitleGroups"><?php if(isset($TitleGroups)){echo $TitleGroups; }?></textarea>
+								<textarea maxlength="50" name="TitleGroups" placeholder="Place your title here.."><?php if(isset($TitleGroups)){echo $TitleGroups; }?></textarea>
 							</div>
 							<div class="horizontal-GroupSpace">
 							</div>
 							<div class="GroupsInformation-Description">
 								Description:<br/>
-								<textarea maxlength="500" name="TextAreaGroups"><?php if(isset($TextAreaGroups)){echo $TextAreaGroups; }?></textarea>
+								<textarea maxlength="500" name="TextAreaGroups" placeholder="Place your description here.."><?php if(isset($TextAreaGroups)){echo $TextAreaGroups; }?></textarea>
 								
 							</div>	
 						</div>
 							<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 							Upload a profile Image:
 							<br/>
-							<input id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
+							<input class="file_upload_button" id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
 							<br/>
 							<hr>
 							<br/>
 							Song or Samples Upload:
 							<br/>
-							<input id="files" type="file" name="myMusic" accept="audio/*" />
+							<input class="file_upload_button" id="files" type="file" name="myMusic" accept="audio/*" />
 							<br/>
 							Is this a song or sample?
 							<div class="checkbox">
@@ -334,18 +353,18 @@ $formSuccessfullMessage = "";
 							Genre(s)
 							<table style="left: 0; right: 0; margin: 0 auto;">
 								<tr>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_rnb" value="1">RNB </td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_rock" value="1">Rock</td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_pop" value="1">Pop</td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_punk" value="1">Punk</td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_jazz" value="1">Jazz</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_rnb" value="1">RNB </td>
+									<td style="width: 120px;"><input type="checkbox" name="g_rock" value="1">Rock</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_pop" value="1">Pop</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_punk" value="1">Punk</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_jazz" value="1">Jazz</td>
 								</tr>
 								<tr>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_metal" value="1">Metal</td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_funk" value="1">Funk</td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_country" value="1">Country</td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_edm" value="1">EDM</td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_classical" value="1">Classical</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_metal" value="1">Metal</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_funk" value="1">Funk</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_country" value="1">Country</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_edm" value="1">EDM</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_classical" value="1">Classical</td>
 								</tr>
 							<table>
 							<br/>
@@ -356,15 +375,15 @@ $formSuccessfullMessage = "";
 							Mood(s)
 							<table style="left: 0; right: 0; margin: 0 auto;">
 								<tr>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_happy" value="1">Happy</td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_sad" value="1">Sad</td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_angry" value="1">Angry</td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_chill" value="1">Chill</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_happy" value="1">Happy</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_sad" value="1">Sad</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_angry" value="1">Angry</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_chill" value="1">Chill</td>
 								</tr>
 								<tr>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_focus" value="1">Focus</td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_workout" value="1">Workout</td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_travel" value="1">Travel</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_focus" value="1">Focus</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_workout" value="1">Workout</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_travel" value="1">Travel</td>
 								</tr>
 							</table>
 							<br/>
@@ -375,18 +394,23 @@ $formSuccessfullMessage = "";
 							Instrument(s)
 							<table style="left: 0; right: 0; margin: 0 auto;">
 								<tr>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_guitar" value="1">Guitar</td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_bass" value="1">Bass</td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_synth" value="1">Synth</td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_pads" value="1">Pads</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_guitar" value="1">Guitar</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_bass" value="1">Bass</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_synth" value="1">Synth</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_pads" value="1">Pads</td>
 								</tr>
 								<tr>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_woodwind" value="1">Woodwind</td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_drums" value="1">Drums</td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_strings" value="1">Strings</td>
-									<td style="background-color:red;width: 120px;"><input type="checkbox" name="g_brass" value="1">Brass</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_woodwind" value="1">Woodwind</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_drums" value="1">Drums</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_strings" value="1">Strings</td>
+									<td style="width: 120px;"><input type="checkbox" name="g_brass" value="1">Brass</td>
 								</tr>
 							</table>
+							<br/>
+							<br/>
+							<hr>
+							<br/>
+							<br/>
 						
 						<div id="buttonAreaCreate">
 							<input id="CreateGroupProfileSubmit" type="submit" />

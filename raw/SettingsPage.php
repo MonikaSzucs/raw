@@ -1,3 +1,35 @@
+<?php
+
+//the session_start() should always be at the top
+session_start();
+//this is to make sure people can't access the pages unless they log in
+if(!isset($_SESSION["user_id"]))
+{
+	session_destroy(); 
+	header( 'Location: signout.php' ); 
+};
+
+	echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
+
+	/*
+	if(!isset($_SESSION["user_id"]))
+	{
+		session_destroy(); 
+		header( 'Location: signout.php' ); 
+	};
+	*/
+
+	//Step1 connect to database
+	define('DB_HOST', 'localhost');
+	define('DB_USER', 'root');
+	define('DB_PASSWORD', '');
+	define('DB_DATABASE', 'raw');
+
+	$db = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -55,9 +87,9 @@
 -->
         <div id="hamburger"> 
             <ul id="hambul">
-                <li class="hamclass">
+                <a href="ProfileIntroPage.php"><li class="hamclass">
                 Profile
-                </li>  
+                </li></a>  
                 <a href="logout.php"><li class="hamclass">
                 Sign Out
                 </li></a>               
