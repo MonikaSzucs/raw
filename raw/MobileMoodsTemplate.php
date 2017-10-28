@@ -68,7 +68,7 @@ mysqli_close($conn);
         <div id="play-button" class="m-player"></div>
         <div id="next-button" class="m-player"></div>
     </div>
-    <div class="main-page">
+    <div id="mpcat" class="main-page">
         
                         
 <!--
@@ -87,6 +87,9 @@ mysqli_close($conn);
         </div>
         
         <h1 id="m-genresh">Moods</h1>
+        
+        <div id="catalogpage">
+        
         <div class="row1">
             <div id="m-happy" class="mood-divs">
                 <p class="genre-tags">Happy
@@ -123,6 +126,8 @@ mysqli_close($conn);
         <div class="row4">
             <div id="m-travel" class="mood-divs"><p class="genre-tags">Travel
                 </p></div>
+        </div>
+            
         </div>
         <div id="invisdiv3"></div>
 

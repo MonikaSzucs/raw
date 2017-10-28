@@ -69,7 +69,7 @@ mysqli_close($conn);
         <div id="next-button" class="m-player"></div>
 
     </div>
-    <div class="main-page">
+    <div  id="mpcat" class="main-page">
         
                         
 <!--
@@ -89,6 +89,8 @@ mysqli_close($conn);
         <h1 id="m-genresh">Instruments</h1>
         
     
+        <div id="catalogpage">
+        
         <div class="row1">
             <div id="m-guitar" class="mood-divs">
                 <p class="genre-tags">Guitar
@@ -132,7 +134,7 @@ mysqli_close($conn);
             </div>
         </div>
 
-     
+     </div>
 
         <div class="invisdiv2"></div>
 

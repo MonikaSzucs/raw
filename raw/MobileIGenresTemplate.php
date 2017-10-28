@@ -70,7 +70,7 @@ mysqli_close($conn);
         <div id="next-button" class="m-player"></div>
 
     </div>
-    <div class="main-page">
+    <div id="mpcat" class="main-page">
 
 
 <!--
@@ -90,15 +90,18 @@ mysqli_close($conn);
 
         <h1 id="m-genresh">Genres</h1>
 
+        <div id="catalogpage2">
         <div class="row1">
             <div id="m-rnb" class="mood-divs">
                 <p class="genre-tags">RNB
                 </p>
             </div>
+            
             <div id="m-punk" class="mood-divs">
                 <p class="genre-tags">Punk
                 </p>
             </div>
+            
         </div>
 
         <div class="row2">
@@ -144,6 +147,8 @@ mysqli_close($conn);
                 </p>
             </div>
         </div>
+            
+            </div>
 
 
         <div class="invisdiv2"></div>
