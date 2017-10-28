@@ -2,8 +2,13 @@
 
 //the session_start() should always be at the top
 session_start();
+//this is to make sure people can't access the pages unless they log in
+if(!isset($_SESSION["user_id"]))
+{
+	session_destroy(); 
+	header( 'Location: signout.php' ); 
+};
 
-if (sizeof($_SESSION)===2){
 	echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
 
 	/*
@@ -22,13 +27,6 @@ if (sizeof($_SESSION)===2){
 
 	$db = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
 
-	
-}
-else{
-	session_start();
-	session_destroy();
-	header( 'Location: index.php' ) ;
-}
 
 ?>
 
@@ -112,8 +110,23 @@ $(document).ready(function(){
         <a href="UsersSounds.php"><div class="m-profile-box" >
             <div id="m-profile-pic-intro"></div>
             <div id="m-view-profile-div">
-                <p id="name">Name</p>
-            <p id="view-profile">View Profile</p>
+                <p id="name">
+				
+				<?php
+				
+					//get group?_user from data base where user id equal to session user ID
+					$query = "SELECT * FROM user WHERE user_id =" . $_SESSION['user_id'];
+					$result = mysqli_query($db, $query) or die('Error querying database.');
+					
+					$first_name = array(); 
+					while ($row = mysqli_fetch_array($result)){
+						$first_name[] = $row['first_name'];
+					}
+					
+					echo $first_name[0];
+				?>
+				</p>
+            <p id="view-profile">Profile</p>
             
             </div>
         </div>
@@ -126,7 +139,7 @@ $(document).ready(function(){
             </div>
             
             <div class="m-center-text" id="m-notifications-button">
-                Notifications
+                <a href="Notifications.php">Notifications</a>
                 <div id="m-noticon" class="m-sicon"></div>
             </div>
 			<div class="m-center-text" id="m-settings-button">

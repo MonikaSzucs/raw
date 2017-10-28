@@ -2,8 +2,14 @@
 
 //the session_start() should always be at the top
 session_start();
+//this is to make sure people can't access the pages unless they log in
+if(!isset($_SESSION["user_id"]))
+{
+	session_destroy(); 
+	header( 'Location: signout.php' ); 
+};
 
-if (sizeof($_SESSION)===2){
+
 	echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
 
 	/*
@@ -40,12 +46,7 @@ if (sizeof($_SESSION)===2){
 
 	//mysqli_close($db);
 	
-}
-else{
-	session_start();
-	session_destroy();
-	header( 'Location: index.php' ) ;
-}
+
 
 ?>
 

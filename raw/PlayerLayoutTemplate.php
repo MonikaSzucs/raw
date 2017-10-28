@@ -15,7 +15,7 @@
 			float: left;
 		}
 		
-		.circlePhotoAuto {
+		.circlePhoto_group_Auto {
 			width: 130px;
 			height: 130px;
 			margin-top: 10px;
@@ -54,15 +54,15 @@
 			<img src='./SVG/EmptyPicture.svg' class='circlePhotoAuto' />
 		</div>
 
-			<div class='vertical_space_group'>
-				<div class="groups_title_generate">
+		<div class='vertical_space_group'>
+			<div class="groups_title_generate">
 					Title:
 				</div>
 			<hr/>
-				<div class="groups_descrition_generate">
-					Description
-				</div>
+			<div class="groups_descrition_generate">
+				Description
 			</div>
+		</div>
 	</div>
 		<!--
 		<div style='background-color:orange padding='></div>

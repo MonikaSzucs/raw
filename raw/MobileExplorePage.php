@@ -1,4 +1,26 @@
+<?php 
 
+session_start();
+//this is to make sure people can't access the pages unless they log in
+if(!isset($_SESSION["user_id"]))
+{
+	session_destroy(); 
+	header( 'Location: signout.php' ); 
+};
+
+//Step1 connect to database
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_DATABASE', 'raw');
+
+$conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
+
+
+//Step 4 Close the conenction
+mysqli_close($conn);
+		
+?>
 
 <!DOCTYPE html>
 <html>
