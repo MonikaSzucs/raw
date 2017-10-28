@@ -107,38 +107,28 @@ if(isset($_POST['toDo'])){
             </ul>
         </div>
 
+		
+		
+		
+		
 		<div class="main-songDiv">
-            
-    
         <div class="feedsidebar">
            
             <div class="whotofollowdiv">  <h3 class="wtftext">Who to follow</h3>
             <div class="personfollow">
-                
                 <p id="follname"> Name </p>
-               
                  <button class="follbut">Follow</button>
                 <div class="followpic"></div>
-               
                 </div>
-            
-            
             </div>
            <div class="listeninghdiv"><h3 class="wtftext">Listening History</h3>
              <p id="follname"> Name </p>
              <p id="follname2"> Song Name </p>
                  <div  class="followpic2"></div>
-               
-            
             </div>
-          
-            
             </div>
-            
             <div class="invisdiv4"></div>
-            
         <div class="first-song">
-       
             <div class="songpic"></div>
             <div class="song-buttons">
                  <ul>
