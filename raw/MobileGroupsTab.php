@@ -92,14 +92,16 @@ if(!isset($_SESSION["user_id"]))
                 <a href="MobileGroupsTab.php"><li>Groups</li></a>
                 <a href="MobileIGenresTemplate.php"><li>Genres</li></a>
                 <li>
-				
-				<?php 
+				<a href="MobileMoodsTemplate.php"><li>Moods</li></a>
+				<!--
+				surrounded by php
 					if (isset(($_GET['Moods'])))
 					<form action="MobileMoodsTemplate.php" method="get">
 						<input type="hidden" name="group_id" value="<?php echo $_GET['genre']?>"/>
 						<input type="submit" class="TopNavTextButtonStyle" value="Moods"/>
 					</form>
-				?>
+
+				-->
 				</li>
                 <a href="MobileInsturmentsTemplate.php"><li>Instruments</li></a>
             </ul>
