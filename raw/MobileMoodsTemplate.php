@@ -88,9 +88,9 @@ mysqli_close($conn);
         
         <h1 id="m-genresh">Moods</h1>
         
-        <div id="catalogpage">
+        <div id="catalogpage2">
         
-        <div class="row1">
+      
             <div id="m-happy" class="mood-divs">
 				<form action="CategoryPicked.php" method="get">
 					<p class="genre-tags">Happy</p>
@@ -103,9 +103,9 @@ mysqli_close($conn);
 					<p class="genre-tags">Sad</p>
 				</a>
             </div>
-        </div>
+        
 
-        <div class="row2">
+      
             <div id="m-angry" class="mood-divs">
 				<a href="CategoryPicked.php">
 					<p class="genre-tags">Angry</p>
@@ -116,9 +116,9 @@ mysqli_close($conn);
 					<p class="genre-tags">Chill</p>
 				</a>
             </div>
-        </div>
+       
 
-        <div class="row3">
+        
             <div id="m-focus" class="mood-divs">
 				<a href="CategoryPicked.php">
 					<p class="genre-tags">Focus</p>
@@ -129,12 +129,12 @@ mysqli_close($conn);
 					<p class="genre-tags">Work Out</p>
 				</a>
             </div>
-        </div>
+        
 
-        <div class="row4">
+        
             <div id="m-travel" class="mood-divs"><p class="genre-tags">Travel
                 </p></div>
-        </div>
+     
             
         </div>
         <div id="invisdiv3"></div>

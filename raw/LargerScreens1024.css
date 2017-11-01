@@ -85,6 +85,7 @@ hambuger menu
         font-size: 14px;
         margin: 0 auto;
         bottom: 0;
+        text-align: center;
         left: 0;
         top: 0;
         width: 180px;
@@ -402,7 +403,7 @@ hambuger menu
         text-align: center;
     }
     .mood-divs {
-        margin-top: 20px;
+        margin: 10px;
         width: 180px;
         height: 120px;
         position: relative;
@@ -444,19 +445,14 @@ hambuger menu
     }
   
     
-    #catalogpage {
-        background-color: white;
-        display: flex;
-        height: auto;
-        margin: 30px;
-        
-    } 
+
     
     #catalogpage2 {
+        height: auto;
         background-color: white;
         display: flex;
          flex-flow: row wrap;
-         justify-content: space-around;
+         justify-content: center;
         
     }
     

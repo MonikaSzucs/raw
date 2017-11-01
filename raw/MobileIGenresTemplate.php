@@ -91,7 +91,7 @@ mysqli_close($conn);
         <h1 id="m-genresh">Genres</h1>
 
         <div id="catalogpage2">
-        <div class="row1">
+      
             <div id="m-rnb" class="mood-divs">
 				<a href="CategoryPicked.php">
 					<p class="genre-tags">RNB
@@ -106,9 +106,9 @@ mysqli_close($conn);
 				</a>
             </div>
             
-        </div>
+       
 
-        <div class="row2">
+      
             <div id="m-rock" class="mood-divs">
 				<a href="CategoryPicked.php">
 					<p class="genre-tags">Rock
@@ -121,9 +121,9 @@ mysqli_close($conn);
 					</p>
 				</a>
             </div>
-        </div>
+   
 
-        <div class="row3">
+     
             <div id="m-jazz" class="mood-divs">
 				<a href="CategoryPicked.php">
 					<p class="genre-tags">Jazz
@@ -136,9 +136,9 @@ mysqli_close($conn);
 					</p>
 				</a>
             </div>
-        </div>
+       
 
-        <div class="row4">
+   
             <div id="m-funk" class="mood-divs">
 				<a href="CategoryPicked.php">
 					<p class="genre-tags">Funk
@@ -151,9 +151,9 @@ mysqli_close($conn);
 					</p>
 				</a>
             </div>
-        </div>
+       
 
-        <div class="row5">
+   
             <div id="m-edm" class="mood-divs">
 				<a href="CategoryPicked.php">
 					<p class="genre-tags">EDM
@@ -166,7 +166,7 @@ mysqli_close($conn);
 					</p>
 				</a>
             </div>
-        </div>
+    
             
             </div>
 

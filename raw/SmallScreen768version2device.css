@@ -280,6 +280,7 @@
         text-align: center;
     }
     .mood-divs {
+        margin: 8px;
         width: 180px;
         height: 120px;
         position: relative;
