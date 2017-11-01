@@ -49,7 +49,7 @@ mysqli_close($conn);
             </div>
 
             <ul class="nav-bar">
-               <a href="MobileExplorePage.php"><li>Explore</li></a>
+               <a href="Streaming.php"><li>Explore</li></a>
                  <a href="MobileGroupsTab.php"><li>Groups</li></a>
                 <a href="MobileIGenresTemplate.php"><li>Genres</li></a>
                 <a href="MobileMoodsTemplate.php"><li>Moods</li></a>
@@ -92,34 +92,42 @@ mysqli_close($conn);
         
         <div class="row1">
             <div id="m-happy" class="mood-divs">
-                <p class="genre-tags">Happy
-                </p>
+				<form action="CategoryPicked.php" method="get">
+					<p class="genre-tags">Happy</p>
+					<input type="hidden" name="mood" value="<?php echo $_GET['g_happy']?>"/>
+					<input type="submit" class="genre-tags" value="Happy"/>
+				</form>
             </div>
             <div id="m-sad" class="mood-divs">
-            <p class="genre-tags">Sad
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Sad</p>
+				</a>
             </div>
         </div>
 
         <div class="row2">
             <div id="m-angry" class="mood-divs">
-            <p class="genre-tags">Angry
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Angry</p>
+				</a>
             </div>
             <div id="m-chill" class="mood-divs">
-            <p class="genre-tags">Chill
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Chill</p>
+				</a>
             </div>
         </div>
 
         <div class="row3">
             <div id="m-focus" class="mood-divs">
-            <p class="genre-tags">Focus
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Focus</p>
+				</a>
             </div>
             <div id="m-workout" class="mood-divs">
-            <p class="genre-tags">Work Out
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Work Out</p>
+				</a>
             </div>
         </div>
 

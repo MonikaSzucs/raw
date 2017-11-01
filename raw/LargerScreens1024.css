@@ -462,7 +462,7 @@ hambuger menu
     
     #m-view-profile-div {
         color: black;
-        width: 300px;
+        width: 850px;
         height: 100px;
         position: absolute;
         margin: auto 0;
@@ -947,6 +947,20 @@ hambuger menu
 		font-size: 18px;
 		color: darkgray
 	}
+	
+	#BackButtonCreation{
+		width: 200px;
+		height: 50px;
+		border: 2px solid darkgray;
+		background-color: #ffffff;
+		border-radius: 25px;
+		position: absolute;
+		top: 30px;
+		right: 40px;
+		font-family: Avenir-Medium;
+		font-size: 18px;
+		color: darkgray
+	}
 
 	.ProfileIconGroups{
 		float: left;
@@ -1178,17 +1192,34 @@ hambuger menu
 			box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
 		}
 		.groups_title_generate{
-			width: 95%;
+			width: 85%;
 			height: 30px;
 			margin-left: 15px;
 			margin-top: 5px;
 			line-height: 30px;
+			background-color:red;
+		}
+		
+		.LeaveButtonGroups{
+			float: right;
+			top: -120px;
+			right: 30px;
+			position: relative;
+			
 		}
 		
 		.groups_descrition_generate{
-			width: 95%;
+			width: 85%;
 			height: 50px;
 			margin-left: 15px;
+			background-color: yellow;
+		}
+		
+		.EnterButtonGroups{
+			float: right;
+			top: -60px;
+			position: relative;
+			right: -20px;
 		}
 		
 		    
@@ -1370,4 +1401,35 @@ hambuger menu
         border-radius: 20px;
 
     }
+	
+	
+	/*Download styleing in groups*/
+	#DownloadButtonGroups {
+		margin-left: 600px;
+		margin-top: 60px;
+	}
+
+
+	/*Leave or Join or Enter Groups area*/
+	#LeaveJoinButton{
+		float:left;
+		right: 0;
+		bottom: 0;
+	}
+
+	
+	/* Styling the NAvigation bar*/
+	.TopNavTextButtonStyle{
+		background-color: Transparent;
+		background-repeat:no-repeat;
+		border: none;
+		cursor:pointer;
+		overflow: hidden;
+		outline:none;
+		color: white;
+		font-size: large;
+		font-family: Avenir-Medium;
+	}
+	
 }
+

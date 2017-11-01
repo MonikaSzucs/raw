@@ -49,7 +49,7 @@ mysqli_close($conn);
             </div>
 
             <ul class="nav-bar">
-              <a href="MobileExplorePage.php"><li>Explore</li></a>
+              <a href="Streaming.php"><li>Explore</li></a>
                  <a href="MobileGroupsTab.php"><li>Groups</li></a>
                 <a href="MobileIGenresTemplate.php"><li>Genres</li></a>
                 <a href="MobileMoodsTemplate.php"><li>Moods</li></a>
@@ -93,58 +93,78 @@ mysqli_close($conn);
         <div id="catalogpage2">
         <div class="row1">
             <div id="m-rnb" class="mood-divs">
-                <p class="genre-tags">RNB
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">RNB
+					</p>
+				</a>
             </div>
             
             <div id="m-punk" class="mood-divs">
-                <p class="genre-tags">Punk
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Punk
+					</p>
+				</a>
             </div>
             
         </div>
 
         <div class="row2">
             <div id="m-rock" class="mood-divs">
-                <p class="genre-tags">Rock
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Rock
+					</p>
+				</a>
             </div>
             <div id="m-pop" class="mood-divs">
-                <p class="genre-tags">Pop
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Pop
+					</p>
+				</a>
             </div>
         </div>
 
         <div class="row3">
             <div id="m-jazz" class="mood-divs">
-                <p class="genre-tags">Jazz
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Jazz
+					</p>
+				</a>
             </div>
             <div id="m-metal" class="mood-divs">
-                <p class="genre-tags">Metal
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Metal
+					</p>
+				</a>
             </div>
         </div>
 
         <div class="row4">
             <div id="m-funk" class="mood-divs">
-                <p class="genre-tags">Funk
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Funk
+					</p>
+				</a>
             </div>
             <div id="m-country" class="mood-divs">
-                <p class="genre-tags">Country
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Country
+					</p>
+				</a>
             </div>
         </div>
 
         <div class="row5">
             <div id="m-edm" class="mood-divs">
-                <p class="genre-tags">EDM
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">EDM
+					</p>
+				</a>
             </div>
             <div id="m-classical" class="mood-divs">
-                <p class="genre-tags">Classical
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Classical
+					</p>
+				</a>
             </div>
         </div>
             

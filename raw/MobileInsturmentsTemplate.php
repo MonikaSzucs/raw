@@ -49,7 +49,7 @@ mysqli_close($conn);
             </div>
 
             <ul class="nav-bar">
-           <a href="MobileExplorePage.php"><li>Explore</li></a>
+           <a href="Streaming.php"><li>Explore</li></a>
                  <a href="MobileGroupsTab.php"><li>Groups</li></a>
                 <a href="MobileIGenresTemplate.php"><li>Genres</li></a>
                 <a href="MobileMoodsTemplate.php"><li>Moods</li></a>
@@ -93,44 +93,54 @@ mysqli_close($conn);
         
         <div class="row1">
             <div id="m-guitar" class="mood-divs">
-                <p class="genre-tags">Guitar
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Guitar</p>
+				</a>
             </div>
             <div id="m-bass" class="mood-divs">
-             <p class="genre-tags">Bass
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Bass</p>
+				</a>
             </div>
         </div>
 
         <div class="row2">
             <div id="m-synth" class="mood-divs">
-                 <p class="genre-tags">Synth
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Synth</p>
+				</a>
             </div>
             <div id="m-pad"  class="mood-divs">
-             <p class="genre-tags">Pads
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Pads</p>
+				</a>
             </div>
         </div>
        
 
         <div class="row3">
             <div id="m-woodwind" class="mood-divs">
-             <p class="genre-tags">Woodwind
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Woodwind</p>
+				</a>
             </div>
-            <div id="m-drums" class="mood-divs">   <p class="genre-tags">Drums
-                </p></div>
+            <div id="m-drums" class="mood-divs">
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Drums</p>
+				</a>
+			</div>
         </div>
 
         <div class="row4">
             <div id="m-strings" class="mood-divs">
-               <p class="genre-tags">Strings
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Strings</p>
+				</a>
             </div>
             <div id="m-brass" class="mood-divs">
-               <p class="genre-tags">Brass
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Brass</p>
+				</a>
             </div>
         </div>
 

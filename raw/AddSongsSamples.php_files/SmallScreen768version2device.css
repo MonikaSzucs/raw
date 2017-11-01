@@ -1,0 +1,662 @@
+/*FONTS ---------------------------------------------------------------------------------*/
+
+@font-face {
+  font-family: "Avenir-Medium";
+  src: url(./Font/Avenir/avenir/Avenir-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Avenir-Black";
+  src: url(./Font/Avenir/avenir/Avenir-Black.ttf);
+}
+
+@font-face {
+  font-family: "Avenir-Light";
+  src: url(./Font/Avenir/avenir/Avenir-Light.ttf);
+}
+
+@media (max-device-width: 700px) {
+    .mobileScreen {
+        display: block;
+    }
+    body {
+        background-color: darkgrey;
+        margin: 0 auto;
+        max-width: 100vw;
+    }
+    .desktopScreen {
+        display: none;
+    }
+    .header {
+        margin: 0 auto;
+        width: 100%;
+        height: 80px;
+        background-color: #19313A;
+        position: fixed;
+        z-index: 9999;
+    }
+    .container {
+        margin: 2em;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 9998;
+    }
+    .container:hover .buttons:not(:last-of-type) {
+        width: 50px;
+        height: 50px;
+        margin: 15px auto 0;
+        opacity: 1;
+    }
+    .container:hover .rotate {
+        background-image: url("imgs/cmenuicon.svg");
+        transform: rotate(90deg);
+    }
+    .buttons {
+        display: block;
+        width: 35px;
+        height: 35px;
+        margin: 20px auto 0;
+        text-decoration: none;
+        position: relative;
+        border-radius: 50%;
+        box-shadow: 0px 5px 11px -2px rgba(0, 0, 0, 0.18), 0px 4px 12px -7px rgba(0, 0, 0, 0.15);
+        opacity: 0;
+        transition: .2s;
+    }
+    .buttons:nth-last-of-type(2) {
+        transition-delay: 20ms;
+    }
+    .buttons:nth-last-of-type(3) {
+        transition-delay: 40ms;
+    }
+    .buttons:nth-last-of-type(4) {
+        transition-delay: 60ms;
+    }
+    .buttons:nth-last-of-type(5) {
+        transition-delay: 80ms;
+    }
+    .buttons:nth-last-of-type(6) {
+        transition-delay: 100ms;
+    }
+    .buttons:nth-last-of-type(1) {
+        width: 80px;
+        height: 80px;
+        opacity: 1;
+    }
+    .buttons:nth-last-of-type(2) {
+        background: #713232 url("imgs/moodsicon.svg") center no-repeat;
+        background-size: 28px 28px;
+    }
+    .buttons:nth-last-of-type(3) {
+        background: #713232 url("imgs/genreicon.svg") center no-repeat;
+        background-size: 28px 28px;
+    }
+    .buttons:nth-last-of-type(4) {
+        background-color: #713232;
+        background-image: url("imgs/discovericon.svg");
+        background-size: 28px 28px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .buttons:nth-last-of-type(5) {
+        background-image: url("imgs/instrumenticon.svg");
+        background-size: 28px 28px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #713232;
+    }
+    .buttons:nth-last-of-type(6) {
+        background-image: url("imgs/profileicon.svg");
+        background-size: 28px 28px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #713232;
+    }
+    .buttons:hover {
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+    }
+    span {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+    span.rotate {
+        background: #713232 url("imgs/cmenuicon.svg") center no-repeat;
+        position: absolute;
+        transform: rotate(0deg);
+        background-size: 32px 32px;
+        transition: .3s;
+    }
+    [tooltip]:before {
+        content: attr(tooltip);
+        background: #585858;
+        padding: 5px 7px;
+        margin-right: 10px;
+        border-radius: 2px;
+        color: #FFF;
+        font: 500 16px Helvetica;
+        white-space: nowrap;
+        position: absolute;
+        bottom: 20%;
+        right: 100%;
+        visibility: hidden;
+        opacity: 0;
+        transition: .3s;
+    }
+    [tooltip]:hover:before {
+        visibility: visible;
+        opacity: 1;
+    }
+    .m-upload-button {
+        width: 55px;
+        height: 55px;
+        background-size: 35px 35px;
+        position: fixed;
+        top: 12px;
+        right: 95px;
+        background-image: url(imgs/uploadicon.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 40px;
+    }
+    .m-upload-button:hover {
+        transition: 60ms ease-in-out;
+        background-size: 40px 40px;
+    }
+    .main-page {
+        margin: 0 auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: #E5E5E5;
+        width: 100%;
+        height: auto;
+    }
+    .toggle-logo {
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        background-size: 38px 38px;
+        top: 15px;
+        right: 35px;
+        background-image: url(imgs/togglelogo.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .toggle-logo:hover {
+        transition: 60ms ease-in-out;
+        background-size: 42px 42px;
+    }
+    .nav-bar {
+        z-index: 9999;
+        position: absolute;
+        color: white;
+        display: none;
+    }
+    nav li {
+        display: inline-block;
+    }
+    .logo-spot {
+        width: 120px;
+        height: 50px;
+        z-index: 9999;
+        position: fixed;
+        left: 20px;
+        top: 15px;
+        background-image: url(imgs/rawlogo.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .track-player {
+        z-index: 9998;
+        height: 65px;
+        width: 100%;
+        position: fixed;
+        background-color: #19313A;
+        bottom: 0;
+    }
+    #m-wrench {
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+        display: block;
+        width: 65px;
+        height: 65px;
+        right: 50px;
+        bottom: 20px;
+        z-index: 9999;
+        border-radius: 65px;
+        background-position: center;
+        background-size: 32px 32px;
+        background-repeat: no-repeat;
+        background-image: url(imgs/cmenuicon.svg);
+    }
+    #invisdiv3 {
+        height: 80px;
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .invisdiv {
+        margin: 0 auto;
+        position: relative;
+        height: 80px;
+        width: 100%;
+    }
+    .invisdiv2 {
+        margin: 0 auto;
+        position: relative;
+        height: 80px;
+        width: 100%;
+    }
+    .row1 {
+        width: 100%;
+        height: 150px;
+        position: relative;
+        text-align: center;
+    }
+    .row2 {
+        width: 100%;
+        height: 150px;
+        position: relative;
+        text-align: center;
+    }
+    .row3 {
+        width: 100%;
+        height: 150px;
+        position: relative;
+        text-align: center;
+    }
+    .row4 {
+        width: 100%;
+        height: 150px;
+        position: relative;
+        text-align: center;
+    }
+    .row5 {
+        width: 100%;
+        height: 150px;
+        position: relative;
+        text-align: center;
+    }
+    .mood-divs {
+        width: 180px;
+        height: 120px;
+        position: relative;
+        display: inline-block;
+    }
+    .m-player {
+        vertical-align: middle;
+        display: inline-block;
+        margin-top: 16px;
+        margin-left: 8px;
+    }
+    #next-button {
+        width: 24px;
+        height: 24px;
+        background-image: url(imgs/next.svg);
+        background-repeat: no-repeat;
+    }
+    #play-button {
+        width: 32px;
+        height: 32px;
+        background-image: url(imgs/play.svg);
+        background-repeat: no-repeat;
+    }
+    #last-button {
+        margin-left: 30px;
+        width: 24px;
+        height: 24px;
+        background-image: url(imgs/previous.svg);
+        background-repeat: no-repeat;
+    }
+    .genre-tags {
+        margin: 0 auto;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        width: 180px;
+        height: 120px;
+        position: absolute;
+        color: white;
+        line-height: 180px;
+    }
+    .genre-tags:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    .m-profile-box {
+        width: 100vw;
+        height: 200px;
+        position: relative;
+        background-color: white;
+        box-shadow: 0px 5px 5px #888888;
+    }
+    #m-profile-pic-intro {
+        background-color: white;
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 20%;
+        left: 25px;
+        z-index: 9997;
+        box-shadow: 0px 5px 5px #888888;
+    }
+    #name {
+        margin-top: 50px;
+    }
+    #view-profile {
+        margin-top: -100px;
+    }
+    #m-view-profile-div {
+        background-color: white;
+        width: 100vw;
+        height: 100%;
+        position: absolute;
+        margin: auto 0;
+        align-items: center;
+        justify-content: center;
+        display: inline-grid;
+        z-index: 9996;
+    }
+    .m-settings-box {
+        width: 100vw;
+        height: 225px;
+        position: relative;
+        top: 30px;
+    }
+    #m-genresh {
+        text-align: center;
+    }
+    #m-message-button {
+        position: relative;
+        width: 100vw;
+        height: 75px;
+        background-color: white;
+        border-bottom: solid #cbcbcb .50px;
+        border-top: solid #cbcbcb .50px;
+    }
+    #m-notifications-button {
+        position: relative;
+        width: 100vw;
+        height: 75px;
+        background-color: white;
+        border-bottom: solid #cbcbcb .50px;
+    }
+    #m-settings-button {
+        text-decoration: none;
+        color: black;
+        position: relative;
+        width: 100vw;
+        height: 75px;
+        background-color: white;
+        border-bottom: solid #cbcbcb .50px;
+    }
+    #m-signout-box {
+        position: absolute;
+        width: 100vw;
+        height: 75px;
+        background-color: white;
+        margin: 0 auto;
+        border-top: solid #cbcbcb .50px;
+        border-bottom: solid #cbcbcb .50px;
+    }
+    #m-messicon {
+        background-image: url(imgs/messagesicon.svg);
+    }
+    #m-seticon {
+        background-image: url(imgs/settingicon.svg);
+    }
+    #m-noticon {
+        background-image: url(imgs/noticon.svg);
+    }
+    #m-signicon {
+        background-image: url(imgs/signouticon.svg)
+    }
+    .m-sicon {
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 15%;
+        left: 20px;
+    }
+    .m-center-text {
+        position: relative;
+        font-family: Avenir-Medium;
+        text-align: center;
+        line-height: 75px;
+    }
+    .m-profile-buttons {
+        width: 100vw;
+        height: 50px;
+        bottom: 0px;
+        position: absolute;
+        background-color: white;
+        box-shadow: 0px 5px 5px #888888;
+    }
+    #m-list-buttons {
+        list-style: none;
+        width 100%;
+        z-index: 9997;
+        position: relative;
+    }
+    #m-list-buttons li {
+        display: inline-block;
+        margin-left: 25px;
+        margin-right: 45px;
+    }
+    .m-profile-main {
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        position: absolute;
+        top: 220px;
+    }
+    #lname {
+        color: gray;
+        font-size: 12px;
+    }
+    #fname {
+         color: gray;
+          font-size: 12px;
+    }
+
+    #m-settings-h {
+        font-family: Helvetica;
+        position: relative;
+        margin-left: 30px;
+    }
+    .m-settings-info {
+        font-family: Helvetica;
+        position: relative;
+        margin-left: 30px;
+    }
+
+    #m-settings-h {
+        position: relative;
+        margin-left: 30px;
+    }
+    .m-settings-info {
+        position: relative;
+        margin-left: 30px;
+    }
+    #reladiv {
+        width: 100%;
+        height: 260px;
+        position: relative;
+    }
+    #m-album-title {
+        position: relative;
+        left: 30px;
+        border-radius: 5px;
+        width: 80%;
+        height: 30px;
+    }
+    #m-genre-title {
+        position: relative;
+        left: 30px;
+        border-radius: 5px;
+        width: 80%;
+        height: 30px;
+    }
+    .upload-inputs {
+        background-color: #ebebeb;
+        border-style: none;
+    }
+    #m-description-title {
+        position: relative;
+        left: 30px;
+        border-radius: 5px;
+        width: 80%;
+        height: 70px;
+    }
+    #uldiv {
+        margin-top: 20px;
+    }
+    .upload-head {
+        font-family: Helvetica;
+        padding-left: 30px;
+        margin: 0 auto;
+        margin-top: 30px
+    }
+    #m-email-input {
+        position: absolute;
+        left: 30px;
+        border-radius: 5px;
+        width: 70%;
+        height: 30px;
+    }
+    #m-reset-button {
+        position: absolute;
+        left: 35px;
+        border-radius: 5px;
+        width: 70%;
+        height: 35px;
+        background-color: white;
+        color: black;
+        text-transform: capitalize;
+    }
+    .uplbuttons {
+        margin-top: 10px;
+        border-radius: 5px;
+        font-size: 18px;
+        color: white;
+        font-family: Helvetica;
+        margin-left: 30px;
+        border: none;
+        height: 40px;
+        width: 100px;
+        box-shadow: 0px 7px 8px -3px rgba(0, 0, 0, 0.50);
+    }
+    #cancel-up {
+        background-color: grey;
+    }
+    #save-up {
+        background-color: #5C9FAD;
+    }
+    #m-email-input {
+        position: absolute;
+        left: 30px;
+        border-radius: 5px;
+        width: 70%;
+        height: 30px;
+    }
+    #m-reset-button {
+        position: absolute;
+        left: 35px;
+        border-radius: 5px;
+        width: 70%;
+        height: 35px;
+        background-color: white;
+        color: black;
+        text-transform: capitalize;
+    }
+    #m-birth {
+        position: absolute;
+        left: 30px;
+        border-radius: 5px;
+        width: 70%;
+        height: 30px;
+    }
+    #m-save {
+        position: relative;
+        left: 30px;
+        border-radius: 5px;
+        width: 40%;
+        height: 50px;
+        background-color: #5C9FAD;
+        color: white;
+    }
+    #m-main-pagesettings {
+        background-color: white;
+    }
+    #m-rnb {
+        background-image: url(imgs/rnb.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-punk {
+        background-image: url(imgs/punk.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-rock {
+        background-image: url(imgs/rock.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-pop {
+        background-image: url(imgs/pop.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-jazz {
+        background-image: url(imgs/jazz.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-metal {
+        background-image: url(imgs/metal.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-funk {
+        background-image: url(imgs/funk.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-edm {
+        background-image: url(imgs/edm.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-hiphop {
+        background-image: url(imgs/hiphop.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-country {
+        background-image: url(imgs/country.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #m-classical {
+        background-image: url(imgs/classical.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
