@@ -89,9 +89,11 @@ mysqli_close($conn);
         <h1 id="m-genresh">Moods</h1>
         <div class="row1">
             <div id="m-happy" class="mood-divs">
-				<a href="CategoryPicked.php">
+				<form action="CategoryPicked.php" method="get">
 					<p class="genre-tags">Happy</p>
-				</a>
+					<input type="hidden" name="mood" value="<?php echo $_GET['g_happy']?>"/>
+					<input type="submit" class="genre-tags" value="Happy"/>
+				</form>
             </div>
             <div id="m-sad" class="mood-divs">
 				<a href="CategoryPicked.php">
