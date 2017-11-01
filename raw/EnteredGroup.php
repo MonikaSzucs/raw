@@ -134,17 +134,19 @@ if(!isset($_GET['group_id'])){
 					?>
 				</div>
 				<div id="m-view-profile-div">
+					
 					<p id="name">Name</p>
 					<ul id="view-profile">
 						<li id="m-followers-list">
 						</li>
 					</ul>
-					<a href="MobileGroupsTab.php"><button id="CreateGroupProfile">Back</button></a>
-					
 					<form action="Add_Song_To_Group.php" method="get">
 						<input type="hidden" name="group_id" value="<?php echo $_GET['group_id']?>"/>
 						<input type="submit" value="Add Songs"/>
 					</form>
+					<a href="MobileGroupsTab.php"><button id="CreateGroupProfile">Back</button></a>
+					
+					
 				</div>
 			</div>
         </div>
@@ -162,9 +164,7 @@ if(!isset($_GET['group_id'])){
 				
 				
 				
-			<!--
-			
-					
+		
 					<div class="first-song">
 					<div class="songpic"></div>
 					<div class="song-buttons">
@@ -180,9 +180,7 @@ if(!isset($_GET['group_id'])){
 				</div>
 				<button id="DownloadButtonGroups">Download</button>
 				
-			-->
-			
-			
+		
 			
 			</div>
 		</div>

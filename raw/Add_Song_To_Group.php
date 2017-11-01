@@ -237,19 +237,21 @@ $formSuccessfullMessage = "";
         <div class="m-profile-box">
 			<div id="m-profile-inner">
 				<div class="m-profile-buttons">
-					<ul id="m-list-buttons">
-						<li>Sounds</li>
-						<li><a href="UserInfo.php">Info</a></li>
-						<li>Groups</li>
-					</ul>
+					
 				</div>
 				<div id="m-profile-pic-intro"></div>
+				
 				<div id="m-view-profile-div">
+					<form action="EnteredGroup.php" method="get">
+						<input type="hidden" name="group_id" value="<?php echo $_GET['group_id']?>"/>
+						<input type="submit" id="BackButtonCreation" value="Back"/>
+					</form>
 					<p id="name">Name</p>
 					<ul id="view-profile">
 						<li id="m-followers-list">
 						</li>
 					</ul>
+
 				</div>
 			</div>
         </div>
@@ -260,10 +262,6 @@ $formSuccessfullMessage = "";
         <div class="m-profile-main" id="CreateGroupsForm">
 			<div id="m-profile-main-inner">
 				<div class="spaceContainerTop"><h1>Add Songs/Samples</h1></div>
-				<form action="EnteredGroup.php" method="get">
-						<input type="hidden" name="group_id" value="<?php echo $_GET['group_id']?>"/>
-						<input type="submit" id="CreateGroupProfile" value="Back"/>
-					</form>
 				<div class="Profile-sub-container">
 					<div class="TopSpace-ProfileGroupSub"></div>
 					<div class="ProfileIconGroups" id="list"></div>
