@@ -57,7 +57,7 @@ if(!isset($_SESSION["user_id"]))
             </div>
 
             <ul class="nav-bar">
-                <a href="MobileExplorePage.php"><li>Explore</li></a>
+                <a href="Streaming.php"><li>Explore</li></a>
 				<a href="MobileGroupsTab.php"><li>Groups</li></a>
 				<a href="MobileIGenresTemplate.php"><li>Genres</li></a>
 				<a href="MobileMoodsTemplate.php"><li>Moods</li></a>

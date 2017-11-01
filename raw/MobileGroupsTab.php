@@ -27,16 +27,26 @@ if(!isset($_SESSION["user_id"]))
 	define('DB_DATABASE', 'raw');
 
 	$db = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
-
+	print_r($_POST);
 	if(isset($_POST['toDo'])){
-		print_r($_POST);
-
+		if($_POST['toDo']=="join"){
+			$query = "INSERT INTO group_users (group_id, user_id)";
+			$query .= " VALUES (" . $_POST['group_id'] . ", " . $_SESSION['user_id'] . ")";
+			
+			echo $query;
+			$result = mysqli_query($db, $query);
+			
+		} else if($_POST['toDo']=="leave"){
+			$query = "DELETE FROM group_users ";
+			$query .= " WHERE group_id = " . $_POST['group_id'] . " AND user_id = " . $_SESSION['user_id'];
+			
+			//DELETE FROM group_users WHERE `group_id` = 46 AND  `user_id` = 1
+			
+			echo $query;
+			$result = mysqli_query($db, $query) ;
+		}
 		
-		$query = "INSERT INTO group_users (group_id, user_id)";
-		$query .= " VALUES (" . $_POST['group_id'] . ", " . $_SESSION['user_id'] . ")";
 		
-		echo $query;
-		$result = mysqli_query($db, $query) or die('Error querying database.');
 
 	}
 
@@ -78,7 +88,7 @@ if(!isset($_SESSION["user_id"]))
             </div>
 
            <ul class="nav-bar">
-              <a href="MobileExplorePage.php"><li>Explore</li></a>
+              <a href="Streaming.php"><li>Explore</li></a>
                 <a href="MobileGroupsTab.php"><li>Groups</li></a>
                 <a href="MobileIGenresTemplate.php"><li>Genres</li></a>
                 <a href="MobileMoodsTemplate.php"><li>Moods</li></a>
@@ -189,9 +199,35 @@ while ($row = mysqli_fetch_array($result))
 			}
 			echo "</div>";
 		echo "<div class='vertical_space_group'>";
+			
 			echo"<div class='groups_title_generate'>" . $row['group_title'] . "</div>";
 			echo "<hr/>";
 			echo "<div class='groups_descrition_generate'>" . substr($row['group_description'],0,300) . "...</div>";
+			
+			if(in_array($row['group_id'], $group_users))
+			{
+				//echo "already Joined";
+				// DELETE FROM `group_users` WHERE `group_users`.`group_id` = 46 AND `group_users`.`user_id` = 1
+				echo "<form action='' method='POST'>";
+					echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+					echo "<input type='hidden' name='toDo' value='leave'>";
+					echo "<input type='submit' value='Leave'>";
+				echo "</form>";
+			}
+			else{
+				echo "<form action='' method='POST'>";
+					echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+					echo "<input type='hidden' name='toDo' value='join'>";
+					echo "<input type='submit' value='join'>";
+				echo "</form>";
+			}
+			
+			if(in_array($row['group_id'], $group_users)){
+				echo "<form action ='EnteredGroup.php' method='GET'>";
+					echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+					echo "<input type='submit' value='Enter'>";
+				echo "</form>";
+			}
 		echo "</div>";
 	echo "</div>";
 	
