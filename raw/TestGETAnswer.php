@@ -1,4 +1,4 @@
 <?php
-echo $_GET['food']
-
+echo $_GET['food'];
+echo "hi";
 ?>
