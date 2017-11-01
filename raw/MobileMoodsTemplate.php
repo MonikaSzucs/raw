@@ -89,34 +89,40 @@ mysqli_close($conn);
         <h1 id="m-genresh">Moods</h1>
         <div class="row1">
             <div id="m-happy" class="mood-divs">
-                <p class="genre-tags">Happy
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Happy</p>
+				</a>
             </div>
             <div id="m-sad" class="mood-divs">
-            <p class="genre-tags">Sad
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Sad</p>
+				</a>
             </div>
         </div>
 
         <div class="row2">
             <div id="m-angry" class="mood-divs">
-            <p class="genre-tags">Angry
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Angry</p>
+				</a>
             </div>
             <div id="m-chill" class="mood-divs">
-            <p class="genre-tags">Chill
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Chill</p>
+				</a>
             </div>
         </div>
 
         <div class="row3">
             <div id="m-focus" class="mood-divs">
-            <p class="genre-tags">Focus
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Focus</p>
+				</a>
             </div>
             <div id="m-workout" class="mood-divs">
-            <p class="genre-tags">Work Out
-                </p>
+				<a href="CategoryPicked.php">
+					<p class="genre-tags">Work Out</p>
+				</a>
             </div>
         </div>
 
