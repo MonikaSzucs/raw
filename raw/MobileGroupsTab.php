@@ -199,7 +199,7 @@ while ($row = mysqli_fetch_array($result))
 	echo "</div>";
 	*/
 	
-	echo "<div style='height: 30px; width: 960px;'></div>";
+	echo "<div style='height: 30px; width: 100%;'></div>";
 	echo "<div class='group_container_create'>";
 		echo "<div class='group_photo_Area'>";
 			if(empty($row['group_photo'] )){
