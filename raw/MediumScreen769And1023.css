@@ -159,6 +159,56 @@ hambuger menu
     .nav-bar a {
         color: white;
     }
+    
+    
+    	.group_container{
+		width: 90%;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
+
+    
+    .group_container_create {
+			width: 950px; 
+			height: 150px; 
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
+    
+    	.group_photo_Area {
+			width: 150px;
+			height: 150px;
+			float: left;
+			border-radius: 100%;
+			box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+		}
+    
+    	.circlePhoto_group_Auto {
+			width: 130px;
+			height: 130px;
+			margin-top: 10px;
+			margin-left: 10px;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			-ms-border-radius: 50%;
+			-o-border-radius: 50%;
+			border-radius: 50%; 
+		}
+    	.groups_title_generate{
+			width: 85%;
+			height: 30px;
+			margin-left: 15px;
+			margin-top: 5px;
+			line-height: 30px;
+			background-color:red;
+		}
+    
+    	.spaceContainerTop p{
+		font-size:30px;
+		padding-left: 50px;
+	}
 
     .toggle-logo {
         position: fixed;
