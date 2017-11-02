@@ -213,7 +213,7 @@ hambuger menu
 			margin-left: 15px;
 			margin-top: 5px;
 			line-height: 30px;
-			background-color:red;
+			
 		}
     
     	.spaceContainerTop p{
@@ -1038,6 +1038,17 @@ hambuger menu
 		height: 150px;
 	}
 
+    
+    	.vertical_space_group {
+			width: 550px;
+			height: 115px;
+			margin-top: 10px;
+			margin-right: 50px;
+			float: right;
+			border-radius: 15px;
+			box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+		}
+    
 	.GroupsInformation-Title{
 		width: 100%;
 		height: 40%;
