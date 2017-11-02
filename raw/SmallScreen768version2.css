@@ -295,7 +295,7 @@
     }
     .main-page {
         margin: 0 auto;
-        position: absolute;
+        position: relative;
         left: 0;
         right: 0;
         background-color: #E5E5E5;
@@ -463,8 +463,11 @@
         top: 30px;
     }
     #m-genresh {
-        font-family: Helvetica;
+      font-family: Avenir-Black;
         text-align: center;
+        position: relative;
+        margin: 0 auto;
+        padding: 20px; 
     }
     #m-message-button {
         margin: 0 auto;
