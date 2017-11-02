@@ -196,6 +196,17 @@ hambuger menu
 			-o-border-radius: 50%;
 			border-radius: 50%; 
 		}
+    
+    	.circlePhotoUploaded{
+		width:100%;
+		height:100%;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		-ms-border-radius: 50%;
+		-o-border-radius: 50%;
+		border-radius: 50%;'
+	}
+    
     	.groups_title_generate{
 			width: 85%;
 			height: 30px;
@@ -612,7 +623,6 @@ hambuger menu
         height: 100vh;
         background-color: white;
         position: absolute;
-        top: 220px;
     }
 
 	#m-profile-main-inner{
@@ -953,6 +963,23 @@ hambuger menu
 		margin: 0 auto;
 		position: absolute;
 	}
+    
+    .LeaveButtonGroups{
+			float: right;
+			top: -120px;
+			right: 30px;
+			position: relative;
+			
+		}
+    
+    	.EnterButtonGroups{
+			float: right;
+			top: -60px;
+			position: relative;
+			right: -20px;
+		}
+		
+    
 
 	.spaceContainerTop{
 		width: 100%;
