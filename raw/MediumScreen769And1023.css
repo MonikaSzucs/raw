@@ -451,11 +451,8 @@ hambuger menu
         top: 30px;
     }
     #m-genresh {
-        font-family: Avenir-Black;
+        font-family: Helvetica;
         text-align: center;
-        position: relative;
-        margin: 0 auto;
-        padding: 20px; 
     }
     #m-message-button {
         margin: 0 auto;
