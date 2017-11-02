@@ -82,17 +82,17 @@ hambuger menu
 
     .genre-tags {
         font-family: Avenir-Medium;
-        font-size: 14px;
+        font-size: 20px;
         margin: 0 auto;
         bottom: 0;
         text-align: center;
         left: 0;
         top: 0;
-        width: 180px;
-        height: 120px;
+        width: 280px;
+        height: 160px;
         position: absolute;
         color: white;
-        line-height: 180px;
+        line-height: 280px;
     }
     .m-player {
         vertical-align: middle;
@@ -404,8 +404,8 @@ hambuger menu
     }
     .mood-divs {
         margin: 10px;
-        width: 180px;
-        height: 120px;
+        width: 280px;
+        height: 160px;
         position: relative;
     }
     .m-profile-box {
@@ -441,7 +441,7 @@ hambuger menu
     
     #mpcat {
         background-color: white;
-        height: 100%;
+        height: auto;
     }
   
     

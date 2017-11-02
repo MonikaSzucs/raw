@@ -286,6 +286,13 @@
         position: relative;
         display: inline-block;
     }
+    
+    
+       #mpcat{
+        background-color: white;
+        height: auto;
+    }
+    
     .m-player {
         vertical-align: middle;
         display: inline-block;

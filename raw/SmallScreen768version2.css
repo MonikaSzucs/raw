@@ -418,6 +418,13 @@
         position: relative;
         display: inline-block;
     }
+    
+       #mpcat{
+        background-color: white;
+        height: auto;
+    }
+    
+    
     .m-profile-box {
         width: 100vw;
         height: 200px;
