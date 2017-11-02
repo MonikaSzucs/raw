@@ -1154,7 +1154,7 @@ hambuger menu
 	}
 	
 	.group_container_create {
-			width: 950px; 
+			width: 100%; 
 			height: 150px; 
 			left: 0;
 			right: 0;
@@ -1181,7 +1181,7 @@ hambuger menu
 			border-radius: 50%; 
 		}
 		.vertical_space_group {
-			width: 770px;
+			width: 670px;
 			height: 115px;
 			margin-top: 20px;
 			margin-right: 10px;
