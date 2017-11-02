@@ -375,7 +375,11 @@
         top: 30px;
     }
     #m-genresh {
+      font-family: Avenir-Black;
         text-align: center;
+        position: relative;
+        margin: 0 auto;
+        padding: 20px; 
     }
     #m-message-button {
         position: relative;
