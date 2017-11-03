@@ -467,6 +467,13 @@
         position: absolute;
         top: 220px;
     }
+    
+      .m-groupdiv-main {
+        width: 100%;
+        height: auto;
+        background-color: white;
+        position: absolute;
+    }
     #lname {
         color: gray;
         font-size: 12px;

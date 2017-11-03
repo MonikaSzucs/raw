@@ -567,6 +567,13 @@ hambuger menu
         text-decoration: underline;
     }
     .m-profile-main {
+         width: 100vw;
+        height: 100vh;
+        background-color: white;
+        position: absolute;
+        top: 220px;
+    }
+    .m-groupdiv-main {
         width: 100%;
         height: auto;
         background-color: white;

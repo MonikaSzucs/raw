@@ -135,7 +135,7 @@ if(!isset($_SESSION["user_id"]))
                 </li></a>               
             </ul>
         </div>
-        <div class="m-profile-main">
+        <div class="m-groupdiv-main">
 			<div class="spaceContainerTop"><p>Groups</p></div>
 			
 			<a href="MobileGroupsTabCreate.php"><button id="CreateGroupProfile">Create Group</button></a>
