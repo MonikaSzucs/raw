@@ -225,7 +225,7 @@ while ($row = mysqli_fetch_array($result))
 					echo "<form action='' method='POST'>";
 						echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
 						echo "<input type='hidden' name='toDo' value='leave'>";
-						echo "<input type='submit' value='Leave'>";
+						echo "<input class='Leave-Butt' type='submit' value='Leave'>";
 					echo "</form>";
 				
 				}
@@ -243,7 +243,7 @@ while ($row = mysqli_fetch_array($result))
 				if(in_array($row['group_id'], $group_users)){
 					echo "<form action ='EnteredGroup.php' method='GET'>";
 						echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
-						echo "<input type='submit' value='Enter'>";
+						echo "<input class='Enter-Butt' type='submit' value='Enter'>";
 					echo "</form>";
 				}
 			echo "</div>";
