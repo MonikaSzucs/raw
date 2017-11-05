@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2017 at 08:39 AM
+-- Generation Time: Nov 05, 2017 at 10:32 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -43,7 +43,8 @@ CREATE TABLE `groups` (
 INSERT INTO `groups` (`group_id`, `group_title`, `group_description`, `group_photo`, `created`) VALUES
 (44, 'The fox jumped over the fence', 'the brown fox jumped over the fence', 'UserPictures/1509162096setC.png', '2017-10-27 20:41:36'),
 (46, 'The brown fox jumped over the fence with a great l', 'The brown fox jumped over the fence with a great leap. The brown fox jumped over the fence with a great leap. The brown fox jumped over the fence with a great leap. The brown fox jumped over the fence with a great leap. The brown fox jumped over the fence with a great leap. The brown fox jumped over the fence with a great leap. The brown fox jumped over the fence with a great leap. ', '', '2017-10-27 20:43:33'),
-(48, 'testinggggg here is is a new one', 'test egsegdsg', 'UserPictures/1509206146dsfdsgdfgfdg.png', '2017-10-28 08:55:46');
+(48, 'testinggggg here is is a new one', 'test egsegdsg', 'UserPictures/1509206146dsfdsgdfgfdg.png', '2017-10-28 08:55:46'),
+(49, '2324', '324', 'UserPictures/1509628886rawwww.png', '2017-11-02 06:21:26');
 
 -- --------------------------------------------------------
 
@@ -63,7 +64,8 @@ CREATE TABLE `group_users` (
 INSERT INTO `group_users` (`group_id`, `user_id`) VALUES
 (44, 1),
 (46, 1),
-(48, 1);
+(48, 1),
+(49, 1);
 
 -- --------------------------------------------------------
 
@@ -113,7 +115,8 @@ CREATE TABLE `music_group` (
 INSERT INTO `music_group` (`group_id`, `music_id`, `music_file`, `music`, `music_uploaded`, `music_title`, `music_photo`, `g_rock`, `g_rnb`, `g_pop`, `g_punk`, `g_jazz`, `g_metal`, `g_funk`, `g_country`, `g_edm`, `g_classical`, `g_happy`, `g_sad`, `g_angry`, `g_chill`, `g_focus`, `g_workout`, `g_travel`, `g_guitar`, `g_bass`, `g_synth`, `g_pads`, `g_woodwind`, `g_drums`, `g_strings`, `g_brass`) VALUES
 (48, 23, 'UsersSongs/1509206146ChaCha_Fontanttez.mp3', 1, '2017-10-28 08:55:46', '', '', 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0),
 (44, 25, 'UsersSongs/1509509160ChaCha_Fontanttez.mp3', 1, '2017-10-31 21:06:00', 'sdgfdgdf', 'UserPictures/1509509160meeting.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
-(48, 26, 'UsersSongs/1509519096censor-erebess3333s22222ep-01.mp3', 1, '2017-10-31 23:51:36', 'retretertret', 'UserPictures/1509519096q2.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
+(48, 26, 'UsersSongs/1509519096censor-erebess3333s22222ep-01.mp3', 1, '2017-10-31 23:51:36', 'retretertret', 'UserPictures/1509519096q2.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(49, 27, 'UsersSongs/1509628886Maid with the Flaxen Hair.mp3', 1, '2017-11-02 06:21:26', '', '', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -147,6 +150,46 @@ INSERT INTO `user` (`user_id`, `first_name`, `username`, `password`, `email`) VA
 (28, 'sfgdgfd', 'fdgdfg', '111', 'fdgfdg@hotmail.ca'),
 (29, 'Monika', 'Szucs', 'sept29', '2145@hotmail.ca'),
 (30, 'Monika', 'MonikaSzucs', 'Super101', 'monika.silvia.s@hotmail.ca');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_songs`
+--
+
+CREATE TABLE `user_songs` (
+  `song_id` int(100) NOT NULL,
+  `song_title` varchar(50) NOT NULL,
+  `music_file` varchar(150) NOT NULL,
+  `music` tinyint(1) NOT NULL,
+  `music_uploaded` datetime NOT NULL,
+  `music_photo` varchar(250) NOT NULL,
+  `g_rock` tinyint(1) NOT NULL,
+  `g_rnb` tinyint(1) NOT NULL,
+  `g_pop` tinyint(1) NOT NULL,
+  `g_punk` tinyint(1) NOT NULL,
+  `g_jazz` tinyint(1) NOT NULL,
+  `g_metal` tinyint(1) NOT NULL,
+  `g_funk` tinyint(1) NOT NULL,
+  `g_country` tinyint(1) NOT NULL,
+  `g_edm` tinyint(1) NOT NULL,
+  `g_classical` tinyint(1) NOT NULL,
+  `g_happy` tinyint(1) NOT NULL,
+  `g_sad` tinyint(1) NOT NULL,
+  `g_angry` tinyint(1) NOT NULL,
+  `g_chill` tinyint(1) NOT NULL,
+  `g_focus` tinyint(1) NOT NULL,
+  `g_workout` tinyint(1) NOT NULL,
+  `g_travel` tinyint(1) NOT NULL,
+  `g_guitar` tinyint(1) NOT NULL,
+  `g_bass` tinyint(1) NOT NULL,
+  `g_synth` tinyint(1) NOT NULL,
+  `g_pads` tinyint(1) NOT NULL,
+  `g_woodwind` tinyint(1) NOT NULL,
+  `g_drums` tinyint(1) NOT NULL,
+  `g_strings` tinyint(1) NOT NULL,
+  `g_brass` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Indexes for dumped tables
@@ -190,12 +233,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 --
 -- AUTO_INCREMENT for table `music_group`
 --
 ALTER TABLE `music_group`
-  MODIFY `music_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `music_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `user`
 --

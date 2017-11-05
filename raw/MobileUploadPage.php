@@ -17,7 +17,7 @@ print_r($_FILES);
 //the ifseet means this will only work when you click form submit 
 if( isset($_FILES["myImage"]["name"]) && !empty($_FILES["myImage"]["name"])) {
 	echo "1<br//>";
-	$target_file_photo .= "UserPictures/".time().basename($_FILES["myImage"]["name"]);
+	$target_file_photo .= "GlobalPictures/".time().basename($_FILES["myImage"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = pathinfo($target_file_photo,PATHINFO_EXTENSION);
     $check = getimagesize($_FILES["myImage"]["tmp_name"]);
@@ -61,7 +61,7 @@ if( isset($_FILES["myImage"]["name"]) && !empty($_FILES["myImage"]["name"])) {
 //music files
 if( isset($_FILES["myMusic"]["name"]) && !empty($_FILES["myMusic"]["name"])) {
 	echo "1<br//>";
-	$target_file_music .= "UsersSongs/". time().basename($_FILES["myMusic"]["name"]);
+	$target_file_music .= "GlobalSongs/". time().basename($_FILES["myMusic"]["name"]);
 	$uploadOk = 1;
 	$valid_extension = array('.mp3', '.mp4', '.wav');
 	$file_extension = strtolower( strrchr( $_FILES["myMusic"]["name"], "." ) );
@@ -145,8 +145,8 @@ $formSuccessfullMessage = "";
 			//step 2 to make the SQL query
 			$TitleSongSample = $_POST["TitleSongSample"]; 
 		
-			$query = "INSERT INTO music_group(group_id, music_file, music, music_title, music_photo, g_rnb, g_rock, g_pop, g_punk, g_jazz, g_metal, g_funk, g_country, g_edm, g_classical, g_happy, g_sad, g_angry, g_chill, g_focus, g_workout, g_travel, g_guitar, g_bass, g_synth, g_pads, g_woodwind, g_drums, g_strings, g_brass) ";
-			$query .= "VALUES ( '" . $_GET['group_id'] . "', '" .  $target_file_music . "', '" . $_POST['music_check']. "', '" . $TitleSongSample . "', '" . $target_file_photo . "', '" . $g_rnb."' , '".$g_rock."', '".$g_pop."', '".$g_punk."', '".$g_jazz."', '".$g_metal."', '".$g_funk."', '".$g_country."', '".$g_edm."', '".$g_classical."', '".$g_happy."', '".$g_sad."', '".$g_angry."', '".$g_chill."', '".$g_focus."', '".$g_workout."', '".$g_travel."', '".$g_guitar."', '".$g_bass."', '".$g_synth."', '".$g_pads."', '".$g_woodwind."', '".$g_drums."', '".$g_strings."', '".$g_brass."') ";
+			$query = "INSERT INTO user_songs(user_id, song_title, music_file, music, music_uploaded, music_photo, g_rnb, g_rock, g_pop, g_punk, g_jazz, g_metal, g_funk, g_country, g_edm, g_classical, g_happy, g_sad, g_angry, g_chill, g_focus, g_workout, g_travel, g_guitar, g_bass, g_synth, g_pads, g_woodwind, g_drums, g_strings, g_brass) ";
+			$query .= "VALUES ( '" . $_GET['user_id'] . "', '" .    $TitleSongSample . "', '" . $target_file_music . "', '" . $_POST['music_check']. "', '" . $TitleSongSample . "', '" . $target_file_photo . "', '" . $g_rnb."' , '".$g_rock."', '".$g_pop."', '".$g_punk."', '".$g_jazz."', '".$g_metal."', '".$g_funk."', '".$g_country."', '".$g_edm."', '".$g_classical."', '".$g_happy."', '".$g_sad."', '".$g_angry."', '".$g_chill."', '".$g_focus."', '".$g_workout."', '".$g_travel."', '".$g_guitar."', '".$g_bass."', '".$g_synth."', '".$g_pads."', '".$g_woodwind."', '".$g_drums."', '".$g_strings."', '".$g_brass."') ";
 			
 			echo $query;
 			//step 3
@@ -243,11 +243,9 @@ $formSuccessfullMessage = "";
 				
 				<div id="m-view-profile-div">
 					<form action="EnteredGroup.php" method="get">
-						<input type="hidden" name="group_id" value="<?php echo $_GET['group_id']?>"/>
+						<input type="hidden" name="user_id" value="<?php echo $_GET['user_id']?>"/>
 						<input type="submit" id="BackButtonCreation" value="Back"/>
 					</form>
-				<p style="color:red; font-weight: bold; font-size: 30px;">Do not test this page!!!!!!!!!! it need to make sure its connected ot that database properly and not added to a group but just attached to the users id </p>
-						only stylize if necessary but then make sure the other page at Add_Song_To_Group.php is the same style.
 				</div>
 			</div>
         </div>
