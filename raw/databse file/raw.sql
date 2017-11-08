@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2017 at 10:32 PM
+-- Generation Time: Nov 08, 2017 at 09:59 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -81,6 +81,7 @@ CREATE TABLE `music_group` (
   `music_uploaded` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `music_title` varchar(50) NOT NULL,
   `music_photo` varchar(250) NOT NULL,
+  `private` tinyint(1) NOT NULL,
   `g_rock` tinyint(1) NOT NULL,
   `g_rnb` tinyint(1) NOT NULL,
   `g_pop` tinyint(1) NOT NULL,
@@ -112,11 +113,63 @@ CREATE TABLE `music_group` (
 -- Dumping data for table `music_group`
 --
 
-INSERT INTO `music_group` (`group_id`, `music_id`, `music_file`, `music`, `music_uploaded`, `music_title`, `music_photo`, `g_rock`, `g_rnb`, `g_pop`, `g_punk`, `g_jazz`, `g_metal`, `g_funk`, `g_country`, `g_edm`, `g_classical`, `g_happy`, `g_sad`, `g_angry`, `g_chill`, `g_focus`, `g_workout`, `g_travel`, `g_guitar`, `g_bass`, `g_synth`, `g_pads`, `g_woodwind`, `g_drums`, `g_strings`, `g_brass`) VALUES
-(48, 23, 'UsersSongs/1509206146ChaCha_Fontanttez.mp3', 1, '2017-10-28 08:55:46', '', '', 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0),
-(44, 25, 'UsersSongs/1509509160ChaCha_Fontanttez.mp3', 1, '2017-10-31 21:06:00', 'sdgfdgdf', 'UserPictures/1509509160meeting.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
-(48, 26, 'UsersSongs/1509519096censor-erebess3333s22222ep-01.mp3', 1, '2017-10-31 23:51:36', 'retretertret', 'UserPictures/1509519096q2.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
-(49, 27, 'UsersSongs/1509628886Maid with the Flaxen Hair.mp3', 1, '2017-11-02 06:21:26', '', '', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO `music_group` (`group_id`, `music_id`, `music_file`, `music`, `music_uploaded`, `music_title`, `music_photo`, `private`, `g_rock`, `g_rnb`, `g_pop`, `g_punk`, `g_jazz`, `g_metal`, `g_funk`, `g_country`, `g_edm`, `g_classical`, `g_happy`, `g_sad`, `g_angry`, `g_chill`, `g_focus`, `g_workout`, `g_travel`, `g_guitar`, `g_bass`, `g_synth`, `g_pads`, `g_woodwind`, `g_drums`, `g_strings`, `g_brass`) VALUES
+(48, 23, 'UsersSongs/1509206146ChaCha_Fontanttez.mp3', 1, '2017-10-28 08:55:46', '', '', 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0),
+(44, 25, 'UsersSongs/1509509160ChaCha_Fontanttez.mp3', 1, '2017-10-31 21:06:00', 'sdgfdgdf', 'UserPictures/1509509160meeting.png', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(48, 26, 'UsersSongs/1509519096censor-erebess3333s22222ep-01.mp3', 1, '2017-10-31 23:51:36', 'retretertret', 'UserPictures/1509519096q2.png', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(49, 27, 'UsersSongs/1509628886Maid with the Flaxen Hair.mp3', 1, '2017-11-02 06:21:26', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(44, 28, 'UsersSongs/1510113696censor-erebess3333s22222ep-01.mp3', 1, '2017-11-07 20:01:36', 'testtt', 'UserPictures/1510113696initial.png', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(44, 29, 'UsersSongs/1510117191Pachabel333ly.mp3', 1, '2017-11-07 20:59:51', 'song3', 'UserPictures/1510117191Untitledsfsdfd.png', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `music_public`
+--
+
+CREATE TABLE `music_public` (
+  `music_public_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `song_title` varchar(50) NOT NULL,
+  `music_file` varchar(150) NOT NULL,
+  `music` tinyint(1) NOT NULL,
+  `music_uploaded` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `music_photo` varchar(250) NOT NULL,
+  `g_rock` tinyint(1) NOT NULL,
+  `g_rnb` tinyint(1) NOT NULL,
+  `g_pop` tinyint(1) NOT NULL,
+  `g_punk` tinyint(1) NOT NULL,
+  `g_jazz` tinyint(1) NOT NULL,
+  `g_metal` tinyint(1) NOT NULL,
+  `g_funk` tinyint(1) NOT NULL,
+  `g_country` tinyint(1) NOT NULL,
+  `g_edm` tinyint(1) NOT NULL,
+  `g_classical` tinyint(1) NOT NULL,
+  `g_happy` tinyint(1) NOT NULL,
+  `g_sad` tinyint(1) NOT NULL,
+  `g_angry` tinyint(1) NOT NULL,
+  `g_chill` tinyint(1) NOT NULL,
+  `g_focus` tinyint(1) NOT NULL,
+  `g_workout` tinyint(1) NOT NULL,
+  `g_travel` tinyint(1) NOT NULL,
+  `g_guitar` tinyint(1) NOT NULL,
+  `g_bass` tinyint(1) NOT NULL,
+  `g_synth` tinyint(1) NOT NULL,
+  `g_pads` tinyint(1) NOT NULL,
+  `g_woodwind` tinyint(1) NOT NULL,
+  `g_drums` tinyint(1) NOT NULL,
+  `g_strings` tinyint(1) NOT NULL,
+  `g_brass` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `music_public`
+--
+
+INSERT INTO `music_public` (`music_public_id`, `user_id`, `song_title`, `music_file`, `music`, `music_uploaded`, `music_photo`, `g_rock`, `g_rnb`, `g_pop`, `g_punk`, `g_jazz`, `g_metal`, `g_funk`, `g_country`, `g_edm`, `g_classical`, `g_happy`, `g_sad`, `g_angry`, `g_chill`, `g_focus`, `g_workout`, `g_travel`, `g_guitar`, `g_bass`, `g_synth`, `g_pads`, `g_woodwind`, `g_drums`, `g_strings`, `g_brass`) VALUES
+(1, 1, 'gggggggggggggggggg', 'ggggdddddddddddddddddddd', 1, '0000-00-00 00:00:00', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(2, 1, 'song1', 'GlobalSongs/1510120550censor-erebess3333s22222ep-01.mp3', 1, '0000-00-00 00:00:00', 'GlobalPictures/1510120550rawwww.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(3, 1, 'song1', 'GlobalSongs/1510120669censor-erebess3333s22222ep-01.mp3', 1, '2017-11-07 21:57:49', 'GlobalPictures/1510120669rawwww.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -151,46 +204,6 @@ INSERT INTO `user` (`user_id`, `first_name`, `username`, `password`, `email`) VA
 (29, 'Monika', 'Szucs', 'sept29', '2145@hotmail.ca'),
 (30, 'Monika', 'MonikaSzucs', 'Super101', 'monika.silvia.s@hotmail.ca');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `user_songs`
---
-
-CREATE TABLE `user_songs` (
-  `song_id` int(100) NOT NULL,
-  `song_title` varchar(50) NOT NULL,
-  `music_file` varchar(150) NOT NULL,
-  `music` tinyint(1) NOT NULL,
-  `music_uploaded` datetime NOT NULL,
-  `music_photo` varchar(250) NOT NULL,
-  `g_rock` tinyint(1) NOT NULL,
-  `g_rnb` tinyint(1) NOT NULL,
-  `g_pop` tinyint(1) NOT NULL,
-  `g_punk` tinyint(1) NOT NULL,
-  `g_jazz` tinyint(1) NOT NULL,
-  `g_metal` tinyint(1) NOT NULL,
-  `g_funk` tinyint(1) NOT NULL,
-  `g_country` tinyint(1) NOT NULL,
-  `g_edm` tinyint(1) NOT NULL,
-  `g_classical` tinyint(1) NOT NULL,
-  `g_happy` tinyint(1) NOT NULL,
-  `g_sad` tinyint(1) NOT NULL,
-  `g_angry` tinyint(1) NOT NULL,
-  `g_chill` tinyint(1) NOT NULL,
-  `g_focus` tinyint(1) NOT NULL,
-  `g_workout` tinyint(1) NOT NULL,
-  `g_travel` tinyint(1) NOT NULL,
-  `g_guitar` tinyint(1) NOT NULL,
-  `g_bass` tinyint(1) NOT NULL,
-  `g_synth` tinyint(1) NOT NULL,
-  `g_pads` tinyint(1) NOT NULL,
-  `g_woodwind` tinyint(1) NOT NULL,
-  `g_drums` tinyint(1) NOT NULL,
-  `g_strings` tinyint(1) NOT NULL,
-  `g_brass` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 --
 -- Indexes for dumped tables
 --
@@ -218,6 +231,14 @@ ALTER TABLE `music_group`
   ADD KEY `group_id` (`group_id`);
 
 --
+-- Indexes for table `music_public`
+--
+ALTER TABLE `music_public`
+  ADD PRIMARY KEY (`music_public_id`),
+  ADD UNIQUE KEY `music_public_id` (`music_public_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -238,7 +259,12 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `music_group`
 --
 ALTER TABLE `music_group`
-  MODIFY `music_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `music_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+--
+-- AUTO_INCREMENT for table `music_public`
+--
+ALTER TABLE `music_public`
+  MODIFY `music_public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `user`
 --
@@ -260,6 +286,12 @@ ALTER TABLE `group_users`
 --
 ALTER TABLE `music_group`
   ADD CONSTRAINT `music_group_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`group_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `music_public`
+--
+ALTER TABLE `music_public`
+  ADD CONSTRAINT `music_public_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
