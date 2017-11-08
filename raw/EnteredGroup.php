@@ -45,6 +45,7 @@ if(!isset($_GET['group_id'])){
     <link rel="stylesheet" href="SmallScreen768version2device.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
 </head>
 
 <body>
@@ -135,10 +136,17 @@ if(!isset($_GET['group_id'])){
 				</div>
 				<div id="m-view-profile-div">
 					
-					<p id="name">Name</p>
+					<p id="name">
+						<?php
+							echo $row['group_title'];
+						?>
+					</p>
+					<p id="name">
+						<?php
+							echo $row['group_description'];
+						?>
+					</p>
 					<ul id="view-profile">
-						<li id="m-followers-list">
-						</li>
 					</ul>
 					<form action="Add_Song_To_Group.php" method="get">
 						<input type="hidden" name="group_id" value="<?php echo $_GET['group_id']?>"/>
@@ -164,26 +172,66 @@ if(!isset($_GET['group_id'])){
 				
 				
 				
-		
-					<div class="first-song">
-					<div class="songpic"></div>
-					<div class="song-buttons">
-						 <ul>
-						<li>Like</li>
-						<li>Share</li>
-						</ul>
-					<p id="FeedArtistsName">Name</p>
-					<p id="FeedSongName">Track Name</p>
+				<?php
+					if(isset($_GET['group_id'])){
+						
+						$query = "SELECT * FROM music_group WHERE group_id = " . $_GET['group_id'];
+						//echo $query;
+						
+						
+						$result = mysqli_query($db, $query) or die('Error querying database.');
+						
+						$i=1;
+						while ($row = mysqli_fetch_array($result)){
+							
+							echo "<div class='music_player'>";
+							echo $row['music_file'] . "<br/>";
+							
+							echo "<div class='first-song'>";
+							echo "<div class='songpic'></div>";
+							echo "<div class='song-buttons'>";
+							echo "<ul>";
+							echo "<li>Like</li>";
+							echo "<li>Share</li>";
+							echo "</ul>";
+							echo "<p id='FeedArtistsName'>Name</p>";
+							echo "<p id='FeedSongName'>Track Name</p>";
+							echo "</div>";
+							echo "<div class='track-display'>" . $row['music_file'] . "</div>";
+							echo "<div id='waveform".$i."' class='wave'></div>";
+								echo "<div style='text-align: center'>";
+								  echo "<button class='btn btn-primary' onclick='wavesurfer".$i.".playPause()'>";
+									echo "<i class='glyphicon glyphicon-play'></i>";
+									echo "Play/Pause";
+								  echo "</button>";
+								echo "</div>";
+							echo "</div>";
+							echo "<button id='DownloadButtonGroups'>Download</button>";
+							echo "<script>";
+							echo "var wavesurfer".$i." = WaveSurfer.create({";
+									echo "container: '#waveform".$i."',";
+									echo "waveColor: 'blue',";
+									echo "progressColor: 'purple'";
+							echo "});";
+							echo "wavesurfer".$i.".load('". $row['music_file'] ."');";
+							echo "</script>";
+							$i++;
+							echo "<br/><br/><br/><br/><br/><br/><br/>";
+							echo "</div>";
+						}
+						
+						////print_r($row)
+					} else{
 					
-					</div>
-					<div class="track-display"></div>
-				</div>
-				<button id="DownloadButtonGroups">Download</button>
+						echo "error no group is selected";
+					}
 				
-		
+				?>
+				
+				
+			<div>
 			
 			</div>
-		</div>
 	
 		
 		
@@ -198,7 +246,7 @@ if(!isset($_GET['group_id'])){
 
     <script src="cmenuscript.js"></script>
 	<script src="UploadPhotos.js"></script>
-
+	
 
 
 </body>

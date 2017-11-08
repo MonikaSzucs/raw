@@ -21,6 +21,19 @@
     .mobileScreen {
         display: block;
     }
+	
+	.LargeScreenGroup {
+		display: none;
+	}
+	
+	.MediumScreenGroup{
+		display: none;
+	}
+	
+	.SmallScreenGroup{
+		display: block;
+	}
+	
     body {
         background-color: darkgrey;
         margin: 0 auto;
@@ -901,4 +914,14 @@
         background-size: contain;
         background-repeat: no-repeat;
     }
+	
+/*
+Groups small style
+*/
+
+	.s_group_container_create{
+		
+	}
+	
+	
 }

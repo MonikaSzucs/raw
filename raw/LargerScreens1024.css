@@ -21,6 +21,19 @@
     .mobileScreen {
         display: block;
     }
+	
+	.LargeScreenGroup {
+		display: block;
+	}
+	
+	.MediumScreenGroup{
+		display: none;
+	}
+	
+	.SmallScreenGroup{
+		display: none;
+	}
+	
     body {
         background-color: darkgrey;
         margin: 0 auto;
@@ -1172,7 +1185,7 @@ hambuger menu
 			height: 150px;
 			left: 0;
 			right: 0;
-			margin: 25px;
+			margin: 10px 25px 10px 50px;
 		}
 
 		.group_photo_Area {
@@ -1195,7 +1208,7 @@ hambuger menu
 			border-radius: 50%;
 		}
 		.vertical_space_group {
-			width: 550px;
+			width: 70%;
 			height: 115px;
 			margin-top: 10px;
 			margin-left: 190px;
@@ -1444,5 +1457,54 @@ hambuger menu
 		font-size: large;
 		font-family: Avenir-Medium;
 	}
-
+	
+	.Leave-Butt{
+		border: 1px solid darkgray;
+		padding: 10px;
+		border-radius: 20px;
+		margin-top: 20px;
+		background-color: white;
+		width: 75px;
+	}
+	
+	.Enter-Butt{
+		border: 1px solid darkgray;
+		padding: 10px;
+		border-radius: 20px;
+		margin-top: 20px;
+		margin-right: -25px;
+		background-color: white;
+		width: 75px;
+	}
+	
+	.join-Butt{
+		border: 1px solid darkgray;
+		padding: 10px;
+		border-radius: 20px;
+		margin-top: 20px;
+		margin-right: -6px;
+		background-color: white;
+		width: 75px;
+	}
+	
+	
+	/* Music player and wave*/
+	
+	.music_player {
+		height: 350px;
+		display: block;
+		width: 100%;
+		clear: both;
+		margin: 20px 10px;
+		float: left;
+	}
+	
+	.wave {
+		height: 200px;
+		display: block;
+		width: 100%;
+		clear: both;
+		margin: 20px 10px;
+		float: left;
+	}
 }

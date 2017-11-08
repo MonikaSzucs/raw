@@ -135,7 +135,7 @@ if(!isset($_SESSION["user_id"]))
                 </li></a>               
             </ul>
         </div>
-        <div class="m-groupdiv-main">
+        <div class="M-groupdiv-main">
 			<div class="spaceContainerTop"><p>Groups</p></div>
 			
 			<a href="MobileGroupsTabCreate.php"><button id="CreateGroupProfile">Create Group</button></a>
@@ -200,56 +200,183 @@ while ($row = mysqli_fetch_array($result))
 	*/
 	
 	echo "<div style='height: 30px; width: 100%;'></div>";
-	echo "<div class='group_container_create'>";
-		echo "<div class='group_photo_Area'>";
-			if(empty($row['group_photo'] )){
-				echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
-			}
-			else{
-				echo "<td> <img src='" . $row['group_photo'] . "' class='circlePhotoUploaded' > </td>";
-			}
-			echo "</div>";
-		echo "<div class='vertical_space_group'>";
-			
-			echo"<div class='groups_title_generate'>" . $row['group_title']; 
-				
-			echo "</div>";
-			echo "<hr/>";
-			echo "<div class='groups_descrition_generate'>" . substr($row['group_description'],0,250) . "...</div>";
-			echo "<div class='LeaveButtonGroups'>";
-				if(in_array($row['group_id'], $group_users))
-				{
-					//echo "already Joined";
-					// DELETE FROM `group_users` WHERE `group_users`.`group_id` = 46 AND `group_users`.`user_id` = 1
-				
-					echo "<form action='' method='POST'>";
-						echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
-						echo "<input type='hidden' name='toDo' value='leave'>";
-						echo "<input class='Leave-Butt' type='submit' value='Leave'>";
-					echo "</form>";
-				
+	
+	//
+	//
+	//Large screen area
+	//
+	//
+	echo "<div class='LargeScreenGroup'>";
+		echo "<div class='group_container_create'>";
+			echo "<div class='group_photo_Area'>";
+				if(empty($row['group_photo'] )){
+					echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
 				}
 				else{
-					echo "<form action='' method='POST'>";
-						echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
-						echo "<input type='hidden' name='toDo' value='join'>";
-						echo "<input type='submit' value='join'>";
-					echo "</form>";
+					echo "<td> <img src='" . $row['group_photo'] . "' class='circlePhotoUploaded' > </td>";
 				}
+				echo "</div>";
+			echo "<div class='vertical_space_group'>";
 				
-			echo "</div>";
-			
-			echo "<div class='EnterButtonGroups'>";
-				if(in_array($row['group_id'], $group_users)){
-					echo "<form action ='EnteredGroup.php' method='GET'>";
-						echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
-						echo "<input class='Enter-Butt' type='submit' value='Enter'>";
-					echo "</form>";
-				}
+				echo"<div class='groups_title_generate'>" . $row['group_title']; 
+					
+				echo "</div>";
+				echo "<hr/>";
+				echo "<div class='groups_descrition_generate'>" . substr($row['group_description'],0,120) . "...</div>";
+				echo "<div class='LeaveButtonGroups'>";
+					if(in_array($row['group_id'], $group_users))
+					{
+						//echo "already Joined";
+						// DELETE FROM `group_users` WHERE `group_users`.`group_id` = 46 AND `group_users`.`user_id` = 1
+					
+						echo "<form action='' method='POST'>";
+							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+							echo "<input type='hidden' name='toDo' value='leave'>";
+							echo "<input class='Leave-Butt' type='submit' value='Leave'>";
+						echo "</form>";
+					
+					}
+					else{
+						echo "<form action='' method='POST'>";
+							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+							echo "<input type='hidden' name='toDo' value='join'>";
+							echo "<input class='join-Butt' type='submit' value='join'>";
+						echo "</form>";
+					}
+					
+				echo "</div>";
+				
+				echo "<div class='EnterButtonGroups'>";
+					if(in_array($row['group_id'], $group_users)){
+						echo "<form action ='EnteredGroup.php' method='GET'>";
+							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+							echo "<input class='Enter-Butt' type='submit' value='Enter'>";
+						echo "</form>";
+					}
+				echo "</div>";
 			echo "</div>";
 		echo "</div>";
 	echo "</div>";
 	
+	
+	//
+	//
+	//Medium screen area
+	//
+	//
+	
+	echo "<div class='MediumScreenGroup'>";
+		echo "<div class='M_group_container_create'>";
+			echo "<div class='group_photo_Area'>";
+				if(empty($row['group_photo'] )){
+					echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
+				}
+				else{
+					echo "<td> <img src='" . $row['group_photo'] . "' class='circlePhotoUploaded' > </td>";
+				}
+				echo "</div>";
+			echo "<div class='M_vertical_space_group'>";
+				
+				echo"<div class='groups_title_generate'>" . substr($row['group_title'],0,40) . " ..."; 
+					
+				echo "</div>";
+				echo "<hr/>";
+				echo "<div class='groups_descrition_generate'>" . substr($row['group_description'],0,80) . " ...</div>";
+				echo "<div class='LeaveButtonGroups'>";
+					if(in_array($row['group_id'], $group_users))
+					{
+						//echo "already Joined";
+						// DELETE FROM `group_users` WHERE `group_users`.`group_id` = 46 AND `group_users`.`user_id` = 1
+					
+						echo "<form action='' method='POST'>";
+							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+							echo "<input type='hidden' name='toDo' value='leave'>";
+							echo "<input class='M_Leave-Butt' type='submit' value='Leave'>";
+						echo "</form>";
+					
+					}
+					else{
+						echo "<form action='' method='POST'>";
+							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+							echo "<input type='hidden' name='toDo' value='join'>";
+							echo "<input class='M_join-Butt' type='submit' value='join'>";
+						echo "</form>";
+					}
+					
+				echo "</div>";
+				
+				echo "<div class='EnterButtonGroups'>";
+					if(in_array($row['group_id'], $group_users)){
+						echo "<form action ='EnteredGroup.php' method='GET'>";
+							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+							echo "<input class='M_Enter-Butt' type='submit' value='Enter'>";
+						echo "</form>";
+					}
+				echo "</div>";
+			echo "</div>";
+		echo "</div>";
+	echo "</div>";
+	
+	
+	
+	
+	//
+	//
+	//Small screen area
+	//
+	//
+	
+	echo "<div class='SmallScreenGroup'>";
+		echo "<div class='s_group_container_create'>";
+			echo "<div class='group_photo_Area'>";
+				if(empty($row['group_photo'] )){
+					echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
+				}
+				else{
+					echo "<td> <img src='" . $row['group_photo'] . "' class='circlePhotoUploaded' > </td>";
+				}
+				echo "</div>";
+			echo "<div class='M_vertical_space_group'>";
+				
+				echo"<div class='groups_title_generate'>" . substr($row['group_title'],0,40) . " ..."; 
+					
+				echo "</div>";
+				echo "<hr/>";
+				echo "<div class='groups_descrition_generate'>" . substr($row['group_description'],0,80) . " ...</div>";
+				echo "<div class='LeaveButtonGroups'>";
+					if(in_array($row['group_id'], $group_users))
+					{
+						//echo "already Joined";
+						// DELETE FROM `group_users` WHERE `group_users`.`group_id` = 46 AND `group_users`.`user_id` = 1
+					
+						echo "<form action='' method='POST'>";
+							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+							echo "<input type='hidden' name='toDo' value='leave'>";
+							echo "<input class='M_Leave-Butt' type='submit' value='Leave'>";
+						echo "</form>";
+					
+					}
+					else{
+						echo "<form action='' method='POST'>";
+							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+							echo "<input type='hidden' name='toDo' value='join'>";
+							echo "<input class='M_join-Butt' type='submit' value='join'>";
+						echo "</form>";
+					}
+					
+				echo "</div>";
+				
+				echo "<div class='EnterButtonGroups'>";
+					if(in_array($row['group_id'], $group_users)){
+						echo "<form action ='EnteredGroup.php' method='GET'>";
+							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+							echo "<input class='M_Enter-Butt' type='submit' value='Enter'>";
+						echo "</form>";
+					}
+				echo "</div>";
+			echo "</div>";
+		echo "</div>";
+	echo "</div>";
 	
 /*
 	echo "<tr>";

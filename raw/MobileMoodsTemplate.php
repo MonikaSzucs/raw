@@ -94,7 +94,7 @@ mysqli_close($conn);
             <div id="m-happy" class="mood-divs">
 				<form action="CategoryPicked.php" method="get">
 					<p class="genre-tags">Happy</p>
-					<input type="hidden" name="mood" value="<?php echo $_GET['g_happy']?>"/>
+					<input type="hidden" name="mood" value='g_happy'/>
 					<input type="submit" class="genre-tags" value="Happy"/>
 				</form>
             </div>
