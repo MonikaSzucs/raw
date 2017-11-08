@@ -34,6 +34,8 @@
 		display: block;
 	}
 	
+	
+	
     body {
         background-color: darkgrey;
         margin: 0 auto;
@@ -919,9 +921,77 @@
 Groups small style
 */
 
-	.s_group_container_create{
-		
+	.mob_group_container_create{
+		width: 85%;
+		min-width: 350px;
+		height: 200px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
 	}
 	
+	.M_group_photo_Area{
+		width: 100px;
+		height: 100px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		border-radius: 100%;
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+	}
 	
+	.M_vertical_space_group{
+		width: 96%;
+		height: 90px;
+		margin-top: 10px;
+		padding-top: 5px;
+		margin-left: 10px;
+		border-radius: 15px;
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+	}
+	
+	.s_Leave-Butt{
+		border: 1px solid darkgray;
+		padding: 8px;
+		border-radius: 20px;
+		margin-top: 15px;
+		background-color: white;
+		width: 75px;
+	}
+	
+	.s_join-Butt{
+		border: 1px solid darkgray;
+		padding: 8px;
+		border-radius: 20px;
+		margin-top: 15px;
+		margin-right: 4px;
+		background-color: white;
+		width: 75px;
+	}
+	
+	.s_Enter-Butt{
+		border: 1px solid darkgray;
+		padding: 8px;
+		border-radius: 20px;
+		margin-top: 7px;
+		margin-right: 2px;
+		background-color: white;
+		width: 75px;
+	}
+	
+	.circlePhoto_group_Auto {
+			width: 100px;
+			height: 100px;
+			margin-top: 0px;
+			margin-left: 0px;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			-ms-border-radius: 50%;
+			-o-border-radius: 50%;
+			border-radius: 50%;
+	}
+	
+	.circlePhotoUploaded{
+
+	}
 }

@@ -34,6 +34,8 @@
 		display: none;
 	}
 	
+	
+	
     body {
         background-color: darkgrey;
         margin: 0 auto;
@@ -1382,7 +1384,7 @@ hambuger menu
         font-family: helvetica;
         font-weight: 300;
         font-size: 16px;
-        margin-left: 150px;
+        margin-left: 195px;
 
     }
 
@@ -1413,13 +1415,13 @@ hambuger menu
         font-size: 14px;
         font-weight: 400;
         margin: 0 auto;
-        margin-left: 150px;
+        margin-left: 200px;
         font-family: helvetica;
     }
 
     .track-display {
         margin: 20px;
-        width: 440px;
+        width: 50vw;
         height: 60px;
         background-color: red;
         position: relative;
@@ -1432,7 +1434,7 @@ hambuger menu
 
 	/*Download styleing in groups*/
 	#DownloadButtonGroups {
-		margin-left: 600px;
+		margin-left: 65vw;
 		margin-top: 60px;
 	}
 
@@ -1495,16 +1497,24 @@ hambuger menu
 		display: block;
 		width: 100%;
 		clear: both;
-		margin: 20px 10px;
+		margin: 10px 10px;
 		float: left;
 	}
 	
 	.wave {
-		height: 200px;
+		height: 00px !important;
 		display: block;
-		width: 100%;
+		width: 40vw;
 		clear: both;
-		margin: 20px 10px;
 		float: left;
+		margin-top: -30px;
+		margin-left: 9vw;
+	}
+	
+	.btn_play_pause{
+		background-color: blue;
+		float: left;
+		margin-top: -30px;
+		margin-left: 50px;
 	}
 }

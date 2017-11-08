@@ -327,6 +327,57 @@ while ($row = mysqli_fetch_array($result))
 	//
 	
 	echo "<div class='SmallScreenGroup'>";
+		echo "<div class='mob_group_container_create'>";
+			echo "<div class='M_group_photo_Area'>";
+				if(empty($row['group_photo'] )){
+					echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
+				}
+				else{
+					echo "<td> <img src='" . $row['group_photo'] . "' class='circlePhotoUploaded' > </td>";
+				}
+			echo "</div>";
+			echo "<div class='M_vertical_space_group'>";
+				echo"<div class='groups_title_generate'>" . substr($row['group_title'],0,20) . " ..."; 
+				echo "</div>";
+				echo "<hr/>";
+				echo "<div class='groups_descrition_generate'>" . substr($row['group_description'],0,30) . " ...</div>";
+				echo "<div class='LeaveButtonGroups'>";
+					if(in_array($row['group_id'], $group_users))
+					{
+						//echo "already Joined";
+						// DELETE FROM `group_users` WHERE `group_users`.`group_id` = 46 AND `group_users`.`user_id` = 1
+					
+						echo "<form action='' method='POST'>";
+							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+							echo "<input type='hidden' name='toDo' value='leave'>";
+							echo "<input class='s_Leave-Butt' type='submit' value='Leave'>";
+						echo "</form>";
+					
+					}
+					else{
+						echo "<form action='' method='POST'>";
+							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+							echo "<input type='hidden' name='toDo' value='join'>";
+							echo "<input class='s_join-Butt' type='submit' value='join'>";
+						echo "</form>";
+					}
+					
+				echo "</div>";
+				
+				echo "<div class='EnterButtonGroups'>";
+					if(in_array($row['group_id'], $group_users)){
+						echo "<form action ='EnteredGroup.php' method='GET'>";
+							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+							echo "<input class='s_Enter-Butt' type='submit' value='Enter'>";
+						echo "</form>";
+					}
+				echo "</div>";
+			echo "</div>";
+		echo "</div>";
+	echo "</div>";
+	
+	/*
+	echo "<div class='other-SmallScreenGroup'>";
 		echo "<div class='s_group_container_create'>";
 			echo "<div class='group_photo_Area'>";
 				if(empty($row['group_photo'] )){
@@ -377,7 +428,7 @@ while ($row = mysqli_fetch_array($result))
 			echo "</div>";
 		echo "</div>";
 	echo "</div>";
-	
+	*/
 /*
 	echo "<tr>";
 		echo "<td>" . $row['group_title'] . "</td>";  
