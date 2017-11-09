@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2017 at 09:59 AM
+-- Generation Time: Nov 09, 2017 at 07:07 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -44,7 +44,9 @@ INSERT INTO `groups` (`group_id`, `group_title`, `group_description`, `group_pho
 (44, 'The fox jumped over the fence', 'the brown fox jumped over the fence', 'UserPictures/1509162096setC.png', '2017-10-27 20:41:36'),
 (46, 'The brown fox jumped over the fence with a great l', 'The brown fox jumped over the fence with a great leap. The brown fox jumped over the fence with a great leap. The brown fox jumped over the fence with a great leap. The brown fox jumped over the fence with a great leap. The brown fox jumped over the fence with a great leap. The brown fox jumped over the fence with a great leap. The brown fox jumped over the fence with a great leap. ', '', '2017-10-27 20:43:33'),
 (48, 'testinggggg here is is a new one', 'test egsegdsg', 'UserPictures/1509206146dsfdsgdfgfdg.png', '2017-10-28 08:55:46'),
-(49, '2324', '324', 'UserPictures/1509628886rawwww.png', '2017-11-02 06:21:26');
+(49, '2324', '324', 'UserPictures/1509628886rawwww.png', '2017-11-02 06:21:26'),
+(50, 'g6', 'g6', 'UserPictures/151020443121215840_1438397616276162_1031578615_o.png', '2017-11-08 21:13:51'),
+(51, 'g7', 'g7', 'UserPictures/1510204466q2.png', '2017-11-08 21:14:26');
 
 -- --------------------------------------------------------
 
@@ -65,7 +67,9 @@ INSERT INTO `group_users` (`group_id`, `user_id`) VALUES
 (44, 1),
 (46, 1),
 (48, 1),
-(49, 1);
+(49, 1),
+(50, 1),
+(51, 1);
 
 -- --------------------------------------------------------
 
@@ -119,7 +123,9 @@ INSERT INTO `music_group` (`group_id`, `music_id`, `music_file`, `music`, `music
 (48, 26, 'UsersSongs/1509519096censor-erebess3333s22222ep-01.mp3', 1, '2017-10-31 23:51:36', 'retretertret', 'UserPictures/1509519096q2.png', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
 (49, 27, 'UsersSongs/1509628886Maid with the Flaxen Hair.mp3', 1, '2017-11-02 06:21:26', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
 (44, 28, 'UsersSongs/1510113696censor-erebess3333s22222ep-01.mp3', 1, '2017-11-07 20:01:36', 'testtt', 'UserPictures/1510113696initial.png', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
-(44, 29, 'UsersSongs/1510117191Pachabel333ly.mp3', 1, '2017-11-07 20:59:51', 'song3', 'UserPictures/1510117191Untitledsfsdfd.png', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
+(44, 29, 'UsersSongs/1510117191Pachabel333ly.mp3', 1, '2017-11-07 20:59:51', 'song3', 'UserPictures/1510117191Untitledsfsdfd.png', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(50, 30, 'UsersSongs/1510204431Pachabel333ly.mp3', 1, '2017-11-08 21:13:51', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(51, 31, 'UsersSongs/1510204466censor-erebess3333s22222ep-01.mp3', 1, '2017-11-08 21:14:26', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -167,9 +173,13 @@ CREATE TABLE `music_public` (
 --
 
 INSERT INTO `music_public` (`music_public_id`, `user_id`, `song_title`, `music_file`, `music`, `music_uploaded`, `music_photo`, `g_rock`, `g_rnb`, `g_pop`, `g_punk`, `g_jazz`, `g_metal`, `g_funk`, `g_country`, `g_edm`, `g_classical`, `g_happy`, `g_sad`, `g_angry`, `g_chill`, `g_focus`, `g_workout`, `g_travel`, `g_guitar`, `g_bass`, `g_synth`, `g_pads`, `g_woodwind`, `g_drums`, `g_strings`, `g_brass`) VALUES
-(1, 1, 'gggggggggggggggggg', 'ggggdddddddddddddddddddd', 1, '0000-00-00 00:00:00', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(2, 1, 'song1', 'GlobalSongs/1510120550censor-erebess3333s22222ep-01.mp3', 1, '0000-00-00 00:00:00', 'GlobalPictures/1510120550rawwww.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
-(3, 1, 'song1', 'GlobalSongs/1510120669censor-erebess3333s22222ep-01.mp3', 1, '2017-11-07 21:57:49', 'GlobalPictures/1510120669rawwww.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
+(9, 1, 'm1', 'GlobalSongs/1510199716Pachabel333ly.mp3', 1, '2017-11-08 19:55:16', 'GlobalPictures/1510199716rawwww.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(10, 1, 'm3', 'GlobalSongs/1510199743Pachabel333ly.mp3', 1, '2017-11-08 19:55:43', 'GlobalPictures/1510199743test.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(11, 1, 'm4', 'GlobalSongs/1510199777Pachabel333ly.mp3', 1, '2017-11-08 19:56:17', 'GlobalPictures/1510199777bird.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(12, 1, 'b7', 'GlobalSongs/1510203040censor-erebess3333s22222ep-01.mp3', 1, '2017-11-08 20:50:40', 'GlobalPictures/1510203040download.jpg', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(13, 1, '55555', 'GlobalSongs/1510203451ChaCha_Fontanttez.mp3', 1, '2017-11-08 20:57:31', 'GlobalPictures/1510203451Untitledsfsdfd.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(14, 1, 'm6', 'GlobalSongs/1510203496ChaCha_Fontanttez.mp3', 1, '2017-11-08 20:58:16', 'GlobalPictures/1510203496sdfdsfdsfdsf.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(15, 1, 'm7', 'GlobalSongs/1510203797ChaCha_Fontanttez.mp3', 1, '2017-11-08 21:03:17', 'GlobalPictures/1510203797rawwww.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -254,17 +264,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 --
 -- AUTO_INCREMENT for table `music_group`
 --
 ALTER TABLE `music_group`
-  MODIFY `music_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `music_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `music_public`
 --
 ALTER TABLE `music_public`
-  MODIFY `music_public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `music_public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `user`
 --
