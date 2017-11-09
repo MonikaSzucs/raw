@@ -108,7 +108,10 @@ hambuger menu
         position: absolute;
         color: white;
         line-height: 280px;
+		background-color:transparent;
+		border: none;
     }
+	
     .m-player {
         vertical-align: middle;
         display: inline-block;
@@ -1579,5 +1582,9 @@ hambuger menu
 		margin: 0 auto;
 		bottom: 100px;
 		position: absolute;
+	}
+	
+	.category_form {
+		background-color: transparent;
 	}
 }

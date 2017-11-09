@@ -92,12 +92,14 @@ mysqli_close($conn);
         
       
             <div id="m-happy" class="mood-divs">
-				<form action="CategoryPicked.php" method="get">
+				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Happy</p>
 					<input type="hidden" name="mood" value='g_happy'/>
 					<input type="submit" class="genre-tags" value="Happy"/>
 				</form>
             </div>
+			
+			
             <div id="m-sad" class="mood-divs">
 				<a href="CategoryPicked.php">
 					<p class="genre-tags">Sad</p>

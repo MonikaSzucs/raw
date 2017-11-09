@@ -198,6 +198,7 @@ if(!isset($_GET['group_id'])){
 									echo "<p id='FeedSongName'>Track: </p>";
 								echo "</div>";
 								echo "<div class='track-display'>";
+								
 									echo "<div id='waveform".$i."' class='wave'></div>";
 										echo "<div style='text-align: center' class='btn_play_pause'>";
 										  echo "<button class='btn btn-primary' class='play_pause' onclick='wavesurfer".$i.".playPause()'>";

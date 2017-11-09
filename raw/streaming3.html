@@ -1,48 +1,68 @@
 <!DOCTYPE html>
-
 <html>
 <head>
 </head>
-
-<body>
-
-
-<div class='container_musics_feed'>
-	<div class='first-song'>
-		<div class='songpic'>
-			<td> 
-				<img src='GlobalPictures/1510199716rawwww.png' class='circlePhotoUploaded' > </td></div>
-		<div class='song-buttons'>
-			<p id='FeedArtistsName'>Name</p>
-			<p id='FeedSongName'>m1</p>
+	<body>
+		<div class='container_musics_feed'>
+			<div class='first-song'>
+				<div class='songpic'>
+					<td> 
+						<img src='GlobalPictures/1510199716rawwww.png' class='circlePhotoUploaded' >
+					</td>
+				</div>
+				<div class='song-buttons'>
+					<p id='FeedArtistsName'>Name</p>
+					<p id='FeedSongName'>m1</p>
+				</div>
+				<div class='track-display'>
+					<div id='waveform1' class='wave'></div>
+					<div><button class='play_pause_feed' onclick='wavesurfer1.playPause()'>
+						<i class='glyphicon glyphicon-play'></i>Play/Pause
+						</button>
+					</div>
+				</div>
+			</div>
+			<button class='download_feed_button'>Download</button>
+				<script>var wavesurfer1 = WaveSurfer.create({container: '#waveform1',waveColor: '#c5ddff',progressColor: '#75a8ff'});wavesurfer1.load('GlobalSongs/1510199716Pachabel333ly.mp3');
+				</script>
 		</div>
-		<div class='track-display'>
-			<div id='waveform1' class='wave'></div>
-			<div><button class='play_pause_feed' onclick='wavesurfer1.playPause()'>
-				<i class='glyphicon glyphicon-play'></i>Play/Pause</button>
-			</div></div>
-	</div>
-	<button class='download_feed_button'>Download</button>
-	<script>var wavesurfer1 = WaveSurfer.create({container: '#waveform1',waveColor: '#c5ddff',progressColor: '#75a8ff'});wavesurfer1.load('GlobalSongs/1510199716Pachabel333ly.mp3');</script></div><div class='first-song'>
-	<div class='songpic'><td> 
-		<img src='GlobalPictures/1510199743test.png' class='circlePhotoUploaded' > </td></div><div class='song-buttons'>
-	<p id='FeedArtistsName'>Name</p>
-	<p id='FeedSongName'>m3</p>
-	</div><div class='track-display'>
-	<div id='waveform2' class='wave'></div>
-	<div><button class='play_pause_feed' onclick='wavesurfer2.playPause()'><i class='glyphicon glyphicon-play'></i>Play/Pause</button></div></div></div>
-	
-	<button class='download_feed_button'>Download</button>
-	
-	<script>var wavesurfer2 = WaveSurfer.create({container: '#waveform2',waveColor: '#c5ddff',progressColor: '#75a8ff'});wavesurfer2.load('GlobalSongs/1510199743Pachabel333ly.mp3');</script></div><div class='first-song'><div class='songpic'><td> <img src='GlobalPictures/1510199777bird.png' class='circlePhotoUploaded' > </td></div><div class='song-buttons'><p id='FeedArtistsName'>Name</p><p id='FeedSongName'>m4</p></div><div class='track-display'>
-		<div id='waveform3' class='wave'></div>
-		<div>
-			<button class='play_pause_feed' onclick='wavesurfer3.playPause()'><i class='glyphicon glyphicon-play'></i>Play/Pause</button></div></div></div><button class='download_feed_button'>Download</button>
-<script>var wavesurfer3 = WaveSurfer.create({container: '#waveform3',waveColor: '#c5ddff',progressColor: '#75a8ff'});wavesurfer3.load('GlobalSongs/1510199777Pachabel333ly.mp3');</script></div></div>
-
-
-</body>
-
-
-
+		
+		
+			<div class='first-song'>
+			<div class='songpic'><td> 
+				<img src='GlobalPictures/1510199743test.png' class='circlePhotoUploaded' > </td></div><div class='song-buttons'>
+			<p id='FeedArtistsName'>Name</p>
+			<p id='FeedSongName'>m3</p>
+			</div><div class='track-display'>
+			<div id='waveform2' class='wave'></div>
+			<div><button class='play_pause_feed' onclick='wavesurfer2.playPause()'><i class='glyphicon glyphicon-play'></i>Play/Pause</button>
+			</div>
+			</div>
+			</div>
+			
+				<button class='download_feed_button'>Download</button>
+			
+				<script>var wavesurfer2 = WaveSurfer.create({container: '#waveform2',waveColor: '#c5ddff',progressColor: '#75a8ff'});wavesurfer2.load('GlobalSongs/1510199743Pachabel333ly.mp3');
+				</script>
+			</div>
+			<div class='first-song'>
+			<div class='songpic'>
+			<td> 
+			<img src='GlobalPictures/1510199777bird.png' class='circlePhotoUploaded' > </td>
+			</div>
+			<div class='song-buttons'>
+			<p id='FeedArtistsName'>Name</p><p id='FeedSongName'>m4</p></div><div class='track-display'>
+				<div id='waveform3' class='wave'></div>
+				<div>
+					<button class='play_pause_feed' onclick='wavesurfer3.playPause()'>
+					<i class='glyphicon glyphicon-play'>
+					</i>Play/Pause</button>
+					</div>
+					</div>
+					</div>
+					<button class='download_feed_button'>Download</button>
+		<script>var wavesurfer3 = WaveSurfer.create({container: '#waveform3',waveColor: '#c5ddff',progressColor: '#75a8ff'});wavesurfer3.load('GlobalSongs/1510199777Pachabel333ly.mp3');</script>
+		</div>
+		</div>
+	</body>
 </html>
