@@ -110,7 +110,7 @@ if(isset($_POST['toDo'])){
         </div>
 
 
-		<div class="main-songDiv">
+		<div class="main-songDiv_feed">
 			<div class="feedsidebar">
 				<div class="whotofollowdiv">  <h3 class="wtftext">Recent Groups Created</h3>
 				<div class="personfollow">
@@ -130,8 +130,9 @@ if(isset($_POST['toDo'])){
 			
 			<?php
 			
+			//SELECT * FROM `music_public` ORDER BY music_uploaded DESC LIMIT 5;
 			//Step2 get data from database
-			$query = "SELECT * FROM music_public WHERE music=1;";
+			$query = "SELECT * FROM music_public ORDER BY music_uploaded DESC LIMIT 5;";
 			$result = mysqli_query($db, $query) or die('Error querying database.');
 			
 			//Step3 Display the result
@@ -182,7 +183,7 @@ if(isset($_POST['toDo'])){
 			};
 			
 			echo "</div>";
-			//SELECT * FROM `music_public` ORDER BY music_uploaded DESC LIMIT 5;
+			
 			
 			?>
 			

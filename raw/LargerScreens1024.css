@@ -596,6 +596,13 @@ hambuger menu
         background-color: white;
         position: absolute;
     }
+	
+	.white_background_group_Large{
+		width: 100%;
+        height: 1300px;
+        background-color: white;
+        position: absolute;
+	}
 
 	.spaceContainerTop p{
 		font-size:30px;
@@ -1196,6 +1203,7 @@ hambuger menu
 			float: left;
 			border-radius: 100%;
 			box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+			margin-top: -10px;
 		}
 
 		.circlePhoto_group_Auto {
@@ -1216,6 +1224,7 @@ hambuger menu
 			margin-left: 190px;
 			border-radius: 15px;
 			box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+			padding-top: 20px;
 		}
 		.groups_title_generate{
 			width: 85%;
@@ -1356,7 +1365,12 @@ hambuger menu
     }
 
 
-
+	.main-songDiv_feed {
+		width: 100%;
+        height: 1200px;
+        background-color: white;
+        position: absolute;
+	}
 
     .songpic {
         margin-top: 20px;
@@ -1374,9 +1388,7 @@ hambuger menu
         padding-left: 50px;
         width: 40vw;
         height: 120px;
-		background-color:yellow;
 		margin-top: 80px;
-		border: 5px black solid;
     }
 
     #FeedSongName {
@@ -1540,7 +1552,6 @@ hambuger menu
 	.container_musics_feed{
 		width: 75%;
 		height: 120px;
-		background-color: purple;
 	}
 	
 	.download_feed_button{
@@ -1551,5 +1562,22 @@ hambuger menu
 		border-radius: 20px;
 		background-color: white;
 		width: 85px;
+	}
+	
+	.pagination a{
+		padding: 10px 0px 10px 20px;
+		text-decoration: none !important;
+		font-size: 30px;
+		
+	}
+	
+	.pagination{
+		margin-top: 70px;
+		text-align: center;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		bottom: 100px;
+		position: absolute;
 	}
 }

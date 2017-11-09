@@ -135,7 +135,7 @@ if(!isset($_SESSION["user_id"]))
                 </li></a>               
             </ul>
         </div>
-        <div class="M-groupdiv-main">
+        <div class="white_background_group_Large">
 			<div class="spaceContainerTop"><p>Groups</p></div>
 			
 			<a href="MobileGroupsTabCreate.php"><button id="CreateGroupProfile">Create Group</button></a>
@@ -144,9 +144,9 @@ if(!isset($_SESSION["user_id"]))
 	<?php
 	
 
-	$limit = 1;
+	$limit = 5;
 	if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
-	$start_from = ($page-1) * $limit; ;
+	$start_from = ($page-1) * $limit;
 	
 	
 	//get group?_user from data base where user id equal to session user ID
@@ -225,20 +225,10 @@ while ($row = mysqli_fetch_array($result)) {
 			echo "</div>";
 		echo "</div>";
 		
-		$querry = "SELECT COUNT(group_id) FROM groups";  
-		$rs_result = mysqli_query($db, $querry);  
-		$row = mysqli_fetch_row($rs_result);  
-		$total_records = $row[0];  
-		$total_pages = ceil($total_records / $limit);  
-		$pagLink = "<div class='pagination'>";  
-		for ($i=1; $i<=$total_pages; $i++) {  
-					 $pagLink .= "<a href='MobileGroupsTab.php?page=".$i."'>".$i."</a>";  
-		};  
-		echo $pagLink . "</div>";  
-		
+
 	echo "</div>";
 	
-	
+
 	
 	
 	
@@ -364,9 +354,16 @@ while ($row = mysqli_fetch_array($result)) {
 } 
 
 
-	
-	
-	
+	$querry = "SELECT COUNT(group_id) FROM groups";  
+	$rs_result = mysqli_query($db, $querry);  
+	$row = mysqli_fetch_row($rs_result);  
+	$total_records = $row[0];  
+	$total_pages = ceil($total_records / $limit);  
+	$pagLink = "<div class='pagination'>";  
+		for ($i=1; $i<=$total_pages; $i++) {  
+			$pagLink .= "<a href='MobileGroupsTab.php?page=".$i."'>".$i."&nbsp;&nbsp;&nbsp;</a>";  
+		};  
+	echo $pagLink . "</div>";  
 	
 	
 	?>
