@@ -53,6 +53,8 @@ if(isset($_POST['toDo'])){
     <link rel="stylesheet" href="SmallScreen768version2.css">
     <link rel="stylesheet" href="HomeDesktop.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
 </head>
 
 <body>
@@ -107,43 +109,83 @@ if(isset($_POST['toDo'])){
             </ul>
         </div>
 
-		
-		
-		
-		
+
 		<div class="main-songDiv">
-        <div class="feedsidebar">
-           
-            <div class="whotofollowdiv">  <h3 class="wtftext">Who to follow</h3>
-            <div class="personfollow">
-                <p id="follname"> Name </p>
-                 <button class="follbut">Follow</button>
-                <div class="followpic"></div>
-                </div>
-            </div>
-           <div class="listeninghdiv"><h3 class="wtftext">Listening History</h3>
-             <p id="follname"> Name </p>
-             <p id="follname2"> Song Name </p>
-                 <div  class="followpic2"></div>
-            </div>
-            </div>
-            <div class="invisdiv4"></div>
-        <div class="first-song">
-            <div class="songpic"></div>
-            <div class="song-buttons">
-                 <ul>
-                <li>Like</li>
-                <li>Share</li>
-                </ul>
-            <p id="FeedArtistsName">Name</p>
-            <p id="FeedSongName">Track Name</p>
-    
-            </div>
-            <div class="track-display"></div>
-            
-            </div>
-        
-        
+			<div class="feedsidebar">
+				<div class="whotofollowdiv">  <h3 class="wtftext">Recent Groups Created</h3>
+				<div class="personfollow">
+					<p id="follname"> Name </p>
+					 <button class="follbut">Join</button>
+					<div class="followpic"></div>
+					</div>
+				</div>
+			   <div class="listeninghdiv"><h3 class="wtftext">Listening History</h3>
+				 <p id="follname"> Name </p>
+				 <p id="follname2"> Song Name </p>
+					 <div  class="followpic2"></div>
+				</div>
+			</div>
+				<div class="invisdiv4"></div>
+			<div class="Recently_Uplaoded_Title">Recently Uploaded</div>
+			
+			<?php
+			
+			//Step2 get data from database
+			$query = "SELECT * FROM music_public WHERE music=1;";
+			$result = mysqli_query($db, $query) or die('Error querying database.');
+			
+			//Step3 Display the result
+			
+			$i=1;
+			echo "<div class='container_musics_feed'>";
+			while ($row = mysqli_fetch_array($result)) {
+				
+				
+				
+				echo "<div class='first-song'>";
+					echo "<div class='songpic'>";
+						if(empty($row['music_photo'] )){
+							echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
+						}
+						else{
+							echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploaded' > </td>";
+						}
+					echo "</div>";
+					echo "<div class='song-buttons'>";
+						echo "<p id='FeedArtistsName'>Name</p>";
+						echo "<p id='FeedSongName'>" . $row['song_title'] . "</p>";
+					echo "</div>";
+					echo "<div class='track-display'>";
+					
+						echo "<div id='waveform".$i."' class='wave'></div>";
+							echo "<div>";
+								echo "<button class='play_pause_feed' onclick='wavesurfer".$i.".playPause()'>";
+									echo "<i class='glyphicon glyphicon-play'></i>";
+									echo "Play/Pause";
+								echo "</button>";
+							echo "</div>";
+						echo "</div>";
+						
+					echo "</div>";
+					
+					echo "<button class='download_feed_button'>Download</button>";
+					
+					echo "<script>";
+						echo "var wavesurfer".$i." = WaveSurfer.create({";
+							echo "container: '#waveform".$i."',";
+							echo "waveColor: '#c5ddff',";
+							echo "progressColor: '#75a8ff'";
+						echo "});";
+						echo "wavesurfer".$i.".load('". $row['music_file'] ."');";
+					echo "</script>";
+					$i++;
+			};
+			
+			echo "</div>";
+			//SELECT * FROM `music_public` ORDER BY music_uploaded DESC LIMIT 5;
+			
+			?>
+			
         </div>
 
     </div>

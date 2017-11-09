@@ -208,7 +208,11 @@ if(!isset($_GET['group_id'])){
 									echo "</div>";
 								
 								echo "</div>";
-								echo "<button id='DownloadButtonGroups'>Download</button>";
+								echo "<a href='/rawNov8/raw/raw/". $row['music_file'] . "' download='" . $row['music_file'] . "'>";
+								echo "<button id='DownloadButtonGroups'>";
+								echo "Download";
+								echo "</button>";
+								echo "</a>";
 									echo "<script>";
 									echo "var wavesurfer".$i." = WaveSurfer.create({";
 											echo "container: '#waveform".$i."',";

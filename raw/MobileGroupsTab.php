@@ -144,60 +144,26 @@ if(!isset($_SESSION["user_id"]))
 	<?php
 	
 
-	
+	$limit = 1;
+	if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+	$start_from = ($page-1) * $limit; ;
 	
 	
 	//get group?_user from data base where user id equal to session user ID
 	$query = "SELECT * FROM group_users WHERE user_id =" . $_SESSION['user_id'];
 	$result = mysqli_query($db, $query) or die('Error querying database.');
-	
 	$group_users = array(); 
 	while ($row = mysqli_fetch_array($result)){
 		$group_users[] = $row['group_id'];
 	}
 	
 	//Step2 get data from database
-	$query = "SELECT * FROM groups";
+	$query = "SELECT * FROM groups LIMIT " . $limit . " OFFSET " . $start_from;
 	$result = mysqli_query($db, $query) or die('Error querying database.');
 //Step3 Display the result
 
-/*
-	echo "<table border='1' style='width:800px; margin:0 auto;'>";
-	echo "<tr>";
-		echo "<th  width='120px'> group_title </th>";
-		echo "<th  width='420px'> group_description </th>";
-		echo "<th> group_photo </th>";
-		echo "<th> Interested </th>";
-		echo "<th> Tracks </th>";
-	echo "</tr>";
-*/
 
-while ($row = mysqli_fetch_array($result)) 
-{
-	
-	////the styling of the groups
-	/*
-	echo "<div style='width: 100%; height: 100px; background-color:red'></div>";
-	echo "<div class='TopSpace-ProfileGroupSub'></div>";
-	echo "<div class='group_container'>";
-		
-		echo "<div class='ProfileIconGroups'>";
-			if(empty($row['group_photo'] )){
-				echo "<img src='./SVG/EmptyPicture.svg' class='circlePhotoAuto' /> ";
-			}
-			else{
-				echo "<td> <img src='" . $row['group_photo'] . "' class='circlePhotoUploaded' > </td>";
-			}
-		echo "</div>";
-		echo "<div class='vertical-space'></div>";
-		echo "<div class='GroupsInformation'>";
-			echo "<div class='GroupsInformation-Title'>test" . $row['group_title'] . "<br/></div>";
-			echo "<div class='horizontal-GroupSpace'></div>";
-			echo "<div class='GroupsInformation-Description'>" . $row['group_description'] . "<br/></div>";	
-		echo "</div>";
-		
-	echo "</div>";
-	*/
+while ($row = mysqli_fetch_array($result)) {
 	
 	echo "<div style='height: 30px; width: 100%;'></div>";
 	
@@ -207,6 +173,8 @@ while ($row = mysqli_fetch_array($result))
 	//
 	//
 	echo "<div class='LargeScreenGroup'>";
+	
+	
 		echo "<div class='group_container_create'>";
 			echo "<div class='group_photo_Area'>";
 				if(empty($row['group_photo'] )){
@@ -256,7 +224,22 @@ while ($row = mysqli_fetch_array($result))
 				echo "</div>";
 			echo "</div>";
 		echo "</div>";
+		
+		$querry = "SELECT COUNT(group_id) FROM groups";  
+		$rs_result = mysqli_query($db, $querry);  
+		$row = mysqli_fetch_row($rs_result);  
+		$total_records = $row[0];  
+		$total_pages = ceil($total_records / $limit);  
+		$pagLink = "<div class='pagination'>";  
+		for ($i=1; $i<=$total_pages; $i++) {  
+					 $pagLink .= "<a href='MobileGroupsTab.php?page=".$i."'>".$i."</a>";  
+		};  
+		echo $pagLink . "</div>";  
+		
 	echo "</div>";
+	
+	
+	
 	
 	
 	//
@@ -376,113 +359,16 @@ while ($row = mysqli_fetch_array($result))
 		echo "</div>";
 	echo "</div>";
 	
-	/*
-	echo "<div class='other-SmallScreenGroup'>";
-		echo "<div class='s_group_container_create'>";
-			echo "<div class='group_photo_Area'>";
-				if(empty($row['group_photo'] )){
-					echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
-				}
-				else{
-					echo "<td> <img src='" . $row['group_photo'] . "' class='circlePhotoUploaded' > </td>";
-				}
-				echo "</div>";
-			echo "<div class='M_vertical_space_group'>";
-				
-				echo"<div class='groups_title_generate'>" . substr($row['group_title'],0,40) . " ..."; 
-					
-				echo "</div>";
-				echo "<hr/>";
-				echo "<div class='groups_descrition_generate'>" . substr($row['group_description'],0,80) . " ...</div>";
-				echo "<div class='LeaveButtonGroups'>";
-					if(in_array($row['group_id'], $group_users))
-					{
-						//echo "already Joined";
-						// DELETE FROM `group_users` WHERE `group_users`.`group_id` = 46 AND `group_users`.`user_id` = 1
-					
-						echo "<form action='' method='POST'>";
-							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
-							echo "<input type='hidden' name='toDo' value='leave'>";
-							echo "<input class='M_Leave-Butt' type='submit' value='Leave'>";
-						echo "</form>";
-					
-					}
-					else{
-						echo "<form action='' method='POST'>";
-							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
-							echo "<input type='hidden' name='toDo' value='join'>";
-							echo "<input class='M_join-Butt' type='submit' value='join'>";
-						echo "</form>";
-					}
-					
-				echo "</div>";
-				
-				echo "<div class='EnterButtonGroups'>";
-					if(in_array($row['group_id'], $group_users)){
-						echo "<form action ='EnteredGroup.php' method='GET'>";
-							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
-							echo "<input class='M_Enter-Butt' type='submit' value='Enter'>";
-						echo "</form>";
-					}
-				echo "</div>";
-			echo "</div>";
-		echo "</div>";
-	echo "</div>";
-	*/
-/*
-	echo "<tr>";
-		echo "<td>" . $row['group_title'] . "</td>";  
-		echo "<td>" . $row['group_description'] . "</td>"; 
-		if(empty($row['group_photo'] )){
-			echo "<td></td>";
-		}
-		else{
-			echo "<td> <img src='" . $row['group_photo'] . "' style='width:100px;height:100px;' > </td>";
-		}
 
-		//join
-		//condition if they are in the group then don't show the button
-		
-		echo "<td>";
-			//if $row['group_id'] exit in $group_users['group_id'] do not show form;
-			//else shows join form;
-			*/
-			
-			/*echo '$row[group_id]'. $row['group_id'];
-
-			echo '<BR/>$group_id THAT THIS PERSON ALREADY JOINED';
-			echo "<pre>";
-			print_r($group_users);
-			echo "</pre>";	*/		
-			/*
-			if(in_array($row['group_id'], $group_users))
-			{
-				echo "already Joined";
-			}
-			else{
-				echo "<form action='' method='POST'>";
-					echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
-					echo "<input type='hidden' name='toDo' value='join'>";
-					echo "<input type='submit' value='join'>";
-				echo "</form>";
-			}
-		echo "</td>";
-		
-		echo "<td >";
-			echo "<form action ='GroupMusic.php' method='GET'>";
-				echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
-				echo "<input type='submit' value='Enter'>";
-			echo "</form>";
-		echo "</td>";
-		
-	echo "</tr>";
-	*/
 	
 } 
 
-/*
-	echo "</table>";
-	*/
+
+	
+	
+	
+	
+	
 	?>
 	
         <div id="invisdiv3"></div>    

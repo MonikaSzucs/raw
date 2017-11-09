@@ -1335,7 +1335,9 @@ hambuger menu
 
     }
 
-
+/*
+		Feed Page area Styling
+*/
     .feedsidebar{
 
         float: right;
@@ -1370,13 +1372,11 @@ hambuger menu
     .first-song {
         left: 0;
         padding-left: 50px;
-        width: 60%;
-        position: absolute;
-        height: 200px;
-        margin: 0 auto;
-
-
-
+        width: 40vw;
+        height: 120px;
+		background-color:yellow;
+		margin-top: 80px;
+		border: 5px black solid;
     }
 
     #FeedSongName {
@@ -1387,6 +1387,16 @@ hambuger menu
         margin-left: 195px;
 
     }
+	
+	.Recently_Uplaoded_Title{
+		background-color:red;
+		width: 500px;
+		font-size: 30px;
+		margin-left: 50px;
+		margin-top: 20px;
+		margin-bottom: 60px;
+	}
+	
 
     .song-buttons {
         margin-top: 0 auto;
@@ -1420,8 +1430,8 @@ hambuger menu
     }
 
     .track-display {
-        margin: 20px;
-        width: 50vw;
+        margin: 30px;
+        width: 100%;
         height: 60px;
         background-color: red;
         position: relative;
@@ -1502,13 +1512,12 @@ hambuger menu
 	}
 	
 	.wave {
-		height: 00px !important;
+		height: 10px !important;
 		display: block;
-		width: 40vw;
-		clear: both;
+		width: 30vw;
 		float: left;
 		margin-top: -30px;
-		margin-left: 9vw;
+		margin-left: 5.5vw;
 	}
 	
 	.btn_play_pause{
@@ -1516,5 +1525,31 @@ hambuger menu
 		float: left;
 		margin-top: -30px;
 		margin-left: 50px;
+	}
+	
+	.play_pause_feed{
+		border: 1px solid darkgray;
+		padding: 10px;
+		border-radius: 20px;
+		background-color: white;
+		width: 85px;
+		margin-top: -50px;
+		margin-left: 20px;
+	}
+	
+	.container_musics_feed{
+		width: 75%;
+		height: 120px;
+		background-color: purple;
+	}
+	
+	.download_feed_button{
+		margin-top:-110px;
+		margin-left: 50vw;
+		border: 1px solid darkgray;
+		padding: 10px;
+		border-radius: 20px;
+		background-color: white;
+		width: 85px;
 	}
 }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+	
+	 <div class='container_musics_feed'>
+		while ($row = mysqli_fetch_array($result)) {
+				
+		<div class='first-song'>
+		<div class='songpic'>
+		<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' />
+		
+		</div>
+		<div class='song-buttons'>
+		<p id='FeedArtistsName'>Name</p>
+		<p id='FeedSongName'> . $row['song_title'] . </p>
+		</div>
+		<div class='track-display'>
+					
+		<div id='waveform".$i."' class='wave'></div>
+		<div>
+		<button class='play_pause_feed' onclick='wavesurfer".$i.".playPause()'>
+		<i class='glyphicon glyphicon-play'></i>					 
+		</button>
+		</div>
+		</div>
+	}
+	
+	</body>
+
+
+
+</html>
