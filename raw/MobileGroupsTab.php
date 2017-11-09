@@ -163,7 +163,6 @@ if(!isset($_SESSION["user_id"]))
 
 
 while ($row = mysqli_fetch_array($result)) {
-	
 	echo "<div style='height: 30px; width: 100%;'></div>";
 	
 	//
@@ -172,8 +171,6 @@ while ($row = mysqli_fetch_array($result)) {
 	//
 	//
 	echo "<div class='LargeScreenGroup'>";
-	
-	
 		echo "<div class='group_container_create'>";
 			echo "<div class='group_photo_Area'>";
 				if(empty($row['group_photo'] )){
@@ -228,15 +225,11 @@ while ($row = mysqli_fetch_array($result)) {
 	echo "</div>";
 	
 
-	
-	
-	
 	//
 	//
 	//Medium screen area
 	//
 	//
-	
 	echo "<div class='MediumScreenGroup'>";
 		echo "<div class='M_group_container_create'>";
 			echo "<div class='group_photo_Area'>";
@@ -289,15 +282,12 @@ while ($row = mysqli_fetch_array($result)) {
 		echo "</div>";
 	echo "</div>";
 	
-	
-	
-	
+
 	//
 	//
 	//Small screen area
 	//
 	//
-	
 	echo "<div class='SmallScreenGroup'>";
 		echo "<div class='mob_group_container_create'>";
 			echo "<div class='M_group_photo_Area'>";
@@ -347,10 +337,7 @@ while ($row = mysqli_fetch_array($result)) {
 			echo "</div>";
 		echo "</div>";
 	echo "</div>";
-	
-
-	
-} 
+	} 
 
 
 	$querry = "SELECT COUNT(group_id) FROM groups";  
@@ -365,7 +352,7 @@ while ($row = mysqli_fetch_array($result)) {
 	echo $pagLink . "</div>";  
 	
 	
-	?>
+?>
 	
         <div id="invisdiv3"></div>    
             
