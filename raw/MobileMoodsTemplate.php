@@ -101,41 +101,57 @@ mysqli_close($conn);
 			
 			
             <div id="m-sad" class="mood-divs">
-				<a href="CategoryPicked.php">
+				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Sad</p>
-				</a>
+					<input type="hidden" name="mood" value='g_sad'/>
+					<input type="submit" class="genre-tags" value="Sad"/>
+				</form>
             </div>
         
 
       
             <div id="m-angry" class="mood-divs">
-				<a href="CategoryPicked.php">
+				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Angry</p>
-				</a>
+					<input type="hidden" name="mood" value='g_angry'/>
+					<input type="submit" class="genre-tags" value="Angry"/>
+				</form>
             </div>
+			
             <div id="m-chill" class="mood-divs">
-				<a href="CategoryPicked.php">
+			
+				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Chill</p>
-				</a>
+					<input type="hidden" name="mood" value='g_chill'/>
+					<input type="submit" class="genre-tags" value="Chill"/>
+				</form>
             </div>
-       
-
-        
+      
             <div id="m-focus" class="mood-divs">
-				<a href="CategoryPicked.php">
+				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Focus</p>
-				</a>
+					<input type="hidden" name="mood" value='g_focus'/>
+					<input type="submit" class="genre-tags" value="Focus"/>
+				</form>
             </div>
+			
             <div id="m-workout" class="mood-divs">
-				<a href="CategoryPicked.php">
+				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Work Out</p>
-				</a>
+					<input type="hidden" name="mood" value='g_workout'/>
+					<input type="submit" class="genre-tags" value="Work Out"/>
+				</form>
             </div>
         
 
         
-            <div id="m-travel" class="mood-divs"><p class="genre-tags">Travel
-                </p></div>
+            <div id="m-travel" class="mood-divs">
+				<form action="CategoryPicked.php" method="get" class="category_form">
+					<p class="genre-tags">Travel</p>
+					<input type="hidden" name="mood" value='g_travel'/>
+					<input type="submit" class="genre-tags" value="Travel"/>
+				</form>
+			</div>
      
             
         </div>

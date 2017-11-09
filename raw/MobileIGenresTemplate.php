@@ -93,78 +93,83 @@ mysqli_close($conn);
         <div id="catalogpage2">
       
             <div id="m-rnb" class="mood-divs">
-				<a href="CategoryPicked.php">
-					<p class="genre-tags">RNB
-					</p>
-				</a>
+				<form action="CategoryPicked.php" method="get" class="category_form">
+					<p class="genre-tags">RNB</p>
+					<input type="hidden" name="mood" value='g_rnb'/>
+					<input type="submit" class="genre-tags" value="RNB"/>
+				</form>
             </div>
             
             <div id="m-punk" class="mood-divs">
-				<a href="CategoryPicked.php">
-					<p class="genre-tags">Punk
-					</p>
-				</a>
+				<form action="CategoryPicked.php" method="get" class="category_form">
+					<p class="genre-tags">Punk</p>
+					<input type="hidden" name="mood" value='g_punk'/>
+					<input type="submit" class="genre-tags" value="Punk"/>
+				</form>
             </div>
             
-       
-
-      
             <div id="m-rock" class="mood-divs">
-				<a href="CategoryPicked.php">
-					<p class="genre-tags">Rock
-					</p>
-				</a>
+				<form action="CategoryPicked.php" method="get" class="category_form">
+					<p class="genre-tags">Rock</p>
+					<input type="hidden" name="mood" value='g_rock'/>
+					<input type="submit" class="genre-tags" value="Rock"/>
+				</form>
             </div>
+			
             <div id="m-pop" class="mood-divs">
-				<a href="CategoryPicked.php">
-					<p class="genre-tags">Pop
-					</p>
-				</a>
+				<form action="CategoryPicked.php" method="get" class="category_form">
+					<p class="genre-tags">Pop</p>
+					<input type="hidden" name="mood" value='g_pop'/>
+					<input type="submit" class="genre-tags" value="Pop"/>
+				</form>
             </div>
    
-
-     
             <div id="m-jazz" class="mood-divs">
-				<a href="CategoryPicked.php">
-					<p class="genre-tags">Jazz
-					</p>
-				</a>
+				<form action="CategoryPicked.php" method="get" class="category_form">
+					<p class="genre-tags">Jazz</p>
+					<input type="hidden" name="mood" value='g_jazz'/>
+					<input type="submit" class="genre-tags" value="Jazz"/>
+				</form>
             </div>
+			
             <div id="m-metal" class="mood-divs">
-				<a href="CategoryPicked.php">
-					<p class="genre-tags">Metal
-					</p>
-				</a>
+				<form action="CategoryPicked.php" method="get" class="category_form">
+					<p class="genre-tags">Metal</p>
+					<input type="hidden" name="mood" value='g_metal'/>
+					<input type="submit" class="genre-tags" value="Metal"/>
+				</form>
             </div>
-       
 
-   
             <div id="m-funk" class="mood-divs">
-				<a href="CategoryPicked.php">
-					<p class="genre-tags">Funk
-					</p>
-				</a>
+				<form action="CategoryPicked.php" method="get" class="category_form">
+					<p class="genre-tags">Funk</p>
+					<input type="hidden" name="mood" value='g_funk'/>
+					<input type="submit" class="genre-tags" value="Funk"/>
+				</form>
             </div>
+			
             <div id="m-country" class="mood-divs">
-				<a href="CategoryPicked.php">
-					<p class="genre-tags">Country
-					</p>
-				</a>
+				<form action="CategoryPicked.php" method="get" class="category_form">
+					<p class="genre-tags">Country</p>
+					<input type="hidden" name="mood" value='g_country'/>
+					<input type="submit" class="genre-tags" value="Country"/>
+				</form>
             </div>
-       
-
-   
+      
             <div id="m-edm" class="mood-divs">
-				<a href="CategoryPicked.php">
-					<p class="genre-tags">EDM
-					</p>
-				</a>
+				<form action="CategoryPicked.php" method="get" class="category_form">
+					<p class="genre-tags">EDM</p>
+					<input type="hidden" name="mood" value='g_edm'/>
+					<input type="submit" class="genre-tags" value="EDM"/>
+				</form>
             </div>
+			
             <div id="m-classical" class="mood-divs">
-				<a href="CategoryPicked.php">
-					<p class="genre-tags">Classical
-					</p>
-				</a>
+				<form action="CategoryPicked.php" method="get" class="category_form">
+					<p class="genre-tags">Classical</p>
+					<input type="hidden" name="mood" value='g_classical'/>
+					<input type="submit" class="genre-tags" value="Classical"/>
+				</form>
             </div>
     
             

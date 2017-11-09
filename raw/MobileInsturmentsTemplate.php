@@ -93,54 +93,68 @@ mysqli_close($conn);
         
         
             <div id="m-guitar" class="mood-divs">
-				<a href="CategoryPicked.php">
+				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Guitar</p>
-				</a>
+					<input type="hidden" name="mood" value='g_guitar'/>
+					<input type="submit" class="genre-tags" value="Guitar"/>
+				</form>
             </div>
+			
+			
             <div id="m-bass" class="mood-divs">
-				<a href="CategoryPicked.php">
+				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Bass</p>
-				</a>
+					<input type="hidden" name="mood" value='g_bass'/>
+					<input type="submit" class="genre-tags" value="Bass"/>
+				</form>
             </div>
-        
-
         
             <div id="m-synth" class="mood-divs">
-				<a href="CategoryPicked.php">
+				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Synth</p>
-				</a>
+					<input type="hidden" name="mood" value='g_synth'/>
+					<input type="submit" class="genre-tags" value="Synth"/>
+				</form>
             </div>
+			
             <div id="m-pad"  class="mood-divs">
-				<a href="CategoryPicked.php">
+				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Pads</p>
-				</a>
+					<input type="hidden" name="mood" value='g_pads'/>
+					<input type="submit" class="genre-tags" value="Pads"/>
+				</form>
             </div>
      
-       
-
-
             <div id="m-woodwind" class="mood-divs">
-				<a href="CategoryPicked.php">
+				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Woodwind</p>
-				</a>
+					<input type="hidden" name="mood" value='g_woodwind'/>
+					<input type="submit" class="genre-tags" value="Woodwind"/>
+				</form>
             </div>
+			
             <div id="m-drums" class="mood-divs">
-				<a href="CategoryPicked.php">
+				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Drums</p>
-				</a>
+					<input type="hidden" name="mood" value='g_drums'/>
+					<input type="submit" class="genre-tags" value="Drums"/>
+				</form>
 			</div>
-     
-
         
             <div id="m-strings" class="mood-divs">
-				<a href="CategoryPicked.php">
+				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Strings</p>
-				</a>
+					<input type="hidden" name="mood" value='g_strings'/>
+					<input type="submit" class="genre-tags" value="Strings"/>
+				</form>
             </div>
+			
             <div id="m-brass" class="mood-divs">
-				<a href="CategoryPicked.php">
+				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Brass</p>
-				</a>
+					<input type="hidden" name="mood" value='g_brass'/>
+					<input type="submit" class="genre-tags" value="Brass"/>
+				</form>
             </div>
         
 
