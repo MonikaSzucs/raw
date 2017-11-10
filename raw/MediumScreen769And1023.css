@@ -432,6 +432,7 @@ hambuger menu
         background-position: center;
         background-repeat: no-repeat;
     }
+
     .track-player {
         z-index: 9998;
         height: 65px;
@@ -1216,6 +1217,23 @@ hambuger menu
 
 
 /*  groups page css  end*/
+
+/* ------------------ Streaming.php Styling ------------------*/
+
+  .track-display {
+      margin: 30px;
+      width: 90%;
+      height: 60px;
+      background-color: red;
+      position: relative;
+      left: 40px;
+      box-shadow: 2px 5px 5px #888888;
+      border-radius: 20px;
+  }
+
+/* ------------------ END OF Streaming.php Styling ------------------*/
+
+
 	.white_background_group_Large{
 		width: 100%;
         height: 1300px;

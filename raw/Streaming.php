@@ -150,7 +150,7 @@ if(isset($_POST['toDo'])){
                                 echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
                             }
                             else{
-                                echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploaded' > </td>";
+                                echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploadedFeed' > </td>";
                             }
 														echo "<button  id='play_pause_feed' class='play_pause_feed' onClick='wavesurfer".$i.".playPause(); play_pause_image_function()'>";
 														echo "<i class='glyphicon glyphicon-play'></i";
@@ -213,7 +213,7 @@ if(isset($_POST['toDo'])){
 		                                echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
 		                            }
 		                            else{
-		                                echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploaded' > </td>";
+		                                echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploadedFeed' > </td>";
 		                            }
 		                        echo "</div>";
 		                        echo "<div class='song-buttons'>";
@@ -258,7 +258,7 @@ if(isset($_POST['toDo'])){
 				                                echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
 				                            }
 				                            else{
-				                                echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploaded' > </td>";
+				                                echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploadedFeed' > </td>";
 				                            }
 				                        echo "</div>";
 				                        echo "<div class='song-buttons'>";

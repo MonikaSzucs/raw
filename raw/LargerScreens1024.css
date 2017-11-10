@@ -1196,6 +1196,17 @@ hambuger menu
 	}
 
 	.circlePhotoUploaded{
+		width:150px;
+		height:150px;
+    position: absolute;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		-ms-border-radius: 50%;
+		-o-border-radius: 50%;
+		border-radius: 50%;'
+	}
+
+	.circlePhotoUploadedFeed{
 		width:100%;
 		height:100%;
     position: absolute;
