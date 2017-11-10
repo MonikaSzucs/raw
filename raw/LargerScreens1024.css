@@ -185,7 +185,7 @@ hambuger menu
         right: 0;
         background-color: white;
         width: 80%;
-        height: 100vh;
+        height: auto;
     }
 
 
@@ -256,13 +256,17 @@ hambuger menu
 	*/
 	.file_upload_button{
 		margin: 20px;
-        padding: 25px;
-        border: .5px solid darkgray;
+        padding: 10px;
+        border: 1px solid darkgray;
         width: 90%;
+		padding: 10px;
+		font-size: 20px;
         border-radius: 10px;
+		background-color: #f0f0f0;
         height: 70px;
         font-family: Avenir-Medium;
 	}
+
 
     form button {
         float: right;
@@ -605,6 +609,15 @@ hambuger menu
         position: absolute;
         top: 220px;
     }
+	
+	.m-profile-main_white{
+		width: 100%;
+        height: 1650px;
+        background-color: white;
+        position: absolute;
+        top: 220px;
+	}
+	
     .m-groupdiv-main {
         width: 100%;
         height: auto;
@@ -629,6 +642,11 @@ hambuger menu
 	#CreateGroupsForm{
 		height: 1475px !important;
 	}
+	
+	#CreateGroupsForm_white{
+		height: 1675px !important;
+	}
+	
 
     #lname {
         color: gray;
@@ -1121,6 +1139,13 @@ hambuger menu
 		position: absolute;
 		top: 1200px;
 	}
+	
+	#buttonAreaCreate_buttonSubmit{
+		width: 100%;
+		height: 50px;
+		position: absolute;
+		bottom: -30px;
+	}
 
 	input{
 		margin-top: 30px;
@@ -1215,7 +1240,7 @@ hambuger menu
 		-moz-border-radius: 50%;
 		-ms-border-radius: 50%;
 		-o-border-radius: 50%;
-		border-radius: 50%;
+		border-radius: 50%;'
 	}
 
 	.group_container_create {
@@ -1429,14 +1454,14 @@ hambuger menu
 
     }
 
-  	.Recently_Uploaded_Title {
-      font-family: Avenir Black;
-  		width: 500px;
-  		font-size: 35px;
-  		margin-left: 50px;
-  		margin-top: 20px;
-  		margin-bottom: -30px;
-  	}
+	.Recently_Uploaded_Title {
+    font-family: Avenir Black;
+		width: 500px;
+		font-size: 35px;
+		margin-left: 50px;
+		margin-top: 20px;
+		margin-bottom: -30px;
+	}
 
 
     .song-buttons {
@@ -1623,7 +1648,45 @@ hambuger menu
 		background-color: transparent;
 	}
 
+	.group_upload_title_style {
+		font-size: 30px;
+		font-weight: bold;
+	}
 
-
-
+	.input_buttons_styles_groups_create{
+		display: none;
+	}
+	
+	.input_buttons_styles_groups_create{
+		-webkit-appearance: none;
+		background-color: #336173;
+		border: 5px solid #336173;
+		border-radius: 20px;
+		width: 100%;
+		display: inline-block;
+		position: relative;
+		width: 30px;
+		height: 30px;
+	}
+	
+	.input_buttons_styles_groups_create:checked{
+		background: #E5E5E5;
+		border: 5px solid #336173;
+	}
+	
+	.label_groups_music_sample{
+		height: 50px;
+		width: 200px;
+		float: left;
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 25px;
+	}
+	
+	.music_sample_label_groups_uploading{
+		position: relative;
+		top: -5px;
+		padding-left: 15px;
+	}
+	
 }

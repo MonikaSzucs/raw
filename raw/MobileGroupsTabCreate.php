@@ -305,7 +305,7 @@ $formSuccessfullMessage = "";
 		
 		
 
-        <div class="m-profile-main" id="CreateGroupsForm">
+        <div class="m-profile-main_white" id="CreateGroupsForm_white">
 			<div id="m-profile-main-inner">
 				<div class="spaceContainerTop"><h1>Create Group</h1></div>
 				<a href="MobileGroupsTab.php"><button id="CreateGroupProfile">Back</button></a>
@@ -330,27 +330,49 @@ $formSuccessfullMessage = "";
 								
 							</div>	
 						</div>
-							<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+							<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+							
+							<span class='group_upload_title_style'>
 							Upload a profile Image:
+							</span>
+							
 							<br/>
 							<input class="file_upload_button" id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
 							<br/>
 							<hr>
 							<br/>
+							<br/>
+							<span class='group_upload_title_style'>
 							Song or Samples Upload:
+							</span>
+							
 							<br/>
 							<input class="file_upload_button" id="files" type="file" name="myMusic" accept="audio/*" />
 							<br/>
+							<br/>
+							<hr>
+							<br/>
+							<span class='group_upload_title_style'>
 							Is this a song or sample?
+							</span>
+							
 							<div class="checkbox">
-							  <label><input type="radio" value="1" name="music_check" checked>Music</label>
-							  <label><input type="radio" value="0" name="music_check">Sample</label>
+							  <label class="label_groups_music_sample"><input class="input_buttons_styles_groups_create" type="radio" value="1" name="music_check" checked><span class="music_sample_label_groups_uploading">Music</span></label>
+							  <label class="label_groups_music_sample"><input class="input_buttons_styles_groups_create" type="radio" value="0" name="music_check"><span class="music_sample_label_groups_uploading">Sample</span></label>
 							</div>
+							<br/>
+							<br/>
+							<br/>
+							<br/>
+							<br/>
 							<br/>
 							<hr/>
 							<br/>
 							
+							<span class='group_upload_title_style'>
 							Genre(s)
+							</span>
+							
 							<table style="left: 0; right: 0; margin: 0 auto;">
 								<tr>
 									<td style="width: 120px;"><input type="checkbox" name="g_rnb" value="1">RNB </td>
@@ -372,7 +394,11 @@ $formSuccessfullMessage = "";
 							<hr>
 							<br/>
 							<br/>
+							
+							<span class='group_upload_title_style'>
 							Mood(s)
+							</span>
+							
 							<table style="left: 0; right: 0; margin: 0 auto;">
 								<tr>
 									<td style="width: 120px;"><input type="checkbox" name="g_happy" value="1">Happy</td>
@@ -391,7 +417,11 @@ $formSuccessfullMessage = "";
 							<hr>
 							<br/>
 							<br/>
+							
+							<span class='group_upload_title_style'>
 							Instrument(s)
+							</span>
+							
 							<table style="left: 0; right: 0; margin: 0 auto;">
 								<tr>
 									<td style="width: 120px;"><input type="checkbox" name="g_guitar" value="1">Guitar</td>
@@ -412,7 +442,7 @@ $formSuccessfullMessage = "";
 							<br/>
 							<br/>
 						
-						<div id="buttonAreaCreate">
+						<div id="buttonAreaCreate_buttonSubmit">
 							<input id="CreateGroupProfileSubmit" type="submit" />
 						</div>
 
