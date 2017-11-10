@@ -1659,8 +1659,8 @@ hambuger menu
 	
 	.input_buttons_styles_groups_create{
 		-webkit-appearance: none;
-		background-color: #336173;
-		border: 5px solid #336173;
+		background-color: #E5E5E5;
+		border: 5px solid #E5E5E5;
 		border-radius: 20px;
 		width: 100%;
 		display: inline-block;
@@ -1670,8 +1670,8 @@ hambuger menu
 	}
 	
 	.input_buttons_styles_groups_create:checked {
-		background: #E5E5E5;
-		border: 5px solid #336173;
+		background: #336173;
+		border: 5px solid #E5E5E5;
 	}
 	
 	.label_groups_music_sample{
@@ -1691,8 +1691,8 @@ hambuger menu
 	
 	.input_checkbox_style_group_create{
 		-webkit-appearance: none;
-		background-color: #336173;
-		border: 5px solid #336173;
+		background-color: #E5E5E5;
+		border: 5px solid #E5E5E5;
 		border-radius: 5px;
 		width: 100%;
 		display: inline-block;
@@ -1702,9 +1702,9 @@ hambuger menu
 	}
 	
 	.input_checkbox_style_group_create:checked {
-		background: #E5E5E5;
+		background: #336173;
 		
-		border: 5px solid #336173;
+		border: 5px solid #E5E5E5;
 	}
 	
 	.categories_label_groups_uploading{
