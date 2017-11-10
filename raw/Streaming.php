@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 //the session_start() should always be at the top
 session_start();
@@ -10,10 +10,10 @@ echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
 
 if(!isset($_SESSION["user_id"]))
 {
-	session_destroy(); 
-	header( 'Location: signout.php' ); 
+	session_destroy();
+	header( 'Location: signout.php' );
 };
- 
+
 
 //Step1 connect to database
 define('DB_HOST', 'localhost');
@@ -26,10 +26,10 @@ $db = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE) or die('Error conn
 if(isset($_POST['toDo'])){
 	print_r($_POST);
 
-	
+
 	$query = "INSERT INTO group_users (group_id, user_id)";
 	$query .= " VALUES (" . $_POST['group_id'] . ", " . $_SESSION['user_id'] . ")";
-	
+
 	echo $query;
 	$result = mysqli_query($db, $query) or die('Error querying database.');
 
@@ -93,100 +93,213 @@ if(isset($_POST['toDo'])){
         <div id="next-button" class="m-player"></div>
     </div>
     <div class="main-page">
-                
+
 <!--
         hamburger menu
-        
+
 -->
-        <div id="hamburger"> 
+        <div id="hamburger">
             <ul id="hambul">
                 <a href="ProfileIntroPage.php"><li class="hamclass">
                 Profile
-                </li></a>  
+                </li></a>
                 <a href="logout.php"><li class="hamclass">
                 Sign Out
-                </li></a>               
+                </li></a>
             </ul>
         </div>
 
 
 		<div class="main-songDiv_feed">
-			<div class="feedsidebar">
-				<div class="whotofollowdiv">  <h3 class="wtftext">Recent Groups Created</h3>
-				<div class="personfollow">
-					<p id="follname"> Name </p>
-					 <button class="follbut">Join</button>
-					<div class="followpic"></div>
+			<div class='streaming_desktop'>
+				<div class="feedsidebar">
+					<div class="whotofollowdiv">  <h3 class="wtftext">Recent Groups Created</h3>
+					<div class="personfollow">
+						<p id="follname"> Name </p>
+						 <button class="follbut">Join</button>
+						<div class="followpic"></div>
+						</div>
+					</div>
+				   <div class="listeninghdiv"><h3 class="wtftext">Listening History</h3>
+					 <p id="follname"> Name </p>
+					 <p id="follname2"> Song Name </p>
+						 <div  class="followpic2"></div>
 					</div>
 				</div>
-			   <div class="listeninghdiv"><h3 class="wtftext">Listening History</h3>
-				 <p id="follname"> Name </p>
-				 <p id="follname2"> Song Name </p>
-					 <div  class="followpic2"></div>
-				</div>
+					<div class="invisdiv4"></div>
+				<div class="Recently_Uploaded_Title">Recently Uploaded</div>
 			</div>
-				<div class="invisdiv4"></div>
-			<div class="Recently_Uplaoded_Title">Recently Uploaded</div>
-			
 			<?php
-			
+
 			//SELECT * FROM `music_public` ORDER BY music_uploaded DESC LIMIT 5;
 			//Step2 get data from database
 			$query = "SELECT * FROM music_public ORDER BY music_uploaded DESC LIMIT 5;";
 			$result = mysqli_query($db, $query) or die('Error querying database.');
-			
+
 			//Step3 Display the result
-			
+
 			$i=1;
+			$k=0;
 			echo "<div class='container_musics_feed'>";
 			while ($row = mysqli_fetch_array($result)) {
-				
-				
-				
-				echo "<div class='first-song'>";
-					echo "<div class='songpic'>";
-						if(empty($row['music_photo'] )){
-							echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
-						}
-						else{
-							echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploaded' > </td>";
-						}
-					echo "</div>";
-					echo "<div class='song-buttons'>";
-						echo "<p id='FeedArtistsName'>Name</p>";
-						echo "<p id='FeedSongName'>" . $row['song_title'] . "</p>";
-					echo "</div>";
-					echo "<div class='track-display'>";
-					
-						echo "<div id='waveform".$i."' class='wave'></div>";
-							echo "<div>";
-								echo "<button class='play_pause_feed' onclick='wavesurfer".$i.".playPause()'>";
-									echo "<i class='glyphicon glyphicon-play'></i>";
-									echo "Play/Pause";
-								echo "</button>";
-							echo "</div>";
-						echo "</div>";
-						
-					echo "</div>";
-					
-					echo "<button class='download_feed_button'>Download</button>";
-					
-					echo "<script>";
-						echo "var wavesurfer".$i." = WaveSurfer.create({";
-							echo "container: '#waveform".$i."',";
-							echo "waveColor: '#c5ddff',";
-							echo "progressColor: '#75a8ff'";
-						echo "});";
-						echo "wavesurfer".$i.".load('". $row['music_file'] ."');";
-					echo "</script>";
-					$i++;
+
+						echo "<div id='streaming_desktop'>";
+                    echo "<div class='first-song'>";
+                        echo "<div class='songpic'>";
+                            if(empty($row['music_photo'] )){
+                                echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
+                            }
+                            else{
+                                echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploaded' > </td>";
+                            }
+														echo "<button  id='play_pause_feed' class='play_pause_feed' onClick='wavesurfer".$i.".playPause(); play_pause_image_function()'>";
+														echo "<i class='glyphicon glyphicon-play'></i";
+														echo "</button>";
+                        echo "</div>";
+                        echo "<div class='song-buttons'>";
+                            echo "<p id='FeedArtistsName'>Name</p>";
+                            echo "<p id='FeedSongName'>" . $row['song_title'] . "</p>";
+                        echo "</div>";
+                        echo "<div class='track-display'>";
+
+                            echo "<div id='waveform".$i."' class='wave'></div>";
+                                // echo "<div>";
+                                // echo "</div>";
+                            echo "</div>";
+
+                        echo "</div>";
+
+                        echo "<button class='download_feed_button'>Download</button>";
+
+                        echo "<script>";
+                            echo "var wavesurfer".$i." = WaveSurfer.create({";
+                                echo "container: '#waveform".$i."',";
+                                echo "waveColor: '#c5ddff',";
+                                echo "progressColor: '#75a8ff'";
+                            echo "});";
+                            echo "wavesurfer".$i.".load('". $row['music_file'] ."');";
+
+													echo "var img = document.getElementsByClassName('play_pause_feed');";
+													echo "var num = 'play';";
+
+													echo "function play_pause_image_function(){";
+														echo "if (num === 'play'){";
+															echo "img[".$k."].style.backgroundImage='url(SVG/Pause.svg)';";
+															echo "num = 'pause';";
+															echo "console.log(".$k.");";
+														echo "}";
+
+
+														echo "else if(num === 'pause'){";
+															echo "img[".$k."].style.backgroundImage = 'url(SVG/Play.svg)';";
+															echo "num = 'play';";
+															echo "console.log(".$k.");";
+														echo "}";
+													echo "}";
+												echo "</script>";
+                        $i++;
+												$k++;
+                echo "</div>";
+
+							//
+							//
+							//Tablet Area
+							//
+
+						echo "<div class='streaming_tablet'>";
+		                    echo "<div class='first-song'>";
+		                        echo "<div class='songpic'>";
+		                            if(empty($row['music_photo'] )){
+		                                echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
+		                            }
+		                            else{
+		                                echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploaded' > </td>";
+		                            }
+		                        echo "</div>";
+		                        echo "<div class='song-buttons'>";
+		                            echo "<p id='FeedArtistsName'>Name</p>";
+		                            echo "<p id='FeedSongName'>" . $row['song_title'] . "</p>";
+		                        echo "</div>";
+		                        echo "<div class='track-display'>";
+
+		                            echo "<div id='waveform".$i."' class='wave'></div>";
+		                                echo "<div>";
+		                                    echo "<button class='play_pause_feed' onclick='wavesurfer".$i.".playPause()'>";
+		                                        echo "<i class='glyphicon glyphicon-play'></i>";
+		                                        echo "Play/Pause";
+		                                    echo "</button>";
+		                                echo "</div>";
+		                            echo "</div>";
+
+		                        echo "</div>";
+
+		                        echo "<button class='download_feed_button'>Download</button>";
+
+		                        echo "<script>";
+		                            echo "var wavesurfer".$i." = WaveSurfer.create({";
+		                                echo "container: '#waveform".$i."',";
+		                                echo "waveColor: '#c5ddff',";
+		                                echo "progressColor: '#75a8ff'";
+		                            echo "});";
+		                            echo "wavesurfer".$i.".load('". $row['music_file'] ."');";
+		                        echo "</script>";
+		                        $i++;
+		            echo "</div>";
+
+									//
+									//
+									//Mobile Area
+									//
+
+								echo "<div class='streaming_mobile'>";
+				                    echo "<div class='first-song'>";
+				                        echo "<div class='songpic'>";
+				                            if(empty($row['music_photo'] )){
+				                                echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
+				                            }
+				                            else{
+				                                echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploaded' > </td>";
+				                            }
+				                        echo "</div>";
+				                        echo "<div class='song-buttons'>";
+				                            echo "<p id='FeedArtistsName'>Name</p>";
+				                            echo "<p id='FeedSongName'>" . $row['song_title'] . "</p>";
+				                        echo "</div>";
+				                        echo "<div class='track-display'>";
+
+				                            echo "<div id='waveform".$i."' class='wave'></div>";
+				                                echo "<div>";
+				                                    echo "<button class='play_pause_feed' onclick='wavesurfer".$i.".playPause()'>";
+				                                        echo "<i class='glyphicon glyphicon-play'></i>";
+				                                        echo "Play/Pause";
+				                                    echo "</button>";
+				                                echo "</div>";
+				                            echo "</div>";
+
+				                        echo "</div>";
+
+				                        echo "<button class='download_feed_button'>Download</button>";
+
+				                        echo "<script>";
+				                            echo "var wavesurfer".$i." = WaveSurfer.create({";
+				                                echo "container: '#waveform".$i."',";
+				                                echo "waveColor: '#c5ddff',";
+				                                echo "progressColor: '#75a8ff'";
+				                            echo "});";
+				                            echo "wavesurfer".$i.".load('". $row['music_file'] ."');";
+				                        echo "</script>";
+				                        $i++;
+				            echo "</div>";
+
+
+
 			};
-			
+
 			echo "</div>";
-			
-			
+
+
 			?>
-			
+
         </div>
 
     </div>
@@ -205,6 +318,7 @@ if(isset($_POST['toDo'])){
 </body>
 
 
+
 <?php
 //Step 4 close the connection
 mysqli_close($db);
@@ -212,4 +326,3 @@ echo "<br/><br/><br/>";
 ?>
 
 </html>
-

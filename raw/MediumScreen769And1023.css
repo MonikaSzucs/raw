@@ -21,20 +21,32 @@
     .mobileScreen {
         display: block;
     }
-	
+
 	.LargeScreenGroup {
 		display: none;
 	}
-	
+
 	.MediumScreenGroup{
 	display: block;
 	}
-	
+
 	.SmallScreenGroup{
 	display: none;
 	}
-	
-	
+
+  .streaming_desktop {
+    display: none;
+  }
+
+  .streaming_tablet {
+    display: block;
+  }
+
+  .streaming_mobile {
+    display: none;
+  }
+
+
     body {
         background-color: darkgrey;
         margin: 0 auto;
@@ -96,9 +108,9 @@ hambuger menu
         background-color: white;
         height: 100%;
     }
-    
-    
-    
+
+
+
     .genre-tags {
         font-family: helvetica;
         font-size: 14px;
@@ -173,8 +185,8 @@ hambuger menu
     .nav-bar a {
         color: white;
     }
-    
-    
+
+
     	.group_container{
 		width: 90%;
 		left: 0;
@@ -182,15 +194,15 @@ hambuger menu
 		margin: 0 auto;
 	}
 
-    
+
     .group_container_create {
-			
-			height: 150px; 
+
+			height: 150px;
 			left: 0;
 			right: 0;
 			margin: 0 auto;
 		}
-    
+
     	.group_photo_Area {
 			width: 150px;
 			height: 150px;
@@ -198,7 +210,7 @@ hambuger menu
 			border-radius: 100%;
 			box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
 		}
-    
+
     	.circlePhoto_group_Auto {
 			width: 130px;
 			height: 130px;
@@ -208,9 +220,9 @@ hambuger menu
 			-moz-border-radius: 50%;
 			-ms-border-radius: 50%;
 			-o-border-radius: 50%;
-			border-radius: 50%; 
+			border-radius: 50%;
 		}
-    
+
     	.circlePhotoUploaded{
 		width:100%;
 		height:100%;
@@ -220,7 +232,7 @@ hambuger menu
 		-o-border-radius: 50%;
 		border-radius: 50%;'
 	}
-    
+
     	.groups_title_generate{
 			width: 85%;
 			height: 30px;
@@ -230,20 +242,20 @@ hambuger menu
             font-family: Avenir-Black;
             font-size: 18px;
             overflow: auto;
-			
+
 		}
-    
-    
+
+
     	.groups_descrition_generate{
 			width: 85%;
 			height: 50px;
 			margin-left: 15px;
             overflow: auto;
             font-family: Avenir-Light;
-			
+
 		}
-		
-    
+
+
     	.spaceContainerTop p{
 		font-size:30px;
 		padding-left: 50px;
@@ -267,18 +279,18 @@ hambuger menu
         transition: 60ms ease-in-out;
         background-size: 85px 85px;
     }
-    
-    
+
+
 /*Chatstyle*//*Chatstyle*//*Chatstyle*//*Chatstyle*//*Chatstyle*//*Chatstyle*/
- 
-    
+
+
         #mchat {
         height: 66vh;
         bottom: 0;
         width: 100%;
         position: relative;
         background-color:  white;
-        
+
     }
     #mform {
         height: auto;
@@ -286,11 +298,11 @@ hambuger menu
         margin: 0 auto;
         background-color: white;
     }
-    
+
     form {
-        
+
         margin: 0 auto;
-      
+
         position: relative;
         width: 100%;
     }
@@ -312,7 +324,7 @@ hambuger menu
         border-radius: 5px;
         background-color: white;
     }
-    
+
     form input [type=text] {
         padding: 1px;
     }
@@ -329,7 +341,7 @@ hambuger menu
         border-radius: 10px;
 
     }
-    
+
     #messages {
         background-color: white;
         position: relative;
@@ -348,8 +360,8 @@ hambuger menu
 
 
 /*Chatstyle*//*Chatstyle*//*Chatstyle*//*Chatstyle*//*Chatstyle*//*Chatstyle*/
-    
-    
+
+
     .nav-bar {
 
         z-index: 9999;
@@ -558,7 +570,7 @@ hambuger menu
         text-align: center;
         position: relative;
         margin: 0 auto;
-        padding: 20px; 
+        padding: 20px;
     }
     #m-message-button {
         margin: 0 auto;
@@ -576,18 +588,18 @@ hambuger menu
         background-color: white;
         border-bottom: solid #cbcbcb .50px;
     }
-    
-    
+
+
        #catalogpage2 {
-        
+
         background-color: white;
         display: flex;
          flex-flow: row wrap;
          justify-content: center;
            height:auto;
-        
+
     }
-    
+
     #m-settings-button {
         text-decoration: none;
         color: black;
@@ -667,7 +679,7 @@ hambuger menu
         position: absolute;
         top: 220px;
     }
-    
+
     .m-groupdiv-main {
         width: 100vw;
         height: auto;
@@ -1013,23 +1025,23 @@ hambuger menu
 		margin: 0 auto;
 		position: absolute;
 	}
-    
+
     .LeaveButtonGroups{
 			float: right;
 			top: -115px;
 			right: 10px;
 			position: relative;
-			
+
 		}
-    
+
     	.EnterButtonGroups{
 			float: right;
 			top: -60px;
 			position: relative;
 			right: -68px;
 		}
-		
-    
+
+
 
 	.spaceContainerTop{
 		width: 100%;
@@ -1088,7 +1100,7 @@ hambuger menu
 		height: 150px;
 	}
 
-    
+
     	.vertical_space_group {
 			width: 550px;
 			height: 115px;
@@ -1097,7 +1109,7 @@ hambuger menu
 			border-radius: 15px;
 			box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
 		}
-    
+
 	.GroupsInformation-Title{
 		width: 100%;
 		height: 40%;
@@ -1154,14 +1166,14 @@ hambuger menu
 	input{
 		margin-top: 30px;
 	}
-	
+
 	.M_group_container_create{
 		height: 150px;
 		left: 0;
 		right: 0;
 		margin: 10px 25px 10px 50px;
 	}
-	
+
 	.M_vertical_space_group{
 		width: 70%;
 			height: 115px;
@@ -1170,7 +1182,7 @@ hambuger menu
 			border-radius: 15px;
 			box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
 	}
-	
+
 	.M_Leave-Butt{
 		border: 1px solid darkgray;
 		padding: 10px;
@@ -1179,7 +1191,7 @@ hambuger menu
 		background-color: white;
 		width: 75px;
 	}
-	
+
 	.M_Enter-Butt{
 		border: 1px solid darkgray;
 		padding: 10px;
@@ -1189,7 +1201,7 @@ hambuger menu
 		background-color: white;
 		width: 75px;
 	}
-	
+
 	.M_join-Butt{
 		border: 1px solid darkgray;
 		padding: 10px;
@@ -1215,9 +1227,9 @@ hambuger menu
 		padding: 10px 0px 10px 20px;
 		text-decoration: none !important;
 		font-size: 30px;
-		
+
 	}
-	
+
 	.pagination{
 		margin-top: 70px;
 		text-align: center;

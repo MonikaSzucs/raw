@@ -21,21 +21,33 @@
     .mobileScreen {
         display: block;
     }
-	
+
 	.LargeScreenGroup {
 		display: block;
 	}
-	
+
 	.MediumScreenGroup{
 		display: none;
 	}
-	
+
 	.SmallScreenGroup{
 		display: none;
 	}
-	
-	
-	
+
+  .streaming_desktop {
+    display: block;
+  }
+
+  .streaming_tablet {
+    display: none;
+  }
+
+  .streaming_mobile {
+    display: none;
+  }
+
+
+
     body {
         background-color: darkgrey;
         margin: 0 auto;
@@ -111,7 +123,7 @@ hambuger menu
 		background-color:transparent;
 		border: none;
     }
-	
+
     .m-player {
         vertical-align: middle;
         display: inline-block;
@@ -171,7 +183,7 @@ hambuger menu
         position: relative;
         left: 0;
         right: 0;
-        background-color: #E5E5E5;
+        background-color: white;
         width: 80%;
         height: auto;
     }
@@ -356,7 +368,7 @@ hambuger menu
         height: 65px;
         width: 100%;
         position: fixed;
-      background-color: #19313A;
+        background-color: #19313A;
         bottom: 0;
     }
     #m-wrench {
@@ -599,7 +611,7 @@ hambuger menu
         background-color: white;
         position: absolute;
     }
-	
+
 	.white_background_group_Large{
 		width: 100%;
         height: 1300px;
@@ -611,7 +623,7 @@ hambuger menu
 		font-size:30px;
 		padding-left: 50px;
         font-family: Avenir-Black;
-		
+
 	}
 
 	#CreateGroupsForm{
@@ -1186,6 +1198,8 @@ hambuger menu
 	.circlePhotoUploaded{
 		width:100%;
 		height:100%;
+    position: absolute;
+    z-index: -1;
 		-webkit-border-radius: 50%;
 		-moz-border-radius: 50%;
 		-ms-border-radius: 50%;
@@ -1397,22 +1411,22 @@ hambuger menu
 
     #FeedSongName {
         margin: 0 auto;
-        font-family: helvetica;
+        font-family: Avenir Medium;
         font-weight: 300;
         font-size: 16px;
         margin-left: 195px;
 
     }
-	
-	.Recently_Uplaoded_Title{
-		background-color:red;
+
+	.Recently_Uploaded_Title {
+    font-family: Avenir Black;
 		width: 500px;
-		font-size: 30px;
+		font-size: 35px;
 		margin-left: 50px;
 		margin-top: 20px;
-		margin-bottom: 60px;
+		margin-bottom: -30px;
 	}
-	
+
 
     .song-buttons {
         margin-top: 0 auto;
@@ -1437,12 +1451,11 @@ hambuger menu
     }
 
     #FeedArtistsName{
-        color: dimgray;
+        color: #c5c5c5;
         font-size: 14px;
-        font-weight: 400;
         margin: 0 auto;
-        margin-left: 200px;
-        font-family: helvetica;
+        margin-left: 195px;
+        font-family: Avenir Black;
     }
 
     .track-display {
@@ -1458,7 +1471,7 @@ hambuger menu
     }
 
 
-	/*Download styleing in groups*/
+	/*Download styling in groups*/
 	#DownloadButtonGroups {
 		margin-left: 65vw;
 		margin-top: 60px;
@@ -1485,7 +1498,7 @@ hambuger menu
 		font-size: large;
 		font-family: Avenir-Medium;
 	}
-	
+
 	.Leave-Butt{
 		border: 1px solid darkgray;
 		padding: 10px;
@@ -1494,7 +1507,7 @@ hambuger menu
 		background-color: white;
 		width: 75px;
 	}
-	
+
 	.Enter-Butt{
 		border: 1px solid darkgray;
 		padding: 10px;
@@ -1504,7 +1517,7 @@ hambuger menu
 		background-color: white;
 		width: 75px;
 	}
-	
+
 	.join-Butt{
 		border: 1px solid darkgray;
 		padding: 10px;
@@ -1514,10 +1527,10 @@ hambuger menu
 		background-color: white;
 		width: 75px;
 	}
-	
-	
+
+
 	/* Music player and wave*/
-	
+
 	.music_player {
 		height: 350px;
 		display: block;
@@ -1526,7 +1539,7 @@ hambuger menu
 		margin: 10px 10px;
 		float: left;
 	}
-	
+
 	.wave {
 		height: 10px !important;
 		display: block;
@@ -1535,46 +1548,56 @@ hambuger menu
 		margin-top: -30px;
 		margin-left: 5.5vw;
 	}
-	
+
 	.btn_play_pause{
 		background-color: blue;
 		float: left;
 		margin-top: -30px;
 		margin-left: 50px;
 	}
-	
+
 	.play_pause_feed{
-		border: 1px solid darkgray;
+    background: url(SVG/Play.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px;
+		border: 1px solid white;
 		padding: 10px;
 		border-radius: 20px;
-		background-color: white;
-		width: 85px;
-		margin-top: -50px;
-		margin-left: 20px;
+		background-color: #a34334;
+		width: 30px;
+    height: 30px;
+    position: absolute;
+    margin: 45px 45px 45px 45px;
+		/*margin-top: -50px;
+		margin-left: 20px;*/
 	}
-	
+
 	.container_musics_feed{
 		width: 75%;
 		height: 120px;
 	}
-	
+
 	.download_feed_button{
-		margin-top:-110px;
-		margin-left: 50vw;
+    font-family: Avenir Medium;
+    font-size: 10px;
+    color: #c5c5c5;
+		margin-left: 42vw;
 		border: 1px solid darkgray;
-		padding: 10px;
+		padding: initial;
 		border-radius: 20px;
 		background-color: white;
 		width: 85px;
+    height: 30px;
 	}
-	
+
 	.pagination a{
 		padding: 10px 0px 10px 20px;
 		text-decoration: none !important;
 		font-size: 30px;
-		
+
 	}
-	
+
 	.pagination{
 		margin-top: 70px;
 		text-align: center;
@@ -1584,12 +1607,12 @@ hambuger menu
 		bottom: 100px;
 		position: absolute;
 	}
-	
+
 	.category_form {
 		background-color: transparent;
 	}
-	
-	
-	
-	
+
+
+
+
 }

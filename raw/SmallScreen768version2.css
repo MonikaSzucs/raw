@@ -21,21 +21,32 @@
     .mobileScreen {
         display: block;
     }
-	
+
 	.LargeScreenGroup {
 		display: none;
 	}
-	
+
 	.MediumScreenGroup{
 		display: none;
 	}
-	
+
 	.SmallScreenGroup{
 		display: block;
 	}
-	
-	
-	
+
+  .streaming_desktop {
+    display: none;
+  }
+
+  .streaming_tablet {
+    display: none;
+  }
+
+  .streaming_mobile {
+    display: block;
+  }
+
+
     body {
         background-color: darkgrey;
         margin: 0 auto;
@@ -187,18 +198,18 @@
         background-color: #713232;
     }
 
-    
-    
+
+
      /*Chatstyle*/   /*Chatstyle*/   /*Chatstyle*/   /*Chatstyle*/   /*Chatstyle*/
- 
-    
+
+
         #mchat {
         height: 66vh;
         bottom: 0;
         width: 100%;
         position: relative;
         background-color:  white;
-        
+
     }
     #mform {
         height: auto;
@@ -206,11 +217,11 @@
         margin: 0 auto;
         background-color: white;
     }
-    
+
     form {
-        
+
         margin: 0 auto;
-      
+
         position: relative;
         width: 100%;
     }
@@ -237,7 +248,7 @@
         border-radius: 0px;
 
     }
-    
+
     #messages {
         background-color: white;
         position: relative;
@@ -252,11 +263,11 @@
     #messages li:nth-child(odd) {
         background: #eee;
     }
-    
-    
+
+
       /*Chatstyle*/   /*Chatstyle*/   /*Chatstyle*/   /*Chatstyle*/   /*Chatstyle*/
-    
-    
+
+
     .buttons:hover {
         box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
     }
@@ -482,7 +493,7 @@
         text-align: center;
         position: relative;
         margin: 0 auto;
-        padding: 20px; 
+        padding: 20px;
     }
     #m-message-button {
         margin: 0 auto;
@@ -576,25 +587,25 @@
         background-color: white;
         position: absolute;
         top: 220px;
-    } 
-    
+    }
+
     .m-groupdiv-main {
         width: 100vw;
         height: auto;
         background-color: white;
         position: absolute;
-      
+
     }
-    
+
      .group_container_create {
-			
-			height: 150px; 
+
+			height: 150px;
 			left: 0;
 			right: 0;
 			margin: 25px;;
 		}
-    
-    
+
+
     #lname {
         color: gray;
         font-size: 12px;
@@ -916,7 +927,7 @@
         background-size: contain;
         background-repeat: no-repeat;
     }
-	
+
 /*
 Groups small style
 */
@@ -929,7 +940,7 @@ Groups small style
 		right: 0;
 		margin: 0 auto;
 	}
-	
+
 	.M_group_photo_Area{
 		width: 100px;
 		height: 100px;
@@ -939,7 +950,7 @@ Groups small style
 		border-radius: 100%;
 		box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
 	}
-	
+
 	.M_vertical_space_group{
 		width: 96%;
 		height: 90px;
@@ -949,7 +960,7 @@ Groups small style
 		border-radius: 15px;
 		box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
 	}
-	
+
 	.s_Leave-Butt{
 		border: 1px solid darkgray;
 		padding: 8px;
@@ -958,7 +969,7 @@ Groups small style
 		background-color: white;
 		width: 75px;
 	}
-	
+
 	.s_join-Butt{
 		border: 1px solid darkgray;
 		padding: 8px;
@@ -968,7 +979,7 @@ Groups small style
 		background-color: white;
 		width: 75px;
 	}
-	
+
 	.s_Enter-Butt{
 		border: 1px solid darkgray;
 		padding: 8px;
@@ -978,7 +989,7 @@ Groups small style
 		background-color: white;
 		width: 75px;
 	}
-	
+
 	.circlePhoto_group_Auto {
 			width: 100px;
 			height: 100px;
@@ -990,7 +1001,7 @@ Groups small style
 			-o-border-radius: 50%;
 			border-radius: 50%;
 	}
-	
+
 	.circlePhotoUploaded{
 		width:100%;
 		height:100%;
@@ -1000,17 +1011,16 @@ Groups small style
 		-o-border-radius: 50%;
 		border-radius: 50%;
 	}
-	
+
 	.white_background_group_Large{
 		width: 100%;
         height: 1450px;
         background-color: white;
         position: absolute;
 	}
-	
+
 	#CreateGroupProfile {
 		width: 100px;
 		background-color:red;
 	}
 }
-
