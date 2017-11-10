@@ -127,7 +127,6 @@ if(isset($_POST['toDo'])){
 					</div>
 				</div>
 					<div class="invisdiv4"></div>
-				<div class="Recently_Uploaded_Title">Recently Uploaded</div>
 			</div>
 			<?php
 
@@ -140,10 +139,12 @@ if(isset($_POST['toDo'])){
 
 			$i=1;
 			$k=0;
+			echo 	"<div class='Recently_Uploaded_Title'>Recently Uploaded</div>";
 			echo "<div class='container_musics_feed'>";
+
 			while ($row = mysqli_fetch_array($result)) {
 
-						echo "<div id='streaming_desktop'>";
+						echo "<div class='streaming_desktop'>";
                     echo "<div class='first-song'>";
                         echo "<div class='songpic'>";
                             if(empty($row['music_photo'] )){
@@ -215,6 +216,9 @@ if(isset($_POST['toDo'])){
 		                            else{
 		                                echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploadedFeed' > </td>";
 		                            }
+																echo "<button class='play_pause_feed' onclick='wavesurfer".$i.".playPause()'>";
+																echo "<i class='glyphicon glyphicon-play'></i>";
+																echo "</button>";
 		                        echo "</div>";
 		                        echo "<div class='song-buttons'>";
 		                            echo "<p id='FeedArtistsName'>Name</p>";
@@ -223,12 +227,6 @@ if(isset($_POST['toDo'])){
 		                        echo "<div class='track-display'>";
 
 		                            echo "<div id='waveform".$i."' class='wave'></div>";
-		                                echo "<div>";
-		                                    echo "<button class='play_pause_feed' onclick='wavesurfer".$i.".playPause()'>";
-		                                        echo "<i class='glyphicon glyphicon-play'></i>";
-		                                        echo "Play/Pause";
-		                                    echo "</button>";
-		                                echo "</div>";
 		                            echo "</div>";
 
 		                        echo "</div>";

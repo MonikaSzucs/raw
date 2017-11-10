@@ -185,7 +185,7 @@ hambuger menu
         right: 0;
         background-color: white;
         width: 80%;
-        height: auto;
+        height: 100vh;
     }
 
 
@@ -1215,7 +1215,7 @@ hambuger menu
 		-moz-border-radius: 50%;
 		-ms-border-radius: 50%;
 		-o-border-radius: 50%;
-		border-radius: 50%;'
+		border-radius: 50%;
 	}
 
 	.group_container_create {
@@ -1429,14 +1429,14 @@ hambuger menu
 
     }
 
-	.Recently_Uploaded_Title {
-    font-family: Avenir Black;
-		width: 500px;
-		font-size: 35px;
-		margin-left: 50px;
-		margin-top: 20px;
-		margin-bottom: -30px;
-	}
+  	.Recently_Uploaded_Title {
+      font-family: Avenir Black;
+  		width: 500px;
+  		font-size: 35px;
+  		margin-left: 50px;
+  		margin-top: 20px;
+  		margin-bottom: -30px;
+  	}
 
 
     .song-buttons {
