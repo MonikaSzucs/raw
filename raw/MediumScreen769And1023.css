@@ -1225,6 +1225,7 @@ hambuger menu
     height: 0px;
   }*/
 
+/* ------------------ Page Title */
   .Recently_Uploaded_Title {
     font-family: Avenir Black;
     width: 590px;
@@ -1298,13 +1299,14 @@ hambuger menu
       font-family: Avenir Medium;
       font-size: 24px;
       color: #c5c5c5;
-      margin: 10px 0 0px 755px;
+      margin: 10px 0 0px 0px;
       border: 1px solid darkgray;
       padding: initial;
       border-radius: 20px;
       background-color: white;
       width: 155px;
       height: 70px;
+      left:74%;
       position: relative;
     }
 
