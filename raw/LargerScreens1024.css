@@ -1670,7 +1670,7 @@ hambuger menu
 	}
 	
 	.input_buttons_styles_groups_create:checked {
-		background: #336173;
+		background: #A43433;
 		border: 5px solid #E5E5E5;
 	}
 	
@@ -1702,7 +1702,7 @@ hambuger menu
 	}
 	
 	.input_checkbox_style_group_create:checked {
-		background: #336173;
+		background: #A43433;
 		
 		border: 5px solid #E5E5E5;
 	}
