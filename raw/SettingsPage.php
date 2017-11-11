@@ -78,7 +78,7 @@ if(!isset($_SESSION["user_id"]))
         <div id="next-button" class="m-player"></div>
 
     </div>
-    <div id="m-main-pagesettings" class="main-page">
+    <div class="m-main-pagesettings_white" class="main-page">
         
                         
 <!--
@@ -98,22 +98,37 @@ if(!isset($_SESSION["user_id"]))
 
         <h1 id="m-settings-h">Settings</h1>
 		
-		<p class="m-settings-info">Add Profile  Image</p>
-		<input id="files" type="file" name="UserProfilePicture" accept="image/x-png,image/gif,image/jpeg" />
+		<div class="setting_profile_image">
+			<div class="m-profile-pic-intro_settings"></div>
+			<div class="m-profile-pic-intro_settings_change_image">
+				<p class="m-settings-info">Change Profile  Image</p>
+				<input id="files" class="m-settings-info_image_button" type="file" name="UserProfilePicture" accept="image/x-png,image/gif,image/jpeg" />
+			</div>
+			
+			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			<hr/>
+			<br/><br/>
+			
+			<div class="m-settings-info_Email_Area">
+				<p class="m-settings-info">Current Email Address:</p>
+				<p class="m-settings-info_sub_titles">Change Email Address: </p>
+				<div class="m-settings-info_email_input_area">
+					<input id="m-email-input" type="text" name="email">
+					<button class="m-email-input_button">Change Email</button>
+				</div>
+				
+				<br/><br/><br/>
+				<hr/>
+				<br/><br/><br/>
+			
+				
+			</div>
+		</div>
 
-        <hr>
-		<br/>
-		<br/>
-        <p class="m-settings-info">Email Address</p>
-
-        <hr>
-
-        <input id="m-email-input" type="text" name="email">
-
-        <br//>
-        <br//>
-        <br/>
-        <br/>
+		
+		
+		<!--
+		
 
         <p class="m-settings-info">Password</p>
         <hr>
@@ -143,7 +158,7 @@ if(!isset($_SESSION["user_id"]))
         
 
         <button id="m-save">SAVE</button>
-
+		-->
         
     
 

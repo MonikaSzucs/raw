@@ -140,7 +140,40 @@ if(!isset($_SESSION["user_id"]))
         <div class="m-profile-main">
 			<div id="m-profile-main-inner">
 				<div class="spaceContainerTop"><h1>User Information</h1></div>
-				
+				<div class="User_Info_display_area">
+					<div class="User_Info_Title_style">
+						Name:
+					</div>
+					
+					<br/>
+					
+					<div class="User_Info_Title_style">
+						User Name:
+					</div>
+					
+					<hr/>
+					<br/>
+					
+					<div class="User_Info_Title_style">
+						Bibiliography:
+					</div>
+					
+					<hr/>
+					<br/>
+					
+					<div class="User_Info_Title_style">
+						Skills:
+					</div>
+					
+					<hr/>
+					<br/>
+					
+					<div class="User_Info_Title_style">
+						Hobbies:
+					</div>
+					
+					<br/>
+				</div>
 					
 					
 				</div>
