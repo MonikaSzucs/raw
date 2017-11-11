@@ -1,3 +1,20 @@
+/*FONTS ---------------------------------------------------------------------------------*/
+
+@font-face {
+  font-family: "Avenir-Medium";
+  src: url(./Font/Avenir/avenir/Avenir-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Avenir-Black";
+  src: url(./Font/Avenir/avenir/Avenir-Black.ttf);
+}
+
+@font-face {
+  font-family: "Avenir-Light";
+  src: url(./Font/Avenir/avenir/Avenir-Light.ttf);
+}
+
 @media (max-device-width: 700px) {
     .mobileScreen {
         display: block;
@@ -263,11 +280,19 @@
         text-align: center;
     }
     .mood-divs {
+        margin: 8px;
         width: 180px;
         height: 120px;
         position: relative;
         display: inline-block;
     }
+    
+    
+       #mpcat{
+        background-color: white;
+        height: 100%;
+    }
+    
     .m-player {
         vertical-align: middle;
         display: inline-block;
@@ -316,7 +341,7 @@
         box-shadow: 0px 5px 5px #888888;
     }
     #m-profile-pic-intro {
-        background-color: aquamarine;
+        background-color: white;
         width: 100px;
         height: 100px;
         border-radius: 100%;
@@ -324,6 +349,7 @@
         top: 20%;
         left: 25px;
         z-index: 9997;
+        box-shadow: 0px 5px 5px #888888;
     }
     #name {
         margin-top: 50px;
@@ -349,7 +375,11 @@
         top: 30px;
     }
     #m-genresh {
+      font-family: Avenir-Black;
         text-align: center;
+        position: relative;
+        margin: 0 auto;
+        padding: 20px; 
     }
     #m-message-button {
         position: relative;
@@ -368,7 +398,7 @@
     }
     #m-settings-button {
         text-decoration: none;
-        color: black; 
+        color: black;
         position: relative;
         width: 100vw;
         height: 75px;
@@ -407,6 +437,7 @@
     }
     .m-center-text {
         position: relative;
+        font-family: Avenir-Medium;
         text-align: center;
         line-height: 75px;
     }
@@ -430,21 +461,38 @@
         margin-right: 45px;
     }
     .m-profile-main {
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         background-color: white;
         position: absolute;
         top: 220px;
     }
+    
+    
+     .group_container_create {
+			
+			height: 150px; 
+			left: 0;
+			right: 0;
+			margin: 25px;;
+		}
+    
+    
+      .m-groupdiv-main {
+        width: 100%;
+        height: auto;
+        background-color: white;
+        position: absolute;
+    }
     #lname {
         color: gray;
         font-size: 12px;
     }
-    #fname { 
+    #fname {
          color: gray;
           font-size: 12px;
     }
-    
+
     #m-settings-h {
         font-family: Helvetica;
         position: relative;
@@ -455,7 +503,7 @@
         position: relative;
         margin-left: 30px;
     }
-    
+
     #m-settings-h {
         position: relative;
         margin-left: 30px;
@@ -640,4 +688,39 @@
         background-size: contain;
         background-repeat: no-repeat;
     }
+	
+	.white_background_group_Large{
+		width: 100%;
+        height: 1300px;
+        background-color: white;
+        position: absolute;
+	}
+	
+	.circlePhotoUploaded{
+		width:100%;
+		height:100%;
+		
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		-ms-border-radius: 50%;
+		-o-border-radius: 50%;
+		border-radius: 50%;
+	}
+	
+	.play_pause_feed_mobile {
+    background: url(SVG/Play.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px;
+		border: 1px solid white;
+		padding: 10px;
+		border-radius: 20px;
+		background-color: #a34334;
+		width: 30px;
+    height: 30px;
+    position: absolute;
+    margin: 45px 45px 45px 45px;
+		/*margin-top: -50px;
+		margin-left: 20px;*/
+	}
 }
