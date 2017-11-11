@@ -1592,7 +1592,7 @@ hambuger menu
 		margin-left: 50px;
 	}
 
-	.play_pause_feed{
+	.play_pause_feed_desktop {
     background: url(SVG/Play.svg);
     background-repeat: no-repeat;
     background-position: center;

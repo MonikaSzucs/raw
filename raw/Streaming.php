@@ -138,12 +138,22 @@ if(isset($_POST['toDo'])){
 			//Step3 Display the result
 
 			$i=1;
-			$k=0;
+			$desktop_num = 0;
+			$tablet_num = 0;
+			$mobile_num = 0;
+			
 			echo 	"<div class='Recently_Uploaded_Title'>Recently Uploaded</div>";
 			echo "<div class='container_musics_feed'>";
 
 			while ($row = mysqli_fetch_array($result)) {
-
+				
+				
+				//
+				//Desktop Area
+				//
+						//echo "<p>".$k."</p>";
+						
+						
 						echo "<div class='streaming_desktop'>";
                     echo "<div class='first-song'>";
                         echo "<div class='songpic'>";
@@ -153,7 +163,7 @@ if(isset($_POST['toDo'])){
                             else{
                                 echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploadedFeed' > </td>";
                             }
-														echo "<button  id='play_pause_feed' class='play_pause_feed' onClick='wavesurfer".$i.".playPause(); play_pause_image_function()'>";
+														echo "<button  id='play_pause_feed' class='play_pause_feed_desktop' onClick='wavesurfer".$i.".playPause(); play_pause_image_function(".$desktop_num.", 0)'>";
 														echo "<i class='glyphicon glyphicon-play'></i";
 														echo "</button>";
                         echo "</div>";
@@ -180,26 +190,13 @@ if(isset($_POST['toDo'])){
                             echo "});";
                             echo "wavesurfer".$i.".load('". $row['music_file'] ."');";
 
-													echo "var img = document.getElementsByClassName('play_pause_feed');";
-													echo "var num = 'play';";
+													
+	
 
-													echo "function play_pause_image_function(){";
-														echo "if (num === 'play'){";
-															echo "img[".$k."].style.backgroundImage='url(SVG/Pause.svg)';";
-															echo "num = 'pause';";
-															echo "console.log(".$k.");";
-														echo "}";
-
-
-														echo "else if(num === 'pause'){";
-															echo "img[".$k."].style.backgroundImage = 'url(SVG/Play.svg)';";
-															echo "num = 'play';";
-															echo "console.log(".$k.");";
-														echo "}";
-													echo "}";
-												echo "</script>";
+							echo "</script>";
                         $i++;
-												$k++;
+						
+						
                 echo "</div>";
 
 							//
@@ -216,9 +213,10 @@ if(isset($_POST['toDo'])){
 		                            else{
 		                                echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploadedFeed' > </td>";
 		                            }
-																echo "<button class='play_pause_feed' onclick='wavesurfer".$i.".playPause()'>";
-																echo "<i class='glyphicon glyphicon-play'></i>";
-																echo "</button>";
+
+										echo "<button  id='play_pause_feed' class='play_pause_feed_tablet' onClick='wavesurfer".$i.".playPause(); play_pause_image_function(".$tablet_num.", 1)'>";
+										echo "<i class='glyphicon glyphicon-play'></i>";
+										echo "</button>";
 		                        echo "</div>";
 		                        echo "<div class='song-buttons'>";
 		                            echo "<p id='FeedArtistsName'>Name</p>";
@@ -242,6 +240,7 @@ if(isset($_POST['toDo'])){
 		                            echo "wavesurfer".$i.".load('". $row['music_file'] ."');";
 		                        echo "</script>";
 		                        $i++;
+
 		            echo "</div>";
 
 									//
@@ -267,7 +266,7 @@ if(isset($_POST['toDo'])){
 
 				                            echo "<div id='waveform".$i."' class='wave'></div>";
 				                                echo "<div>";
-				                                    echo "<button class='play_pause_feed' onclick='wavesurfer".$i.".playPause()'>";
+													echo "<button  id='play_pause_feed' class='play_pause_feed_mobile' onClick='wavesurfer".$i.".playPause(); play_pause_image_function(".$mobile_num.", 2)'>";
 				                                        echo "<i class='glyphicon glyphicon-play'></i>";
 				                                        echo "Play/Pause";
 				                                    echo "</button>";
@@ -287,15 +286,61 @@ if(isset($_POST['toDo'])){
 				                            echo "wavesurfer".$i.".load('". $row['music_file'] ."');";
 				                        echo "</script>";
 				                        $i++;
+										$desktop_num++;
+										$tablet_num++;
+										$mobile_num++;
 				            echo "</div>";
 
 
-
+					
 			};
-
+			
 			echo "</div>";
-
-
+		
+			
+			echo "<script>";
+				//echo "img[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
+				echo "var img = document.getElementsByClassName('play_pause_feed_desktop');";
+				echo "var imgT = document.getElementsByClassName('play_pause_feed_tablet');";
+				echo "var imgM = document.getElementsByClassName('play_pause_feed_mobile');";
+				echo "console.log(img);";
+				echo "var num = 'play';";
+				echo"function play_pause_image_function(trackNum, version){";
+							//echo "console.log('This is working');";
+							echo "console.log(trackNum);";
+							echo "console.log(version);";
+							
+							
+							echo "if (num === 'play'){";
+									echo "num = 'pause';";
+									echo "console.log('Play');";
+									echo "if (version === 0){";
+										echo "img[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
+									echo "}";
+									echo "if (version === 1){";
+										echo "imgT[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
+									echo "}";
+									echo "if (version === 2){";
+										echo "imgM[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
+									echo "}";
+									
+							echo "}";
+							echo "else if(num === 'pause'){";
+										echo "if (version === 0){";
+										echo "img[trackNum].style.backgroundImage = 'url(SVG/Pause.svg)';";
+									echo "}";
+									echo "if (version === 1){";
+										echo "imgT[trackNum].style.backgroundImage = 'url(SVG/Pause.svg)';";
+									echo "}";
+									echo "if (version === 2){";
+										echo "imgM[trackNum].style.backgroundImage = 'url(SVG/Pause.svg)';";
+									echo "}";
+									
+									echo "num = 'play';";
+									echo "console.log('Pause');";
+							echo "}";
+						echo "}";
+			echo "</script>";
 			?>
 
         </div>
