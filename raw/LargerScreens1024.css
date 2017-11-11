@@ -716,12 +716,13 @@ hambuger menu
         position: absolute;
         left: 30px;
         border-radius: 5px;
-        width: 80%;
+        width: 75%;
         height: 30px;
+		padding-left: 20px;
     }
 	
 	.m-email-input_button{
-		width: 100px;
+		width: 120px;
 		height: 50px;
 		background-color: #ebebeb;
 		float: right;
@@ -830,7 +831,7 @@ hambuger menu
     }
 	
 	.m-main-pagesettings_white{
-		height: 1000px;
+		height: 2500px;
 		width: 90%;
 		left: 0;
 		right: 0;
@@ -1789,8 +1790,8 @@ hambuger menu
 	
 	.m-settings-info_Email_Area{
 		width: 100%;
-		height: 600px;
-		background-color: orange;
+		height: 1550px;
+	
 		position: absolute;
 		margin-left: 20px;
 		
@@ -1806,4 +1807,43 @@ hambuger menu
 		height: 50px;
 		position: absolute;
 	}
+	
+	.m-settings-info_password_input_area{
+		width: 100%;
+		height: 50px;
+		position: absolute;
+	}
+	
+	.m-password-input{
+		background-color: #ebebeb;
+        border-style: none;
+        position: absolute;
+        left: 30px;
+        border-radius: 5px;
+        width: 70%;
+        height: 30px;
+		padding-left: 20px;
+	}
+	
+	.m-first_name-input{
+		background-color: #ebebeb;
+        border-style: none;
+        position: absolute;
+        left: 30px;
+        border-radius: 5px;
+        width: 70%;
+        height: 30px;
+		padding-left: 20px;
+	}
+	
+	.m-password-input_button{
+		width: 180px;
+		height: 50px;
+		background-color: #ebebeb;
+		float: right;
+		margin-right: 20px;
+		position: relative;
+		top: -10px;
+	}
+	
 }

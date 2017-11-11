@@ -112,15 +112,87 @@ if(!isset($_SESSION["user_id"]))
 			<div class="m-settings-info_Email_Area">
 				<p class="m-settings-info">Current Email Address:</p>
 				<p class="m-settings-info_sub_titles">Change Email Address: </p>
+				
 				<div class="m-settings-info_email_input_area">
-					<input id="m-email-input" type="text" name="email">
+					<input id="m-email-input" type="text" name="email" placeholder="Type New Email Here">
 					<button class="m-email-input_button">Change Email</button>
 				</div>
 				
 				<br/><br/><br/>
 				<hr/>
-				<br/><br/><br/>
+				<br/>
 			
+				<div class="m-settings-info_password_input_area">
+					<p class="m-settings-info_sub_titles">Change Password:</p>
+					<input class="m-password-input" type="text" name="password" placeholder="Type New Password Here">
+					<button class="m-password-input_button">Change Password</button>
+				</div>
+				
+				<br/><br/><br/></br><br/></br><br/>
+				<hr/>
+				<br/>
+				
+				<div>
+					<p class="m-settings-info">Current First Name:</p>
+					<p class="m-settings-info_sub_titles">Change First Name:</p>
+					<input class="m-first_name-input" type="text" name="email" placeholder="Type New First Name Here">
+					<button class="m-password-input_button">Change First Name</button>
+				</div>
+				
+				<br/><br/><br/></br>
+				<hr/>
+				<br/>
+				
+				<div>
+					<p class="m-settings-info">Current Last Name:</p>
+					<p class="m-settings-info_sub_titles">Change Last Name:</p>
+					<input class="m-password-input" type="text" name="email">
+					<button class="m-password-input_button">Change Last Name</button>
+				</div>
+				
+				<br/><br/><br/></br>
+				<hr/>
+				<br/>
+				
+				<div>
+					<p class="m-settings-info">Current Username Name:</p>
+					<p class="m-settings-info_sub_titles">Change Username:</p>
+					<input class="m-password-input" type="text" name="email">
+					<button class="m-password-input_button">Change Username</button>
+				</div>
+				
+				<br/><br/><br/></br>
+				<hr/>
+				<br/>
+				
+				<div>
+					<p class="m-settings-info">Current Biography Name:</p>
+					<p class="m-settings-info_sub_titles">Change Biography:</p>
+					<input class="m-password-input" type="text" name="email">
+					<button class="m-password-input_button">Change Biography</button>
+				</div>
+				
+				<br/><br/><br/></br>
+				<hr/>
+				<br/>
+				
+				<div>
+					<p class="m-settings-info">Current Hobbies:</p>
+					<p class="m-settings-info_sub_titles">Change Hobbies:</p>
+					<input class="m-password-input" type="text" name="email">
+					<button class="m-password-input_button">Change Hobbies</button>
+				</div>
+				
+				<br/><br/><br/></br>
+				<hr/>
+				<br/>
+				
+				<div>
+					<p class="m-settings-info">Current Skills:</p>
+					<p class="m-settings-info_sub_titles">Change Skills:</p>
+					<input class="m-password-input" type="text" name="email">
+					<button class="m-password-input_button">Change Skills</button>
+				</div>
 				
 			</div>
 		</div>
@@ -129,15 +201,6 @@ if(!isset($_SESSION["user_id"]))
 		
 		<!--
 		
-
-        <p class="m-settings-info">Password</p>
-        <hr>
-        <br/>
-        <button id="m-reset-button">Send Password to Email</button>
-        <br/>
-        <br/>
-        <br/>
-        <br//>
 
         <p class="m-settings-info">Name</p>
         <hr>
