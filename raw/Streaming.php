@@ -141,19 +141,19 @@ if(isset($_POST['toDo'])){
 			$desktop_num = 0;
 			$tablet_num = 0;
 			$mobile_num = 0;
-			
+
 			echo 	"<div class='Recently_Uploaded_Title'>Recently Uploaded</div>";
 			echo "<div class='container_musics_feed'>";
 
 			while ($row = mysqli_fetch_array($result)) {
-				
-				
+
+
 				//
 				//Desktop Area
 				//
 						//echo "<p>".$k."</p>";
-						
-						
+
+
 						echo "<div class='streaming_desktop'>";
                     echo "<div class='first-song'>";
                         echo "<div class='songpic'>";
@@ -190,13 +190,13 @@ if(isset($_POST['toDo'])){
                             echo "});";
                             echo "wavesurfer".$i.".load('". $row['music_file'] ."');";
 
-													
-	
+
+
 
 							echo "</script>";
                         $i++;
-						
-						
+
+
                 echo "</div>";
 
 							//
@@ -207,6 +207,8 @@ if(isset($_POST['toDo'])){
 						echo "<div class='streaming_tablet'>";
 		                    echo "<div class='first-song'>";
 		                        echo "<div class='songpic'>";
+															echo "<div class='songpic_fade'>";
+															echo "</div>";
 		                            if(empty($row['music_photo'] )){
 		                                echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
 		                            }
@@ -292,12 +294,12 @@ if(isset($_POST['toDo'])){
 				            echo "</div>";
 
 
-					
+
 			};
-			
+
 			echo "</div>";
-		
-			
+
+
 			echo "<script>";
 				//echo "img[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
 				echo "var img = document.getElementsByClassName('play_pause_feed_desktop');";
@@ -309,8 +311,8 @@ if(isset($_POST['toDo'])){
 							//echo "console.log('This is working');";
 							echo "console.log(trackNum);";
 							echo "console.log(version);";
-							
-							
+
+
 							echo "if (num === 'play'){";
 									echo "num = 'pause';";
 									echo "console.log('Play');";
@@ -323,7 +325,7 @@ if(isset($_POST['toDo'])){
 									echo "if (version === 2){";
 										echo "imgM[trackNum].style.backgroundImage = 'url(SVG/Pause.svg)';";
 									echo "}";
-									
+
 							echo "}";
 							echo "else if(num === 'pause'){";
 										echo "if (version === 0){";
@@ -335,7 +337,7 @@ if(isset($_POST['toDo'])){
 									echo "if (version === 2){";
 										echo "imgM[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
 									echo "}";
-									
+
 									echo "num = 'play';";
 									echo "console.log('Pause');";
 							echo "}";
