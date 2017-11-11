@@ -315,18 +315,6 @@ if(isset($_POST['toDo'])){
 									echo "num = 'pause';";
 									echo "console.log('Play');";
 									echo "if (version === 0){";
-										echo "img[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
-									echo "}";
-									echo "if (version === 1){";
-										echo "imgT[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
-									echo "}";
-									echo "if (version === 2){";
-										echo "imgM[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
-									echo "}";
-									
-							echo "}";
-							echo "else if(num === 'pause'){";
-										echo "if (version === 0){";
 										echo "img[trackNum].style.backgroundImage = 'url(SVG/Pause.svg)';";
 									echo "}";
 									echo "if (version === 1){";
@@ -334,6 +322,18 @@ if(isset($_POST['toDo'])){
 									echo "}";
 									echo "if (version === 2){";
 										echo "imgM[trackNum].style.backgroundImage = 'url(SVG/Pause.svg)';";
+									echo "}";
+									
+							echo "}";
+							echo "else if(num === 'pause'){";
+										echo "if (version === 0){";
+										echo "img[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
+									echo "}";
+									echo "if (version === 1){";
+										echo "imgT[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
+									echo "}";
+									echo "if (version === 2){";
+										echo "imgM[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
 									echo "}";
 									
 									echo "num = 'play';";

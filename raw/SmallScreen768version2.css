@@ -45,6 +45,10 @@
   .streaming_mobile {
     display: block;
   }
+  
+  .change_group_description_title_layout_ML{
+	  display: none;
+  }
 
 
     body {
@@ -1174,6 +1178,18 @@ Groups small style
     margin: 45px 45px 45px 45px;
 		/*margin-top: -50px;
 		margin-left: 20px;*/
+	}
+	
+	.ProfileIconGroups{
+		width: 200px;
+		height: 200px;
+		left: 0;
+		right:0;
+		margin: 0 auto;
+        border-radius: 100%;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+		position: absolute;
+		margin-top: 40px;
 	}
 
       /* ------------------ END of Music Player ------------------*/

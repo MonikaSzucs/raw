@@ -311,26 +311,45 @@ $formSuccessfullMessage = "";
 				<a href="MobileGroupsTab.php"><button id="CreateGroupProfile">Back</button></a>
 				<div class="Profile-sub-container">
 					<div class="TopSpace-ProfileGroupSub"></div>
-					<div class="ProfileIconGroups" id="list"></div>
+					
+					
+						<div class="ProfileIconGroups" id="list"></div>
+			
+					
 					<div class="vertical-space"></div>
 					<form id="contactForm" name="form" action="" method="post" enctype="multipart/form-data">
 						<span style='color:red; font-weight:bold'> <?php if(isset($formErrorMessage)){echo $formErrorMessage;} ?> </span>
 						<span style='color:Green; font-weight:bold'> <?php if(isset($formSuccessfullMessage)){echo $formSuccessfullMessage;} ?> </span>
 						
-						<div class="GroupsInformation">
-							<div class="GroupsInformation-Title">
-								Title:<br/>
-								<textarea maxlength="50" name="TitleGroups" placeholder="Place your title here.."><?php if(isset($TitleGroups)){echo $TitleGroups; }?></textarea>
+						
+							<div class="GroupsInformation">
+								<div class="GroupsInformation-Title">
+									<span class="description_groups_create_text">
+									Title:
+									</span>
+									<br/>
+									<textarea maxlength="50" name="TitleGroups" placeholder="Place your title here.."><?php if(isset($TitleGroups)){echo $TitleGroups; }?></textarea>
+								</div>
+								<div class="horizontal-GroupSpace">
+								</div>
+								<div class="GroupsInformation-Description">
+									<span class="description_groups_create_text">
+									Description:
+									</span>
+									<br/>
+									<textarea maxlength="500" name="TextAreaGroups" placeholder="Place your description here.."><?php if(isset($TextAreaGroups)){echo $TextAreaGroups; }?></textarea>
+									
+								</div>	
 							</div>
-							<div class="horizontal-GroupSpace">
+						
+						
+							<br/>
+							
+							<div class="LargeScreenGroup">
+								<br/><br/><br/><br/><br/>
 							</div>
-							<div class="GroupsInformation-Description">
-								Description:<br/>
-								<textarea maxlength="500" name="TextAreaGroups" placeholder="Place your description here.."><?php if(isset($TextAreaGroups)){echo $TextAreaGroups; }?></textarea>
-								
-							</div>	
-						</div>
-							<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+							
+							<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 							
 							<span class='group_upload_title_style'>
 							Upload a profile Image:
