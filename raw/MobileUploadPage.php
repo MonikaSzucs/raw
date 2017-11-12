@@ -251,9 +251,6 @@ $formSuccessfullMessage = "";
 			</div>
         </div>
 
-		
-		
-
         <div class="upload_page_music_global_white" id="upload_page_music_global_white">
 			<div id="m-profile-main-inner">
 				
