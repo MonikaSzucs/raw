@@ -45,11 +45,11 @@
   .streaming_mobile {
     display: block;
 	}
-  
+
   .change_group_description_title_layout_ML{
 	  display: none;
 	}
-  
+
   .setting_hide_tablet_desktop{
 	  display: none;
 	}
@@ -57,6 +57,7 @@
 	.setting_hide_mobile{
 	  display: block;
 	}
+
 
     body {
         background-color: darkgrey;
@@ -1046,11 +1047,11 @@ Groups small style
       font-family: Avenir Black;
       width: 590px;
       font-size: 58px;
+      padding-top: 15px;
       margin-left: 50px;
-      margin-top: 20px;
-      margin-bottom: 45px;
+      margin-top: 0px;
+      margin-bottom: 90px;
     }
-
 
     .track-display {
         margin: 30px 0 0 100px;
@@ -1064,9 +1065,9 @@ Groups small style
     }
 
     .songpic {
-        margin-top: 40px;
-        width: 200px;
-        height: 200px;
+        margin-top: 0px;
+        width: 300px;
+        height: 300px;
         background-color: aquamarine;
         border-radius: 150px;
         box-shadow: 0px 5px 5px #888888;
@@ -1078,7 +1079,7 @@ Groups small style
         left: 0;
         padding-left: 50px;
         width: 80vw;
-        margin-top: 15px;
+        margin-top: 0px;
     }
 
 
@@ -1094,35 +1095,41 @@ Groups small style
   		border-radius: 50%;
   	}
 
-    #FeedArtistsName{
+      #FeedArtistsName {
         color: #c5c5c5;
         font-family: Avenir Black;
-        font-size: 18px;
+        font-size: 20px;
         margin: 0 auto;
-        margin-left: 230px;
-    }
+        margin-left: 0px;
+      }
 
       #FeedSongName {
           margin: 0 auto;
           font-family: Avenir Medium;
           font-weight: 300;
-          font-size: 30px;
-          margin-left: 230px;
+          font-size: 45px;
+          margin-left: 0px;
 
       }
+
+      .song-buttons {
+        margin: 50 0 0 345px;
+        position: absolute;
+      }
+
 
       .download_feed_button{
         font-family: Avenir Medium;
         font-size: 24px;
         color: #c5c5c5;
-        margin: 10px 0 0px 0px;
+        margin: 190px 0 140px 400px;
         border: 1px solid darkgray;
         padding: initial;
-        border-radius: 20px;
+        border-radius: 30px;
         background-color: white;
-        width: 155px;
+        width: 165px;
         height: 70px;
-        left:74%;
+        left: 0%;
         position: relative;
       }
 
@@ -1139,7 +1146,7 @@ Groups small style
 
     	.wave {
     		height: 10px !important;
-    		display: block;
+    		display: none;
     		width: 30vw;
     		float: left;
     		margin-top: -20px;
@@ -1174,19 +1181,20 @@ Groups small style
     background: url(SVG/Play.svg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 10px;
+    background-size: 20px;
 		border: 1px solid white;
 		padding: 10px;
-		border-radius: 20px;
+		border-radius: 40px;
 		background-color: #a34334;
-		width: 30px;
-    height: 30px;
+		width: 80px;
+    height: 80px;
     position: absolute;
-    margin: 45px 45px 45px 45px;
+    z-index: 9997;
+    margin: 210px;
 		/*margin-top: -50px;
 		margin-left: 20px;*/
 	}
-	
+
 	.ProfileIconGroups{
 		width: 200px;
 		height: 200px;
@@ -1198,7 +1206,7 @@ Groups small style
 		position: absolute;
 		margin-top: 40px;
 	}
-	
+
 	.setting_mobile_container{
 		width:92%;
 		height: 2000px;
