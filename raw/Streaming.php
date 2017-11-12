@@ -251,33 +251,29 @@ if(isset($_POST['toDo'])){
 									//
 
 								echo "<div class='streaming_mobile'>";
-				                    echo "<div class='first-song'>";
-				                        echo "<div class='songpic'>";
-				                            if(empty($row['music_photo'] )){
-				                                echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
-				                            }
-				                            else{
-				                                echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploadedFeed' > </td>";
-				                            }
-				                        echo "</div>";
-				                        echo "<div class='song-buttons'>";
-				                            echo "<p id='FeedArtistsName'>Name</p>";
-				                            echo "<p id='FeedSongName'>" . $row['song_title'] . "</p>";
-				                        echo "</div>";
-				                        echo "<div class='track-display'>";
+					        echo "<div class='first-song'>";
+					          echo "<div class='songpic'>";
+					            if(empty($row['music_photo'] )){
+					              echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
+					                }
+				              else{
+				                echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploadedFeed' > </td>";
+				                   }
+				             echo "</div>";
+				             echo "<div class='song-buttons'>";
+				              echo "<p id='FeedArtistsName'>Name</p>";
+				              echo "<p id='FeedSongName'>" . $row['song_title'] . "</p>";
+				             echo "</div>";
+                        echo "<div id='waveform".$i."' class='wave'></div>";
+                            echo "<div>";
+															echo "<button  id='play_pause_feed' class='play_pause_feed_mobile' onClick='wavesurfer".$i.".playPause(); play_pause_image_function(".$mobile_num.", 2)'>";
+                                echo "<i class='glyphicon glyphicon-play'></i>";
+                              echo "</button>";
+		                        echo "</div>";
+		                  echo "</div>";
+									echo "<button class='download_feed_button'>Download</button>";
+                echo "</div>";
 
-				                            echo "<div id='waveform".$i."' class='wave'></div>";
-				                                echo "<div>";
-													echo "<button  id='play_pause_feed' class='play_pause_feed_mobile' onClick='wavesurfer".$i.".playPause(); play_pause_image_function(".$mobile_num.", 2)'>";
-				                                        echo "<i class='glyphicon glyphicon-play'></i>";
-				                                        echo "Play/Pause";
-				                                    echo "</button>";
-				                                echo "</div>";
-				                            echo "</div>";
-
-				                        echo "</div>";
-
-				                        echo "<button class='download_feed_button'>Download</button>";
 
 				                        echo "<script>";
 				                            echo "var wavesurfer".$i." = WaveSurfer.create({";
