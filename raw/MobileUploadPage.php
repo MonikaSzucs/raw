@@ -242,6 +242,7 @@ $formSuccessfullMessage = "";
 				
 				
 				<div id="m-view-profile-div">
+				<div class="spaceContainerTop"><h1>Add Songs/Samples</h1></div>
 					<form action="EnteredGroup.php" method="get">
 						<input type="hidden" name="user_id" value="<?php echo $_GET['user_id']?>"/>
 						<input type="submit" id="BackButtonCreation" value="Back"/>
@@ -255,7 +256,7 @@ $formSuccessfullMessage = "";
 
         <div class="m-profile-main" id="CreateGroupsForm">
 			<div id="m-profile-main-inner">
-				<div class="spaceContainerTop"><h1>Add Songs/Samples</h1></div>
+				
 				<div class="Profile-sub-container">
 					<div class="TopSpace-ProfileGroupSub"></div>
 					<div class="ProfileIconGroups" id="list"></div>
@@ -264,36 +265,54 @@ $formSuccessfullMessage = "";
 						<span style='color:red; font-weight:bold'> <?php if(isset($formErrorMessage)){echo $formErrorMessage;} ?> </span>
 						<span style='color:Green; font-weight:bold'> <?php if(isset($formSuccessfullMessage)){echo $formSuccessfullMessage;} ?> </span>
 						
-						<div class="GroupsInformation">
+						<div class="UploadNewSongAreaTitle">
 							<div class="GroupsInformation-Title">
 								Title:<br/>
 								<textarea maxlength="50" name="TitleSongSample" placeholder="Place your title here.."><?php if(isset($TitleSongSample)){echo $TitleSongSample; }?></textarea>
 							</div>
-							<div class="horizontal-GroupSpace">
-							</div>
 								
 						</div>
 							<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-							Upload a profile Image:
+							
+							<div class="upload_page_global_titles">
+								Upload a profile Image:
+							</div>
+							
 							<br/>
 							<input class="file_upload_button" id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
 							<br/>
 							<hr>
 							<br/>
-							Song or Samples Upload:
+							
+							<div class="upload_page_global_titles">
+								Song or Samples Upload:
+							</div>
+							
 							<br/>
 							<input class="file_upload_button" id="files" type="file" name="myMusic" accept="audio/*" />
 							<br/>
-							Is this a song or sample?
-							<div class="checkbox">
-							  <label><input type="radio" value="1" name="music_check" checked>Music</label>
-							  <label><input type="radio" value="0" name="music_check">Sample</label>
+							<br/>
+							<hr/>
+							<br/>
+							<div class="upload_page_global_titles">
+								Is this a song or sample?
 							</div>
+							<br/>
+							
+							<div class="checkbox">
+							  <label class="label_music_sample_global_upload"><input class="input_buttons_styles_music_global" type="radio" value="1" name="music_check" checked><span class="music_sample_label_music_global_uploading">Music</span></label>
+							  <label class="label_music_sample_global_upload"><input class="input_buttons_styles_music_global" type="radio" value="0" name="music_check"><span class="music_sample_label_music_global_uploading">Sample</span></label>
+							</div>
+							<br/>
+							<br/>
 							<br/>
 							<hr/>
 							<br/>
 							
-							Genre(s)
+							<span class='music_global_upload_title_style'>
+								Genre(s)
+							</span>
+							
 							<table style="left: 0; right: 0; margin: 0 auto;">
 								<tr>
 									<td style="width: 120px;"><input type="checkbox" name="g_rnb" value="1">RNB </td>
@@ -315,7 +334,11 @@ $formSuccessfullMessage = "";
 							<hr>
 							<br/>
 							<br/>
-							Mood(s)
+							
+							<span class='music_global_upload_title_style'>
+								Mood(s)
+							</span>
+							
 							<table style="left: 0; right: 0; margin: 0 auto;">
 								<tr>
 									<td style="width: 120px;"><input type="checkbox" name="g_happy" value="1">Happy</td>
@@ -334,7 +357,11 @@ $formSuccessfullMessage = "";
 							<hr>
 							<br/>
 							<br/>
-							Instrument(s)
+							
+							<span class='music_global_upload_title_style'>
+								Instrument(s)
+							</span>
+							
 							<table style="left: 0; right: 0; margin: 0 auto;">
 								<tr>
 									<td style="width: 120px;"><input type="checkbox" name="g_guitar" value="1">Guitar</td>

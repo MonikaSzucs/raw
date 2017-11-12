@@ -503,11 +503,11 @@ hambuger menu
 
     #m-view-profile-div {
         color: black;
-        width: 850px;
+        width: 90%;
         height: 100px;
         position: absolute;
         margin: auto 0;
-        left: 150px;
+		margin-left: 5vw;
 		top: 30px;
         display: inline-grid;
         z-index: 9996;
@@ -1024,11 +1024,9 @@ hambuger menu
 	}
 
 	.spaceContainerTop h1 {
-		left: 70px;
 		top: 10px;
 		position: relative;
         font-family: Avenir-Black;
-
 	}
 
 
@@ -1053,8 +1051,8 @@ hambuger menu
 		background-color: #ffffff;
 		border-radius: 25px;
 		position: absolute;
-		top: 30px;
-		right: 40px;
+		top: -50px;
+		right: 0px;
 		font-family: Avenir-Medium;
 		font-size: 18px;
 		color: darkgray
@@ -1064,7 +1062,7 @@ hambuger menu
 		float: left;
 		width: 150px;
 		height: 150px;
-		top: 0;
+		top: 10px;
 		bottom: 0;
 		margin: auto;
         border-radius: 100%;
@@ -1101,9 +1099,6 @@ hambuger menu
 		line-height: 150%;
 		margin: 10px 0px 0 20px;
 		background-color: white;
-		border-bottom: 2px solid grey;
-
-
 	}
 
 	.group_container{
@@ -1863,4 +1858,56 @@ hambuger menu
 		top: -10px;
 	}
 	
+	.UploadNewSongAreaTitle{
+		float: left;
+		width: 70%;
+		height: 120px;
+		margin-top: 20px;
+		font-family: Avenir-Medium;
+		border-radius: 10px;
+		border: 1px solid #ececec;
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+	}
+	
+	.upload_page_global_titles{
+		font-size: 30px;
+		font-weight: bold;
+	}
+	
+	.label_music_sample_global_upload {
+		height: 50px;
+		width: 200px;
+		float: left;
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 25px;
+	}
+	
+	.input_buttons_styles_music_global{
+		-webkit-appearance: none;
+		background-color: #E5E5E5;
+		border: 5px solid #E5E5E5;
+		border-radius: 20px;
+		width: 100%;
+		display: inline-block;
+		position: relative;
+		width: 30px;
+		height: 30px;
+	}
+	
+	.input_buttons_styles_music_global:checked {
+		background: #A43433;
+		border: 5px solid #E5E5E5;
+	}
+	
+	.music_sample_label_music_global_uploading{
+		position: relative;
+		top: -5px;
+		padding-left: 15px;
+	}
+	
+	.music_global_upload_title_style {
+		font-size: 30px;
+		font-weight: bold;
+	}
 }
