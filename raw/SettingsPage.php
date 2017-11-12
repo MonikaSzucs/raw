@@ -98,142 +98,164 @@ if(!isset($_SESSION["user_id"]))
 
         <h1 id="m-settings-h">Settings</h1>
 		
-		<div class="setting_profile_image">
-			<div class="m-profile-pic-intro_settings"></div>
-			<div class="m-profile-pic-intro_settings_change_image">
-				<p class="m-settings-info">Change Profile  Image</p>
-				<input id="files" class="m-settings-info_image_button" type="file" name="UserProfilePicture" accept="image/x-png,image/gif,image/jpeg" />
-			</div>
+		<!---
+		
+		Mobile view code below
+		
+		-->
+		
+		<div class="setting_hide_mobile">
+			<div class="setting_mobile_container">
+				<div class="m-profile-pic-mobile_intro_settings"></div>
+				
 			
-			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-			<hr/>
-			<br/><br/>
-			
-			<div class="m-settings-info_Email_Area">
-				<p class="m-settings-info">Current Email Address:</p>
-				<p class="m-settings-info_sub_titles">Change Email Address: </p>
 				
-				<div class="m-settings-info_email_input_area">
-					<input id="m-email-input" type="text" name="email" placeholder="Type New Email Here">
-					<button class="m-email-input_button">Change Email</button>
-				</div>
-				
-				<br/><br/><br/>
-				<hr/>
-				<br/>
-			
-				<div class="m-settings-info_password_input_area">
-					<p class="m-settings-info_sub_titles">Change Password:</p>
-					<input class="m-password-input" type="text" name="password" placeholder="Type New Password Here">
-					<button class="m-password-input_button">Change Password</button>
-				</div>
-				
-				<br/><br/><br/></br><br/></br><br/>
-				<hr/>
-				<br/>
-				
-				<div>
-					<p class="m-settings-info">Current First Name:</p>
-					<p class="m-settings-info_sub_titles">Change First Name:</p>
-					<input class="m-first_name-input" type="text" name="email" placeholder="Type New First Name Here">
-					<button class="m-password-input_button">Change First Name</button>
-				</div>
-				
-				<br/><br/><br/></br>
-				<hr/>
-				<br/>
-				
-				<div>
-					<p class="m-settings-info">Current Last Name:</p>
-					<p class="m-settings-info_sub_titles">Change Last Name:</p>
-					<input class="m-password-input" type="text" name="email">
-					<button class="m-password-input_button">Change Last Name</button>
-				</div>
-				
-				<br/><br/><br/></br>
-				<hr/>
-				<br/>
-				
-				<div>
-					<p class="m-settings-info">Current Username Name:</p>
-					<p class="m-settings-info_sub_titles">Change Username:</p>
-					<input class="m-password-input" type="text" name="email">
-					<button class="m-password-input_button">Change Username</button>
-				</div>
-				
-				<br/><br/><br/></br>
-				<hr/>
-				<br/>
-				
-				<div>
-					<p class="m-settings-info">Current Biography Name:</p>
-					<p class="m-settings-info_sub_titles">Change Biography:</p>
-					<input class="m-password-input" type="text" name="email">
-					<button class="m-password-input_button">Change Biography</button>
-				</div>
-				
-				<br/><br/><br/></br>
-				<hr/>
-				<br/>
-				
-				<div>
-					<p class="m-settings-info">Current Hobbies:</p>
-					<p class="m-settings-info_sub_titles">Change Hobbies:</p>
-					<input class="m-password-input" type="text" name="email">
-					<button class="m-password-input_button">Change Hobbies</button>
-				</div>
-				
-				<br/><br/><br/></br>
-				<hr/>
-				<br/>
-				
-				<div>
-					<p class="m-settings-info">Current Skills:</p>
-					<p class="m-settings-info_sub_titles">Change Skills:</p>
-					<input class="m-password-input" type="text" name="email">
-					<button class="m-password-input_button">Change Skills</button>
-				</div>
 				
 			</div>
 		</div>
-
 		
 		
-		<!--
+		<!---
 		
-
-        <p class="m-settings-info">Name</p>
-        <hr>
-        <br//>
-        <p id="fname" class="m-settings-info">First Name</p>
-        <input id="m-firstname" type="text" name="bday">
-        <br/>
-        <br/>
-        <br/>
-        <p id="lname"class="m-settings-info">Last Name</p>
-        <input id="m-lastname" type="text" name="bday">
-
-        <br/>
-        <br/>
-        <br/>
-        <br//>
-		<br/>
-        
-
-        <button id="m-save">SAVE</button>
+		Desktop and Tablet view code below
+		
 		-->
-        
-    
-
+		
+		<div class="setting_hide_tablet_desktop">
+			<div class="setting_profile_image">
+				<div class="m-profile-pic-intro_settings"></div>
+				<div class="m-profile-pic-intro_settings_change_image">
+					<p class="m-settings-info">Change Profile  Image</p>
+					<input id="files" class="m-settings-info_image_button" type="file" name="UserProfilePicture" accept="image/x-png,image/gif,image/jpeg" />
+				</div>
+				
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				<hr/>
+				<br/><br/>
+				
+				<div class="m-settings-info_Email_Area">
+					<p class="m-settings-info">Current Email Address:</p>
+					<p class="m-settings-info_sub_titles">Change Email Address: </p>
+					
+					<div class="m-settings-info_email_input_area">
+						<input id="m-email-input" type="text" name="email" placeholder="Type New Email Here">
+						<button class="m-email-input_button">Change Email</button>
+					</div>
+					
+					<br/><br/><br/>
+					<hr/>
+					<br/>
+				
+					<div class="m-settings-info_password_input_area">
+						<p class="m-settings-info_sub_titles">Change Password:</p>
+						<input class="m-password-input" type="text" name="password" placeholder="Type New Password Here">
+						<button class="m-password-input_button">Change Password</button>
+					</div>
+					
+					<br/><br/>
+					
+					<div class="setting_break_mobile">
+						<br/></br><br/></br><br/>
+					</div>
+					
+					<hr/>
+					<br/>
+					
+					<div>
+						<p class="m-settings-info">Current First Name:</p>
+						<p class="m-settings-info_sub_titles">Change First Name:</p>
+						<input class="m-first_name-input" type="text" name="firstName" placeholder="Type New First Name Here">
+						<button class="m-first_name-input_button">Change First Name</button>
+					</div>
+					
+					<br/><br/>
+					
+					<div class="setting_break_mobile">
+						<br/></br>
+					</div>
+					
+					<hr/>
+					<br/>
+					
+					<div>
+						<p class="m-settings-info">Current Last Name:</p>
+						<p class="m-settings-info_sub_titles">Change Last Name:</p>
+						<input class="m-password-input" type="text" name="lastName" placeholder="Type New Last Name Here">
+						<button class="m-password-input_button">Change Last Name</button>
+					</div>
+					
+					<br/><br/>
+					
+					<div class="setting_break_mobile">
+						<br/></br>
+					</div>
+					
+					<hr/>
+					<br/>
+					
+					<div>
+						<p class="m-settings-info">Current Username Name:</p>
+						<p class="m-settings-info_sub_titles">Change Username:</p>
+						<input class="m-password-input" type="text" name="username" placeholder="Type New Username Here">
+						<button class="m-password-input_button">Change Username</button>
+					</div>
+					
+					<br/><br/>
+					
+					<div class="setting_break_mobile">
+						<br/></br>
+					</div>
+					
+					<hr/>
+					<br/>
+					
+					<div>
+						<p class="m-settings-info">Current Biography Name:</p>
+						<p class="m-settings-info_sub_titles">Change Biography:</p>
+						<input class="m-password-input" type="text" name="email" placeholder="Type New Biography Here">
+						<button class="m-password-input_button">Change Biography</button>
+					</div>
+					
+					<br/><br/>
+					
+					<div class="setting_break_mobile">
+						<br/></br>
+					</div>
+					
+					<hr/>
+					<br/>
+					
+					<div>
+						<p class="m-settings-info">Current Hobbies:</p>
+						<p class="m-settings-info_sub_titles">Change Hobbies:</p>
+						<input class="m-password-input" type="text" name="email" placeholder="Type New Hobbie Here">
+						<button class="m-password-input_button">Change Hobbies</button>
+					</div>
+					
+					<br/><br/>
+					
+					<div class="setting_break_mobile">
+						<br/></br>
+					</div>
+					
+					<hr/>
+					<br/>
+					
+					<div>
+						<p class="m-settings-info">Current Skills:</p>
+						<p class="m-settings-info_sub_titles">Change Skills:</p>
+						<input class="m-password-input" type="text" name="email" placeholder="Type New Skills Here">
+						<button class="m-password-input_button">Change Skills</button>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+		
         <div id="invisdiv3"></div>
 
-
-
-
     </div>
-
-       
-
 
     <nav class="container">
         <a class="buttons" href="ProfileIntroPagevers2.html" tooltip="Profile"></a>

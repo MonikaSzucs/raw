@@ -36,20 +36,27 @@
 
   .streaming_desktop {
     display: none;
-  }
+	}
 
   .streaming_tablet {
     display: none;
-  }
+	}
 
   .streaming_mobile {
     display: block;
-  }
+	}
   
   .change_group_description_title_layout_ML{
 	  display: none;
-  }
+	}
+  
+  .setting_hide_tablet_desktop{
+	  display: none;
+	}
 
+	.setting_hide_mobile{
+	  display: block;
+	}
 
     body {
         background-color: darkgrey;
@@ -1191,7 +1198,15 @@ Groups small style
 		position: absolute;
 		margin-top: 40px;
 	}
-
+	
+	.setting_mobile_container{
+		width:92%;
+		height: 2000px;
+		background-color: red;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
       /* ------------------ END of Music Player ------------------*/
 
   /* ------------------ END OF Streaming.php Styling ------------------*/

@@ -36,17 +36,23 @@
 
   .streaming_desktop {
     display: block;
-  }
+	}
 
   .streaming_tablet {
     display: none;
-  }
+	}
 
   .streaming_mobile {
     display: none;
-  }
+	}
 
+	.setting_hide_tablet_desktop{
+	  display: block;
+	}
 
+	.setting_hide_mobile{
+	  display: none;
+	}
 
     body {
         background-color: darkgrey;
@@ -1812,6 +1818,7 @@ hambuger menu
 		width: 100%;
 		height: 50px;
 		position: absolute;
+		
 	}
 	
 	.m-password-input{
@@ -1837,6 +1844,16 @@ hambuger menu
 	}
 	
 	.m-password-input_button{
+		width: 180px;
+		height: 50px;
+		background-color: #ebebeb;
+		float: right;
+		margin-right: 20px;
+		position: relative;
+		top: -10px;
+	}
+	
+	.m-first_name-input_button{
 		width: 180px;
 		height: 50px;
 		background-color: #ebebeb;
