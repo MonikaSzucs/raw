@@ -45,11 +45,11 @@
   .streaming_mobile {
     display: none;
 	}
-  
+
   .setting_break_mobile{
 	  display: none;
 	}
-  
+
   .setting_hide_tablet_desktop{
 	  display: block;
 	}
@@ -1172,7 +1172,7 @@ hambuger menu
         border: 1px solid #E5E5E5;
 		margin-left: 20px;
 	}
-	
+
 	.description_groups_create_text{
 		padding-left: 20px;
 	}
@@ -1402,29 +1402,29 @@ hambuger menu
 		bottom: 100px;
 		position: absolute;
 	}
-	
+
 	.play_pause_feed_tablet {
     background: url(SVG/Play.svg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 10px;
+    background-size: 15px;
 		border: 1px solid white;
 		padding: 10px;
-		border-radius: 20px;
+		border-radius: 30px;
 		background-color: #a34334;
-		width: 30px;
-    height: 30px;
+		width: 50px;
+    height: 50px;
     position: absolute;
-    margin: 45px 45px 45px 45px;
+    margin: 75px;
 		/*margin-top: -50px;
 		margin-left: 20px;*/
 	}
-	
+
 	.group_upload_title_style {
 		font-size: 25px;
 		font-weight: bold;
 	}
-	
+
 	.file_upload_button{
 		margin: 20px;
         padding: 10px;
@@ -1437,7 +1437,7 @@ hambuger menu
         height: 70px;
         font-family: Avenir-Medium;
 	}
-	
+
 	.label_groups_music_sample{
 		height: 50px;
 		width: 200px;
@@ -1446,7 +1446,7 @@ hambuger menu
 		vertical-align: middle;
 		font-size: 23px;
 	}
-	
+
 	.input_buttons_styles_groups_create{
 		-webkit-appearance: none;
 		background-color: #E5E5E5;
@@ -1458,25 +1458,25 @@ hambuger menu
 		width: 30px;
 		height: 30px;
 	}
-	
+
 	.input_buttons_styles_groups_create:checked {
 		background: #A43433;
 		border: 5px solid #E5E5E5;
 	}
-	
+
 	.music_sample_label_groups_uploading{
 		position: relative;
 		top: -6px;
 		padding-left: 15px;
 	}
-	
+
 	.categories_label_groups_uploading{
 		position: relative;
 		top: -10px;
 		padding-left: 10px;
 		font-size:18px;
 	}
-	
+
 	.input_checkbox_style_group_create{
 		-webkit-appearance: none;
 		background-color: #E5E5E5;
@@ -1488,13 +1488,13 @@ hambuger menu
 		width: 30px;
 		height: 30px;
 	}
-	
+
 	.input_checkbox_style_group_create:checked {
 		background: #A43433;
-		
+
 		border: 5px solid #E5E5E5;
 	}
-	
+
 	.m-profile-pic-intro_settings {
         box-shadow: 0px 5px 5px #888888;
         width: 200px;
@@ -1505,7 +1505,7 @@ hambuger menu
         z-index: 9997;
 		float: left;
     }
-	
+
 	.m-main-pagesettings_white{
 		height: 2500px;
 		width: 99%;
@@ -1515,7 +1515,7 @@ hambuger menu
 		position: absolute;
 		background-color: white;
 	}
-	
+
 	.m-profile-pic-intro_settings_change_image{
 		width: 500px;
         height: 100px;
@@ -1525,18 +1525,18 @@ hambuger menu
         z-index: 9997;
 		float: left;
 	}
-	
+
 	.m-settings-info_Email_Area{
 		width: 100%;
 		height: 1550px;
 		position: absolute;
 		margin-left: 20px;
 	}
-	
+
 	.m-profile-pic-intro_settings_change_image input {
 		margin-left: 30px;
 	}
-	
+
 	.m-settings-info{
 		font-family: Helvetica;
         position: relative;
@@ -1544,18 +1544,18 @@ hambuger menu
 		font-weight: bold;
 		font-size: 25px;
 	}
-	
+
 	.m-settings-info_sub_titles{
 		font-size: 25px;
 		margin-left: 15px;
 	}
-	
+
 	.m-settings-info_email_input_area{
 		width: 100%;
 		height: 50px;
 		position: absolute;
 	}
-	
+
 	#m-email-input{
 		background-color: #ebebeb;
         border-style: none;
@@ -1567,7 +1567,7 @@ hambuger menu
 		padding-left: 20px;
 		bottom: 10px;
 	}
-	
+
 	.m-email-input_button{
 		width: 120px;
 		height: 50px;
@@ -1576,7 +1576,7 @@ hambuger menu
 		margin-right: 40px;
 		position: relative;
 	}
-	
+
 	.m-password-input{
 		background-color: #ebebeb;
         border-style: none;
@@ -1588,7 +1588,7 @@ hambuger menu
 		position: relative;
 		bottom: 15px;
 	}
-	
+
 	.m-password-input_button{
 		width: 180px;
 		height: 50px;
@@ -1597,7 +1597,7 @@ hambuger menu
 		margin-right: 40px;
 		position: relative;
 	}
-	
+
 	.m-first_name-input{
 		background-color: #ebebeb;
         border-style: none;
@@ -1609,7 +1609,7 @@ hambuger menu
         height: 30px;
 		padding-left: 20px;
 	}
-	
+
 	.m-first_name-input_button{
 		width: 180px;
 		height: 50px;
@@ -1618,7 +1618,7 @@ hambuger menu
 		margin-right: 40px;
 		position: relative;
 	}
-	
+
 	#BackButtonCreation{
 		width: 200px;
 		height: 50px;
