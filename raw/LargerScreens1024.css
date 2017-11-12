@@ -619,6 +619,14 @@ hambuger menu
         top: 220px;
     }
 	
+	.upload_page_music_global_white{
+		 width: 100%;
+        height: 100vh;
+        background-color: white;
+        position: absolute;
+        top: 220px;
+	}
+	
 	.m-profile-main_white{
 		width: 100%;
         height: 1975px;
@@ -650,6 +658,10 @@ hambuger menu
 
 	#CreateGroupsForm{
 		height: 1475px !important;
+	}
+	
+	#upload_page_music_global_white{
+		height: 1650px !important;
 	}
 	
 	#CreateGroupsForm_white{
@@ -1149,6 +1161,23 @@ hambuger menu
         font-size: 18px;
         color: darkgray;
 	}
+	
+	#Create_music_global_upload_button{
+		width: 200px;
+		height: 50px;
+		  border: 2px solid darkgray;
+		background-color: #ffffff;
+		border-radius: 25px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		font-family: Avenir-Medium;
+        font-size: 18px;
+        color: darkgray;
+		bottom: 0;
+	}
+	
 	.GroupsInformation-Description textarea{
 		width: 99%;
 		height: 70px;
@@ -1167,6 +1196,13 @@ hambuger menu
 		height: 50px;
 		position: absolute;
 		top: 1200px;
+	}
+	
+	#button_Area_music_upload_create{
+		width: 100%;
+		height: 50px;
+		position: absolute;
+		bottom: -50px;
 	}
 	
 	#buttonAreaCreate_buttonSubmit{
@@ -1909,5 +1945,31 @@ hambuger menu
 	.music_global_upload_title_style {
 		font-size: 30px;
 		font-weight: bold;
+	}
+	
+	
+	.input_checkbox_style_music_global_create{
+		-webkit-appearance: none;
+		background-color: #E5E5E5;
+		border: 5px solid #E5E5E5;
+		border-radius: 5px;
+		width: 100%;
+		display: inline-block;
+		position: relative;
+		width: 30px;
+		height: 30px;
+	}
+	
+	.input_checkbox_style_music_global_create:checked {
+		background: #A43433;
+		
+		border: 5px solid #E5E5E5;
+	}
+	
+	.categories_label_music_global_uploading{
+		position: relative;
+		top: -10px;
+		padding-left: 10px;
+		font-size:18px;
 	}
 }
