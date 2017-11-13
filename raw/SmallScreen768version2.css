@@ -58,6 +58,21 @@
 	  display: block;
 	}
 
+  .hide_desktop_tablet_group_create{
+
+  }
+
+  .upload_global_music_samples_desktop{
+    display: none;
+  }
+
+  .upload_global_music_samples_mobile{
+    display: block;
+  }
+
+  .upload_global_music_samples_tablet{
+    display: none
+  }
 
     body {
         background-color: darkgrey;

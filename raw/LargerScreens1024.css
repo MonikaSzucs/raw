@@ -54,6 +54,18 @@
 	  display: none;
 	}
 
+  .upload_global_music_samples_desktop{
+    display: block;
+  }
+
+  .upload_global_music_samples_mobile{
+    display: none;
+  }
+
+  .upload_global_music_samples_tablet{
+    display: none;
+  }
+
     body {
         background-color: darkgrey;
         margin: 0 auto;
