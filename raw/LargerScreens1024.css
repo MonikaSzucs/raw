@@ -273,17 +273,21 @@ hambuger menu
 
 	*/
 	.file_upload_button{
-		margin: 20px;
-        padding: 10px;
-        border: 1px solid darkgray;
-        width: 90%;
-		padding: 10px;
-		font-size: 20px;
-        border-radius: 10px;
-		background-color: #f0f0f0;
-        height: 70px;
-        font-family: Avenir-Medium;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #cecece;
+    width: 90%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: white;
+    height: 70px;
+    font-family: Avenir-Medium;
 	}
+
+  .checkbox {
+    margin-left: 20px;
+  }
 
 
     form button {
@@ -636,7 +640,7 @@ hambuger menu
         height: 100vh;
         background-color: white;
         position: absolute;
-        top: 220px;
+        top: 170px;
 	}
 
 	.m-profile-main_white{
@@ -673,7 +677,7 @@ hambuger menu
 	}
 
 	#upload_page_music_global_white{
-		height: 1650px !important;
+		height: 1850px !important;
 	}
 
 	#CreateGroupsForm_white{
@@ -1083,15 +1087,17 @@ hambuger menu
 	}
 
 	.ProfileIconGroups{
-		float: left;
-		width: 150px;
-		height: 150px;
-		top: 10px;
-		bottom: 0;
-		margin: auto;
-        border-radius: 100%;
-        box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
-
+    float: left;
+    width: 150px;
+    height: 150px;
+    top: 10;
+    bottom: 0;
+    margin: auto;
+    border: #6b6b6b;
+    border-width: 3px;
+    border-radius: 100%;
+    border-style: dashed;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .15);
 	}
 	.GroupsInformation{
 		float: left;
@@ -1150,7 +1156,7 @@ hambuger menu
 	.GroupsInformation-Title textarea{
 		width: 99%;
 		height: 60px;
-		font-family: Avenir-Medium;
+		font-family: Avenir Light;
     font-size: 25px;
 		border: 1px solid #f2f2f2;
 		-webkit-border-radius: 5px;
@@ -1925,18 +1931,19 @@ hambuger menu
 	}
 
 	.UploadNewSongAreaTitle{
-		float: left;
-		width: 70%;
-		height: 120px;
-		margin-top: 20px;
-		font-family: Avenir-Medium;
-		border-radius: 10px;
-		border: 1px solid #ececec;
-		box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+    float: left;
+    width: 70%;
+    height: 120px;
+    margin-top: 20px;
+    font-family: Avenir-Medium;
+    border-radius: 10px;
+    border: 1px solid #dedede;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .15);
 	}
 
 	.upload_page_global_titles{
 		font-size: 30px;
+    font-family: avenir medium;
 		font-weight: bold;
 	}
 
@@ -1970,10 +1977,13 @@ hambuger menu
 		position: relative;
 		top: -5px;
 		padding-left: 15px;
+    font-family: Avenir Medium;
+    font-size: 20px;
 	}
 
 	.music_global_upload_title_style {
 		font-size: 30px;
+    font-family: Avenir Medium;
 		font-weight: bold;
 	}
 
@@ -2000,6 +2010,11 @@ hambuger menu
 		position: relative;
 		top: -10px;
 		padding-left: 10px;
+    font-family: avenir medium;
 		font-size:18px;
 	}
+
+  .td_style_global {
+    padding: 15px;
+  }
 }

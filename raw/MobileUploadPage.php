@@ -603,20 +603,20 @@ $formSuccessfullMessage = "";
 								Genre(s)
 							</span>
 
-							<table style="left: 0; right: 0; margin: 0 auto;">
+							<table style="left: 0;right: 0;margin: 20px 0 0 20px;">
 								<tr>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_rnb" value="1"><span class="categories_label_music_global_uploading">RNB</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_rock" value="1"><span class="categories_label_music_global_uploading">Rock</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_pop" value="1"><span class="categories_label_music_global_uploading">Pop</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_punk" value="1"><span class="categories_label_music_global_uploading">Punk</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_jazz" value="1"><span class="categories_label_music_global_uploading">Jazz</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_rnb" value="1"><span class="categories_label_music_global_uploading">RNB</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_rock" value="1"><span class="categories_label_music_global_uploading">Rock</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_pop" value="1"><span class="categories_label_music_global_uploading">Pop</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_punk" value="1"><span class="categories_label_music_global_uploading">Punk</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_jazz" value="1"><span class="categories_label_music_global_uploading">Jazz</span></td>
 								</tr>
 								<tr>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_metal" value="1"><span class="categories_label_music_global_uploading">Metal</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_funk" value="1"><span class="categories_label_music_global_uploading">Funk</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_country" value="1"><span class="categories_label_music_global_uploading">Country</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_edm" value="1"><span class="categories_label_music_global_uploading">EDM</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_classical" value="1"><span class="categories_label_music_global_uploading">Classical</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_metal" value="1"><span class="categories_label_music_global_uploading">Metal</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_funk" value="1"><span class="categories_label_music_global_uploading">Funk</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_country" value="1"><span class="categories_label_music_global_uploading">Country</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_edm" value="1"><span class="categories_label_music_global_uploading">EDM</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_classical" value="1"><span class="categories_label_music_global_uploading">Classical</span></td>
 								</tr>
 							<table>
 							<br/>
@@ -629,17 +629,17 @@ $formSuccessfullMessage = "";
 								Mood(s)
 							</span>
 
-							<table style="left: 0; right: 0; margin: 0 auto;">
+							<table style="left: 0;right: 0;margin: 20px 0 0 20px;">
 								<tr>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_happy" value="1"><span class="categories_label_music_global_uploading">Happy</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_sad" value="1"><span class="categories_label_music_global_uploading">Sad</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_angry" value="1"><span class="categories_label_music_global_uploading">Angry</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_chill" value="1"><span class="categories_label_music_global_uploading">Chill</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_happy" value="1"><span class="categories_label_music_global_uploading">Happy</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_sad" value="1"><span class="categories_label_music_global_uploading">Sad</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_angry" value="1"><span class="categories_label_music_global_uploading">Angry</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_chill" value="1"><span class="categories_label_music_global_uploading">Chill</span></td>
 								</tr>
 								<tr>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_focus" value="1"><span class="categories_label_music_global_uploading">Focus</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_workout" value="1"><span class="categories_label_music_global_uploading">Workout</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_travel" value="1"><span class="categories_label_music_global_uploading">Travel</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_focus" value="1"><span class="categories_label_music_global_uploading">Focus</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_workout" value="1"><span class="categories_label_music_global_uploading">Workout</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_travel" value="1"><span class="categories_label_music_global_uploading">Travel</span></td>
 								</tr>
 							</table>
 							<br/>
@@ -652,18 +652,18 @@ $formSuccessfullMessage = "";
 								Instrument(s)
 							</span>
 
-							<table style="left: 0; right: 0; margin: 0 auto;">
+							<table style="left: 0;right: 0;margin: 20px 0 0 20px;">
 								<tr>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_guitar" value="1"><span class="categories_label_music_global_uploading">Guitar</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_bass" value="1"><span class="categories_label_music_global_uploading">Bass</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create"type="checkbox" name="g_synth" value="1"><span class="categories_label_music_global_uploading">Synth</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_pads" value="1"><span class="categories_label_music_global_uploading">Pads</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_guitar" value="1"><span class="categories_label_music_global_uploading">Guitar</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_bass" value="1"><span class="categories_label_music_global_uploading">Bass</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create"type="checkbox" name="g_synth" value="1"><span class="categories_label_music_global_uploading">Synth</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_pads" value="1"><span class="categories_label_music_global_uploading">Pads</span></td>
 								</tr>
 								<tr>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_woodwind" value="1"><span class="categories_label_music_global_uploading">Woodwind</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_drums" value="1"><span class="categories_label_music_global_uploading">Drums</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_strings" value="1"><span class="categories_label_music_global_uploading">Strings</span></td>
-									<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_brass" value="1"><span class="categories_label_music_global_uploading">Brass</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_woodwind" value="1"><span class="categories_label_music_global_uploading">Woodwind</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_drums" value="1"><span class="categories_label_music_global_uploading">Drums</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_strings" value="1"><span class="categories_label_music_global_uploading">Strings</span></td>
+									<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_brass" value="1"><span class="categories_label_music_global_uploading">Brass</span></td>
 								</tr>
 							</table>
 							<br/>
