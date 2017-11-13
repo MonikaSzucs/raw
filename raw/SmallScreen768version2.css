@@ -471,9 +471,10 @@
         position: relative;
         display: inline-block;
     }
+
     .m-profile-box {
         width: 100vw;
-        height: 200px;
+        height: 150px;
         position: relative;
         background-color: white;
         box-shadow: 0px 5px 5px #888888;
@@ -499,9 +500,8 @@
         margin-top: -100px;
     }
     #m-view-profile-div {
-        background-color: white;
         width: 100vw;
-        height: 200px;
+        height: 150px;
         position: absolute;
         margin: auto 0;
         align-items: center;
@@ -1211,15 +1211,14 @@ Groups small style
 	}
 
 	.ProfileIconGroups{
+    float: none;
 		width: 200px;
 		height: 200px;
-		left: 0;
-		right:0;
-		margin: 0 auto;
-        border-radius: 100%;
-        box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
-		position: absolute;
-		margin-top: 40px;
+		margin: 0px auto 30px 30%;
+    border-radius: 100%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+		position: relative;
+
 	}
 
 	.setting_mobile_container{
@@ -1234,4 +1233,27 @@ Groups small style
 
   /* ------------------ END OF Streaming.php Styling ------------------*/
 
-}
+  /* ------------------ MobilieUploadPage.php Styling ------------------*/
+
+  .UploadNewSongAreaTitle{
+    float: none;
+    width: 90%;
+    height: auto;
+    font-family: Avenir-Medium;
+    border-radius: 10px;
+    border: 1px solid #dedede;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .15);
+    margin: 0px 0 0 5%;
+  }
+
+  .td_style_global {
+    padding: 23px;
+    width: 148px;  }
+
+  .input_checkbox_style_music_global_create {
+    padding: 18px;
+  }
+
+  .checkbox {
+    margin-left: 50px;
+  }
