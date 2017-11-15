@@ -1692,6 +1692,7 @@ hambuger menu
 		display: block;
 		width: 30vw;
 		float: left;
+		height:30px;
 		margin-top: -30px;
 		margin-left: 5.5vw;
 	}

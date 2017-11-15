@@ -54,7 +54,7 @@ if(isset($_POST['toDo'])){
     <link rel="stylesheet" href="HomeDesktop.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
+	<script src="wave.js"></script>
 </head>
 
 <body>
@@ -184,18 +184,17 @@ if(isset($_POST['toDo'])){
 
                         echo "<button class='download_feed_button'>Download</button>";
 
-                        echo "<script>";
-                            echo "var wavesurfer".$i." = WaveSurfer.create({";
-                                echo "container: '#waveform".$i."',";
-                                echo "waveColor: '#c5ddff',";
-                                echo "progressColor: '#75a8ff'";
-                            echo "});";
-                            echo "wavesurfer".$i.".load('". $row['music_file'] ."');";
-
-
-
-
-							echo "</script>";
+                        echo "<script>
+								var wavesurfer".$i." = WaveSurfer.create({
+								container: '#waveform".$i."',
+                                waveColor: '#c5ddff',
+                                progressColor: '#75a8ff',
+								height:75,
+								hideScrollbar:true,
+								barWidth:5
+                         });
+                         wavesurfer".$i.".load('". $row['music_file'] ."');
+						 </script>";
                         $i++;
 
 
