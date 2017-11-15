@@ -38,7 +38,7 @@ if(!isset($_SESSION["user_id"]))
 		echo $query;
 		$result = mysqli_query($db, $query) or die('Error querying database.');
 
-	}
+	};
 
 	//SELECT * FROM `group_user` WHERE `user_id` = 1
 	///I need to put a condition to make sure they aren't in that group already because if they are then don't show the join button.
@@ -46,7 +46,7 @@ if(!isset($_SESSION["user_id"]))
 
 	//mysqli_close($db);
 	
-
+	
 
 ?>
 
@@ -59,6 +59,8 @@ if(!isset($_SESSION["user_id"]))
     <link rel="stylesheet" href="SmallScreen768version2.css">
     <link rel="stylesheet" href="SmallScreen768version2device.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
 </head>
 
 <body>
@@ -114,10 +116,10 @@ if(!isset($_SESSION["user_id"]))
                 </li></a>               
             </ul>
         </div>
-        <div class="m-profile-main">
+        <div class="categoryPickedArea_desktop">
 			<div class="spaceContainerTop"><p>Category Type here</p></div>
 			
-			<a href="AddSongsSamples.php"><button id="CreateGroupProfile">Add Songs/Samples</button></a>
+			<a href="MobileUploadPage.php"><button id="CreateGroupProfile">Add Songs/Samples</button></a>
         
 	
 	<?php
@@ -127,148 +129,120 @@ if(!isset($_SESSION["user_id"]))
 	
 	
 	//get group?_user from data base where user id equal to session user ID
-	$query = "SELECT * FROM group_users WHERE user_id =" . $_SESSION['user_id'];
+	$query = "SELECT * FROM music_public WHERE user_id =" . $_SESSION['user_id'];
 	$result = mysqli_query($db, $query) or die('Error querying database.');
 	
+	$i=1;
+	$desktop_num = 0;
+	$tablet_num = 0;
+	$mobile_num = 0;
+			
 	$group_users = array(); 
 	while ($row = mysqli_fetch_array($result)){
-		$group_users[] = $row['group_id'];
+		$group_users[] = $row['music_public_id'];
 	}
 	
+	echo  $_GET['mood'];
+	
 	//Step2 get data from database
-	$query = "SELECT * FROM groups";
+	
+	
+	$query = "SELECT * FROM music_public WHERE " . $_GET['mood'] . "=1";
+	//$query = "SELECT * FROM groups";
 	$result = mysqli_query($db, $query) or die('Error querying database.');
 //Step3 Display the result
 
-/*
-	echo "<table border='1' style='width:800px; margin:0 auto;'>";
-	echo "<tr>";
-		echo "<th  width='120px'> group_title </th>";
-		echo "<th  width='420px'> group_description </th>";
-		echo "<th> group_photo </th>";
-		echo "<th> Interested </th>";
-		echo "<th> Tracks </th>";
-	echo "</tr>";
-*/
 
 while ($row = mysqli_fetch_array($result)) 
 {
-	
-	////the styling of the groups
-	/*
-	echo "<div style='width: 100%; height: 100px; background-color:red'></div>";
-	echo "<div class='TopSpace-ProfileGroupSub'></div>";
-	echo "<div class='group_container'>";
-		
-		echo "<div class='ProfileIconGroups'>";
-			if(empty($row['group_photo'] )){
-				echo "<img src='./SVG/EmptyPicture.svg' class='circlePhotoAuto' /> ";
-			}
-			else{
-				echo "<td> <img src='" . $row['group_photo'] . "' class='circlePhotoUploaded' > </td>";
-			}
-		echo "</div>";
-		echo "<div class='vertical-space'></div>";
-		echo "<div class='GroupsInformation'>";
-			echo "<div class='GroupsInformation-Title'>test" . $row['group_title'] . "<br/></div>";
-			echo "<div class='horizontal-GroupSpace'></div>";
-			echo "<div class='GroupsInformation-Description'>" . $row['group_description'] . "<br/></div>";	
-		echo "</div>";
-		
-	echo "</div>";
-	*/
-	
-	echo "<div style='height: 30px; width: 960px;'></div>";
-	echo "<div class='group_container_create'>";
-		echo "<div class='group_photo_Area'>";
-			if(empty($row['group_photo'] )){
-				echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
-			}
-			else{
-				echo "<td> <img src='" . $row['group_photo'] . "' class='circlePhotoUploaded' > </td>";
-			}
-			echo "</div>";
-		echo "<div class='vertical_space_group'>";
-			
-			echo"<div class='groups_title_generate'>" . $row['group_title'] . "</div>";
-			echo "<hr/>";
-			echo "<div class='groups_descrition_generate'>" . substr($row['group_description'],0,300) . "...</div>";
-			
-			if(in_array($row['group_id'], $group_users))
-			{
-				echo "already Joined";
-			}
-			else{
-				echo "<form action='' method='POST'>";
-					echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
-					echo "<input type='hidden' name='toDo' value='join'>";
-					echo "<input type='submit' value='join'>";
-				echo "</form>";
-			}
-			
-			echo "<form action ='EnteredGroup.php' method='GET'>";
-				echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
-				echo "<input type='submit' value='Enter'>";
-			echo "</form>";
 
-		echo "</div>";
-	echo "</div>";
-	
-	
-/*
-	echo "<tr>";
-		echo "<td>" . $row['group_title'] . "</td>";  
-		echo "<td>" . $row['group_description'] . "</td>"; 
-		if(empty($row['group_photo'] )){
-			echo "<td></td>";
-		}
-		else{
-			echo "<td> <img src='" . $row['group_photo'] . "' style='width:100px;height:100px;' > </td>";
-		}
+				echo "<div class='streaming_desktop'>";
+                    echo "<div class='first-song'>";
+                        echo "<div class='songpic'>";
+                            if(empty($row['music_photo'] )){
+                                echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
+                            }
+                            else{
+                                echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploadedFeed' > </td>";
+                            }
+								echo "<div class='songpicfade'>";
+								echo "</div>";
+								echo "<button  id='play_pause_feed' class='play_pause_feed_desktop' onClick='wavesurfer".$i.".playPause(); play_pause_image_function(".$desktop_num.", 0)'>";
+								echo "<i class='glyphicon glyphicon-play'></i>";
+								echo "</button>";
+                        echo "</div>";
+                        echo "<div class='song-buttons'>";
+                            echo "<p id='FeedArtistsName'>Name</p>";
+                            echo "<p id='FeedSongName'>" . $row['song_title'] . "</p>";
+                        echo "</div>";
+                        echo "<div class='track-display'>";
 
-		//join
-		//condition if they are in the group then don't show the button
-		
-		echo "<td>";
-			//if $row['group_id'] exit in $group_users['group_id'] do not show form;
-			//else shows join form;
-			*/
-			
-			/*echo '$row[group_id]'. $row['group_id'];
+                            echo "<div id='waveform".$i."' class='wave'></div>";
+                                // echo "<div>";
+                                // echo "</div>";
+                            echo "</div>";
 
-			echo '<BR/>$group_id THAT THIS PERSON ALREADY JOINED';
-			echo "<pre>";
-			print_r($group_users);
-			echo "</pre>";	*/		
-			/*
-			if(in_array($row['group_id'], $group_users))
-			{
-				echo "already Joined";
-			}
-			else{
-				echo "<form action='' method='POST'>";
-					echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
-					echo "<input type='hidden' name='toDo' value='join'>";
-					echo "<input type='submit' value='join'>";
-				echo "</form>";
-			}
-		echo "</td>";
-		
-		echo "<td >";
-			echo "<form action ='GroupMusic.php' method='GET'>";
-				echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
-				echo "<input type='submit' value='Enter'>";
-			echo "</form>";
-		echo "</td>";
-		
-	echo "</tr>";
-	*/
-	
+                        echo "</div>";
+
+                        echo "<button class='download_feed_button'>Download</button>";
+
+                        echo "<script>";
+                            echo "var wavesurfer".$i." = WaveSurfer.create({";
+                                echo "container: '#waveform".$i."',";
+                                echo "waveColor: '#c5ddff',";
+                                echo "progressColor: '#75a8ff'";
+                            echo "});";
+                            echo "wavesurfer".$i.".load('". $row['music_file'] ."');";
+							echo "</script>";
+							$i++;
+                echo "</div>";
 } 
 
-/*
-	echo "</table>";
-	*/
+echo "<script>";
+				//echo "img[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
+				echo "var img = document.getElementsByClassName('play_pause_feed_desktop');";
+				echo "var imgT = document.getElementsByClassName('play_pause_feed_tablet');";
+				echo "var imgM = document.getElementsByClassName('play_pause_feed_mobile');";
+				echo "console.log(img);";
+				echo "var num = 'play';";
+				echo"function play_pause_image_function(trackNum, version){";
+							//echo "console.log('This is working');";
+							echo "console.log(trackNum);";
+							echo "console.log(version);";
+
+
+							echo "if (num === 'play'){";
+									echo "num = 'pause';";
+									echo "console.log('Play');";
+									echo "if (version === 0){";
+										echo "img[trackNum].style.backgroundImage = 'url(SVG/Pause.svg)';";
+									echo "}";
+									echo "if (version === 1){";
+										echo "imgT[trackNum].style.backgroundImage = 'url(SVG/Pause.svg)';";
+									echo "}";
+									echo "if (version === 2){";
+										echo "imgM[trackNum].style.backgroundImage = 'url(SVG/Pause.svg)';";
+									echo "}";
+
+							echo "}";
+							echo "else if(num === 'pause'){";
+										echo "if (version === 0){";
+										echo "img[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
+									echo "}";
+									echo "if (version === 1){";
+										echo "imgT[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
+									echo "}";
+									echo "if (version === 2){";
+										echo "imgM[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
+									echo "}";
+
+									echo "num = 'play';";
+									echo "console.log('Pause');";
+							echo "}";
+						echo "}";
+			echo "</script>";
+			
+			
 	?>
 	
 	</div>

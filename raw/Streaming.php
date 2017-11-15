@@ -154,7 +154,7 @@ if(isset($_POST['toDo'])){
 						//echo "<p>".$k."</p>";
 
 
-						echo "<div class='streaming_desktop'>";
+				echo "<div class='streaming_desktop'>";
                     echo "<div class='first-song'>";
                         echo "<div class='songpic'>";
                             if(empty($row['music_photo'] )){
@@ -163,11 +163,11 @@ if(isset($_POST['toDo'])){
                             else{
                                 echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploadedFeed' > </td>";
                             }
-														echo "<div class='songpicfade'>";
-														echo "</div>";
-														echo "<button  id='play_pause_feed' class='play_pause_feed_desktop' onClick='wavesurfer".$i.".playPause(); play_pause_image_function(".$desktop_num.", 0)'>";
-														echo "<i class='glyphicon glyphicon-play'></i";
-														echo "</button>";
+								echo "<div class='songpicfade'>";
+								echo "</div>";
+								echo "<button  id='play_pause_feed' class='play_pause_feed_desktop' onClick='wavesurfer".$i.".playPause(); play_pause_image_function(".$desktop_num.", 0)'>";
+								echo "<i class='glyphicon glyphicon-play'></i";
+								echo "</button>";
                         echo "</div>";
                         echo "<div class='song-buttons'>";
                             echo "<p id='FeedArtistsName'>Name</p>";

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2017 at 07:07 AM
+-- Generation Time: Nov 15, 2017 at 06:21 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -179,7 +179,9 @@ INSERT INTO `music_public` (`music_public_id`, `user_id`, `song_title`, `music_f
 (12, 1, 'b7', 'GlobalSongs/1510203040censor-erebess3333s22222ep-01.mp3', 1, '2017-11-08 20:50:40', 'GlobalPictures/1510203040download.jpg', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
 (13, 1, '55555', 'GlobalSongs/1510203451ChaCha_Fontanttez.mp3', 1, '2017-11-08 20:57:31', 'GlobalPictures/1510203451Untitledsfsdfd.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
 (14, 1, 'm6', 'GlobalSongs/1510203496ChaCha_Fontanttez.mp3', 1, '2017-11-08 20:58:16', 'GlobalPictures/1510203496sdfdsfdsfdsf.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
-(15, 1, 'm7', 'GlobalSongs/1510203797ChaCha_Fontanttez.mp3', 1, '2017-11-08 21:03:17', 'GlobalPictures/1510203797rawwww.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
+(15, 1, 'm7', 'GlobalSongs/1510203797ChaCha_Fontanttez.mp3', 1, '2017-11-08 21:03:17', 'GlobalPictures/1510203797rawwww.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(16, 1, 'Wandering', 'GlobalSongs/1510713140Wandering.mp3', 1, '2017-11-14 18:32:20', 'GlobalPictures/1510713140Untitledsfdsfd.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0),
+(17, 1, 'wandering', 'GlobalSongs/1510713331Don_t_Look.mp3', 1, '2017-11-14 18:35:31', 'GlobalPictures/1510713331youtubechannel.png', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -200,19 +202,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `first_name`, `username`, `password`, `email`) VALUES
-(1, 'Monika', 'Moni', '111', '123@hotmail.ca'),
-(9, 'asdasd', 'asdasd', 'asdasd', 'asdsad@sss.ghhh'),
+(1, 'Monika', 'feifei', 'test', 'test@hotmail.com'),
 (10, 'Hanna', 'test', '1234', 'hanna123@hotmail.ca'),
-(21, 'zfcsdfs', 'fdsf', 'sdf', 'dsfsdf@hotmail.ca'),
-(22, 'sasdfas', 'asaf', 'adsfads', 'asfasf@hotmail.ca'),
-(23, 'sfdsfdsf', 'dsfdsf', 'sdfds', '43tgfterg@hotmail.ca'),
-(24, 'dsfdf', 'sdfdsf', 'sdfdsfsd', 'sdfsdf@hotmail.ca'),
-(25, 'sfdsf', 'dsfsdf', 'dsfdsf', 'asdasd@hotmail.ca'),
-(26, 'asfdsaf', 'dsfasdf', 'dasf', 'dsaf@hotmail.com'),
-(27, 'sda', 'sadfsdaf', '123', 'afsafd@hotmail.ca'),
-(28, 'sfgdgfd', 'fdgdfg', '111', 'fdgfdg@hotmail.ca'),
-(29, 'Monika', 'Szucs', 'sept29', '2145@hotmail.ca'),
-(30, 'Monika', 'MonikaSzucs', 'Super101', 'monika.silvia.s@hotmail.ca');
+(29, 'Monika', 'Szucs', 'sept29', '2145@hotmail.ca');
 
 --
 -- Indexes for dumped tables
@@ -274,7 +266,7 @@ ALTER TABLE `music_group`
 -- AUTO_INCREMENT for table `music_public`
 --
 ALTER TABLE `music_public`
-  MODIFY `music_public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `music_public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `user`
 --

@@ -133,39 +133,211 @@ if(!isset($_SESSION["user_id"]))
 				<hr/>
 				<br/><br/>
 				
-				<div class="m-settings-info_Email_Area">
-					<p class="m-settings-info">Current Email Address:</p>
-					<p class="m-settings-info_sub_titles">Change Email Address: </p>
-					
-					<div class="m-settings-info_email_input_area">
-						<input id="m-email-input" type="text" name="email" placeholder="Type New Email Here">
-						<button class="m-email-input_button">Change Email</button>
+				<!--
+				//
+				//
+				Email 
+				//
+				//
+				-->
+				<div class="setting_change_area">
+					<div class="email_area_settings">
+						<br/>
+						<?php
+						if (isset($_POST['email-button'])) {
+							$query = "UPDATE user SET email='". $_POST['email'] ."' WHERE user_id='" . $_SESSION["user_id"] . "';";
+							$result = mysqli_query($db, $query) or die('Error querying database.');
+						}	
+						?>
+						<span class="setting_title_items">Current Email Address:
+						<?php
+								$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
+								$result = mysqli_query($db, $query) or die('Error querying database.');
+								$row = mysqli_fetch_array($result);
+								
+								echo $row['email'];
+							?>
+						</span>
+						
+						<br/><br/>
+						<span class="m-settings-info_sub_titles">Change Email Address: </span>
+						<div class="m-settings-info_email_input_area">
+							<form method='post' class='change_username_form'>
+								<input id="email-input" type="text" name="email" placeholder="Type New Email Here">
+								<button name="email-button" class="email-input_button">Change Email</button>
+							</form>
+						</div>
 					</div>
 					
-					<br/><br/><br/>
 					<hr/>
-					<br/>
+				<!--
+				//
+				//
+				Password
+				//
+				//
+				-->
 				
-					<div class="m-settings-info_password_input_area">
-						<p class="m-settings-info_sub_titles">Change Password:</p>
-						<input class="m-password-input" type="text" name="password" placeholder="Type New Password Here">
-						<button class="m-password-input_button">Change Password</button>
+					<div class="password_area_settings">
+						<?php
+							if (isset($_POST['password-button'])) {
+								$query = "UPDATE user SET password='". $_POST['password'] ."' WHERE user_id='" . $_SESSION["user_id"] . "';";
+								$result = mysqli_query($db, $query) or die('Error querying database.');
+							}
+						?>
+						<span class="setting_title_items">Current Password Address:
+						<?php
+								$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
+								$result = mysqli_query($db, $query) or die('Error querying database.');
+								$row = mysqli_fetch_array($result);
+								
+								echo $row['password'];
+							?>
+						</span>
+						
+						<br/><br/>
+						<span class="m-settings-info_sub_titles">Change Password:</span>
+						<div class="m-settings-info_password_input_area">
+							<form method='post' class='change_username_form'>
+								<input class="m-password-input" type="text" name="password" placeholder="Type New Password Here">
+								<button name="password-button"  class="password-input_button">Change Password</button>
+							</form>
+						</div>
+					</div>
+
+					<hr/>
+
+				<!--
+				//
+				//
+				First Name
+				//
+				//
+				-->
+					<div class="first_name_area_settings">
+						<?php
+							if (isset($_POST['first-name-button'])) {
+								$query = "UPDATE user SET first_name='". $_POST['first_name'] ."' WHERE user_id='" . $_SESSION["user_id"] . "';";
+								$result = mysqli_query($db, $query) or die('Error querying database.');
+							}
+						?>
+						<span class="setting_title_items">Current First Name:
+						<?php
+							$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
+							$result = mysqli_query($db, $query) or die('Error querying database.');
+							$row = mysqli_fetch_array($result);
+							echo $row['first_name'];
+						?>
+						</span>
+						
+						<br/><br/>
+						<span class="m-settings-info_sub_titles">Change First Name:</span>
+						<form method='post' class='change_username_form'>
+							<input class="m-first_name-input" type="text" name="first_name" placeholder="Type New First Name Here">
+							<button name="first-name-button" class="first_name-input_button">Change First Name</button>
+						</form>
 					</div>
 					
-					<br/><br/>
+					<hr/>
+				
+				<!--
+				//
+				//
+				Last Name
+				//
+				//
+				-->
+					<div class="last_name_area_settings">
+						<?php
+							if(isset($_POST['last-name-button'])) {
+								$query = "UPDATE user SET last_name='". $_POST['last_name'] ."' WHERE user_id='" . $_SESSION["user_id"] . "';";
+								$result = mysqli_query($db, $query) or die('Error querying database.');
+							}
+						?>
+						<span class="setting_title_items">Current Last Name:
+						<?php
+							$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
+							$result = mysqli_query($db, $query) or die('Error querying database.');
+							$row = mysqli_fetch_array($result);
+							echo $row['last_name'];
+						?>
+						</span>
+						
+						<br/><br/>
+						<span class="m-settings-info_sub_titles">Change Last Name:</span>
+						<form method='post' class='change_username_form'>
+							<input class="m-password-input" type="text" name="last_name" placeholder="Type New Last Name Here">
+							<button name="last-name-button" class="last_name-input_button">Change Last Name</button>
+						</form>
+					</div>
 					
-					<div class="setting_break_mobile">
-						<br/></br><br/></br><br/>
+					<hr/>
+					
+				<!--
+				//
+				//
+				User Name
+				//
+				//
+				-->
+					<div class="username_area_settings">
+						<?php
+							if (isset($_POST['username-button'])) {
+								$query = "UPDATE user SET username='". $_POST['username'] ."' WHERE user_id='" . $_SESSION["user_id"] . "';";
+								$result = mysqli_query($db, $query) or die('Error querying database.');
+							}
+						?>
+						<span class="setting_title_items">Current Username Name:
+						<?php
+							$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
+							$result = mysqli_query($db, $query) or die('Error querying database.');
+							$row = mysqli_fetch_array($result);
+							echo $row['username'];
+						?>
+						</span>
+						
+						<br/><br/>
+						<span class="m-settings-info_sub_titles">Change Username:</span>
+						<form method='post' class='change_username_form'>
+							<input class='m-password-input' type='text' name='username' placeholder='Type New Username Here'>
+							<button name="username-button" class='username_input_button'>Change Username</button>
+						</form>
 					</div>
 					
 					<hr/>
 					<br/>
 					
-					<div>
-						<p class="m-settings-info">Current First Name:</p>
-						<p class="m-settings-info_sub_titles">Change First Name:</p>
-						<input class="m-first_name-input" type="text" name="firstName" placeholder="Type New First Name Here">
-						<button class="m-first_name-input_button">Change First Name</button>
+				<!--
+				//
+				//
+				Biography
+				//
+				//
+				-->
+					<div class="biography_area_settings">
+						<?php
+							if (isset($_POST['biography-button'])) {
+								$query = "UPDATE user SET biography='". $_POST['biography'] ."' WHERE user_id='" . $_SESSION["user_id"] . "';";
+								$result = mysqli_query($db, $query) or die('Error querying database.');
+							}
+						?>
+						<span class="setting_title_items">Current Biography:</br>
+						</span>
+						<span>
+						<?php
+							$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
+							$result = mysqli_query($db, $query) or die('Error querying database.');
+							$row = mysqli_fetch_array($result);
+							echo $row['biography'];
+						?>
+						</span>
+						
+						<br/><br/>
+						<span class="m-settings-info_sub_titles">Change Biography:</span>
+						<form method='post' class='change_username_form'>
+							<input class="m-password-input" type="text" name="biography" placeholder="Type New Biography Here">
+							<button  name="biography-button" class="m-password-input_button">Change Biography</button>
+						</form>
 					</div>
 					
 					<br/><br/>
@@ -177,11 +349,35 @@ if(!isset($_SESSION["user_id"]))
 					<hr/>
 					<br/>
 					
+				<!--
+				//
+				//
+				Hobbies
+				//
+				//
+				-->
 					<div>
-						<p class="m-settings-info">Current Last Name:</p>
-						<p class="m-settings-info_sub_titles">Change Last Name:</p>
-						<input class="m-password-input" type="text" name="lastName" placeholder="Type New Last Name Here">
-						<button class="m-password-input_button">Change Last Name</button>
+						<?php
+							if (isset($_POST['hobbies-button'])) {
+								$query = "UPDATE user SET hobbies='". $_POST['hobbies'] ."' WHERE user_id='" . $_SESSION["user_id"] . "';";
+								$result = mysqli_query($db, $query) or die('Error querying database.');
+							}
+						?>
+						<span class="setting_title_items">Current Hobbies:</br>
+						<?php
+							$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
+							$result = mysqli_query($db, $query) or die('Error querying database.');
+							$row = mysqli_fetch_array($result);
+							echo $row['hobbies'];
+						?>
+						</span>
+						
+						<br/><br/>
+						<span class="m-settings-info_sub_titles">Change Hobbies:</span>
+						<form method='post' class='change_username_form'>
+							<input class="m-password-input" type="text" name="hobbies" placeholder="Type New Hobbie Here">
+							<button name="hobbies-button" class="m-password-input_button">Change Hobbies</button>
+						</form>
 					</div>
 					
 					<br/><br/>
@@ -193,59 +389,35 @@ if(!isset($_SESSION["user_id"]))
 					<hr/>
 					<br/>
 					
+				<!--
+				//
+				//
+				Skills
+				//
+				//
+				-->
 					<div>
-						<p class="m-settings-info">Current Username Name:</p>
-						<p class="m-settings-info_sub_titles">Change Username:</p>
-						<input class="m-password-input" type="text" name="username" placeholder="Type New Username Here">
-						<button class="m-password-input_button">Change Username</button>
-					</div>
-					
-					<br/><br/>
-					
-					<div class="setting_break_mobile">
-						<br/></br>
-					</div>
-					
-					<hr/>
-					<br/>
-					
-					<div>
-						<p class="m-settings-info">Current Biography Name:</p>
-						<p class="m-settings-info_sub_titles">Change Biography:</p>
-						<input class="m-password-input" type="text" name="email" placeholder="Type New Biography Here">
-						<button class="m-password-input_button">Change Biography</button>
-					</div>
-					
-					<br/><br/>
-					
-					<div class="setting_break_mobile">
-						<br/></br>
-					</div>
-					
-					<hr/>
-					<br/>
-					
-					<div>
-						<p class="m-settings-info">Current Hobbies:</p>
-						<p class="m-settings-info_sub_titles">Change Hobbies:</p>
-						<input class="m-password-input" type="text" name="email" placeholder="Type New Hobbie Here">
-						<button class="m-password-input_button">Change Hobbies</button>
-					</div>
-					
-					<br/><br/>
-					
-					<div class="setting_break_mobile">
-						<br/></br>
-					</div>
-					
-					<hr/>
-					<br/>
-					
-					<div>
-						<p class="m-settings-info">Current Skills:</p>
-						<p class="m-settings-info_sub_titles">Change Skills:</p>
-						<input class="m-password-input" type="text" name="email" placeholder="Type New Skills Here">
-						<button class="m-password-input_button">Change Skills</button>
+						<?php
+							if (isset($_POST['skills-button'])) {
+								$query = "UPDATE user SET skills='". $_POST['skills'] ."' WHERE user_id='" . $_SESSION["user_id"] . "';";
+								$result = mysqli_query($db, $query) or die('Error querying database.');
+							}
+						?>
+						<span class="setting_title_items">Current Skills:</br>
+						<?php
+							$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
+							$result = mysqli_query($db, $query) or die('Error querying database.');
+							$row = mysqli_fetch_array($result);
+							echo $row['skills'];
+						?>
+						</span>
+						
+						<br/><br/>
+						<span class="m-settings-info_sub_titles">Change Skills:</span>
+						<form method='post' class='change_username_form'>
+							<input class="m-password-input" type="text" name="skills" placeholder="Type New Skills Here">
+							<button name="skills-button" class="m-password-input_button">Change Skills</button>
+						</form>
 					</div>
 					
 					</div>
