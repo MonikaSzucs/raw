@@ -53,6 +53,10 @@
 	.setting_hide_mobile{
 	  display: none;
 	}
+	
+	.setting_hide_tablet{
+		display: none;
+	}
 
   .upload_global_music_samples_desktop{
     display: block;

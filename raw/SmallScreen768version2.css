@@ -57,6 +57,10 @@
 	.setting_hide_mobile{
 	  display: block;
 	}
+	
+	.setting_hide_tablet{
+		display: none;
+	}
 
   .hide_desktop_tablet_group_create{
 
