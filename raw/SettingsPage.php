@@ -78,7 +78,7 @@ if(!isset($_SESSION["user_id"]))
         <div id="next-button" class="m-player"></div>
 
     </div>
-    <div class="m-main-pagesettings_white" class="main-page">
+    <div class="settings_white" class="main-page">
         
                         
 <!--
@@ -97,31 +97,18 @@ if(!isset($_SESSION["user_id"]))
         </div>
 
         <h1 id="m-settings-h">Settings</h1>
-		
-		<!---
-		
-		Mobile view code below
-		
-		-->
-		
-		<div class="setting_hide_mobile">
-			<div class="setting_mobile_container">
-				<div class="m-profile-pic-mobile_intro_settings"></div>
-				
-			
-				
-				
-			</div>
-		</div>
+
+
 		
 		
 		<!---
-		
-		Desktop and Tablet view code below
-		
+		//
+		//
+		Desktop view code below
+		//
+		//
 		-->
-		
-		<div class="setting_hide_tablet_desktop">
+		<div class="setting_hide_desktop">
 			<div class="setting_profile_image">
 				<div class="m-profile-pic-intro_settings"></div>
 				<div class="m-profile-pic-intro_settings_change_image">
@@ -305,7 +292,6 @@ if(!isset($_SESSION["user_id"]))
 					</div>
 					
 					<hr/>
-					<br/>
 					
 				<!--
 				//
@@ -321,34 +307,27 @@ if(!isset($_SESSION["user_id"]))
 								$result = mysqli_query($db, $query) or die('Error querying database.');
 							}
 						?>
-						<span class="setting_title_items">Current Biography:</br>
-						</span>
-						<span>
+						<span class="setting_title_items">Current Biography:</br></span>
+						<div class="biography_pulled">
 						<?php
 							$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
 							$result = mysqli_query($db, $query) or die('Error querying database.');
 							$row = mysqli_fetch_array($result);
 							echo $row['biography'];
 						?>
-						</span>
+						</div>
 						
-						<br/><br/>
+						<br/>
 						<span class="m-settings-info_sub_titles">Change Biography:</span>
 						<form method='post' class='change_username_form'>
 							<input class="m-password-input" type="text" name="biography" placeholder="Type New Biography Here">
-							<button  name="biography-button" class="m-password-input_button">Change Biography</button>
+							<button  name="biography-button" class="biography-input_button">Change Biography</button>
 						</form>
 					</div>
-					
-					<br/><br/>
-					
-					<div class="setting_break_mobile">
-						<br/></br>
-					</div>
+
 					
 					<hr/>
-					<br/>
-					
+
 				<!--
 				//
 				//
@@ -356,39 +335,33 @@ if(!isset($_SESSION["user_id"]))
 				//
 				//
 				-->
-					<div>
+					<div class="hobbies_area_settings">
 						<?php
 							if (isset($_POST['hobbies-button'])) {
 								$query = "UPDATE user SET hobbies='". $_POST['hobbies'] ."' WHERE user_id='" . $_SESSION["user_id"] . "';";
 								$result = mysqli_query($db, $query) or die('Error querying database.');
 							}
 						?>
-						<span class="setting_title_items">Current Hobbies:</br>
+						<span class="setting_title_items">Current Hobbies:</br></span>
+						<div class="hobbies_pulled">
 						<?php
 							$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
 							$result = mysqli_query($db, $query) or die('Error querying database.');
 							$row = mysqli_fetch_array($result);
 							echo $row['hobbies'];
 						?>
-						</span>
+						</div>
 						
-						<br/><br/>
+						<br/>
 						<span class="m-settings-info_sub_titles">Change Hobbies:</span>
 						<form method='post' class='change_username_form'>
 							<input class="m-password-input" type="text" name="hobbies" placeholder="Type New Hobbie Here">
-							<button name="hobbies-button" class="m-password-input_button">Change Hobbies</button>
+							<button name="hobbies-button" class="hobbies-input_button">Change Hobbies</button>
 						</form>
 					</div>
 					
-					<br/><br/>
-					
-					<div class="setting_break_mobile">
-						<br/></br>
-					</div>
-					
 					<hr/>
-					<br/>
-					
+		
 				<!--
 				//
 				//
@@ -396,27 +369,28 @@ if(!isset($_SESSION["user_id"]))
 				//
 				//
 				-->
-					<div>
+					<div class="skills_area_settings">
 						<?php
 							if (isset($_POST['skills-button'])) {
 								$query = "UPDATE user SET skills='". $_POST['skills'] ."' WHERE user_id='" . $_SESSION["user_id"] . "';";
 								$result = mysqli_query($db, $query) or die('Error querying database.');
 							}
 						?>
-						<span class="setting_title_items">Current Skills:</br>
+						<span class="setting_title_items">Current Skills:</br></span>
+						<div class="skills_pulled">
 						<?php
 							$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
 							$result = mysqli_query($db, $query) or die('Error querying database.');
 							$row = mysqli_fetch_array($result);
 							echo $row['skills'];
 						?>
-						</span>
+						</div>
 						
-						<br/><br/>
+						<br/>
 						<span class="m-settings-info_sub_titles">Change Skills:</span>
 						<form method='post' class='change_username_form'>
 							<input class="m-password-input" type="text" name="skills" placeholder="Type New Skills Here">
-							<button name="skills-button" class="m-password-input_button">Change Skills</button>
+							<button name="skills-button" class="skills-input_button">Change Skills</button>
 						</form>
 					</div>
 					

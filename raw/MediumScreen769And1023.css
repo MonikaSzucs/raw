@@ -50,8 +50,8 @@
 	  display: none;
 	}
 
-  .setting_hide_tablet_desktop{
-	  display: block;
+  .setting_hide_desktop{
+	  display: none;
 	}
 
 	.setting_hide_mobile{
@@ -69,6 +69,8 @@
   .upload_global_music_samples_mobile{
     display: none;
   }
+  
+  
 
     body {
         background-color: darkgrey;

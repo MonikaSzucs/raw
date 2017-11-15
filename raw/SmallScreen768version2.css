@@ -50,7 +50,7 @@
 	  display: none;
 	}
 
-  .setting_hide_tablet_desktop{
+  .setting_hide_desktop{
 	  display: none;
 	}
 
@@ -73,6 +73,8 @@
   .upload_global_music_samples_tablet{
     display: none
   }
+  
+  
 
     body {
         background-color: darkgrey;
