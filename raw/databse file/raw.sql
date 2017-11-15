@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2017 at 06:21 AM
+-- Generation Time: Nov 15, 2017 at 09:37 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -192,19 +192,23 @@ INSERT INTO `music_public` (`music_public_id`, `user_id`, `song_title`, `music_f
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `first_name` varchar(15) NOT NULL,
+  `last_name` varchar(250) DEFAULT NULL,
   `username` varchar(15) NOT NULL,
   `password` varchar(64) NOT NULL,
-  `email` varchar(40) NOT NULL
+  `email` varchar(40) NOT NULL,
+  `biography` varchar(500) DEFAULT NULL,
+  `hobbies` varchar(250) DEFAULT NULL,
+  `skills` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `first_name`, `username`, `password`, `email`) VALUES
-(1, 'Monika', 'feifei', 'test', 'test@hotmail.com'),
-(10, 'Hanna', 'test', '1234', 'hanna123@hotmail.ca'),
-(29, 'Monika', 'Szucs', 'sept29', '2145@hotmail.ca');
+INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `username`, `password`, `email`, `biography`, `hobbies`, `skills`) VALUES
+(1, 'name1', 'lastname1', 'username1', '111', '123@hotmail.ca', 'testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography ', 'hobbie 1, hobbie 2, hobbie 3,', 'skills 1, skill 2, skill 3,'),
+(10, 'Hanna', NULL, 'test', '1234', 'hanna123@hotmail.ca', NULL, NULL, NULL),
+(29, 'Monika', NULL, 'Szucs', 'sept29', '2145@hotmail.ca', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -271,7 +275,7 @@ ALTER TABLE `music_public`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- Constraints for dumped tables
 --
