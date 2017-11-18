@@ -191,6 +191,10 @@
         width: 80px;
         height: 80px;
         opacity: 1;
+		position: fixed;
+		right: 20px;
+		bottom: 20px;
+		z-index: 9999;
     }
     .buttons:nth-last-of-type(2) {
         background: #713232 url("imgs/moodsicon.svg") center no-repeat;
@@ -1078,7 +1082,7 @@ Groups small style
         margin: 30px 0 0 100px;
         width: 72vw;
         height: 80px;
-        background-color: red;
+		display:none;
         position: relative;
         left: 40px;
         box-shadow: 2px 5px 5px #888888;
@@ -1087,8 +1091,8 @@ Groups small style
 
     .songpic {
         margin-top: 0px;
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
         background-color: aquamarine;
         border-radius: 150px;
         box-shadow: 0px 5px 5px #888888;
@@ -1121,7 +1125,7 @@ Groups small style
         font-family: Avenir Black;
         font-size: 20px;
         margin: 0 auto;
-        margin-left: 0px;
+        margin-left: 270px;
       }
 
       #FeedSongName {
@@ -1129,7 +1133,7 @@ Groups small style
           font-family: Avenir Medium;
           font-weight: 300;
           font-size: 45px;
-          margin-left: 0px;
+          margin-left: 270px;
 
       }
 
@@ -1143,13 +1147,13 @@ Groups small style
         font-family: Avenir Medium;
         font-size: 24px;
         color: #c5c5c5;
-        margin: 190px 0 140px 400px;
+        margin: 150px 0 140px 400px;
         border: 1px solid darkgray;
         padding: initial;
         border-radius: 30px;
         background-color: white;
-        width: 165px;
-        height: 70px;
+        width: 140px;
+        height: 60px;
         left: 0%;
         position: relative;
       }
@@ -1166,12 +1170,16 @@ Groups small style
     	}
 
     	.wave {
-    		height: 10px !important;
+    		/*height: 10px !important;
     		display: none;
     		width: 30vw;
     		float: left;
     		margin-top: -20px;
     		margin-left: 9vw;
+			*/
+			display: block;
+			width: 300px;
+			float: right;
     	}
 
     	.btn_play_pause{

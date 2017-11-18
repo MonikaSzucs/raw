@@ -3,9 +3,9 @@
 //the session_start() should always be at the top
 session_start();
 
-var_dump($_SESSION);
+//var_dump($_SESSION);
 
-echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
+//echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
 
 
 if(!isset($_SESSION["user_id"]))
@@ -24,13 +24,13 @@ define('DB_DATABASE', 'raw');
 $db = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
 
 if(isset($_POST['toDo'])){
-	print_r($_POST);
+	//print_r($_POST);
 
 
 	$query = "INSERT INTO group_users (group_id, user_id)";
 	$query .= " VALUES (" . $_POST['group_id'] . ", " . $_SESSION['user_id'] . ")";
 
-	echo $query;
+	//echo $query;
 	$result = mysqli_query($db, $query) or die('Error querying database.');
 
 }
@@ -154,7 +154,7 @@ if(isset($_POST['toDo'])){
 						//echo "<p>".$k."</p>";
 
 
-				echo "<div class='streaming_desktop'>";
+				echo "<div class='streaming'>";
                     echo "<div class='first-song'>";
                         echo "<div class='songpic'>";
                             if(empty($row['music_photo'] )){
@@ -166,7 +166,7 @@ if(isset($_POST['toDo'])){
 								echo "<div class='songpicfade'>";
 								echo "</div>";
 								echo "<button  id='play_pause_feed' class='play_pause_feed_desktop' onClick='wavesurfer".$i.".playPause(); play_pause_image_function(".$desktop_num.", 0)'>";
-								echo "<i class='glyphicon glyphicon-play'></i";
+								echo "<i class='glyphicon glyphicon-play'></i>";
 								echo "</button>";
                         echo "</div>";
                         echo "<div class='song-buttons'>";
@@ -189,9 +189,10 @@ if(isset($_POST['toDo'])){
 								container: '#waveform".$i."',
                                 waveColor: '#c5ddff',
                                 progressColor: '#75a8ff',
-								height:75,
+								height:50,
 								hideScrollbar:true,
-								barWidth:5
+								barWidth:5,
+								responsive: true
                          });
                          wavesurfer".$i.".load('". $row['music_file'] ."');
 						 </script>";
@@ -200,11 +201,12 @@ if(isset($_POST['toDo'])){
 
                 echo "</div>";
 
+
 							//
 							//
 							//Tablet Area
 							//
-
+				/*
 						echo "<div class='streaming_tablet'>";
 		                    echo "<div class='first-song'>";
 		                        echo "<div class='songpic'>";
@@ -293,7 +295,7 @@ if(isset($_POST['toDo'])){
 										$mobile_num++;
 				            echo "</div>";
 
-
+			*/
 
 			};
 

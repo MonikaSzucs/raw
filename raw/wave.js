@@ -1759,7 +1759,7 @@ WaveSurfer.util.extend(WaveSurfer.Drawer.Canvas, {
                 left: 0,
                 top: 0,
                 bottom: 0,
-                overflow: 'hidden',
+                overflow: 'visible',
                 width: '0',
                 display: 'none',
                 boxSizing: 'border-box',
