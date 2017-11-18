@@ -18,6 +18,8 @@
 /*MEDIA ------------------------------------------------------------------------------*/
 
 @media (min-width: 1024px) {
+	
+	
     .mobileScreen {
         display: block;
     }
@@ -71,7 +73,7 @@
   }
 
     body {
-        background-color: darkgrey;
+        background-color: green;
         margin: 0 auto;
         max-width: 100vw;
     }
@@ -1521,6 +1523,7 @@ hambuger menu
         height: 1200px;
         background-color: #f8f8f8;
         position: absolute;
+		padding-bottom: 150px;
 	}
 
     .songpic {
@@ -1620,7 +1623,7 @@ hambuger menu
 
 	/*Download styling in groups*/
 	#DownloadButtonGroups {
-		margin-left: 65vw;
+		margin-left: 300px;
 		margin-top: 60px;
 	}
 
@@ -1723,7 +1726,7 @@ hambuger menu
     position: absolute;
     margin: 45px 45px 45px 45px;
     transition: 0.2s ease;
-    opacity: 0;
+    opacity: 1;
 	}
 
   .songpic:hover .play_pause_feed_desktop {
@@ -1732,7 +1735,6 @@ hambuger menu
 
 	.container_musics_feed{
 		width: 75%;
-		height: 120px;
 	}
 
 	.download_feed_button{
