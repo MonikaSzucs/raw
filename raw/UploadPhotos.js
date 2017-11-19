@@ -25,7 +25,7 @@ function handleFileSelect(evt) {
           var span = document.createElement('span');
           span.innerHTML = 
           [
-            '<img style="height: 120px; border: 1px solid #000; margin: 5px"; src="', 
+            '<img style="border-radius:50%; height: 148px; width: 148px; border: 1px solid #000;"; src="', 
             e.target.result,
             '" title="', escape(theFile.name), 
             '"/>'
