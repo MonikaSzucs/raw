@@ -10,11 +10,57 @@ if(!isset($_SESSION["user_id"]))
 
 $target_file_photo = "";
 $target_file_music = "";
+$target_music_file = "";
+$target_file = "";
 print_r($_FILES);
 	echo "TTTTTTT<br//>";
 
 //group picture
 //the ifseet means this will only work when you click form submit
+if( isset($_FILES["fileToUpload"]["name"]) && !empty($_FILES["fileToUpload"]["name"])) {
+	$target_file = "GlobalPictures/".time().basename($_FILES["fileToUpload"]["name"]);
+	$uploadOk = 1;
+	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+	$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+
+	if($check !== false) {
+		echo "File is an image - " . $check["mime"] . ".";
+		$uploadOk = 1;
+	} else {
+		echo "File is not an image.";
+		$uploadOk = 0;
+	}
+	
+	// Check if file already exists
+	if (file_exists($target_file)) {
+		echo "Sorry, file already exists.";
+		$uploadOk = 0;
+	}
+	// Check file size
+	if ($_FILES["fileToUpload"]["size"] > 50000000) {
+		echo "Sorry, your file is too large.";
+		$uploadOk = 0;
+	}
+	// Allow certain file formats
+	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+	&& $imageFileType != "gif" ) {
+		echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+		$uploadOk = 0;
+	}
+	
+	// Check if $uploadOk is set to 0 by an error
+	if ($uploadOk == 0) {
+		echo "Sorry, your file was not uploaded.";
+		// if everything is ok, try to upload file
+	} else {
+		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+			echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+		} else {
+			echo "Sorry, there was an error uploading your file.";
+			}
+	}
+}
+/*
 if( isset($_FILES["myImage"]["name"]) && !empty($_FILES["myImage"]["name"])) {
 	echo "1<br//>";
 	$target_file_photo .= "GlobalPictures/".time().basename($_FILES["myImage"]["name"]);
@@ -57,8 +103,43 @@ if( isset($_FILES["myImage"]["name"]) && !empty($_FILES["myImage"]["name"])) {
 		}
 	}
 }
+*/
+///music
+if( isset($_FILES["userfile"]["name"]) && !empty($_FILES["userfile"]["name"])) {
+
+	$target_music_file = "GlobalSongs/". time().basename($_FILES["userfile"]["name"]);
+	$musicUploadOk = 1;
+	$file_name = $_FILES['userfile']['name'];
+    $temp_dir = $_FILES["userfile"]["tmp_name"];
+    $ext_str = "mp3,mp4,wav";
+	$ext = substr($file_name, strrpos($file_name, '.') + 1);
+    $allowed_extensions=explode(',',$ext_str);
+	$musicFileType = pathinfo($target_music_file,PATHINFO_EXTENSION);
+	if($musicFileType == "mp3" || $musicFileType == "mp4" || $musicFileType == "wav"
+	) {						
+		$musicUploadOk = 1;
+	} else {				
+		$musicUploadOk = 0;
+	}
+	if ($_FILES["userfile"]["size"] > 50000000000) {
+		echo "Sorry, your file is too large.";
+		$musicUploadOk = 0;
+	}
+	if ($musicUploadOk == 0) {
+		echo "Sorry, only MP3, MP4, WAV files are allowed.";
+	} else{
+		if (move_uploaded_file($temp_dir, $target_music_file)){
+			echo "The file ". basename( $_FILES["userfile"]["name"]). " has been uploaded.";
+		}
+		else {
+			echo "Sorry, there was an error uploading your file.";
+		}
+	}
+}
+
 
 //music files
+/*
 if( isset($_FILES["myMusic"]["name"]) && !empty($_FILES["myMusic"]["name"])) {
 	echo "1<br//>";
 	$target_file_music .= "GlobalSongs/". time().basename($_FILES["myMusic"]["name"]);
@@ -87,6 +168,7 @@ if( isset($_FILES["myMusic"]["name"]) && !empty($_FILES["myMusic"]["name"])) {
 		}
 	}
 }
+*/
 
 
 
@@ -140,13 +222,13 @@ $formSuccessfullMessage = "";
 		$g_brass = isset($_POST['g_brass']) ? $_POST['g_brass']: "";
 
 
-		if(isset($target_file_music))
+		if(isset($target_music_file))
 		{
 			//step 2 to make the SQL query
 			$TitleSongSample = $_POST["TitleSongSample"];
 
 			$query = "INSERT INTO music_public(user_id,  music_file, music, song_title, music_photo, g_rnb, g_rock, g_pop, g_punk, g_jazz, g_metal, g_funk, g_country, g_edm, g_classical, g_happy, g_sad, g_angry, g_chill, g_focus, g_workout, g_travel, g_guitar, g_bass, g_synth, g_pads, g_woodwind, g_drums, g_strings, g_brass) ";
-			$query .= "VALUES ( '" . $_SESSION["user_id"] . "',  '" . $target_file_music . "', '" . $_POST['music_check']. "', '" . $TitleSongSample . "', '" . $target_file_photo . "', '" . $g_rnb."' , '".$g_rock."', '".$g_pop."', '".$g_punk."', '".$g_jazz."', '".$g_metal."', '".$g_funk."', '".$g_country."', '".$g_edm."', '".$g_classical."', '".$g_happy."', '".$g_sad."', '".$g_angry."', '".$g_chill."', '".$g_focus."', '".$g_workout."', '".$g_travel."', '".$g_guitar."', '".$g_bass."', '".$g_synth."', '".$g_pads."', '".$g_woodwind."', '".$g_drums."', '".$g_strings."', '".$g_brass."') ";
+			$query .= "VALUES ( '" . $_SESSION["user_id"] . "',  '" . $target_music_file . "', '" . $_POST['music_check']. "', '" . $TitleSongSample . "', '" . $target_file . "', '" . $g_rnb."' , '".$g_rock."', '".$g_pop."', '".$g_punk."', '".$g_jazz."', '".$g_metal."', '".$g_funk."', '".$g_country."', '".$g_edm."', '".$g_classical."', '".$g_happy."', '".$g_sad."', '".$g_angry."', '".$g_chill."', '".$g_focus."', '".$g_workout."', '".$g_travel."', '".$g_guitar."', '".$g_bass."', '".$g_synth."', '".$g_pads."', '".$g_woodwind."', '".$g_drums."', '".$g_strings."', '".$g_brass."') ";
 
 			echo $query;
 			//step 3
@@ -225,7 +307,7 @@ $formSuccessfullMessage = "";
         <div id="hamburger">
             <ul id="hambul">
               <a href="ProfileIntroPage.php"> <li class="hamclass">
-                Profile
+                Profile 
                    </li> </a>
                 <a href="logout.php"><li class="hamclass">
                 Sign Out
@@ -256,297 +338,20 @@ $formSuccessfullMessage = "";
 
 
         <div class="upload_page_music_global_white" id="upload_page_music_global_white">
+			
 			<div id="m-profile-main-inner">
 
-				<div class="Profile-sub-container">
-					<div class="TopSpace-ProfileGroupSub"></div>
+				
+					
+				
+				<div class="Profile-sub-container"> </div>
+<div class="TopSpace-ProfileGroupSub"></div>
+				<div class="ProfileIconGroups" id="list"></div>
+				
+				
+				
 
-<!-- MOBILE ------------------------>
-
-<div class="upload_global_music_samples_mobile">
-	<div class="ProfileIconGroups" id="list"></div>
-	<div class="vertical-space"></div>
-
-
-
-	<form id="contactForm" name="form" action="" method="post" enctype="multipart/form-data">
-		<span style='color:red; font-weight:bold'> <?php if(isset($formErrorMessage)){echo $formErrorMessage;} ?> </span>
-		<span style='color:Green; font-weight:bold'> <?php if(isset($formSuccessfullMessage)){echo $formSuccessfullMessage;} ?> </span>
-
-		<div class="UploadNewSongAreaTitle">
-			<div class="GroupsInformation-Title">
-				Title:<br/>
-				<textarea maxlength="50" name="TitleSongSample" placeholder="Place your title here.."><?php if(isset($TitleSongSample)){echo $TitleSongSample; }?></textarea>
-			</div>
-
-		</div>
-			<br/>
-
-			<div class="upload_page_global_titles">
-				Upload a profile Image:
-			</div>
-
-			<input class="file_upload_button" id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
-			<br/>
-			<hr>
-			<br/>
-
-			<div class="upload_page_global_titles">
-				Song or Samples Upload:
-			</div>
-
-			<br/>
-			<input class="file_upload_button" id="files" type="file" name="myMusic" accept="audio/*" />
-			<br/>
-			<br/>
-			<hr/>
-			<br/>
-			<div class="upload_page_global_titles">
-				Is this a song or sample?
-			</div>
-			<br/>
-
-			<div class="checkbox">
-				<label class="label_music_sample_global_upload"><input class="input_buttons_styles_music_global" type="radio" value="1" name="music_check" checked><span class="music_sample_label_music_global_uploading">Music</span></label>
-				<label class="label_music_sample_global_upload"><input class="input_buttons_styles_music_global" type="radio" value="0" name="music_check"><span class="music_sample_label_music_global_uploading">Sample</span></label>
-			</div>
-			<br/>
-			<br/>
-			<br/>
-			<hr/>
-			<br/>
-
-			<span class='music_global_upload_title_style'>
-				Genre(s)
-			</span>
-
-			<table style="left: 0; right: 0; margin: 0 auto;">
-				<tr>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_pop" value="1"><span class="categories_label_music_global_uploading">Pop</span></td>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_rnb" value="1"><span class="categories_label_music_global_uploading">RNB</span></td>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_rock" value="1"><span class="categories_label_music_global_uploading">Rock</span></td>
-				</tr>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_punk" value="1"><span class="categories_label_music_global_uploading">Punk</span></td>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_jazz" value="1"><span class="categories_label_music_global_uploading">Jazz</span></td>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_metal" value="1"><span class="categories_label_music_global_uploading">Metal</span></td>
-				</tr>
-				<tr>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_funk" value="1"><span class="categories_label_music_global_uploading">Funk</span></td>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_country" value="1"><span class="categories_label_music_global_uploading">Country</span></td>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_edm" value="1"><span class="categories_label_music_global_uploading">EDM</span></td>
-				</tr>
-				<tr>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_classical" value="1"><span class="categories_label_music_global_uploading">Classical</span></td>
-				</tr>
-			<table>
-			<br/>
-			<br/>
-			<hr>
-			<br/>
-			<br/>
-
-			<span class='music_global_upload_title_style'>
-				Mood(s)
-			</span>
-
-			<table style="left: 0; right: 0; margin: 0 auto;">
-				<tr>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_happy" value="1"><span class="categories_label_music_global_uploading">Happy</span></td>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_sad" value="1"><span class="categories_label_music_global_uploading">Sad</span></td>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_angry" value="1"><span class="categories_label_music_global_uploading">Angry</span></td>
-				</tr>
-				<tr>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_chill" value="1"><span class="categories_label_music_global_uploading">Chill</span></td>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_focus" value="1"><span class="categories_label_music_global_uploading">Focus</span></td>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_workout" value="1"><span class="categories_label_music_global_uploading">Workout</span></td>
-				</tr>
-				<tr>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_travel" value="1"><span class="categories_label_music_global_uploading">Travel</span></td>
-				</tr>
-			</table>
-			<br/>
-			<br/>
-			<hr>
-			<br/>
-			<br/>
-
-			<span class='music_global_upload_title_style'>
-				Instrument(s)
-			</span>
-
-			<table style="left: 0; right: 0; margin: 0 auto;">
-				<tr>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_guitar" value="1"><span class="categories_label_music_global_uploading">Guitar</span></td>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_bass" value="1"><span class="categories_label_music_global_uploading">Bass</span></td>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create"type="checkbox" name="g_synth" value="1"><span class="categories_label_music_global_uploading">Synth</span></td>
-				</tr>
-				<tr>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_pads" value="1"><span class="categories_label_music_global_uploading">Pads</span></td>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_woodwind" value="1"><span class="categories_label_music_global_uploading">Woodwind</span></td>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_drums" value="1"><span class="categories_label_music_global_uploading">Drums</span></td>
-				</tr>
-				<tr>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_strings" value="1"><span class="categories_label_music_global_uploading">Strings</span></td>
-					<td class="td_style_global"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_brass" value="1"><span class="categories_label_music_global_uploading">Brass</span></td>
-
-				</tr>
-			</table>
-			<br/>
-			<br/>
-			<hr>
-			<br/>
-			<br/>
-
-		<div id="button_Area_music_upload_create">
-			<input id="Create_music_global_upload_button" type="submit" />
-		</div>
-
-	</form>
-
-</div>
-
-<!-- TABLET ---------------------------------------------------------->
-
-
-<div class="upload_global_music_samples_tablet">
-	<div class="ProfileIconGroups" id="list"></div>
-	<div class="vertical-space"></div>
-
-
-
-	<form id="contactForm" name="form" action="" method="post" enctype="multipart/form-data">
-		<span style='color:red; font-weight:bold'> <?php if(isset($formErrorMessage)){echo $formErrorMessage;} ?> </span>
-		<span style='color:Green; font-weight:bold'> <?php if(isset($formSuccessfullMessage)){echo $formSuccessfullMessage;} ?> </span>
-
-		<div class="UploadNewSongAreaTitle">
-			<div class="GroupsInformation-Title">
-				Title:<br/>
-				<textarea maxlength="50" name="TitleSongSample" placeholder="Place your title here.."><?php if(isset($TitleSongSample)){echo $TitleSongSample; }?></textarea>
-			</div>
-
-		</div>
-			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-
-			<div class="upload_page_global_titles">
-				NOTE: I'm going to be replacing this image upload button into an icon right next to the actual profile picture:
-			</div>
-
-			<br/>
-			<input class="file_upload_button" id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
-			<br/>
-			<hr>
-			<br/>
-
-			<div class="upload_page_global_titles">
-				Song or Samples Upload:
-			</div>
-
-			<br/>
-			<input class="file_upload_button" id="files" type="file" name="myMusic" accept="audio/*" />
-			<br/>
-			<br/>
-			<hr/>
-			<br/>
-			<div class="upload_page_global_titles">
-				Is this a song or sample?
-			</div>
-			<br/>
-
-			<div class="checkbox">
-				<label class="label_music_sample_global_upload"><input class="input_buttons_styles_music_global" type="radio" value="1" name="music_check" checked><span class="music_sample_label_music_global_uploading">Music</span></label>
-				<label class="label_music_sample_global_upload"><input class="input_buttons_styles_music_global" type="radio" value="0" name="music_check"><span class="music_sample_label_music_global_uploading">Sample</span></label>
-			</div>
-			<br/>
-			<br/>
-			<br/>
-			<hr/>
-			<br/>
-
-			<span class='music_global_upload_title_style'>
-				Genre(s)
-			</span>
-
-			<table style="left: 0; right: 0; margin: 0 auto;">
-				<tr>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_rnb" value="1"><span class="categories_label_music_global_uploading">RNB</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_rock" value="1"><span class="categories_label_music_global_uploading">Rock</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_pop" value="1"><span class="categories_label_music_global_uploading">Pop</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_punk" value="1"><span class="categories_label_music_global_uploading">Punk</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_jazz" value="1"><span class="categories_label_music_global_uploading">Jazz</span></td>
-				</tr>
-				<tr>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_metal" value="1"><span class="categories_label_music_global_uploading">Metal</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_funk" value="1"><span class="categories_label_music_global_uploading">Funk</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_country" value="1"><span class="categories_label_music_global_uploading">Country</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_edm" value="1"><span class="categories_label_music_global_uploading">EDM</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_classical" value="1"><span class="categories_label_music_global_uploading">Classical</span></td>
-				</tr>
-			<table>
-			<br/>
-			<br/>
-			<hr>
-			<br/>
-			<br/>
-
-			<span class='music_global_upload_title_style'>
-				Mood(s)
-			</span>
-
-			<table style="left: 0; right: 0; margin: 0 auto;">
-				<tr>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_happy" value="1"><span class="categories_label_music_global_uploading">Happy</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_sad" value="1"><span class="categories_label_music_global_uploading">Sad</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_angry" value="1"><span class="categories_label_music_global_uploading">Angry</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_chill" value="1"><span class="categories_label_music_global_uploading">Chill</span></td>
-				</tr>
-				<tr>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_focus" value="1"><span class="categories_label_music_global_uploading">Focus</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_workout" value="1"><span class="categories_label_music_global_uploading">Workout</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_travel" value="1"><span class="categories_label_music_global_uploading">Travel</span></td>
-				</tr>
-			</table>
-			<br/>
-			<br/>
-			<hr>
-			<br/>
-			<br/>
-
-			<span class='music_global_upload_title_style'>
-				Instrument(s)
-			</span>
-
-			<table style="left: 0; right: 0; margin: 0 auto;">
-				<tr>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_guitar" value="1"><span class="categories_label_music_global_uploading">Guitar</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_bass" value="1"><span class="categories_label_music_global_uploading">Bass</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create"type="checkbox" name="g_synth" value="1"><span class="categories_label_music_global_uploading">Synth</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_pads" value="1"><span class="categories_label_music_global_uploading">Pads</span></td>
-				</tr>
-				<tr>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_woodwind" value="1"><span class="categories_label_music_global_uploading">Woodwind</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_drums" value="1"><span class="categories_label_music_global_uploading">Drums</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_strings" value="1"><span class="categories_label_music_global_uploading">Strings</span></td>
-					<td style="width: 135px;"><input class="input_checkbox_style_music_global_create" type="checkbox" name="g_brass" value="1"><span class="categories_label_music_global_uploading">Brass</span></td>
-				</tr>
-			</table>
-			<br/>
-			<br/>
-			<hr>
-			<br/>
-			<br/>
-
-		<div id="button_Area_music_upload_create">
-			<input id="Create_music_global_upload_button" type="submit" />
-		</div>
-
-	</form>
-
-</div>
-
-<!-- DESKTOP ---------------------------------------------------------->
-
-<div class="upload_global_music_samples_desktop">
-					<div class="ProfileIconGroups" id="list"></div>
+					
 					<div class="vertical-space"></div>
 
 
@@ -569,7 +374,8 @@ $formSuccessfullMessage = "";
 							</div>
 
 							<br/>
-							<input class="file_upload_button" id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
+							<!--<input class="file_upload_button" id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" /> -->
+							<input class="file_upload_button" type="file" name="fileToUpload" id="files" accept="image/x-png,image/gif,image/jpeg"><br>
 							<br/>
 							<hr>
 							<br/>
@@ -579,7 +385,8 @@ $formSuccessfullMessage = "";
 							</div>
 
 							<br/>
-							<input class="file_upload_button" id="files" type="file" name="myMusic" accept="audio/*" />
+							<!-- <input class="file_upload_button" id="files" type="file" name="myMusic" accept="audio/*" /> -->
+							<input class="file_upload_button" type="file" class="form-control" name="userfile" id="userfile" accept="audio/*"/>
 							<br/>
 							<br/>
 							<hr/>
@@ -683,14 +490,15 @@ $formSuccessfullMessage = "";
 
 
 				</div>
-			</div>
-
+			
+			
 			<div id="form_output">
 
 
 			</div>
 		</div>
-    </div>
+		</div>
+   
     <nav class="container">
         <a class="buttons" href="ProfileIntroPage.php" tooltip="Profile"></a>
          <a class="buttons" href="MobileGroupsTab.php" tooltip="Groups"></a>

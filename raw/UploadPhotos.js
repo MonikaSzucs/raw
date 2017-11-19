@@ -3,9 +3,11 @@ var files = document.getElementById("files");
 
 
 function handleFileSelect(evt) {
-	//console.log(files.value);
+	
+	
+	//
     var files = evt.target.files;
-
+		console.log(files.value)
     // Loop through the FileList and render image files as thumbnails.
     for (var i = 0, f; f = files[i]; i++) {
 
@@ -30,6 +32,8 @@ function handleFileSelect(evt) {
           ].join('');
           
           document.getElementById('list').insertBefore(span, null);
+		  
+		  console.log(document.getElementById('list'));
         };
       })(f);
 
