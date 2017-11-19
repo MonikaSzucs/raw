@@ -677,7 +677,7 @@ hambuger menu
         line-height: 75px;
     }
     .m-profile-buttons {
-        width: 100vw;
+        width: 100%;
         height: 50px;
         bottom: 0px;
         position: absolute;
@@ -719,11 +719,12 @@ hambuger menu
     }
 
 	#m-profile-main-inner{
-		width: 870px;
+		width: 100%;
 		background-color:white;
 		left: 0;
 		right: 0;
 		margin: auto;
+		padding-bottom: 120px;
 	}
 
     #lname {
@@ -1106,18 +1107,17 @@ hambuger menu
 	}
 
 	.ProfileIconGroups{
-    float: left;
-    width: 150px;
-    height: 150px;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    border: #6b6b6b;
-    border-width: 2px;
-    border-radius: 100%;
-    border-style: dashed;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, .15);
-    margin-left: 10%;
+		float: left;
+		width: 150px;
+		height: 150px;
+		top: 0;
+		bottom: 0;
+		border: #6b6b6b;
+		border-width: 2px;
+		border-radius: 100%;
+		border-style: dashed;
+		box-shadow: 5px 5px 10px rgba(0, 0, 0, .15);
+
 	}
 	.GroupsInformation{
 		float: left;
@@ -1175,9 +1175,9 @@ hambuger menu
 
 	.GroupsInformation-Title textarea{
     width: 100%;
-    height: 75px;
+    height: 50px;
     border: 1px solid #E5E5E5;
-    margin: 15px 0 0 0;
+    margin: 5px 0 0 0;
     border-radius: 10px;
     outline: none;
     resize: none;
@@ -1189,7 +1189,7 @@ hambuger menu
     position: relative;
     display: block;
     width: 100%;
-    height: auto;
+    height: 30px;
     margin: 15px 0 0 0;
     font-family: avenir medium;
     font-weight: bold;
@@ -1622,6 +1622,7 @@ hambuger menu
     font-size: 18px;
     color: darkgray;
     bottom: 0;
+	margin-top: 45px;
   }
 
 	.m-profile-pic-intro_settings {
@@ -1924,5 +1925,103 @@ hambuger menu
       margin: 80px;
    
     opacity: 1;
+	}
+	
+	.Upload_Global_Main_Title{
+		width: 100%;
+        height: 150px;
+        position: relative;
+        background-color: white;
+        box-shadow: 0px 2px 2px #888888;
+	}
+	
+	.upload_page_music_global_white{
+		width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 170px;
+	}
+	
+	.TopSpace-ProfileGroupSub{
+		height: 25px;
+		width: 100%;
+		background-color:red;
+	}
+	
+	#contactForm{
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 20px;
+		width:85%;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+	}
+	
+	.upload_global_image_area{
+		float:left;
+		margin-top: 30px;
+		width: 100%;
+		border-bottom: solid 1px #DCDCDC;
+		padding-bottom: 20px;
+
+	}
+	
+	.UploadNewSongAreaTitle{
+		float: left;
+    width: 70%;
+    height: 120px;
+    margin-top: 20px;
+    font-family: Avenir-Medium;
+    border-radius: 10px;
+    border: 1px solid #dedede;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .15);
+	margin-left: 30px;
+	}
+	
+	.image_circle_title_enter{
+		float:left;
+		margin-top: 20px;
+		width: 100%;
+	}
+	
+	.upload_global_song_area{
+		float:left;
+		margin-top: 30px;
+		width: 100%;
+		border-bottom: solid 1px #DCDCDC;
+		padding-bottom: 20px;
+	}
+	
+	.upload_global_radio_button_area{
+		float:left;
+		margin-top: 30px;
+		width: 100%;
+		border-bottom: solid 1px #DCDCDC;
+		padding-bottom: 30px;
+	}
+	
+	.upload_global_genre_area{
+		float:left;
+		margin-top: 30px;
+		width: 100%;
+		border-bottom: solid 1px #DCDCDC;
+		padding-bottom: 30px;
+	}
+	
+	.upload_global_moods_area{
+		float:left;
+		margin-top: 30px;
+		width: 100%;
+		border-bottom: solid 1px #DCDCDC;
+		padding-bottom: 30px;
+	}
+	
+	.upload_global_instruments_area{
+		float:left;
+		margin-top: 30px;
+		width: 100%;
+		border-bottom: solid 1px #DCDCDC;
+		padding-bottom: 30px;
 	}
 }

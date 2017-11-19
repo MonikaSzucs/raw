@@ -340,16 +340,20 @@ $formSuccessfullMessage = "";
 			
 			<div id="m-profile-main-inner">
 
-			<div class="Profile-sub-container"> </div>
+			
 			<div class="TopSpace-ProfileGroupSub"></div>
 
 			
-					<div class="vertical-space"></div>
+				
 
 
 
 				<form id="contactForm" name="form" action="" method="post" enctype="multipart/form-data">
-					<div class="ProfileIconGroups" id="list"></div>
+					
+				<div class="image_circle_title_enter">
+					<div class="icon_upload_global_area_container">
+						<div class="ProfileIconGroups" id="list"></div>
+					</div>
 						<span style='color:red; font-weight:bold'> <?php if(isset($formErrorMessage)){echo $formErrorMessage;} ?> </span>
 						<span style='color:Green; font-weight:bold'> <?php if(isset($formSuccessfullMessage)){echo $formSuccessfullMessage;} ?> </span>
 
@@ -359,7 +363,9 @@ $formSuccessfullMessage = "";
 							</div>
 
 						</div>
-							
+				</div>
+				
+
 							<div class="upload_global_image_area">
 								<div class="upload_page_global_titles">
 									Upload a profile Image:
@@ -367,7 +373,9 @@ $formSuccessfullMessage = "";
 								<!--<input class="file_upload_button" id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" /> -->
 								<input class="file_upload_button" type="file" name="fileToUpload" id="files" accept="image/x-png,image/gif,image/jpeg"><br>
 							</div>
-							
+
+						
+						
 							<div class="upload_global_song_area">
 								<div class="upload_page_global_titles">
 									Song or Samples Upload:

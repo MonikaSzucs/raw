@@ -1120,17 +1120,17 @@ hambuger menu
 	}
 
 	.ProfileIconGroups{
-    float: left;
-    width: 150px;
-    height: 150px;
-    top: 10;
-    bottom: 0;
-    margin: auto;
-    border: #6b6b6b;
-    border-width: 3px;
-    border-radius: 100%;
-    border-style: dashed;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, .15);
+		float: left;
+		width: 150px;
+		height: 150px;
+		top: 10;
+		bottom: 0;
+		margin: auto;
+		border: #6b6b6b;
+		border-width: 3px;
+		border-radius: 100%;
+		border-style: dashed;
+		box-shadow: 5px 5px 10px rgba(0, 0, 0, .15);
 	}
 	.GroupsInformation{
 		float: left;
@@ -1984,6 +1984,13 @@ hambuger menu
 		margin-top: 30px;
 		width: 100%;
 		border-bottom: solid 1px #DCDCDC;
+		padding-bottom: 20px;
+	}
+	
+	.image_circle_title_enter{
+		float:left;
+		margin-top: 20px;
+		width: 100%;
 		padding-bottom: 20px;
 	}
 	

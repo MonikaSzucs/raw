@@ -1226,9 +1226,9 @@ Groups small style
 
 	.ProfileIconGroups{
     float: none;
-		width: 200px;
-		height: 200px;
-		margin: 0px auto 30px 30%;
+		width: 150px;
+		height: 150px;
+		margin: 0px auto;
     border-radius: 100%;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
 		position: relative;
@@ -1242,6 +1242,10 @@ Groups small style
 		left: 0;
 		right: 0;
 		margin: 0 auto;
+	}
+	
+	.spaceContainerTop h1{
+		font-size: 40px;
 	}
       /* ------------------ END of Music Player ------------------*/
 
@@ -1270,4 +1274,12 @@ Groups small style
 
   .checkbox {
     margin-left: 50px;
+  }
+  
+  .UploadNewSongAreaTitle{
+	  min-width: 300px;
+  }
+  
+  .icon_upload_global_area_container{
+	  min-width: 300px;
   }
