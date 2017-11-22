@@ -10,7 +10,6 @@ if(!isset($_SESSION["user_id"]))
 };
 
 
-	echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
 
 	/*
 	if(!isset($_SESSION["user_id"]))
@@ -181,12 +180,21 @@ while ($row = mysqli_fetch_array($result)) {
 				}
 				echo "</div>";
 			echo "<div class='vertical_space_group'>";
-				
-				echo"<div class='groups_title_generate'>" . $row['group_title']; 
+				if (strlen($row['group_description'])>40){
+					echo"<div class='groups_title_generate'>" . substr($row['group_title'],0,40) . "..."; 
+				} else{
+					echo"<div class='groups_title_generate'>" . $row['group_title'];
+				}
+
 					
 				echo "</div>";
 				echo "<hr/>";
-				echo "<div class='groups_descrition_generate'>" . substr($row['group_description'],0,120) . "...</div>";
+				if (strlen($row['group_description'])>330){
+					echo "<div class='groups_descrition_generate'>" . substr($row['group_description'],0,80) . "...</div>";
+				} else {
+					echo "<div class='groups_descrition_generate'>" . substr($row['group_description'],0,80) . "</div>";
+				}
+				
 				echo "<div class='LeaveButtonGroups'>";
 					if(in_array($row['group_id'], $group_users))
 					{
@@ -230,6 +238,8 @@ while ($row = mysqli_fetch_array($result)) {
 	//Medium screen area
 	//
 	//
+	
+	/*
 	echo "<div class='MediumScreenGroup'>";
 		echo "<div class='M_group_container_create'>";
 			echo "<div class='group_photo_Area'>";
@@ -337,6 +347,7 @@ while ($row = mysqli_fetch_array($result)) {
 			echo "</div>";
 		echo "</div>";
 	echo "</div>";
+	*/
 	} 
 
 

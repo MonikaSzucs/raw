@@ -45,7 +45,7 @@ if(!isset($_GET['group_id'])){
     <link rel="stylesheet" href="SmallScreen768version2device.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
+	<script src="wave.js"></script>
 </head>
 
 <body>
@@ -122,39 +122,41 @@ if(!isset($_GET['group_id'])){
 			
 		?>
 		
-        <div class="m-profile-box">
-			<div id="m-profile-inner">
-				<div id="m-profile-pic-intro">
+        <div class="White_Area_Top">
+			<div id="Entered_Top_Container">
+				<div id="Entered_Groups_Profile_Pic">
 					<?php
 						if(empty($row['group_photo'] )){
 						echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
 					}
-					else{
+					else {
 						echo "<td> <img src='" . $row['group_photo'] . "' class='circlePhotoUploaded' > </td>";
 					}
 					?>
 				</div>
-				<div id="m-view-profile-div">
-					
-					<p id="name">
+				<div id="Entered_Top_Info">
+					<div id="Top_Area_Title">
 						<?php
 							echo $row['group_title'];
 						?>
-					</p>
-					<p id="name">
+					</div>
+					<div id="Top_Area_Info">
 						<?php
 							echo $row['group_description'];
 						?>
-					</p>
-					<ul id="view-profile">
-					</ul>
-					<form action="Add_Song_To_Group.php" method="get">
-						<input type="hidden" name="group_id" value="<?php echo $_GET['group_id']?>"/>
-						<input type="submit" value="Add Songs"/>
-					</form>
-					<a href="MobileGroupsTab.php"><button id="CreateGroupProfile">Back</button></a>
-					
-					
+					</div>
+				
+				</div>
+
+				<div id="Entered_Top_Button">
+
+						<a href="MobileGroupsTab.php"><button id="Entered_Back">Back</button></a>
+
+						<form action="Add_Song_To_Group.php" method="get">
+							<input type="hidden" name="group_id" value="<?php echo $_GET['group_id']?>"/>
+							<input id="Entered_Add_Music" type="submit" value="Add Songs"/>
+						</form>
+
 				</div>
 			</div>
         </div>
@@ -162,15 +164,16 @@ if(!isset($_GET['group_id'])){
 		
 		
 
-        <div class="m-profile-main">
+        <div class="White_Bottom_Area">
 			<div id="m-profile-main-inner">
 				<div class="spaceContainerTop"><h1>Songs</h1></div>
 				<label class="switch">
 				  <input type="checkbox">
-				  <span class="slider round"></span>
+				  
 				</label>
 				
 				
+	
 				
 				<?php
 					if(isset($_GET['group_id'])){
@@ -190,10 +193,6 @@ if(!isset($_GET['group_id'])){
 							echo "<div class='first-song'>";
 								echo "<div class='songpic'></div>";
 								echo "<div class='song-buttons'>";
-									echo "<ul>";
-									echo "<li>Like</li>";
-									echo "<li>Share</li>";
-									echo "</ul>";
 									echo "<p id='FeedArtistsName'>Name</p>";
 									echo "<p id='FeedSongName'>Track: </p>";
 								echo "</div>";
@@ -209,16 +208,20 @@ if(!isset($_GET['group_id'])){
 									echo "</div>";
 								
 								echo "</div>";
-								echo "<a href='/rawNov8/raw/raw/". $row['music_file'] . "' download='" . $row['music_file'] . "'>";
+								echo "<a href='/raw/raw/raw/". $row['music_file'] . "' download='" . $row['music_file'] . "'>";
 								echo "<button id='DownloadButtonGroups'>";
 								echo "Download";
 								echo "</button>";
 								echo "</a>";
 									echo "<script>";
-									echo "var wavesurfer".$i." = WaveSurfer.create({";
-											echo "container: '#waveform".$i."',";
-											echo "waveColor: '#c5ddff',";
-											echo "progressColor: '#75a8ff'";
+									echo "var wavesurfer".$i." = WaveSurfer.create({
+											container: '#waveform".$i."',
+											waveColor: '#c5ddff',
+											progressColor: '#75a8ff',
+											height:50,
+											hideScrollbar:true,
+											barWidth:5,
+											responsive: true";
 									echo "});";
 									echo "wavesurfer".$i.".load('". $row['music_file'] ."');";
 									echo "</script>";
