@@ -178,11 +178,15 @@ if(!isset($_GET['group_id'])){
 				<?php
 					if(isset($_GET['group_id'])){
 						
-						$query = "SELECT * FROM music_group WHERE group_id = " . $_GET['group_id'];
+						$limit = 5;
+						if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+						$start_from = ($page-1) * $limit;
+						
+						$query = "SELECT * FROM music_group WHERE group_id = " . $_GET['group_id'] . " LIMIT "  . $limit . " OFFSET " . $start_from;;
 						//echo $query;
 						
 						
-						$result = mysqli_query($db, $query) or die('Error querying database.');
+						$result = mysqli_query($db, $query) or die('Error querying database. 78');
 						
 						$i=1;
 						while ($row = mysqli_fetch_array($result)){
@@ -231,10 +235,23 @@ if(!isset($_GET['group_id'])){
 						}
 						
 						////print_r($row)
+						$querry = "SELECT COUNT(group_id) FROM music_group WHERE group_id = " . $_GET['group_id'];  
+						$rs_result = mysqli_query($db, $querry);  
+						$row = mysqli_fetch_row($rs_result);  
+						$total_records = $row[0];  
+						$total_pages = ceil($total_records / $limit);  
+						$pagLink = "<div class='pagination'>";  
+							for ($i=1; $i<=$total_pages; $i++) {  
+								$pagLink .= "<a href='EnteredGroup.php?group_id=". $_GET['group_id'] ."& page=".$i."'>".$i."&nbsp;&nbsp;&nbsp;</a>";  
+							};  
+						echo $pagLink . "</div>"; 
+						
 					} else{
 					
 						echo "error no group is selected";
 					}
+					
+					
 				
 				?>
 				
