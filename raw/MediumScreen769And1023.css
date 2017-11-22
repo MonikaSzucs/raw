@@ -1288,15 +1288,13 @@ hambuger menu
 	}
 
 
-
-
 /*  groups page css  end*/
 
 /* ------------------ Streaming.php Styling ------------------*/
 
   .main-songDiv_feed {
 	  width: 100%;
-        height: 1200px;
+        padding-bottom: 180px;
         background-color: #f8f8f8;
         position: absolute;
   }
@@ -2023,5 +2021,9 @@ hambuger menu
 		width: 100%;
 		border-bottom: solid 1px #DCDCDC;
 		padding-bottom: 30px;
+	}
+	
+	.streaming{
+		margin-top: 50px;
 	}
 }
