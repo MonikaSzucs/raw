@@ -282,30 +282,9 @@ $formSuccessfullMessage = "";
         </div>
 
 
-        <div class="m-profile-box">
-			<div id="m-profile-inner">
-				<div class="m-profile-buttons">
-					<ul id="m-list-buttons">
-						<li>Sounds</li>
-						<li><a href="UserInfo.php">Info</a></li>
-						<li>Groups</li>
-					</ul>
-				</div>
-				<div id="m-profile-pic-intro"></div>
-				<div id="m-view-profile-div">
-					<p id="name">Name</p>
-					<ul id="view-profile">
-						<li id="m-followers-list">
-						</li>
-					</ul>
-				</div>
-			</div>
-        </div>
 
 
-
-
-        <div class="m-profile-main_white" id="CreateGroupsForm_white">
+        <div class="create_group_white_container">
 			<div id="m-profile-main-inner">
 				<div class="spaceContainerTop"><h1>Create Group</h1></div>
 				<a href="MobileGroupsTab.php"><button id="CreateGroupProfile">Back</button></a>

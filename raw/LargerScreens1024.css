@@ -751,7 +751,14 @@ hambuger menu
         position: absolute;
         top: 220px;
 	}
-
+	
+	.create_group_white_container{
+		width: 100%;
+        padding-bottom: 150px;
+        background-color: white;
+        position: absolute;
+	}
+	
     .m-groupdiv-main {
         width: 100%;
         height: auto;

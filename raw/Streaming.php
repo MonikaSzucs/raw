@@ -41,6 +41,8 @@ if(isset($_POST['toDo'])){
 //then put the output in the array
 
 //mysqli_close($db);
+
+
 ?>
 
 
@@ -62,7 +64,17 @@ if(isset($_POST['toDo'])){
     <header class="main-header">
         <nav>
             <div class="header">
-                <div class="toggle-logo"> </div>
+			<?php 
+			if(isset($_GET["sample"]) && $_GET['sample']==1)
+			{
+				echo '<a href="Streaming.php?sample=0">';
+			}
+			else{
+				echo '<a href="Streaming.php?sample=1">';
+			}
+				
+			?>		<div class="toggle-logo"> </div>
+                </a>
                 <a href="MobileUploadPage.php">
                     <div class="m-upload-button"></div>
                 </a>
@@ -137,7 +149,20 @@ if(isset($_POST['toDo'])){
 			
 			//SELECT * FROM `music_public` ORDER BY music_uploaded DESC LIMIT 5;
 			//Step2 get data from database
-			$query = "SELECT * FROM music_public ORDER BY music_uploaded DESC LIMIT 5;";
+			$music=1;
+			if(isset($_GET["sample"])){
+				$sample = $_GET["sample"];
+				if($sample == 1)
+				{
+					$music=0;
+				}
+				else{
+					$music=1;
+				}
+			}
+			$query = "SELECT * FROM music_public ";
+			$query .= "WHERE music = ".$music." ";
+			$query .= "ORDER BY music_uploaded DESC LIMIT 5;";
 			$result = mysqli_query($db, $query) or die('Error querying database.');
 			
 			
@@ -176,7 +201,7 @@ if(isset($_POST['toDo'])){
                             }
 								echo "<div class='songpicfade'>";
 								echo "</div>";
-								echo "<button  id='play_pause_feed' class='play_pause_feed_desktop' onClick='wavesurfer".$i.".playPause(); play_pause_image_function(".$desktop_num.")'>";
+								echo "<button  id='play_pause_feed' class='play_pause_feed_desktop' onClick='pauseAllWave(".$i."); '>";
 								echo "<i class='glyphicon glyphicon-play'></i>";
 								echo "</button>";
                         echo "</div>";
@@ -221,6 +246,15 @@ if(isset($_POST['toDo'])){
 								responsive: true
                          });
                          wavesurfer".$i.".load('". $row['music_file'] ."');
+						 wavesurfer".$i.".on('pause', function () {
+								pause_image_function(".$desktop_num.");
+						 });
+						 wavesurfer".$i.".on('finish', function () {
+								pause_image_function(".$desktop_num.");
+						 });
+						 wavesurfer".$i.".on('play', function () {
+								play_image_function(".$desktop_num.");
+						 });
 						 </script>";
                         $i++;
 
@@ -327,37 +361,64 @@ if(isset($_POST['toDo'])){
 
 			echo "</div>";
 
+?>
+			<script>
+			var img = document.getElementsByClassName('play_pause_feed_desktop');
+			
+				function pause_image_function(trackNum){
+					console.log('pause_image_function:'+trackNum);
+					img[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';
+				}
+				function play_image_function(trackNum){
+					console.log('play_image_function:'+trackNum);
+					img[trackNum].style.backgroundImage = 'url(SVG/Pause.svg)';
+				}
+				function pauseAllWave(i){
+					console.log('pauseAllWave:'+i);
+					console.log('i:'+i);
+					if( i === 1){
+						//play_pause_image_function(0);
+						wavesurfer1.playPause();
+						wavesurfer2.pause();
+						wavesurfer3.pause();
+						wavesurfer4.pause();
+						wavesurfer5.pause();
+					}
+					else if( i === 2){
+						//play_pause_image_function(1);
+						wavesurfer2.playPause();
+						wavesurfer1.pause();
+						wavesurfer3.pause();
+						wavesurfer4.pause();
+						wavesurfer5.pause();
+					}
+					else if( i === 3){
+						//play_pause_image_function(2);
+						wavesurfer3.playPause();
+						wavesurfer1.pause();
+						wavesurfer2.pause();
+						wavesurfer4.pause();
+						wavesurfer5.pause();
+					}
+					else if( i === 4){
+						///play_pause_image_function(3);
+						wavesurfer4.playPause();
+						wavesurfer1.pause();
+						wavesurfer2.pause();
+						wavesurfer3.pause();
+						wavesurfer5.pause();
+					}
+					else if( i === 5){
+						///play_pause_image_function(4);
+						wavesurfer5.playPause();
+						wavesurfer1.pause();
+						wavesurfer2.pause();
+						wavesurfer3.pause();
+						wavesurfer4.pause();
+					}
+				}
 
-			echo "<script>";
-				//echo "img[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
-				echo "var img = document.getElementsByClassName('play_pause_feed_desktop');";
-				
-				echo "console.log(img);";
-				echo "var num = 'play';";
-				echo"function play_pause_image_function(trackNum, version){";
-							//echo "console.log('This is working');";
-							echo "console.log(trackNum);";
-							
-
-
-							echo "if (num === 'play'){";
-									echo "num = 'pause';";
-									echo "console.log('Play');";
-									echo "img[trackNum].style.backgroundImage = 'url(SVG/Pause.svg)';";
-								
-
-							echo "}";
-							echo "else if(num === 'pause'){";
-								echo "img[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
-										
-
-									echo "num = 'play';";
-									echo "console.log('Pause');";
-							echo "}";
-						echo "}";
-			echo "</script>";
-			?>
-
+			</script>
         </div>
 
     </div>

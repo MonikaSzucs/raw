@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2017 at 09:37 AM
+-- Generation Time: Nov 22, 2017 at 09:18 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -44,9 +44,9 @@ INSERT INTO `groups` (`group_id`, `group_title`, `group_description`, `group_pho
 (44, 'The fox jumped over the fence', 'the brown fox jumped over the fence', 'UserPictures/1509162096setC.png', '2017-10-27 20:41:36'),
 (46, 'The brown fox jumped over the fence with a great l', 'The brown fox jumped over the fence with a great leap. The brown fox jumped over the fence with a great leap. The brown fox jumped over the fence with a great leap. The brown fox jumped over the fence with a great leap. The brown fox jumped over the fence with a great leap. The brown fox jumped over the fence with a great leap. The brown fox jumped over the fence with a great leap. ', '', '2017-10-27 20:43:33'),
 (48, 'testinggggg here is is a new one', 'test egsegdsg', 'UserPictures/1509206146dsfdsgdfgfdg.png', '2017-10-28 08:55:46'),
-(49, '2324', '324', 'UserPictures/1509628886rawwww.png', '2017-11-02 06:21:26'),
 (50, 'g6', 'g6', 'UserPictures/151020443121215840_1438397616276162_1031578615_o.png', '2017-11-08 21:13:51'),
-(51, 'g7', 'g7', 'UserPictures/1510204466q2.png', '2017-11-08 21:14:26');
+(51, 'g7', 'g7', 'UserPictures/1510204466q2.png', '2017-11-08 21:14:26'),
+(52, 'greoup raw', 'grourpw raw', 'UserPictures/1511322158pexels-photo-167491.jpeg', '2017-11-21 19:42:38');
 
 -- --------------------------------------------------------
 
@@ -67,9 +67,9 @@ INSERT INTO `group_users` (`group_id`, `user_id`) VALUES
 (44, 1),
 (46, 1),
 (48, 1),
-(49, 1),
 (50, 1),
-(51, 1);
+(51, 1),
+(52, 1);
 
 -- --------------------------------------------------------
 
@@ -121,11 +121,13 @@ INSERT INTO `music_group` (`group_id`, `music_id`, `music_file`, `music`, `music
 (48, 23, 'UsersSongs/1509206146ChaCha_Fontanttez.mp3', 1, '2017-10-28 08:55:46', '', '', 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0),
 (44, 25, 'UsersSongs/1509509160ChaCha_Fontanttez.mp3', 1, '2017-10-31 21:06:00', 'sdgfdgdf', 'UserPictures/1509509160meeting.png', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
 (48, 26, 'UsersSongs/1509519096censor-erebess3333s22222ep-01.mp3', 1, '2017-10-31 23:51:36', 'retretertret', 'UserPictures/1509519096q2.png', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
-(49, 27, 'UsersSongs/1509628886Maid with the Flaxen Hair.mp3', 1, '2017-11-02 06:21:26', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
 (44, 28, 'UsersSongs/1510113696censor-erebess3333s22222ep-01.mp3', 1, '2017-11-07 20:01:36', 'testtt', 'UserPictures/1510113696initial.png', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
 (44, 29, 'UsersSongs/1510117191Pachabel333ly.mp3', 1, '2017-11-07 20:59:51', 'song3', 'UserPictures/1510117191Untitledsfsdfd.png', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
 (50, 30, 'UsersSongs/1510204431Pachabel333ly.mp3', 1, '2017-11-08 21:13:51', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
-(51, 31, 'UsersSongs/1510204466censor-erebess3333s22222ep-01.mp3', 1, '2017-11-08 21:14:26', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
+(51, 31, 'UsersSongs/1510204466censor-erebess3333s22222ep-01.mp3', 1, '2017-11-08 21:14:26', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(52, 32, 'UsersSongs/1511322158Where_She_Walks.mp3', 1, '2017-11-21 19:42:38', '', '', 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0),
+(50, 33, '', 1, '2017-11-21 20:44:32', 'sdfdsfdsf', 'UserPictures/1511325872pexels-photo-167491.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1),
+(50, 34, 'UsersSongs/1511325903Marvin_s_Dance.mp3', 1, '2017-11-21 20:45:03', 'gdfgfdg', 'UserPictures/1511325903pexels-photo-179112.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -180,8 +182,33 @@ INSERT INTO `music_public` (`music_public_id`, `user_id`, `song_title`, `music_f
 (13, 1, '55555', 'GlobalSongs/1510203451ChaCha_Fontanttez.mp3', 1, '2017-11-08 20:57:31', 'GlobalPictures/1510203451Untitledsfsdfd.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
 (14, 1, 'm6', 'GlobalSongs/1510203496ChaCha_Fontanttez.mp3', 1, '2017-11-08 20:58:16', 'GlobalPictures/1510203496sdfdsfdsfdsf.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
 (15, 1, 'm7', 'GlobalSongs/1510203797ChaCha_Fontanttez.mp3', 1, '2017-11-08 21:03:17', 'GlobalPictures/1510203797rawwww.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
-(16, 1, 'Wandering', 'GlobalSongs/1510713140Wandering.mp3', 1, '2017-11-14 18:32:20', 'GlobalPictures/1510713140Untitledsfdsfd.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0),
-(17, 1, 'wandering', 'GlobalSongs/1510713331Don_t_Look.mp3', 1, '2017-11-14 18:35:31', 'GlobalPictures/1510713331youtubechannel.png', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0);
+(20, 10, 'hanaaaa', 'GlobalSongs/1510982358Pachabel333ly.mp3', 1, '2017-11-17 21:19:18', 'GlobalPictures/1510982358youtubechannel.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(21, 10, 'Hana titleeee', 'GlobalSongs/1510982788Pachabel333ly.mp3', 1, '2017-11-17 21:26:28', 'GlobalPictures/1510982788youtubechannel.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(22, 10, 'testtttt14325', 'GlobalSongs/1510983168Wandering.mp3', 1, '2017-11-17 21:32:48', 'GlobalPictures/1510983168youtubechannel.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(23, 1, 'test568769780980', 'GlobalSongs/1510983569ChaCha_Fontanttez.mp3', 1, '2017-11-17 21:39:29', 'GlobalPictures/1510983569youtubechannel.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(24, 1, 'Music 1', 'GlobalSongs/1510984365Pachabel333ly.mp3', 1, '2017-11-17 21:52:45', 'GlobalPictures/1510984365youtubechannel.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(25, 1, 'test568769780980', 'GlobalSongs/1510984748ChaCha_Fontanttez.mp3', 1, '2017-11-17 21:59:08', 'GlobalPictures/1510984748youtubechannel.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(26, 1, 'muisc 22', 'GlobalSongs/1510985130Wandering.mp3', 1, '2017-11-17 22:05:30', 'GlobalPictures/1510985130youtubechannel.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(27, 1, 'music100', 'GlobalSongs/1510989857Pachabel333ly.mp3', 1, '2017-11-17 23:24:17', 'GlobalPictures/1510989857Untitledsfsdfd.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(28, 1, 'test', 'GlobalSongs/1511024855Pachabel333ly.mp3', 1, '2017-11-18 09:07:35', 'GlobalPictures/1511024855youtubechannel.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(29, 1, '', '', 1, '2017-11-18 16:09:34', '', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(30, 1, '', '', 1, '2017-11-18 16:11:08', '', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(31, 1, '', '', 1, '2017-11-18 16:12:37', '', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(32, 1, '', '', 1, '2017-11-18 16:13:49', '', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(33, 1, '', '', 1, '2017-11-18 16:16:18', 'GlobalPictures/1511050578pexels-photo-219998.jpeg', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(34, 1, 'testtt', '', 1, '2017-11-18 16:16:43', '', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(35, 1, 'Music100', '', 1, '2017-11-18 16:18:28', 'GlobalPictures/1511050708pexels-photo-386025.jpeg', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(36, 1, 'Music100', 'GlobalSongs/1511051383Pachabel333ly.mp3', 1, '2017-11-18 16:29:43', 'GlobalPictures/1511051383pexels-photo-386025.jpeg', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(37, 1, 'Music10000', 'GlobalSongs/1511051407music1.mp3', 1, '2017-11-18 16:30:07', 'GlobalPictures/1511051407youtubechannel.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(38, 1, '', 'GlobalSongs/1511051703Don_t_Look.mp3', 1, '2017-11-18 16:35:03', 'GlobalPictures/1511051703bird.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(39, 1, '', 'GlobalSongs/1511051724music2.mp3', 1, '2017-11-18 16:35:24', 'GlobalPictures/1511051724sunrise-2923012_960_720.jpg', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(40, 1, 'fdgfdgh', 'GlobalSongs/1511051742music3.mp3', 1, '2017-11-18 16:35:42', 'GlobalPictures/1511051742rawwww.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(41, 1, '345345', 'GlobalSongs/1511051763censor-erebess3333s22222ep-01.mp3', 1, '2017-11-18 16:36:03', 'GlobalPictures/1511051763meeting.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(42, 1, '8o879', 'GlobalSongs/1511051783censor-erebess3333s22222ep-01.mp3', 1, '2017-11-18 16:36:23', 'GlobalPictures/1511051783q2.png', 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1),
+(43, 1, '', 'GlobalSongs/1511054121music3.mp3', 1, '2017-11-18 17:15:21', 'GlobalPictures/1511054121lone-tree-1934897_960_720.jpg', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(44, 1, 'wow', 'GlobalSongs/1511064360music3.mp3', 1, '2017-11-18 20:06:00', 'GlobalPictures/1511064360pexels-photo-219998.jpeg', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(45, 1, 'New Raw folder path', 'GlobalSongs/1511320722Marvin_s_Dance.mp3', 1, '2017-11-21 19:18:42', 'GlobalPictures/1511320722setC.png', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0),
+(46, 1, 'sample', 'GlobalSongs/1511332997Trips.mp3', 0, '2017-11-21 22:43:17', 'GlobalPictures/1511332997126443.png', 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -260,17 +287,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 --
 -- AUTO_INCREMENT for table `music_group`
 --
 ALTER TABLE `music_group`
-  MODIFY `music_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `music_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT for table `music_public`
 --
 ALTER TABLE `music_public`
-  MODIFY `music_public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `music_public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 --
 -- AUTO_INCREMENT for table `user`
 --
