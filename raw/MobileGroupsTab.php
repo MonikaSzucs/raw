@@ -26,7 +26,7 @@ if(!isset($_SESSION["user_id"]))
 	define('DB_DATABASE', 'raw');
 
 	$db = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
-	print_r($_POST);
+	//print_r($_POST);
 	if(isset($_POST['toDo'])){
 		if($_POST['toDo']=="join"){
 			$query = "INSERT INTO group_users (group_id, user_id)";
@@ -90,18 +90,10 @@ if(!isset($_SESSION["user_id"]))
               <a href="Streaming.php"><li>Explore</li></a>
                 <a href="MobileGroupsTab.php"><li>Groups</li></a>
                 <a href="MobileIGenresTemplate.php"><li>Genres</li></a>
-                <li>
+            
 				<a href="MobileMoodsTemplate.php"><li>Moods</li></a>
-				<!--
-				surrounded by php
-					if (isset(($_GET['Moods'])))
-					<form action="MobileMoodsTemplate.php" method="get">
-						<input type="hidden" name="group_id" value="<?php echo $_GET['genre']?>"/>
-						<input type="submit" class="TopNavTextButtonStyle" value="Moods"/>
-					</form>
-
-				-->
-				</li>
+				
+		
                 <a href="MobileInsturmentsTemplate.php"><li>Instruments</li></a>
             </ul>
             <div class="logo-spot"></div>

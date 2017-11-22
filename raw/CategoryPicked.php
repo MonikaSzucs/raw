@@ -10,7 +10,7 @@ if(!isset($_SESSION["user_id"]))
 };
 
 
-	echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
+	//echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
 
 	/*
 	if(!isset($_SESSION["user_id"]))
@@ -29,13 +29,13 @@ if(!isset($_SESSION["user_id"]))
 	$db = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
 
 	if(isset($_POST['toDo'])){
-		print_r($_POST);
+		//print_r($_POST);
 
 		
 		$query = "INSERT INTO group_users (group_id, user_id)";
 		$query .= " VALUES (" . $_POST['group_id'] . ", " . $_SESSION['user_id'] . ")";
 		
-		echo $query;
+		//echo $query;
 		$result = mysqli_query($db, $query) or die('Error querying database.');
 
 	};
@@ -60,7 +60,7 @@ if(!isset($_SESSION["user_id"]))
     <link rel="stylesheet" href="SmallScreen768version2device.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
+	<script src="wave.js"></script>
 </head>
 
 <body>
@@ -186,15 +186,19 @@ while ($row = mysqli_fetch_array($result))
 
                         echo "<button class='download_feed_button'>Download</button>";
 
-                        echo "<script>";
-                            echo "var wavesurfer".$i." = WaveSurfer.create({";
-                                echo "container: '#waveform".$i."',";
-                                echo "waveColor: '#c5ddff',";
-                                echo "progressColor: '#75a8ff'";
-                            echo "});";
+                        echo "<script>
+                            var wavesurfer".$i." = WaveSurfer.create({
+                                container: '#waveform".$i."',
+                                waveColor: '#c5ddff',
+                                progressColor: '#75a8ff',
+								height:50,
+								hideScrollbar:true,
+								barWidth:5,
+								responsive: true
+                            });";
                             echo "wavesurfer".$i.".load('". $row['music_file'] ."');";
-							echo "</script>";
-							$i++;
+						echo "</script>";
+						$i++;
                 echo "</div>";
 } 
 
