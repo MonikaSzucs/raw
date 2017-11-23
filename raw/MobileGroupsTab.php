@@ -1,12 +1,12 @@
-<?php 
+<?php
 
 //the session_start() should always be at the top
 session_start();
 //this is to make sure people can't access the pages unless they log in
 if(!isset($_SESSION["user_id"]))
 {
-	session_destroy(); 
-	header( 'Location: signout.php' ); 
+	session_destroy();
+	header( 'Location: signout.php' );
 };
 
 
@@ -14,8 +14,8 @@ if(!isset($_SESSION["user_id"]))
 	/*
 	if(!isset($_SESSION["user_id"]))
 	{
-		session_destroy(); 
-		header( 'Location: signout.php' ); 
+		session_destroy();
+		header( 'Location: signout.php' );
 	};
 	*/
 
@@ -31,21 +31,21 @@ if(!isset($_SESSION["user_id"]))
 		if($_POST['toDo']=="join"){
 			$query = "INSERT INTO group_users (group_id, user_id)";
 			$query .= " VALUES (" . $_POST['group_id'] . ", " . $_SESSION['user_id'] . ")";
-			
+
 			echo $query;
 			$result = mysqli_query($db, $query);
-			
+
 		} else if($_POST['toDo']=="leave"){
 			$query = "DELETE FROM group_users ";
 			$query .= " WHERE group_id = " . $_POST['group_id'] . " AND user_id = " . $_SESSION['user_id'];
-			
+
 			//DELETE FROM group_users WHERE `group_id` = 46 AND  `user_id` = 1
-			
+
 			echo $query;
 			$result = mysqli_query($db, $query) ;
 		}
-		
-		
+
+
 
 	}
 
@@ -54,7 +54,7 @@ if(!isset($_SESSION["user_id"]))
 	//then put the output in the array
 
 	//mysqli_close($db);
-	
+
 
 
 ?>
@@ -90,10 +90,10 @@ if(!isset($_SESSION["user_id"]))
               <a href="Streaming.php"><li>Explore</li></a>
                 <a href="MobileGroupsTab.php"><li>Groups</li></a>
                 <a href="MobileIGenresTemplate.php"><li>Genres</li></a>
-            
+
 				<a href="MobileMoodsTemplate.php"><li>Moods</li></a>
-				
-		
+
+
                 <a href="MobileInsturmentsTemplate.php"><li>Instruments</li></a>
             </ul>
             <div class="logo-spot"></div>
@@ -110,43 +110,43 @@ if(!isset($_SESSION["user_id"]))
     </div>
     <div class="m-ivisfoot"></div>
     <div class="main-page">
-        
-                
+
+
 <!--
         hamburger menu
-        
+
 -->
-        <div id="hamburger"> 
+        <div id="hamburger">
             <ul id="hambul">
                   <a href="ProfileIntroPage.php"> <li class="hamclass">
                 Profile
-                   </li> </a> 
+                   </li> </a>
                 <a href="logout.php"><li class="hamclass">
                 Sign Out
-                </li></a>               
+                </li></a>
             </ul>
         </div>
-		
+
         <div class="white_background_group_Large">
 			<div class="spaceContainerTop"><p>Groups</p></div>
 			<a href="MobileGroupsTabCreate.php"><button id="CreateGroupProfile">Create Group</button></a>
 
 	<?php
-	
+
 
 	$limit = 5;
 	if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
 	$start_from = ($page-1) * $limit;
-	
-	
+
+
 	//get group?_user from data base where user id equal to session user ID
 	$query = "SELECT * FROM group_users WHERE user_id =" . $_SESSION['user_id'];
 	$result = mysqli_query($db, $query) or die('Error querying database.');
-	$group_users = array(); 
+	$group_users = array();
 	while ($row = mysqli_fetch_array($result)){
 		$group_users[] = $row['group_id'];
 	}
-	
+
 	//Step2 get data from database
 	$query = "SELECT * FROM groups LIMIT " . $limit . " OFFSET " . $start_from;
 	$result = mysqli_query($db, $query) or die('Error querying database.');
@@ -155,7 +155,7 @@ if(!isset($_SESSION["user_id"]))
 
 while ($row = mysqli_fetch_array($result)) {
 	echo "<div style='height: 30px; width: 100%;'></div>";
-	
+
 	//
 	//
 	//Large screen area
@@ -173,12 +173,12 @@ while ($row = mysqli_fetch_array($result)) {
 				echo "</div>";
 			echo "<div class='vertical_space_group'>";
 				if (strlen($row['group_description'])>40){
-					echo"<div class='groups_title_generate'>" . substr($row['group_title'],0,40) . "..."; 
+					echo"<div class='groups_title_generate'>" . substr($row['group_title'],0,40) . "...";
 				} else{
 					echo"<div class='groups_title_generate'>" . $row['group_title'];
 				}
 
-					
+
 				echo "</div>";
 				echo "<hr/>";
 				if (strlen($row['group_description'])>330){
@@ -186,19 +186,19 @@ while ($row = mysqli_fetch_array($result)) {
 				} else {
 					echo "<div class='groups_descrition_generate'>" . substr($row['group_description'],0,80) . "</div>";
 				}
-				
+
 				echo "<div class='LeaveButtonGroups'>";
 					if(in_array($row['group_id'], $group_users))
 					{
 						//echo "already Joined";
 						// DELETE FROM `group_users` WHERE `group_users`.`group_id` = 46 AND `group_users`.`user_id` = 1
-					
+
 						echo "<form action='' method='POST'>";
 							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
 							echo "<input type='hidden' name='toDo' value='leave'>";
 							echo "<input class='Leave-Butt' type='submit' value='Leave'>";
 						echo "</form>";
-					
+
 					}
 					else{
 						echo "<form action='' method='POST'>";
@@ -207,9 +207,9 @@ while ($row = mysqli_fetch_array($result)) {
 							echo "<input class='join-Butt' type='submit' value='join'>";
 						echo "</form>";
 					}
-					
+
 				echo "</div>";
-				
+
 				echo "<div class='EnterButtonGroups'>";
 					if(in_array($row['group_id'], $group_users)){
 						echo "<form action ='EnteredGroup.php' method='GET'>";
@@ -220,17 +220,17 @@ while ($row = mysqli_fetch_array($result)) {
 				echo "</div>";
 			echo "</div>";
 		echo "</div>";
-		
+
 
 	echo "</div>";
-	
+
 
 	//
 	//
 	//Medium screen area
 	//
 	//
-	
+
 	/*
 	echo "<div class='MediumScreenGroup'>";
 		echo "<div class='M_group_container_create'>";
@@ -243,9 +243,9 @@ while ($row = mysqli_fetch_array($result)) {
 				}
 				echo "</div>";
 			echo "<div class='M_vertical_space_group'>";
-				
-				echo"<div class='groups_title_generate'>" . substr($row['group_title'],0,40) . " ..."; 
-					
+
+				echo"<div class='groups_title_generate'>" . substr($row['group_title'],0,40) . " ...";
+
 				echo "</div>";
 				echo "<hr/>";
 				echo "<div class='groups_descrition_generate'>" . substr($row['group_description'],0,80) . " ...</div>";
@@ -254,13 +254,13 @@ while ($row = mysqli_fetch_array($result)) {
 					{
 						//echo "already Joined";
 						// DELETE FROM `group_users` WHERE `group_users`.`group_id` = 46 AND `group_users`.`user_id` = 1
-					
+
 						echo "<form action='' method='POST'>";
 							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
 							echo "<input type='hidden' name='toDo' value='leave'>";
 							echo "<input class='M_Leave-Butt' type='submit' value='Leave'>";
 						echo "</form>";
-					
+
 					}
 					else{
 						echo "<form action='' method='POST'>";
@@ -269,9 +269,9 @@ while ($row = mysqli_fetch_array($result)) {
 							echo "<input class='M_join-Butt' type='submit' value='join'>";
 						echo "</form>";
 					}
-					
+
 				echo "</div>";
-				
+
 				echo "<div class='EnterButtonGroups'>";
 					if(in_array($row['group_id'], $group_users)){
 						echo "<form action ='EnteredGroup.php' method='GET'>";
@@ -283,7 +283,7 @@ while ($row = mysqli_fetch_array($result)) {
 			echo "</div>";
 		echo "</div>";
 	echo "</div>";
-	
+
 
 	//
 	//
@@ -301,7 +301,7 @@ while ($row = mysqli_fetch_array($result)) {
 				}
 			echo "</div>";
 			echo "<div class='M_vertical_space_group'>";
-				echo"<div class='groups_title_generate'>" . substr($row['group_title'],0,20) . " ..."; 
+				echo"<div class='groups_title_generate'>" . substr($row['group_title'],0,20) . " ...";
 				echo "</div>";
 				echo "<hr/>";
 				echo "<div class='groups_descrition_generate'>" . substr($row['group_description'],0,30) . " ...</div>";
@@ -310,13 +310,13 @@ while ($row = mysqli_fetch_array($result)) {
 					{
 						//echo "already Joined";
 						// DELETE FROM `group_users` WHERE `group_users`.`group_id` = 46 AND `group_users`.`user_id` = 1
-					
+
 						echo "<form action='' method='POST'>";
 							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
 							echo "<input type='hidden' name='toDo' value='leave'>";
 							echo "<input class='s_Leave-Butt' type='submit' value='Leave'>";
 						echo "</form>";
-					
+
 					}
 					else{
 						echo "<form action='' method='POST'>";
@@ -325,9 +325,9 @@ while ($row = mysqli_fetch_array($result)) {
 							echo "<input class='s_join-Butt' type='submit' value='join'>";
 						echo "</form>";
 					}
-					
+
 				echo "</div>";
-				
+
 				echo "<div class='EnterButtonGroups'>";
 					if(in_array($row['group_id'], $group_users)){
 						echo "<form action ='EnteredGroup.php' method='GET'>";
@@ -340,30 +340,30 @@ while ($row = mysqli_fetch_array($result)) {
 		echo "</div>";
 	echo "</div>";
 	*/
-	} 
+	}
 
 
-	$querry = "SELECT COUNT(group_id) FROM groups";  
-	$rs_result = mysqli_query($db, $querry);  
-	$row = mysqli_fetch_row($rs_result);  
-	$total_records = $row[0];  
-	$total_pages = ceil($total_records / $limit);  
-	$pagLink = "<div class='pagination'>";  
-		for ($i=1; $i<=$total_pages; $i++) {  
-			$pagLink .= "<a href='MobileGroupsTab.php?page=".$i."'>".$i."&nbsp;&nbsp;&nbsp;</a>";  
-		};  
-	echo $pagLink . "</div>";  
-	
-	
+	$querry = "SELECT COUNT(group_id) FROM groups";
+	$rs_result = mysqli_query($db, $querry);
+	$row = mysqli_fetch_row($rs_result);
+	$total_records = $row[0];
+	$total_pages = ceil($total_records / $limit);
+	$pagLink = "<div class='pagination'>";
+		for ($i=1; $i<=$total_pages; $i++) {
+			$pagLink .= "<a href='MobileGroupsTab.php?page=".$i."'>".$i."&nbsp;&nbsp;&nbsp;</a>";
+		};
+	echo $pagLink . "</div>";
+
+
 ?>
-	
-        <div id="invisdiv3"></div>    
-            
+
+        <div id="invisdiv3"></div>
+
 	</div>
 
     </div>
     <nav class="container">
-	
+
 			<a class="buttons" href="ProfileIntroPagevers2.php" tooltip="Profile"></a>
 			<a class="buttons" href="MobileGroupsTab.php" tooltip="Groups"></a>
 			<a class="buttons" href="MobileInsturmentsTemplate.php" tooltip="Instruments"></a>
@@ -385,4 +385,3 @@ while ($row = mysqli_fetch_array($result)) {
 	?>
 
 </html>
-

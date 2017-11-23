@@ -57,7 +57,7 @@
 	.setting_hide_mobile{
 	  display: block;
 	}
-	
+
 	.setting_hide_tablet{
 		display: none;
 	}
@@ -77,8 +77,8 @@
   .upload_global_music_samples_tablet{
     display: none
   }
-  
-  
+
+
 
     body {
         background-color: orange;
@@ -1132,7 +1132,7 @@ Groups small style
           margin: 0 auto;
           font-family: Avenir Medium;
           font-weight: 300;
-          font-size: 45px;
+          font-size: 35px;
           margin-left: 270px;
 
       }
@@ -1147,7 +1147,7 @@ Groups small style
         font-family: Avenir Medium;
         font-size: 24px;
         color: #c5c5c5;
-        margin: 150px 0 140px 400px;
+        margin: 200px 0 90px 400px;
         border: 1px solid darkgray;
         padding: initial;
         border-radius: 30px;
@@ -1189,21 +1189,20 @@ Groups small style
     		margin-left: 50px;
     	}
 
-      .play_pause_feed{
+      .play_pause_feed_desktop{
         background: url(SVG/Play.svg);
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 15px;
+        background-size: 20px;
         border: 1px solid white;
         padding: 10px;
-        border-radius: 20px;
+        border-radius: 30px;
         background-color: #a34334;
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
         position: absolute;
-        margin: 80px;
-        /*margin-top: -50px;
-        margin-left: 20px;*/
+        margin: 95px;
+        opacity: 1;
       }
 
 	  .play_pause_feed_mobile {
@@ -1243,7 +1242,7 @@ Groups small style
 		right: 0;
 		margin: 0 auto;
 	}
-	
+
 	.spaceContainerTop h1{
 		font-size: 40px;
 	}
@@ -1275,11 +1274,11 @@ Groups small style
   .checkbox {
     margin-left: 50px;
   }
-  
+
   .UploadNewSongAreaTitle{
 	  min-width: 300px;
   }
-  
+
   .icon_upload_global_area_container{
 	  min-width: 300px;
   }
