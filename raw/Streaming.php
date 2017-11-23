@@ -175,7 +175,7 @@ if(isset($_POST['toDo'])){
 			$tablet_num = 0;
 			$mobile_num = 0;
 
-			echo 	"<div class='Recently_Uploaded_Title'>Recently Uploaded</div>";
+			echo "<div class='Recently_Uploaded_Title'>Recently Uploaded</div>";
 			echo "<div class='container_musics_feed'>";
 
 			while ($row = mysqli_fetch_array($result)) {

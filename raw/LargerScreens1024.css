@@ -736,6 +736,14 @@ hambuger menu
         position: absolute;
         top: 275px;
 	}
+	
+	.groups_inside_bottom_area{
+		width: 100%;
+        background-color: white;
+        position: absolute;
+        padding-bottom: 150px;
+		top: 275px
+	}
 
 	.upload_page_music_global_white{
 		 width: 100%;
@@ -1688,6 +1696,13 @@ hambuger menu
         height: 120px;
 		margin-top: 80px;
     }
+	
+	.entered_group_songs {
+        left: 0;
+        padding-left: 50px;
+        width: 40vw;
+        height: 120px;
+    }
 
     #FeedSongName {
         margin: 0 auto;
@@ -1818,6 +1833,21 @@ hambuger menu
 		clear: both;
 		margin: 10px 10px;
 		float: left;
+	}
+	
+	.groups_indiv_song{
+		display: block;
+		width: 100%;
+		clear: both;
+		float: left;
+	}
+	
+	.first_song_entered{
+		left: 0;
+		padding-left: 50px;
+		width: 40vw;
+		height: 120px;
+		background-color:red;
 	}
 
 	.wave {

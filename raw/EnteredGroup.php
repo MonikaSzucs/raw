@@ -65,12 +65,13 @@ if(!isset($_GET['group_id'])){
             </div>
 
            <ul class="nav-bar">
-              <a href="Streaming.php"><li>Explore</li></a>
+				<a href="Streaming.php"><li>Explore</li></a>
                 <a href="MobileGroupsTab.php"><li>Groups</li></a>
                 <a href="MobileIGenresTemplate.php"><li>Genres</li></a>
                 <a href="MobileMoodsTemplate.php"><li>Moods</li></a>
                 <a href="MobileInsturmentsTemplate.php"><li>Instruments</li></a>
             </ul>
+			
             <div class="logo-spot"></div>
 
         </nav>
@@ -130,7 +131,7 @@ if(!isset($_GET['group_id'])){
 						echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
 					}
 					else {
-						echo "<td> <img src='" . $row['group_photo'] . "' class='circlePhotoUploaded' > </td>";
+						echo "<td> <img src='" . $row['group_photo'] . "' class='circlePhotoUploaded'></td>";
 					}
 					?>
 				</div>
@@ -164,7 +165,7 @@ if(!isset($_GET['group_id'])){
 		
 		
 
-        <div class="White_Bottom_Area">
+        <div class="groups_inside_bottom_area">
 			<div id="m-profile-main-inner">
 				<div class="spaceContainerTop"><h1>Songs</h1></div>
 				<label class="switch">
@@ -182,7 +183,7 @@ if(!isset($_GET['group_id'])){
 						if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
 						$start_from = ($page-1) * $limit;
 						
-						$query = "SELECT * FROM music_group WHERE group_id = " . $_GET['group_id'] . " LIMIT "  . $limit . " OFFSET " . $start_from;;
+						$query = "SELECT * FROM music_group WHERE group_id = " . $_GET['group_id'] . " LIMIT "  . $limit . " OFFSET " . $start_from;
 						//echo $query;
 						
 						
@@ -191,29 +192,37 @@ if(!isset($_GET['group_id'])){
 						$i=1;
 						while ($row = mysqli_fetch_array($result)){
 							
-							echo "<div class='music_player'>";
-							echo $row['music_file'] . "<br/>";
-							
-							echo "<div class='first-song'>";
-								echo "<div class='songpic'></div>";
+							echo "<div class='streaming'>";
+							echo "<div class='entered_group_songs'>";
+								echo "<div class='songpic'>";
+									if(empty($row['music_photo'] )){
+										echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
+									}
+									else{
+										echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploadedFeed' > </td>";
+									}
+									echo "<div class='songpicfade'>";
+									echo "</div>";
+									echo "<button class='play_pause_feed_desktop' id='play_pause_feed' onClick='pauseAllWave(".$i."); '>";
+										echo "<i class='glyphicon glyphicon-play'></i>";
+									echo "</button>";
+								echo "</div>";
+								
 								echo "<div class='song-buttons'>";
-									echo "<p id='FeedArtistsName'>Name</p>";
-									echo "<p id='FeedSongName'>Track: </p>";
+									echo "<p id='FeedArtistsName'>First Name Last Name";
+									echo "</p>";
 								echo "</div>";
 								echo "<div class='track-display'>";
 								
 									echo "<div id='waveform".$i."' class='wave'></div>";
 										echo "<div style='text-align: center' class='btn_play_pause'>";
-										  echo "<button class='btn btn-primary' class='play_pause' onclick='wavesurfer".$i.".playPause()'>";
-											echo "<i class='glyphicon glyphicon-play'></i>";
-											echo "Play/Pause";
-										  echo "</button>";
+										  
 										echo "</div>";
 									echo "</div>";
 								
 								echo "</div>";
 								echo "<a href='/raw/raw/raw/". $row['music_file'] . "' download='" . $row['music_file'] . "'>";
-								echo "<button id='DownloadButtonGroups'>";
+								echo "<button class='download_feed_button'>";
 								echo "Download";
 								echo "</button>";
 								echo "</a>";
@@ -242,7 +251,7 @@ if(!isset($_GET['group_id'])){
 						$total_pages = ceil($total_records / $limit);  
 						$pagLink = "<div class='pagination'>";  
 							for ($i=1; $i<=$total_pages; $i++) {  
-								$pagLink .= "<a href='EnteredGroup.php?group_id=". $_GET['group_id'] ."& page=".$i."'>".$i."&nbsp;&nbsp;&nbsp;</a>";  
+								$pagLink .= "<a href='EnteredGroup.php?group_id=". $_GET['group_id'] ."&page=".$i."'>".$i."&nbsp;&nbsp;&nbsp;</a>";  
 							};  
 						echo $pagLink . "</div>"; 
 						
