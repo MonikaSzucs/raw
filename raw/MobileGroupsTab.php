@@ -357,7 +357,7 @@ while ($row = mysqli_fetch_array($result)) {
 
 ?>
 
-        <div id="invisdiv3"></div>
+        <!-- <div id="invisdiv3"></div> -->
 
 	</div>
 

@@ -204,7 +204,7 @@ hambuger menu
         right: 0;
         background-color: white;
         width: 100%;
-        height: auto;
+        padding-bottom: 50px;
     }
    .m-settings-box a {
         color: black;
@@ -1933,12 +1933,6 @@ hambuger menu
         background-color: white;
         position: absolute;
         top: 170px;
-	}
-
-	.TopSpace-ProfileGroupSub{
-		height: 25px;
-		width: 100%;
-		background-color:red;
 	}
 
 	#contactForm{
