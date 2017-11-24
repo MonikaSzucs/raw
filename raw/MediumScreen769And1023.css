@@ -1121,7 +1121,7 @@ hambuger menu
 	.GroupsInformation{
 		float: left;
 		width: 70%;
-		height: 150px;
+		height: 250px;
 		font-family: Avenir-Medium;
 		border-radius: 10px;
 		border: 1px solid #ececec;
@@ -1204,17 +1204,18 @@ hambuger menu
 	}
 
 	#CreateGroupProfileSubmit{
-		width: 200px;
-		height: 50px;
-		  border: 2px solid darkgray;
-		background-color: #ffffff;
-		border-radius: 25px;
-		position: absolute;
-		left: 0;
-		right: 0;
-		margin: 0 auto;
-        font-size: 18px;
-        color: darkgray;
+    width: 200px;
+    height: 50px;
+    border: 2px solid darkgray;
+    background-color: #ffffff;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-family: Avenir-Light;
+    font-size: 18px;
+    color: darkgray;
 	}
 	.GroupsInformation-Description textarea{
 		width: 94%;
@@ -1479,6 +1480,7 @@ hambuger menu
 	.group_upload_title_style {
 		font-size: 25px;
 		font-weight: bold;
+    font-family: Avenir-Medium;
 	}
 
 	.file_upload_button{
@@ -1557,13 +1559,16 @@ hambuger menu
 		position: relative;
 		top: -6px;
 		padding-left: 15px;
+    font-family: Avenir-Light;
+
 	}
 
 	.categories_label_groups_uploading{
 		position: relative;
 		top: -10px;
 		padding-left: 10px;
-		font-size:18px;
+    font-family: Avenir-Light;
+		font-size: 18px;
 	}
 
   .input_checkbox_style_music_global_create{
@@ -1603,6 +1608,13 @@ hambuger menu
 
 		border: 5px solid #E5E5E5;
 	}
+
+  #buttonAreaCreate_buttonSubmit{
+    width: 80%;
+    height: 50px;
+    position: absolute;
+    margin-top: 20px;
+  }
 
   #Create_music_global_upload_button{
     width: 200px;
@@ -2018,4 +2030,33 @@ hambuger menu
 	.streaming{
 		margin-top: 50px;
 	}
+
+
+    .create_group_section_file {
+      margin: 25px 0 25px 0;
+      height:150px;
+      position:relative;
+    }
+
+    .create_group_section_tnd {
+      margin: 25px 0 25px 0;
+      height: 280px;
+      position:relative;
+    }
+
+    .create_group_section_ss {
+      margin: 45px 0 25px 0;
+      height: 90px;
+      position:relative;
+    }
+
+    .create_group_section_cb {
+      margin: 25px 0 25px 0;
+      height: 150px;
+      position:relative;
+    }
+
+    .cb_table {
+      margin: 20px auto
+    }
 }

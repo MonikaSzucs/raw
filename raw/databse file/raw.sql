@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2017 at 09:18 AM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.8
+-- Generation Time: Nov 24, 2017 at 06:13 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -46,7 +46,11 @@ INSERT INTO `groups` (`group_id`, `group_title`, `group_description`, `group_pho
 (48, 'testinggggg here is is a new one', 'test egsegdsg', 'UserPictures/1509206146dsfdsgdfgfdg.png', '2017-10-28 08:55:46'),
 (50, 'g6', 'g6', 'UserPictures/151020443121215840_1438397616276162_1031578615_o.png', '2017-11-08 21:13:51'),
 (51, 'g7', 'g7', 'UserPictures/1510204466q2.png', '2017-11-08 21:14:26'),
-(52, 'greoup raw', 'grourpw raw', 'UserPictures/1511322158pexels-photo-167491.jpeg', '2017-11-21 19:42:38');
+(52, 'greoup raw', 'grourpw raw', 'UserPictures/1511322158pexels-photo-167491.jpeg', '2017-11-21 19:42:38'),
+(53, 'Music test', 'testest', 'UserPictures/1511479647vlcsnap-2017-03-01-22h55m09s495.png', '2017-11-23 15:27:27'),
+(54, 'making Test', 'Test new create group ', 'UserPictures/151149145718580000_1383528578394475_1261109755108130816_n.jpg', '2017-11-23 18:44:17'),
+(55, 'asdnf', ',dnfnsdfkg', 'UserPictures/1511499043adidas_star_wars_dorothy_tang_1.jpg', '2017-11-23 20:50:43'),
+(56, '', '', '', '2017-11-23 21:07:33');
 
 -- --------------------------------------------------------
 
@@ -69,7 +73,11 @@ INSERT INTO `group_users` (`group_id`, `user_id`) VALUES
 (48, 1),
 (50, 1),
 (51, 1),
-(52, 1);
+(52, 1),
+(53, 1),
+(54, 1),
+(55, 1),
+(56, 1);
 
 -- --------------------------------------------------------
 
@@ -127,7 +135,11 @@ INSERT INTO `music_group` (`group_id`, `music_id`, `music_file`, `music`, `music
 (51, 31, 'UsersSongs/1510204466censor-erebess3333s22222ep-01.mp3', 1, '2017-11-08 21:14:26', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
 (52, 32, 'UsersSongs/1511322158Where_She_Walks.mp3', 1, '2017-11-21 19:42:38', '', '', 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0),
 (50, 33, '', 1, '2017-11-21 20:44:32', 'sdfdsfdsf', 'UserPictures/1511325872pexels-photo-167491.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1),
-(50, 34, 'UsersSongs/1511325903Marvin_s_Dance.mp3', 1, '2017-11-21 20:45:03', 'gdfgfdg', 'UserPictures/1511325903pexels-photo-179112.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(50, 34, 'UsersSongs/1511325903Marvin_s_Dance.mp3', 1, '2017-11-21 20:45:03', 'gdfgfdg', 'UserPictures/1511325903pexels-photo-179112.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(53, 35, 'UsersSongs/1511479647Noname_Diddy_Bop_ft_Raury_Cam_O_bi_.mp3', 0, '2017-11-23 15:27:27', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1),
+(54, 36, 'UsersSongs/1511491457Noname_Diddy_Bop_ft_Raury_Cam_O_bi_.mp3', 1, '2017-11-23 18:44:17', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0),
+(55, 37, 'UsersSongs/1511499043Noname_Diddy_Bop_ft_Raury_Cam_O_bi_.mp3', 1, '2017-11-23 20:50:43', '', '', 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(56, 38, '', 1, '2017-11-23 21:07:33', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -287,22 +299,26 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+
 --
 -- AUTO_INCREMENT for table `music_group`
 --
 ALTER TABLE `music_group`
-  MODIFY `music_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `music_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
 --
 -- AUTO_INCREMENT for table `music_public`
 --
 ALTER TABLE `music_public`
   MODIFY `music_public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
 --
 -- Constraints for dumped tables
 --
