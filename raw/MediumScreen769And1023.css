@@ -138,6 +138,7 @@ hambuger menu
 
 
 
+
     .genre-tags {
         font-family: helvetica;
         font-size: 14px;
@@ -341,15 +342,17 @@ hambuger menu
         border-radius: 5px;
         background-color: white;
     }
+
     .Enter-Butt {
         font-family: Avenir-Light;
         margin: 20px;
         padding: 5px;
         border: .5px solid darkgray;
-        width: 60%;
+        width: 71%;
         border-radius: 5px;
-        background-color: white;
-    }
+        background-color:white;
+      }
+
 
     form input [type=text] {
         padding: 1px;
@@ -1434,9 +1437,9 @@ hambuger menu
 
 	.white_background_group_Large{
 		width: 100%;
-        height: 1300px;
         background-color: white;
         position: absolute;
+        padding-bottom: 150px;
 	}
 
 	.pagination a{
