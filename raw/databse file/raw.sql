@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2017 at 06:13 AM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.10
+-- Generation Time: Nov 25, 2017 at 06:10 AM
+-- Server version: 10.1.26-MariaDB
+-- PHP Version: 7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -46,11 +46,7 @@ INSERT INTO `groups` (`group_id`, `group_title`, `group_description`, `group_pho
 (48, 'testinggggg here is is a new one', 'test egsegdsg', 'UserPictures/1509206146dsfdsgdfgfdg.png', '2017-10-28 08:55:46'),
 (50, 'g6', 'g6', 'UserPictures/151020443121215840_1438397616276162_1031578615_o.png', '2017-11-08 21:13:51'),
 (51, 'g7', 'g7', 'UserPictures/1510204466q2.png', '2017-11-08 21:14:26'),
-(52, 'greoup raw', 'grourpw raw', 'UserPictures/1511322158pexels-photo-167491.jpeg', '2017-11-21 19:42:38'),
-(53, 'Music test', 'testest', 'UserPictures/1511479647vlcsnap-2017-03-01-22h55m09s495.png', '2017-11-23 15:27:27'),
-(54, 'making Test', 'Test new create group ', 'UserPictures/151149145718580000_1383528578394475_1261109755108130816_n.jpg', '2017-11-23 18:44:17'),
-(55, 'asdnf', ',dnfnsdfkg', 'UserPictures/1511499043adidas_star_wars_dorothy_tang_1.jpg', '2017-11-23 20:50:43'),
-(56, '', '', '', '2017-11-23 21:07:33');
+(52, 'greoup raw', 'grourpw raw', 'UserPictures/1511322158pexels-photo-167491.jpeg', '2017-11-21 19:42:38');
 
 -- --------------------------------------------------------
 
@@ -73,11 +69,7 @@ INSERT INTO `group_users` (`group_id`, `user_id`) VALUES
 (48, 1),
 (50, 1),
 (51, 1),
-(52, 1),
-(53, 1),
-(54, 1),
-(55, 1),
-(56, 1);
+(52, 1);
 
 -- --------------------------------------------------------
 
@@ -136,10 +128,13 @@ INSERT INTO `music_group` (`group_id`, `music_id`, `music_file`, `music`, `music
 (52, 32, 'UsersSongs/1511322158Where_She_Walks.mp3', 1, '2017-11-21 19:42:38', '', '', 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0),
 (50, 33, '', 1, '2017-11-21 20:44:32', 'sdfdsfdsf', 'UserPictures/1511325872pexels-photo-167491.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1),
 (50, 34, 'UsersSongs/1511325903Marvin_s_Dance.mp3', 1, '2017-11-21 20:45:03', 'gdfgfdg', 'UserPictures/1511325903pexels-photo-179112.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(53, 35, 'UsersSongs/1511479647Noname_Diddy_Bop_ft_Raury_Cam_O_bi_.mp3', 0, '2017-11-23 15:27:27', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1),
-(54, 36, 'UsersSongs/1511491457Noname_Diddy_Bop_ft_Raury_Cam_O_bi_.mp3', 1, '2017-11-23 18:44:17', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0),
-(55, 37, 'UsersSongs/1511499043Noname_Diddy_Bop_ft_Raury_Cam_O_bi_.mp3', 1, '2017-11-23 20:50:43', '', '', 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
-(56, 38, '', 1, '2017-11-23 21:07:33', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+(44, 35, 'UsersSongs/1511390293Stinger.mp3', 1, '2017-11-22 14:38:13', 'm1', 'UserPictures/1511390293pexels-photo-179114.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(44, 36, 'UsersSongs/1511390332Where_She_Walks.mp3', 1, '2017-11-22 14:38:52', 'm3', 'UserPictures/1511390332pexels-photo-96857.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(44, 37, 'UsersSongs/1511390365Infrared.mp3', 1, '2017-11-22 14:39:25', 'm5', 'UserPictures/1511390365mobile-phone-iphone-music-38295.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1),
+(44, 38, 'UsersSongs/1511390397Garden_Walk.mp3', 1, '2017-11-22 14:39:57', 'm7', 'UserPictures/1511390397pexels-photo-63703.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(44, 39, 'UsersSongs/1511581566Sleep Away.mp3', 0, '2017-11-24 19:46:06', 'Sample', 'UserPictures/1511581566Koala.jpg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(46, 40, 'UsersSongs/1511586340Maid with the Flaxen Hair.mp3', 1, '2017-11-24 21:05:40', '0000', 'UserPictures/1511586340Lighthouse.jpg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(46, 41, 'UsersSongs/1511586373Sleep Away.mp3', 0, '2017-11-24 21:06:13', '1', 'UserPictures/1511586373Penguins.jpg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -299,26 +294,22 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
-
+  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 --
 -- AUTO_INCREMENT for table `music_group`
 --
 ALTER TABLE `music_group`
-  MODIFY `music_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
-
+  MODIFY `music_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT for table `music_public`
 --
 ALTER TABLE `music_public`
   MODIFY `music_public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
-
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
-
 --
 -- Constraints for dumped tables
 --
