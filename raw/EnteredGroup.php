@@ -52,7 +52,20 @@ if(!isset($_GET['group_id'])){
     <header class="main-header">
         <nav>
             <div class="header">
+			<?php 
+			if(isset($_GET["sample"]) && $_GET['sample']==1)
+			{
+				echo $_GET['group_id'];
+				//echo "<a href='EnteredGroup.php?group_id=". $_GET['group_id'] ."&page=".$_GET["page"]."'>".$i."&nbsp;&nbsp;&nbsp;</a>"; 
+				echo "<a href='EnteredGroup.php?group_id=" . $_GET['group_id'] ."&sample=0". $_GET["page"] . "'>";
+			}
+			else{
+				echo "<a href='EnteredGroup.php?group_id=" . $_GET['group_id'] ."&sample=1". $_GET["page"] . "'>";
+			}
+				
+			?>	
                 <div class="toggle-logo"> </div>
+				</a>
                 <a href="MobileUploadPage.php">
                     <div class="m-upload-button"></div>
                 </a>
@@ -178,18 +191,34 @@ if(!isset($_GET['group_id'])){
 				
 				<?php
 					if(isset($_GET['group_id'])){
+						$music=1;
+						if(isset($_GET["sample"])){
+							$sample = $_GET["sample"];
+							//console.log($sample);
+							if($sample == 1)
+							{
+								$music=0;
+								echo "SAMPLE LINK WORKS";
+							}
+							else{
+								$music=1;
+							}
+						}
+						
+						
 						
 						$limit = 5;
 						if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
 						$start_from = ($page-1) * $limit;
 						
-						$query = "SELECT * FROM music_group WHERE group_id = " . $_GET['group_id'] . " LIMIT "  . $limit . " OFFSET " . $start_from;
-						//echo $query;
+						$query = "SELECT * FROM music_group WHERE group_id = " . $_GET['group_id'] . " AND music = ". $music ." LIMIT "  . $limit . " OFFSET " . $start_from;
+						echo $query;
 						
 						
-						$result = mysqli_query($db, $query) or die('Error querying database. 78');
+						$result = mysqli_query($db, $query) or die('Error querying database. ');
 						
 						$i=1;
+						$desktop_num = 0;
 						while ($row = mysqli_fetch_array($result)){
 							
 							echo "<div class='streaming'>";
@@ -203,7 +232,7 @@ if(!isset($_GET['group_id'])){
 									}
 									echo "<div class='songpicfade'>";
 									echo "</div>";
-									echo "<button class='play_pause_feed_desktop' id='play_pause_feed' onClick='pauseAllWave(".$i."); '>";
+									echo "<button  id='play_pause_feed' class='play_pause_feed_desktop' onClick='pauseAllWave(".$i."); '>";
 										echo "<i class='glyphicon glyphicon-play'></i>";
 									echo "</button>";
 								echo "</div>";
@@ -215,9 +244,9 @@ if(!isset($_GET['group_id'])){
 								echo "<div class='track-display'>";
 								
 									echo "<div id='waveform".$i."' class='wave'></div>";
-										echo "<div style='text-align: center' class='btn_play_pause'>";
+										///echo "<div style='text-align: center' class='btn_play_pause'>";
 										  
-										echo "</div>";
+										///echo "</div>";
 									echo "</div>";
 								
 								echo "</div>";
@@ -237,10 +266,21 @@ if(!isset($_GET['group_id'])){
 											responsive: true";
 									echo "});";
 									echo "wavesurfer".$i.".load('". $row['music_file'] ."');";
+									echo "wavesurfer".$i.".on('pause', function () {
+											pause_image_function(".$desktop_num.");
+									 });
+									 wavesurfer".$i.".on('finish', function () {
+											pause_image_function(".$desktop_num.");
+									 });
+									 wavesurfer".$i.".on('play', function () {
+											play_image_function(".$desktop_num.");
+									 });";
 									echo "</script>";
 									$i++;
 								echo "<br/><br/><br/><br/><br/><br/><br/>";
 							echo "</div>";
+							
+							$desktop_num++;
 						}
 						
 						////print_r($row)
@@ -264,6 +304,63 @@ if(!isset($_GET['group_id'])){
 				
 				?>
 				
+				<script>
+			var img = document.getElementsByClassName('play_pause_feed_desktop');
+			
+				function pause_image_function(trackNum){
+					console.log('pause_image_function:'+trackNum);
+					img[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';
+				}
+				function play_image_function(trackNum){
+					console.log('play_image_function:'+trackNum);
+					img[trackNum].style.backgroundImage = 'url(SVG/Pause.svg)';
+				}
+				function pauseAllWave(i){
+					console.log('pauseAllWave:'+i);
+					console.log('i:'+i);
+					if( i === 1){
+						//play_pause_image_function(0);
+						wavesurfer1.playPause();
+						wavesurfer2.pause();
+						wavesurfer3.pause();
+						wavesurfer4.pause();
+						wavesurfer5.pause();
+					}
+					else if( i === 2){
+						//play_pause_image_function(1);
+						wavesurfer2.playPause();
+						wavesurfer1.pause();
+						wavesurfer3.pause();
+						wavesurfer4.pause();
+						wavesurfer5.pause();
+					}
+					else if( i === 3){
+						//play_pause_image_function(2);
+						wavesurfer3.playPause();
+						wavesurfer1.pause();
+						wavesurfer2.pause();
+						wavesurfer4.pause();
+						wavesurfer5.pause();
+					}
+					else if( i === 4){
+						///play_pause_image_function(3);
+						wavesurfer4.playPause();
+						wavesurfer1.pause();
+						wavesurfer2.pause();
+						wavesurfer3.pause();
+						wavesurfer5.pause();
+					}
+					else if( i === 5){
+						///play_pause_image_function(4);
+						wavesurfer5.playPause();
+						wavesurfer1.pause();
+						wavesurfer2.pause();
+						wavesurfer3.pause();
+						wavesurfer4.pause();
+					}
+				}
+
+			</script>
 				
 			<div>
 			
@@ -274,7 +371,7 @@ if(!isset($_GET['group_id'])){
     </div>
     <nav class="container">
         <a class="buttons" href="ProfileIntroPage.php" tooltip="Profile"></a>
-         <a class="buttons" href="MobileGroupsTab.php" tooltip="Groups"></a>
+        <a class="buttons" href="MobileGroupsTab.php" tooltip="Groups"></a>
         <a class="buttons" href="MobileInsturmentsTemplate.php" tooltip="Instruments"></a>
         <a class="buttons" href="MobileExplorePage.php" tooltip="Explore"></a>
         <a class="buttons" href="MobileIGenresTemplate.php" tooltip="Genres"></a>
@@ -290,3 +387,4 @@ if(!isset($_GET['group_id'])){
 	mysqli_close($db);
 ?>
 </html>
+
