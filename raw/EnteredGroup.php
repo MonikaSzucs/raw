@@ -181,10 +181,7 @@ if(!isset($_GET['group_id'])){
         <div class="groups_inside_bottom_area">
 			<div id="m-profile-main-inner">
 				<div class="spaceContainerTop"><h1>Songs</h1></div>
-				<label class="switch">
-				  <input type="checkbox">
 
-				</label>
 
 
 
@@ -198,7 +195,7 @@ if(!isset($_GET['group_id'])){
 							if($sample == 1)
 							{
 								$music=0;
-								echo "SAMPLE LINK WORKS";
+								//echo "SAMPLE LINK WORKS";
 							}
 							else{
 								$music=1;
@@ -222,7 +219,7 @@ if(!isset($_GET['group_id'])){
 						while ($row = mysqli_fetch_array($result)){
 
 							echo "<div class='streaming'>";
-							echo "<div class='entered_group_songs'>";
+							echo "<div class='first-song'>";
 								echo "<div class='songpic'>";
 									echo "<div class='songpicfade'>";
 									echo "</div>";
@@ -277,7 +274,6 @@ if(!isset($_GET['group_id'])){
 									 });";
 									echo "</script>";
 									$i++;
-								echo "<br/><br/><br/><br/><br/><br/><br/>";
 							echo "</div>";
 
 							$desktop_num++;
