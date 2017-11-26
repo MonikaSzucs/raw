@@ -1,12 +1,12 @@
-<?php 
+<?php
 
 //the session_start() should always be at the top
 session_start();
 //this is to make sure people can't access the pages unless they log in
 if(!isset($_SESSION["user_id"]))
 {
-	session_destroy(); 
-	header( 'Location: signout.php' ); 
+	session_destroy();
+	header( 'Location: signout.php' );
 };
 
 if(!isset($_GET['group_id'])){
@@ -18,8 +18,8 @@ if(!isset($_GET['group_id'])){
 	/*
 	if(!isset($_SESSION["user_id"]))
 	{
-		session_destroy(); 
-		header( 'Location: signout.php' ); 
+		session_destroy();
+		header( 'Location: signout.php' );
 	};
 	*/
 
@@ -52,18 +52,18 @@ if(!isset($_GET['group_id'])){
     <header class="main-header">
         <nav>
             <div class="header">
-			<?php 
+			<?php
 			if(isset($_GET["sample"]) && $_GET['sample']==1)
 			{
 				echo $_GET['group_id'];
-				//echo "<a href='EnteredGroup.php?group_id=". $_GET['group_id'] ."&page=".$_GET["page"]."'>".$i."&nbsp;&nbsp;&nbsp;</a>"; 
+				//echo "<a href='EnteredGroup.php?group_id=". $_GET['group_id'] ."&page=".$_GET["page"]."'>".$i."&nbsp;&nbsp;&nbsp;</a>";
 				echo "<a href='EnteredGroup.php?group_id=" . $_GET['group_id'] ."&sample=0". $_GET["page"] . "'>";
 			}
 			else{
 				echo "<a href='EnteredGroup.php?group_id=" . $_GET['group_id'] ."&sample=1". $_GET["page"] . "'>";
 			}
-				
-			?>	
+
+			?>
                 <div class="toggle-logo"> </div>
 				</a>
                 <a href="MobileUploadPage.php">
@@ -84,7 +84,7 @@ if(!isset($_GET['group_id'])){
                 <a href="MobileMoodsTemplate.php"><li>Moods</li></a>
                 <a href="MobileInsturmentsTemplate.php"><li>Instruments</li></a>
             </ul>
-			
+
             <div class="logo-spot"></div>
 
         </nav>
@@ -99,43 +99,43 @@ if(!isset($_GET['group_id'])){
     </div>
     <div class="m-ivisfoot"></div>
     <div class="main-page">
-   
+
         <!--
         hamburger menu
-        
+
 -->
-        <div id="hamburger"> 
+        <div id="hamburger">
             <ul id="hambul">
               <a href="ProfileIntroPage.php"> <li class="hamclass">
                 Profile
-                   </li> </a> 
+                   </li> </a>
                 <a href="logout.php"><li class="hamclass">
                 Sign Out
-                </li></a>               
+                </li></a>
             </ul>
         </div>
-        
+
 		<?php
-		
+
 		if(isset($_GET['group_id'])){
 			//SELECT * FROM groups WHERE group_id = 44
-			
+
 			$query = "SELECT * FROM groups WHERE group_id = " . $_GET['group_id'];
 			//echo $query;
-			
-			
+
+
 			$result = mysqli_query($db, $query) or die('Error querying database.');
-			
+
 			$row = mysqli_fetch_array($result);
-			
+
 			////print_r($row)
 		} else{
-		
+
 			echo "error no group is selected";
 		}
-			
+
 		?>
-		
+
         <div class="White_Area_Top">
 			<div id="Entered_Top_Container">
 				<div id="Entered_Groups_Profile_Pic">
@@ -159,7 +159,7 @@ if(!isset($_GET['group_id'])){
 							echo $row['group_description'];
 						?>
 					</div>
-				
+
 				</div>
 
 				<div id="Entered_Top_Button">
@@ -175,20 +175,20 @@ if(!isset($_GET['group_id'])){
 			</div>
         </div>
 
-		
-		
+
+
 
         <div class="groups_inside_bottom_area">
 			<div id="m-profile-main-inner">
 				<div class="spaceContainerTop"><h1>Songs</h1></div>
 				<label class="switch">
 				  <input type="checkbox">
-				  
+
 				</label>
-				
-				
-	
-				
+
+
+
+
 				<?php
 					if(isset($_GET['group_id'])){
 						$music=1;
@@ -204,51 +204,51 @@ if(!isset($_GET['group_id'])){
 								$music=1;
 							}
 						}
-						
-						
-						
+
+
+
 						$limit = 5;
 						if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
 						$start_from = ($page-1) * $limit;
-						
+
 						$query = "SELECT * FROM music_group WHERE group_id = " . $_GET['group_id'] . " AND music = ". $music ." LIMIT "  . $limit . " OFFSET " . $start_from;
-						echo $query;
-						
-						
+						//echo $query;
+
+
 						$result = mysqli_query($db, $query) or die('Error querying database. ');
-						
+
 						$i=1;
 						$desktop_num = 0;
 						while ($row = mysqli_fetch_array($result)){
-							
+
 							echo "<div class='streaming'>";
 							echo "<div class='entered_group_songs'>";
 								echo "<div class='songpic'>";
-									if(empty($row['music_photo'] )){
-										echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
-									}
-									else{
-										echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploadedFeed' > </td>";
-									}
 									echo "<div class='songpicfade'>";
 									echo "</div>";
 									echo "<button  id='play_pause_feed' class='play_pause_feed_desktop' onClick='pauseAllWave(".$i."); '>";
-										echo "<i class='glyphicon glyphicon-play'></i>";
+									echo "<i class='glyphicon glyphicon-play'></i>";
 									echo "</button>";
+									if(empty($row['music_photo'] )){
+										echo "<td> <img src='./SVG/EmptyPicture.svg' class='circlePhotoUploadedFeed' /> </td>";
+									}
+									else{
+										echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploadedFeed' /> </td>";
+									}
 								echo "</div>";
-								
+
 								echo "<div class='song-buttons'>";
 									echo "<p id='FeedArtistsName'>First Name Last Name";
 									echo "</p>";
 								echo "</div>";
 								echo "<div class='track-display'>";
-								
+
 									echo "<div id='waveform".$i."' class='wave'></div>";
 										///echo "<div style='text-align: center' class='btn_play_pause'>";
-										  
+
 										///echo "</div>";
 									echo "</div>";
-								
+
 								echo "</div>";
 								echo "<a href='/raw/raw/raw/". $row['music_file'] . "' download='" . $row['music_file'] . "'>";
 								echo "<button class='download_feed_button'>";
@@ -279,34 +279,34 @@ if(!isset($_GET['group_id'])){
 									$i++;
 								echo "<br/><br/><br/><br/><br/><br/><br/>";
 							echo "</div>";
-							
+
 							$desktop_num++;
 						}
-						
+
 						////print_r($row)
-						$querry = "SELECT COUNT(group_id) FROM music_group WHERE group_id = " . $_GET['group_id'];  
-						$rs_result = mysqli_query($db, $querry);  
-						$row = mysqli_fetch_row($rs_result);  
-						$total_records = $row[0];  
-						$total_pages = ceil($total_records / $limit);  
-						$pagLink = "<div class='pagination'>";  
-							for ($i=1; $i<=$total_pages; $i++) {  
-								$pagLink .= "<a href='EnteredGroup.php?group_id=". $_GET['group_id'] ."&page=".$i."'>".$i."&nbsp;&nbsp;&nbsp;</a>";  
-							};  
-						echo $pagLink . "</div>"; 
-						
+						$querry = "SELECT COUNT(group_id) FROM music_group WHERE group_id = " . $_GET['group_id'];
+						$rs_result = mysqli_query($db, $querry);
+						$row = mysqli_fetch_row($rs_result);
+						$total_records = $row[0];
+						$total_pages = ceil($total_records / $limit);
+						$pagLink = "<div class='pagination'>";
+							for ($i=1; $i<=$total_pages; $i++) {
+								$pagLink .= "<a href='EnteredGroup.php?group_id=". $_GET['group_id'] ."&page=".$i."'>".$i."&nbsp;&nbsp;&nbsp;</a>";
+							};
+						echo $pagLink . "</div>";
+
 					} else{
-					
+
 						echo "error no group is selected";
 					}
-					
-					
-				
+
+
+
 				?>
-				
+
 				<script>
 			var img = document.getElementsByClassName('play_pause_feed_desktop');
-			
+
 				function pause_image_function(trackNum){
 					console.log('pause_image_function:'+trackNum);
 					img[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';
@@ -361,13 +361,13 @@ if(!isset($_GET['group_id'])){
 				}
 
 			</script>
-				
+
 			<div>
-			
+
 			</div>
-	
-		
-		
+
+
+
     </div>
     <nav class="container">
         <a class="buttons" href="ProfileIntroPage.php" tooltip="Profile"></a>
@@ -378,8 +378,8 @@ if(!isset($_GET['group_id'])){
         <a class="buttons" href="MobileMoodsTemplate.php" tooltip="Moods"></a><a class="buttons" href="#" tooltip="Compose"><span><span class="rotate"></span></span></a></nav>
 
     <script src="cmenuscript.js"></script>
-	<script src="UploadPhotos.js"></script>
-	
+	<!--<script src="UploadPhotos.js"></script>-->
+
 
 
 </body>
@@ -387,4 +387,3 @@ if(!isset($_GET['group_id'])){
 	mysqli_close($db);
 ?>
 </html>
-

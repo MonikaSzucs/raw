@@ -1085,7 +1085,7 @@ hambuger menu
     left: 35px;
     top: 20px;
     position: absolute;
-    font-family: avenir;
+    font-family: avenir-medium;
     font-size: 50px;
     margin: 15px;
 	}
@@ -2057,6 +2057,11 @@ hambuger menu
     }
 
     .cb_table {
-      margin: 20px auto
+      margin: 20px auto;
+    }
+
+    #Entered_Back {
+      width: 200px;
+      height: 50px;
     }
 }
