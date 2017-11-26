@@ -1,20 +1,20 @@
-<?php 
+<?php
 
 session_start();
 //this is to make sure people can't access the pages unless they log in
 if(!isset($_SESSION["user_id"]))
 {
-	session_destroy(); 
-	header( 'Location: signout.php' ); 
+	session_destroy();
+	header( 'Location: signout.php' );
 };
 
 $target_file_photo = "";
 $target_file_music = "";
 print_r($_FILES);
 	echo "TTTTTTT<br//>";
-	
+
 //group picture
-//the ifseet means this will only work when you click form submit 
+//the ifseet means this will only work when you click form submit
 if( isset($_FILES["myImage"]["name"]) && !empty($_FILES["myImage"]["name"])) {
 	echo "1<br//>";
 	$target_file_photo .= "UserPictures/".time().basename($_FILES["myImage"]["name"]);
@@ -104,10 +104,10 @@ $formSuccessfullMessage = "";
 		define('DB_DATABASE', 'raw');
 		$conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
 
-		
-		
+
+
 		$user_id= $_SESSION["user_id"];
-		
+
 		//add genre to the group
 		$g_rnb = isset($_POST['g_rnb']) ?  $_POST['g_rnb'] :  "";
 		$g_rock = isset($_POST['g_rock']) ?$_POST['g_rock'] : "";
@@ -119,7 +119,7 @@ $formSuccessfullMessage = "";
 		$g_country = isset($_POST['g_country']) ? $_POST['g_country']: "";
 		$g_edm = isset($_POST['g_edm']) ? $_POST['g_edm']: "";
 		$g_classical = isset($_POST['g_classical']) ? $_POST['g_classical']: "";
-	
+
 		//add Moods to the group
 		$g_happy = isset($_POST['g_happy']) ?  $_POST['g_happy'] :  "";
 		$g_sad = isset($_POST['g_sad']) ?$_POST['g_sad'] : "";
@@ -128,7 +128,7 @@ $formSuccessfullMessage = "";
 		$g_focus = isset($_POST['g_focus']) ? $_POST['g_focus']: "";
 		$g_workout = isset($_POST['g_workout']) ?$_POST['g_workout']: "";
 		$g_travel = isset($_POST['g_travel']) ? $_POST['g_travel']: "";
-		
+
 		//add instruments to the group
 		$g_guitar = isset($_POST['g_guitar']) ?  $_POST['g_guitar'] :  "";
 		$g_bass = isset($_POST['g_bass']) ?$_POST['g_bass'] : "";
@@ -138,16 +138,16 @@ $formSuccessfullMessage = "";
 		$g_drums = isset($_POST['g_drums']) ?$_POST['g_drums']: "";
 		$g_strings = isset($_POST['g_strings']) ? $_POST['g_strings']: "";
 		$g_brass = isset($_POST['g_brass']) ? $_POST['g_brass']: "";
-		
-		
+
+
 		if(isset($target_file_music))
 		{
 			//step 2 to make the SQL query
-			$TitleSongSample = $_POST["TitleSongSample"]; 
-		
+			$TitleSongSample = $_POST["TitleSongSample"];
+
 			$query = "INSERT INTO music_group(group_id, music_file, music, music_title, music_photo, g_rnb, g_rock, g_pop, g_punk, g_jazz, g_metal, g_funk, g_country, g_edm, g_classical, g_happy, g_sad, g_angry, g_chill, g_focus, g_workout, g_travel, g_guitar, g_bass, g_synth, g_pads, g_woodwind, g_drums, g_strings, g_brass) ";
 			$query .= "VALUES ( '" . $_GET['group_id'] . "', '" .  $target_file_music . "', '" . $_POST['music_check']. "', '" . $TitleSongSample . "', '" . $target_file_photo . "', '" . $g_rnb."' , '".$g_rock."', '".$g_pop."', '".$g_punk."', '".$g_jazz."', '".$g_metal."', '".$g_funk."', '".$g_country."', '".$g_edm."', '".$g_classical."', '".$g_happy."', '".$g_sad."', '".$g_angry."', '".$g_chill."', '".$g_focus."', '".$g_workout."', '".$g_travel."', '".$g_guitar."', '".$g_bass."', '".$g_synth."', '".$g_pads."', '".$g_woodwind."', '".$g_drums."', '".$g_strings."', '".$g_brass."') ";
-			
+
 			echo $query;
 			//step 3
 			if($result = mysqli_query($conn, $query) )
@@ -158,13 +158,13 @@ $formSuccessfullMessage = "";
 				echo "Error: " . $query . "<br>" . mysqli_error($conn);
 			}
 		}
-					
-				 
+
+
 		//Step 4 Close the conenction
 		mysqli_close($conn);
-		
-		
-	}	
+
+
+	}
  ?>
 
 
@@ -217,163 +217,175 @@ $formSuccessfullMessage = "";
     </div>
     <div class="m-ivisfoot"></div>
     <div class="main-page">
-   
+
         <!--
         hamburger menu
-        
+
 -->
-        <div id="hamburger"> 
+        <div id="hamburger">
             <ul id="hambul">
               <a href="ProfileIntroPage.php"> <li class="hamclass">
                 Profile
-                   </li> </a> 
+                   </li> </a>
                 <a href="logout.php"><li class="hamclass">
                 Sign Out
-                </li></a>               
+                </li></a>
             </ul>
         </div>
-        
+
 
         <div class="m-profile-box">
-			<div id="m-profile-inner">
-				<div class="m-profile-buttons">
-					
-				</div>
-				<div id="m-profile-pic-intro"></div>
-				
-				<div id="m-view-profile-div">
-					<form action="EnteredGroup.php" method="get">
-						<input type="hidden" name="group_id" value="<?php echo $_GET['group_id']?>"/>
+					<div id="m-profile-inner">
+						<!-- <div class="m-profile-buttons"></div> -->
+						<div id="m-profile-pic-intro"></div>
 						<input type="submit" id="BackButtonCreation" value="Back"/>
-					</form>
-					<p id="name">Name</p>
-					<ul id="view-profile">
-						<li id="m-followers-list">
-						</li>
-					</ul>
-
-				</div>
-			</div>
+						<div id="m-view-profile-div">
+							<form action="EnteredGroup.php" method="get">
+								<input type="hidden" name="group_id" value="<?php echo $_GET['group_id']?>"/>
+							</form>
+							<p id="name">Name</p>
+							<ul id="view-profile">
+								<li id="m-followers-list"></li>
+							</ul>
+						</div>
+					</div>
         </div>
 
-		
-		
 
-        <div class="m-profile-main" id="CreateGroupsForm">
+
+
+      <div class="m-profile-main">
 			<div id="m-profile-main-inner">
 				<div class="spaceContainerTop"><h1>Add Songs/Samples</h1></div>
-				<div class="Profile-sub-container">
 					<div class="TopSpace-ProfileGroupSub"></div>
-					<div class="ProfileIconGroups" id="list"></div>
-					<div class="vertical-space"></div>
 					<form id="contactForm" name="form" action="" method="post" enctype="multipart/form-data">
+						<div class="ProfileIconGroups" id="list"></div>
+						<div class="vertical-space"></div>
 						<span style='color:red; font-weight:bold'> <?php if(isset($formErrorMessage)){echo $formErrorMessage;} ?> </span>
 						<span style='color:Green; font-weight:bold'> <?php if(isset($formSuccessfullMessage)){echo $formSuccessfullMessage;} ?> </span>
-						
-						<div class="GroupsInformation">
-							<div class="GroupsInformation-Title">
-								Title:<br/>
-								<textarea maxlength="50" name="TitleSongSample" placeholder="Place your title here.."><?php if(isset($TitleSongSample)){echo $TitleSongSample; }?></textarea>
+
+						<div class="create_group_section_tnd">
+							<div class="GroupsInformation">
+								<div class="GroupsInformation-Title">
+									Title:<br/>
+									<textarea maxlength="50" name="TitleSongSample" placeholder="Place your title here.."><?php if(isset($TitleSongSample)){echo $TitleSongSample; }?></textarea>
+								</div>
+								<div class="horizontal-GroupSpace">
+								</div>
 							</div>
-							<div class="horizontal-GroupSpace">
-							</div>
-								
 						</div>
-							<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-							Upload a profile Image:
-							<br/>
+
+						<hr />
+
+						<div class = "create_group_section_file">
+							<span class="group_upload_title_style">
+								Upload a profile Image:
+							</span>
 							<input class="file_upload_button" id="files" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
-							<br/>
-							<hr>
-							<br/>
-							Song or Samples Upload:
-							<br/>
+						</div>
+
+						<hr>
+
+						<div class = "create_group_section_file">
+							<span class="group_upload_title_style">
+								Song or Samples Upload:
+							</span>
 							<input class="file_upload_button" id="files" type="file" name="myMusic" accept="audio/*" />
-							<br/>
-							Is this a song or sample?
-							<div class="checkbox">
-							  <label><input type="radio" value="1" name="music_check" checked>Music</label>
-							  <label><input type="radio" value="0" name="music_check">Sample</label>
+						</div>
+
+							<hr  />
+
+							<div class = "create_group_section_ss">
+								<span class = "group_upload_title_style">
+									Is this a song or sample?
+								</span>
+								<div class="checkbox">
+									<label class="label_groups_music_sample"><input class="input_buttons_styles_groups_create" type="radio" value="1" name="music_check" checked><span class="music_sample_label_groups_uploading">Music</span></label>
+									<label class="label_groups_music_sample"><input class="input_buttons_styles_groups_create" type="radio" value="0" name="music_check"><span class="music_sample_label_groups_uploading">Sample</span></label>
+								</div>
 							</div>
-							<br/>
+
 							<hr/>
-							<br/>
-							
-							Genre(s)
-							<table style="left: 0; right: 0; margin: 0 auto;">
-								<tr>
-									<td style="width: 120px;"><input type="checkbox" name="g_rnb" value="1">RNB </td>
-									<td style="width: 120px;"><input type="checkbox" name="g_rock" value="1">Rock</td>
-									<td style="width: 120px;"><input type="checkbox" name="g_pop" value="1">Pop</td>
-									<td style="width: 120px;"><input type="checkbox" name="g_punk" value="1">Punk</td>
-									<td style="width: 120px;"><input type="checkbox" name="g_jazz" value="1">Jazz</td>
-								</tr>
-								<tr>
-									<td style="width: 120px;"><input type="checkbox" name="g_metal" value="1">Metal</td>
-									<td style="width: 120px;"><input type="checkbox" name="g_funk" value="1">Funk</td>
-									<td style="width: 120px;"><input type="checkbox" name="g_country" value="1">Country</td>
-									<td style="width: 120px;"><input type="checkbox" name="g_edm" value="1">EDM</td>
-									<td style="width: 120px;"><input type="checkbox" name="g_classical" value="1">Classical</td>
-								</tr>
-							<table>
-							<br/>
-							<br/>
+
+							<div class = "create_group_section_cb">
+								<span class = "group_upload_title_style">
+									Genre(s)
+								</span>
+								<table style="left: 0; right: 0; margin: 0 auto;">
+									<tr>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_rnb" value="1"><span class="categories_label_groups_uploading">RNB</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_rock" value="1"><span class="categories_label_groups_uploading">Rock</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_pop" value="1"><span class="categories_label_groups_uploading">Pop</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_punk" value="1"><span class="categories_label_groups_uploading">Punk</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_jazz" value="1"><span class="categories_label_groups_uploading">Jazz</span></td>
+									</tr>
+									<tr>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_metal" value="1"><span class="categories_label_groups_uploading">Metal</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_funk" value="1"><span class="categories_label_groups_uploading">Funk</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_country" value="1"><span class="categories_label_groups_uploading">Country</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_edm" value="1"><span class="categories_label_groups_uploading">EDM</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_classical" value="1"><span class="categories_label_groups_uploading">Classical</span></td>
+									</tr>
+								</table>
+							</div>
+
 							<hr>
-							<br/>
-							<br/>
-							Mood(s)
-							<table style="left: 0; right: 0; margin: 0 auto;">
-								<tr>
-									<td style="width: 120px;"><input type="checkbox" name="g_happy" value="1">Happy</td>
-									<td style="width: 120px;"><input type="checkbox" name="g_sad" value="1">Sad</td>
-									<td style="width: 120px;"><input type="checkbox" name="g_angry" value="1">Angry</td>
-									<td style="width: 120px;"><input type="checkbox" name="g_chill" value="1">Chill</td>
-								</tr>
-								<tr>
-									<td style="width: 120px;"><input type="checkbox" name="g_focus" value="1">Focus</td>
-									<td style="width: 120px;"><input type="checkbox" name="g_workout" value="1">Workout</td>
-									<td style="width: 120px;"><input type="checkbox" name="g_travel" value="1">Travel</td>
-								</tr>
-							</table>
-							<br/>
-							<br/>
+
+							<div class = "create_group_section_cb">
+								<span class = "group_upload_title_style">
+									Mood(s)
+								</span>
+								<table style="left: 0; right: 0; margin: 0 auto;">
+									<tr>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_happy" value="1"><span class="categories_label_groups_uploading">Happy</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_sad" value="1"><span class="categories_label_groups_uploading">Sad</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_angry" value="1"><span class="categories_label_groups_uploading">Angry</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_chill" value="1"><span class="categories_label_groups_uploading">Chill</span></td>
+									</tr>
+									<tr>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_focus" value="1"><span class="categories_label_groups_uploading">Focus</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_workout" value="1"><span class="categories_label_groups_uploading">Workout</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_travel" value="1"><span class="categories_label_groups_uploading">Travel</span></td>
+									</tr>
+								</table>
+							</div>
+
 							<hr>
-							<br/>
-							<br/>
-							Instrument(s)
-							<table style="left: 0; right: 0; margin: 0 auto;">
-								<tr>
-									<td style="width: 120px;"><input type="checkbox" name="g_guitar" value="1">Guitar</td>
-									<td style="width: 120px;"><input type="checkbox" name="g_bass" value="1">Bass</td>
-									<td style="width: 120px;"><input type="checkbox" name="g_synth" value="1">Synth</td>
-									<td style="width: 120px;"><input type="checkbox" name="g_pads" value="1">Pads</td>
-								</tr>
-								<tr>
-									<td style="width: 120px;"><input type="checkbox" name="g_woodwind" value="1">Woodwind</td>
-									<td style="width: 120px;"><input type="checkbox" name="g_drums" value="1">Drums</td>
-									<td style="width: 120px;"><input type="checkbox" name="g_strings" value="1">Strings</td>
-									<td style="width: 120px;"><input type="checkbox" name="g_brass" value="1">Brass</td>
-								</tr>
-							</table>
-							<br/>
-							<br/>
+
+							<div class = "create_group_section_cb">
+								<span class = "group_upload_title_style">
+									Instrument(s)
+								</span>
+								<table style="left: 0; right: 0; margin: 0 auto;">
+									<tr>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_guitar" value="1"><span class="categories_label_groups_uploading">Guitar</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_bass" value="1"><span class="categories_label_groups_uploading">Bass</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_synth" value="1"><span class="categories_label_groups_uploading">Synth</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_pads" value="1"><span class="categories_label_groups_uploading">Pads</span></td>
+									</tr>
+									<tr>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_woodwind" value="1"><span class="categories_label_groups_uploading">Woodwind</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_drums" value="1"><span class="categories_label_groups_uploading">Drums</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_strings" value="1"><span class="categories_label_groups_uploading">Strings</span></td>
+										<td style="width: 135px;"><input class="input_checkbox_style_group_create" type="checkbox" name="g_brass" value="1"><span class="categories_label_groups_uploading">Brass</span></td>
+									</tr>
+								</table>
+							</div>
+
 							<hr>
-							<br/>
-							<br/>
-						
-						<div id="buttonAreaCreate">
+
+						<div id="buttonAreaCreate_buttonSubmit">
 							<input id="CreateGroupProfileSubmit" type="submit" />
 						</div>
 
 					</form>
-				</div>
 			</div>
-			
+		</div>
+
 			<div id="form_output">
 
 
 			</div>
-		</div>
     </div>
     <nav class="container">
         <a class="buttons" href="ProfileIntroPage.php" tooltip="Profile"></a>
