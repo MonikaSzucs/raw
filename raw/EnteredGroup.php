@@ -136,7 +136,7 @@ if(!isset($_GET['group_id'])){
 
 		?>
 
-        <div class="White_Area_Top">
+    <div class="White_Area_Top">
 			<div id="Entered_Top_Container">
 				<div id="Entered_Groups_Profile_Pic">
 					<?php
@@ -173,7 +173,7 @@ if(!isset($_GET['group_id'])){
 
 				</div>
 			</div>
-        </div>
+    </div>
 
 
 

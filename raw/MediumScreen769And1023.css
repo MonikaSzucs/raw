@@ -17,7 +17,7 @@
 
 /*MEDIA ------------------------------------------------------------------------------*/
 
-@media (max-width: 1023px) {
+@media (max-width: 1023.9px) {
     .mobileScreen {
         display: block;
     }

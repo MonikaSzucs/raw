@@ -238,16 +238,16 @@ $formSuccessfullMessage = "";
 					<div id="m-profile-inner">
 						<!-- <div class="m-profile-buttons"></div> -->
 						<div id="m-profile-pic-intro"></div>
-						<input type="submit" id="BackButtonCreation" value="Back"/>
 						<div id="m-view-profile-div">
 							<form action="EnteredGroup.php" method="get">
 								<input type="hidden" name="group_id" value="<?php echo $_GET['group_id']?>"/>
 							</form>
 							<p id="name">Name</p>
-							<ul id="view-profile">
+							<!-- <ul id="view-profile">
 								<li id="m-followers-list"></li>
-							</ul>
+							</ul> -->
 						</div>
+						<input type="submit" id="BackButtonCreation" value="Back"/>
 					</div>
         </div>
 
@@ -262,10 +262,9 @@ $formSuccessfullMessage = "";
 						<div class="ProfileIconGroups" id="list"></div>
 						<div class="vertical-space"></div>
 						<span style='color:red; font-weight:bold'> <?php if(isset($formErrorMessage)){echo $formErrorMessage;} ?> </span>
-						<span style='color:Green; font-weight:bold'> <?php if(isset($formSuccessfullMessage)){echo $formSuccessfullMessage;} ?> </span>
 
-						<div class="create_group_section_tnd">
-							<div class="GroupsInformation">
+						<div class="create_group_section_tnd_AddSongPage">
+							<div class="SongInformation">
 								<div class="GroupsInformation-Title">
 									Title:<br/>
 									<textarea maxlength="50" name="TitleSongSample" placeholder="Place your title here.."><?php if(isset($TitleSongSample)){echo $TitleSongSample; }?></textarea>
