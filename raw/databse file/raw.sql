@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2017 at 03:15 AM
+-- Generation Time: Nov 28, 2017 at 07:16 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -46,7 +46,10 @@ INSERT INTO `groups` (`group_id`, `group_title`, `group_description`, `group_pho
 (48, 'testinggggg here is is a new one', 'test egsegdsg', 'UserPictures/1509206146dsfdsgdfgfdg.png', '2017-10-28 08:55:46'),
 (50, 'g6', 'g6', 'UserPictures/151020443121215840_1438397616276162_1031578615_o.png', '2017-11-08 21:13:51'),
 (51, 'g7', 'g7', 'UserPictures/1510204466q2.png', '2017-11-08 21:14:26'),
-(52, 'greoup raw', 'grourpw raw', 'UserPictures/1511322158pexels-photo-167491.jpeg', '2017-11-21 19:42:38');
+(52, 'greoup raw', 'grourpw raw', 'UserPictures/1511322158pexels-photo-167491.jpeg', '2017-11-21 19:42:38'),
+(53, 'Hanna2', 'H2', 'UserPictures/1511845051pexels-photo-640781.jpeg', '2017-11-27 20:57:31'),
+(54, 'Hanna 4444444', '4444444', 'UserPictures/1511845123pexels-photo-660282.jpeg', '2017-11-27 20:58:43'),
+(55, 'User3 Test', 'testttttt', 'UserPictures/1511847059pexels-photo-185662.jpeg', '2017-11-27 21:30:59');
 
 -- --------------------------------------------------------
 
@@ -66,10 +69,16 @@ CREATE TABLE `group_users` (
 INSERT INTO `group_users` (`group_id`, `user_id`) VALUES
 (44, 1),
 (46, 1),
+(46, 10),
 (48, 1),
-(50, 1),
+(48, 10),
+(50, 10),
 (51, 1),
-(52, 1);
+(51, 10),
+(52, 1),
+(53, 10),
+(54, 10),
+(55, 29);
 
 -- --------------------------------------------------------
 
@@ -134,7 +143,21 @@ INSERT INTO `music_group` (`group_id`, `music_id`, `music_file`, `music`, `music
 (44, 38, 'UsersSongs/1511390397Garden_Walk.mp3', 1, '2017-11-22 14:39:57', 'm7', 'UserPictures/1511390397pexels-photo-63703.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
 (44, 39, 'UsersSongs/1511581566Sleep Away.mp3', 0, '2017-11-24 19:46:06', 'Sample', 'UserPictures/1511581566Koala.jpg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
 (46, 40, 'UsersSongs/1511586340Maid with the Flaxen Hair.mp3', 1, '2017-11-24 21:05:40', '0000', 'UserPictures/1511586340Lighthouse.jpg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
-(46, 41, 'UsersSongs/1511586373Sleep Away.mp3', 0, '2017-11-24 21:06:13', '1', 'UserPictures/1511586373Penguins.jpg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
+(46, 41, 'UsersSongs/1511586373Sleep Away.mp3', 0, '2017-11-24 21:06:13', '1', 'UserPictures/1511586373Penguins.jpg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(44, 42, 'UsersSongs/1511836155Infrared.mp3', 0, '2017-11-27 18:29:15', 'much20', 'UserPictures/1511836155pexels-photo-179114.jpeg', 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1),
+(44, 43, 'UsersSongs/1511837312Strolling_Through.mp3', 1, '2017-11-27 18:48:32', 'testing333333', 'UserPictures/1511837312guitar-classical-guitar-acoustic-guitar-electric-guitar.jpg', 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(44, 44, 'UsersSongs/1511837358Infrared.mp3', 0, '2017-11-27 18:49:18', 'testing666666', 'UserPictures/1511837358pexels-photo-63703.jpeg', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1),
+(46, 45, 'UsersSongs/1511838989Trips.mp3', 1, '2017-11-27 19:16:29', 't2', 'UserPictures/1511838989pexels-photo-179112.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(46, 46, 'UsersSongs/1511839022Heart_Break.mp3', 1, '2017-11-27 19:17:02', 't3', 'UserPictures/1511839022pexels-photo-96857.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1),
+(46, 47, 'UsersSongs/1511839055Stinger.mp3', 1, '2017-11-27 19:17:35', 't4', 'UserPictures/1511839055night-vintage-music-bokeh.jpg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0),
+(46, 48, 'UsersSongs/1511839090Heart_Break.mp3', 0, '2017-11-27 19:18:10', 't5', 'UserPictures/1511839090pexels-photo-63703.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1),
+(48, 49, 'UsersSongs/1511839967Infrared.mp3', 0, '2017-11-27 19:32:47', 'sample2', 'UserPictures/1511839967pexels-photo-167491.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1),
+(51, 50, 'UsersSongs/1511840039Heart_Break.mp3', 0, '2017-11-27 19:33:59', 'ssssss', 'UserPictures/1511840039mobile-phone-iphone-music-38295.jpeg', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1),
+(51, 51, 'UsersSongs/1511843915You_re_not_that_Funky.mp3', 0, '2017-11-27 20:38:35', 'M7777', 'UserPictures/1511843915pexels-photo-179912.jpeg', 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1),
+(53, 52, '', 1, '2017-11-27 20:57:31', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(54, 53, 'UsersSongs/1511845123Marvin_s_Dance.mp3', 1, '2017-11-27 20:58:43', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(54, 54, 'UsersSongs/1511845156Where_She_Walks.mp3', 0, '2017-11-27 20:59:16', 'sample Hanna', 'UserPictures/1511845156pexels-photo-96857.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(55, 55, 'UsersSongs/1511847059Strolling_Through.mp3', 1, '2017-11-27 21:30:59', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -294,12 +317,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 --
 -- AUTO_INCREMENT for table `music_group`
 --
 ALTER TABLE `music_group`
-  MODIFY `music_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `music_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 --
 -- AUTO_INCREMENT for table `music_public`
 --
