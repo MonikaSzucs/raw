@@ -53,15 +53,52 @@ if(!isset($_GET['group_id'])){
         <nav>
             <div class="header">
 			<?php
-			if(isset($_GET["sample"]) && $_GET['sample']==1)
+			
+			if(isset($_GET["sample"]) )
 			{
-				echo $_GET['group_id'];
-				//echo "<a href='EnteredGroup.php?group_id=". $_GET['group_id'] ."&page=".$_GET["page"]."'>".$i."&nbsp;&nbsp;&nbsp;</a>";
-				echo "<a href='EnteredGroup.php?group_id=" . $_GET['group_id'] ."&sample=0". $_GET["page"] . "'>";
+				//not default - whatever was set
+				$x = $_GET["sample"];
+				
+				if ($x == 0){
+					echo "<p >XXXVALUE" . $x . "</p>";
+					echo "<a href='EnteredGroup.php?group_id=" . $_GET['group_id'] ."&sample=1&page=1'>";
+				} else {
+					echo "<p >YYYVALUE" . $x . "</p>";
+					echo "<a href='EnteredGroup.php?group_id=" . $_GET['group_id'] ."&sample=0&page=1'>";
+					
+				}
+				
+				echo "<p >XVALUE" . $x . "</p>";
+									
+				
+				
+				
+			} else {
+				$x = 1;
+				echo "<a href='EnteredGroup.php?group_id=" . $_GET['group_id'] ."&sample=1&page=1'>";
+				
 			}
-			else{
-				echo "<a href='EnteredGroup.php?group_id=" . $_GET['group_id'] ."&sample=1". $_GET["page"] . "'>";
-			}
+			
+			/*
+				if ($x === 0){
+					
+					echo "<p >VALUE 0</p>";
+					
+					echo $_GET['group_id'];
+					//echo "<a href='EnteredGroup.php?group_id=". $_GET['group_id'] ."&page=".$_GET["page"]."'>".$i."&nbsp;&nbsp;&nbsp;</a>";
+					echo "<a href='EnteredGroup.php?group_id=" . $_GET['group_id'] ."&sample=1&page=1'>";
+					$x = 1;
+				}
+				
+				else if ($x === 1){
+					echo "<p >VALUE 1";
+									echo "</p>";
+					echo "<a href='EnteredGroup.php?group_id=" . $_GET['group_id'] ."&sample=0&page=1'>";
+					$x = 0;
+				}
+			*/
+			
+			
 
 			?>
                 <div class="toggle-logo"> </div>
@@ -280,7 +317,8 @@ if(!isset($_GET['group_id'])){
 						}
 
 						////print_r($row)
-						$querry = "SELECT COUNT(group_id) FROM music_group WHERE group_id = " . $_GET['group_id'];
+						
+						$querry = "SELECT COUNT(group_id) FROM music_group WHERE group_id = " . $_GET['group_id'] . " AND music = " . $music;
 						$rs_result = mysqli_query($db, $querry);
 						$row = mysqli_fetch_row($rs_result);
 						$total_records = $row[0];

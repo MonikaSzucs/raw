@@ -140,7 +140,7 @@ if(!isset($_SESSION["user_id"]))
 
 
 	//get group?_user from data base where user id equal to session user ID
-	$query = "SELECT * FROM group_users WHERE user_id =" . $_SESSION['user_id'];
+	$query = "SELECT * FROM group_users";
 	$result = mysqli_query($db, $query) or die('Error querying database.');
 	$group_users = array();
 	while ($row = mysqli_fetch_array($result)){
@@ -188,7 +188,17 @@ while ($row = mysqli_fetch_array($result)) {
 				}
 
 				echo "<div class='LeaveButtonGroups'>";
-					if(in_array($row['group_id'], $group_users))
+				
+				
+				
+				
+				$sql = "SELECT * FROM `group_users` WHERE user_id =" . $_SESSION["user_id"] . " AND group_id = " . $row['group_id'];
+
+				$groupsshown = mysqli_query($db, $sql);
+
+	
+					//if(in_array($row['group_id'], $group_users))
+					if(mysqli_num_rows($groupsshown) > 0)
 					{
 						//echo "already Joined";
 						// DELETE FROM `group_users` WHERE `group_users`.`group_id` = 46 AND `group_users`.`user_id` = 1
@@ -209,15 +219,19 @@ while ($row = mysqli_fetch_array($result)) {
 					}
 
 				echo "</div>";
-
-				echo "<div class='EnterButtonGroups'>";
-					if(in_array($row['group_id'], $group_users)){
-						echo "<form action ='EnteredGroup.php' method='GET'>";
-							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
-							echo "<input class='Enter-Butt' type='submit' value='Enter'>";
-						echo "</form>";
+				
+				if(mysqli_num_rows($groupsshown) > 0)
+					{
+						echo "<div class='EnterButtonGroups'>";
+							if(in_array($row['group_id'], $group_users)){
+								echo "<form action ='EnteredGroup.php?sample=1' method='GET'>";
+									echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+									echo "<input class='Enter-Butt' type='submit' value='Enter'>";
+								echo "</form>";
+							}
+						echo "</div>";
 					}
-				echo "</div>";
+				
 			echo "</div>";
 		echo "</div>";
 
