@@ -90,7 +90,7 @@
     }
     /*    hamber menu*/
     #hamb {
-        right: 190px;
+        right: 260px;
         top: 8px;
         margin: 15px;
         display: inline-block;
@@ -188,6 +188,7 @@ hambuger menu
         background-repeat: no-repeat;
         background-position: center;
         border-radius: 40px;
+		margin-right: 30px;
     }
     .m-upload-button:hover {
         transition: 60ms ease-in-out;
@@ -2296,10 +2297,10 @@ hambuger menu
 
   .categoryPickedArea_desktop {
          width: 100%;
-        height: 1500px;
         background-color: white;
         position: absolute;
         top: 0px;
+		padding-bottom: 150px;
     }
 
 	.email_area_settings{

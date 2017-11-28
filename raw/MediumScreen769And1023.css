@@ -100,6 +100,7 @@
         cursor: pointer;
         position: fixed;
         z-index: 9999;
+		margin-right: 30px;
     }
 
     .bar1,
@@ -152,6 +153,7 @@ hambuger menu
         position: absolute;
         color: white;
         line-height: 180px;
+		background-color: transparent;
     }
     .m-player {
         vertical-align: middle;
@@ -188,7 +190,7 @@ hambuger menu
         background-size: 35px 35px;
         position: fixed;
         top: 12px;
-        right: 140px;
+        right: 142px;
         background-image: url(imgs/uploadicon.svg);
         background-repeat: no-repeat;
         background-position: center;

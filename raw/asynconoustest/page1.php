@@ -21,12 +21,16 @@ header
 <li onclick="Blue()">Blue</li>
 
 </nav>
-
+music
+<?php
+echo "<div onClick='goToPage(\"home.php\")'>HomePage</div>";
+?>
+<hr />
 <div id="content"></div>
 
 <!--Music player area -->
 <nav>
-music
+
 </nav>
 
 </body>
@@ -35,10 +39,26 @@ music
 
 var content = document.getElementById("content");
 
+function goToPage(url, id){
+	
+	var murl = url;
+	if(id){
+		murl = url+"?id="+id;
+	}
+	fetch(murl, {
+		method:"GET"
+	}).then((resp)=>{
+		console.log(resp);
+		return resp.text();
+	}).then((mhtml)=>{
+		content.innerHTML = mhtml;
+	});
+}
 function Red() {
 	console.log("hey");
 	console.log(content);
     content.innerHTML='<object type="text/html" data="home.php" ></object>';
+	
 }
 
 function Green() {
