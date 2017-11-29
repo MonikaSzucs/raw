@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2017 at 07:37 AM
+-- Generation Time: Nov 29, 2017 at 06:35 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -238,7 +238,9 @@ INSERT INTO `music_public` (`music_public_id`, `user_id`, `song_title`, `music_f
 (43, 1, '', 'GlobalSongs/1511054121music3.mp3', 1, '2017-11-18 17:15:21', 'GlobalPictures/1511054121lone-tree-1934897_960_720.jpg', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
 (44, 1, 'wow', 'GlobalSongs/1511064360music3.mp3', 1, '2017-11-18 20:06:00', 'GlobalPictures/1511064360pexels-photo-219998.jpeg', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
 (45, 1, 'New Raw folder path', 'GlobalSongs/1511320722Marvin_s_Dance.mp3', 1, '2017-11-21 19:18:42', 'GlobalPictures/1511320722setC.png', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0),
-(46, 1, 'sample', 'GlobalSongs/1511332997Trips.mp3', 0, '2017-11-21 22:43:17', 'GlobalPictures/1511332997126443.png', 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(46, 1, 'sample', 'GlobalSongs/1511332997Trips.mp3', 0, '2017-11-21 22:43:17', 'GlobalPictures/1511332997126443.png', 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(47, 1, 'Country song 1', 'GlobalSongs/1511921590Trips.mp3', 1, '2017-11-28 18:13:10', 'GlobalPictures/1511921590guitar-classical-guitar-acoustic-guitar-electric-guitar.jpg', 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1),
+(48, 1, 'Country sample1', 'GlobalSongs/1511921634Garden_Walk.mp3', 0, '2017-11-28 18:13:54', 'GlobalPictures/1511921634Desert.jpg', 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -327,7 +329,7 @@ ALTER TABLE `music_group`
 -- AUTO_INCREMENT for table `music_public`
 --
 ALTER TABLE `music_public`
-  MODIFY `music_public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `music_public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT for table `user`
 --
