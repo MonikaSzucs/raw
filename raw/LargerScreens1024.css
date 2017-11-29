@@ -2301,6 +2301,7 @@ hambuger menu
         position: absolute;
         top: 0px;
 		padding-bottom: 150px;
+		min-height: 100vh;
     }
 
 	.email_area_settings{

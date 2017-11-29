@@ -67,6 +67,34 @@ if(!isset($_SESSION["user_id"]))
     <header class="main-header">
         <nav>
             <div class="header">
+				<?php
+			
+				if(isset($_GET["sample"]) )
+				{
+					//not default - whatever was set
+					$x = $_GET["sample"];
+					
+					if ($x == 0){
+						echo "<p >XXXVALUE" . $x . "</p>";
+						echo "<a href='CategoryPicked.php?mood=". $_GET['mood'] ."&sample=1&page=1'>";
+					} else {
+						echo "<p >YYYVALUE" . $x . "</p>";
+						echo "<a href='CategoryPicked.php?mood=". $_GET['mood'] ."&sample=0&page=1'>";
+						
+					}
+					
+					echo "<p >XVALUE" . $x . "</p>";
+										
+					
+					
+					
+				} else {
+					$x = 1;
+					echo "<a href='CategoryPicked.php?mood=". $_GET['mood'] ."&sample=1&page=1'>";
+					
+				}
+				?>
+				
                 <div class="toggle-logo"> </div>
                 <a href="MobileUploadPage.php">
                     <div class="m-upload-button"></div>
@@ -124,7 +152,19 @@ if(!isset($_SESSION["user_id"]))
 	
 	<?php
 	
-
+	$music=1;
+	if(isset($_GET["sample"])){
+		$sample = $_GET["sample"];
+		//console.log($sample);
+		if($sample == 1)
+		{
+			$music=0;
+			//echo "SAMPLE LINK WORKS";
+		}
+		else{
+			$music=1;
+		}
+	}
 	
 	
 	
@@ -145,9 +185,11 @@ if(!isset($_SESSION["user_id"]))
 	echo  $_GET['mood'];
 	
 	//Step2 get data from database
+	$limit = 5;
+	if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+	$start_from = ($page-1) * $limit;
 	
-	
-	$query = "SELECT * FROM music_public WHERE " . $_GET['mood'] . "=1";
+	$query = "SELECT * FROM music_public WHERE " . $_GET['mood'] . " = 1 AND music = ". $music ." LIMIT " . $limit  . " OFFSET " . $start_from;
 	//$query = "SELECT * FROM groups";
 	$result = mysqli_query($db, $query) or die('Error querying database.');
 //Step3 Display the result
@@ -167,7 +209,7 @@ while ($row = mysqli_fetch_array($result))
                             }
 								echo "<div class='songpicfade'>";
 								echo "</div>";
-								echo "<button  id='play_pause_feed' class='play_pause_feed_desktop' onClick='wavesurfer".$i.".playPause(); play_pause_image_function(".$desktop_num.", 0)'>";
+								echo "<button  id='play_pause_feed' class='play_pause_feed_desktop' onClick='pauseAllWave(".$i."); '>";
 								echo "<i class='glyphicon glyphicon-play'></i>";
 								echo "</button>";
                         echo "</div>";
@@ -183,8 +225,9 @@ while ($row = mysqli_fetch_array($result))
                             echo "</div>";
 
                         echo "</div>";
-
-                        echo "<button class='download_feed_button'>Download</button>";
+							echo "<a href='/raw/raw/raw/". $row['music_file'] . "' download='" . $row['music_file'] . "'>";
+								echo "<button class='download_feed_button'>Download</button>";
+							echo "</a>";
 
                         echo "<script>
                             var wavesurfer".$i." = WaveSurfer.create({
@@ -195,59 +238,96 @@ while ($row = mysqli_fetch_array($result))
 								hideScrollbar:true,
 								barWidth:5,
 								responsive: true
-                            });";
-                            echo "wavesurfer".$i.".load('". $row['music_file'] ."');";
-						echo "</script>";
+                            });
+                            wavesurfer".$i.".load('". $row['music_file'] ."');
+							 wavesurfer".$i.".on('pause', function () {
+									pause_image_function(".$desktop_num.");
+							 });
+							 wavesurfer".$i.".on('finish', function () {
+									pause_image_function(".$desktop_num.");
+							 });
+							 wavesurfer".$i.".on('play', function () {
+									play_image_function(".$desktop_num.");
+							 });
+						</script>";
 						$i++;
                 echo "</div>";
-} 
+				
+				$desktop_num++;
 
-echo "<script>";
-				//echo "img[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
-				echo "var img = document.getElementsByClassName('play_pause_feed_desktop');";
-				echo "var imgT = document.getElementsByClassName('play_pause_feed_tablet');";
-				echo "var imgM = document.getElementsByClassName('play_pause_feed_mobile');";
-				echo "console.log(img);";
-				echo "var num = 'play';";
-				echo"function play_pause_image_function(trackNum, version){";
-							//echo "console.log('This is working');";
-							echo "console.log(trackNum);";
-							echo "console.log(version);";
+				
+} 	
 
-
-							echo "if (num === 'play'){";
-									echo "num = 'pause';";
-									echo "console.log('Play');";
-									echo "if (version === 0){";
-										echo "img[trackNum].style.backgroundImage = 'url(SVG/Pause.svg)';";
-									echo "}";
-									echo "if (version === 1){";
-										echo "imgT[trackNum].style.backgroundImage = 'url(SVG/Pause.svg)';";
-									echo "}";
-									echo "if (version === 2){";
-										echo "imgM[trackNum].style.backgroundImage = 'url(SVG/Pause.svg)';";
-									echo "}";
-
-							echo "}";
-							echo "else if(num === 'pause'){";
-										echo "if (version === 0){";
-										echo "img[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
-									echo "}";
-									echo "if (version === 1){";
-										echo "imgT[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
-									echo "}";
-									echo "if (version === 2){";
-										echo "imgM[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';";
-									echo "}";
-
-									echo "num = 'play';";
-									echo "console.log('Pause');";
-							echo "}";
-						echo "}";
-			echo "</script>";
-			
-			
+				$querry = "SELECT COUNT(" . $_GET['mood'] . ") FROM music_public WHERE " . $_GET['mood'] . " = 1;";
+				$rs_result = mysqli_query($db, $querry);
+				$row = mysqli_fetch_row($rs_result);
+				$total_records = $row[0];
+				$total_pages = ceil($total_records / $limit);
+				$pagLink = "<div class='pagination'>";
+				for ($i=1; $i<=$total_pages; $i++) {
+					$pagLink .= "<a href='CategoryPicked.php?mood=". $_GET['mood'] ."&page=".$i."'>".$i."&nbsp;&nbsp;&nbsp;</a>";
+				};
+				echo $pagLink . "</div>";
+		
 	?>
+	
+		<script>
+			var img = document.getElementsByClassName('play_pause_feed_desktop');
+			
+				function pause_image_function(trackNum){
+					console.log('pause_image_function:'+trackNum);
+					img[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';
+				}
+				function play_image_function(trackNum){
+					console.log('play_image_function:'+trackNum);
+					img[trackNum].style.backgroundImage = 'url(SVG/Pause.svg)';
+				}
+				function pauseAllWave(i){
+					console.log('pauseAllWave:'+i);
+					console.log('i:'+i);
+					if( i === 1){
+						//play_pause_image_function(0);
+						wavesurfer1.playPause();
+						wavesurfer2.pause();
+						wavesurfer3.pause();
+						wavesurfer4.pause();
+						wavesurfer5.pause();
+					}
+					else if( i === 2){
+						//play_pause_image_function(1);
+						wavesurfer2.playPause();
+						wavesurfer1.pause();
+						wavesurfer3.pause();
+						wavesurfer4.pause();
+						wavesurfer5.pause();
+					}
+					else if( i === 3){
+						//play_pause_image_function(2);
+						wavesurfer3.playPause();
+						wavesurfer1.pause();
+						wavesurfer2.pause();
+						wavesurfer4.pause();
+						wavesurfer5.pause();
+					}
+					else if( i === 4){
+						///play_pause_image_function(3);
+						wavesurfer4.playPause();
+						wavesurfer1.pause();
+						wavesurfer2.pause();
+						wavesurfer3.pause();
+						wavesurfer5.pause();
+					}
+					else if( i === 5){
+						///play_pause_image_function(4);
+						wavesurfer5.playPause();
+						wavesurfer1.pause();
+						wavesurfer2.pause();
+						wavesurfer3.pause();
+						wavesurfer4.pause();
+					}
+				}
+
+			</script>
 	
 	</div>
 

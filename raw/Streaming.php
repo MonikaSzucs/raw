@@ -232,29 +232,27 @@ if(isset($_POST['toDo'])){
 							echo "<a href='/raw/raw/raw/". $row['music_file'] . "' download='" . $row['music_file'] . "'>";
 								echo "<button class='download_feed_button'>Download</button>";
 								echo "</a>";
-						
-                       
 
-                        echo "<script>
-								var wavesurfer".$i." = WaveSurfer.create({
-								container: '#waveform".$i."',
-                                waveColor: '#c5ddff',
-                                progressColor: '#75a8ff',
-								height:50,
-								hideScrollbar:true,
-								barWidth:5,
-								responsive: true
-                         });
-                         wavesurfer".$i.".load('". $row['music_file'] ."');
-						 wavesurfer".$i.".on('pause', function () {
-								pause_image_function(".$desktop_num.");
-						 });
-						 wavesurfer".$i.".on('finish', function () {
-								pause_image_function(".$desktop_num.");
-						 });
-						 wavesurfer".$i.".on('play', function () {
-								play_image_function(".$desktop_num.");
-						 });
+							echo "<script>
+									var wavesurfer".$i." = WaveSurfer.create({
+									container: '#waveform".$i."',
+									waveColor: '#c5ddff',
+									progressColor: '#75a8ff',
+									height:50,
+									hideScrollbar:true,
+									barWidth:5,
+									responsive: true
+							 });
+							 wavesurfer".$i.".load('". $row['music_file'] ."');
+							 wavesurfer".$i.".on('pause', function () {
+									pause_image_function(".$desktop_num.");
+							 });
+							 wavesurfer".$i.".on('finish', function () {
+									pause_image_function(".$desktop_num.");
+							 });
+							 wavesurfer".$i.".on('play', function () {
+									play_image_function(".$desktop_num.");
+							 });
 						 </script>";
                         $i++;
 
