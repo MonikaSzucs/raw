@@ -210,7 +210,8 @@ hambuger menu
         right: 0;
         background-color: white;
         width: 80%;
-        height: auto;
+        min-height: 100vh;
+		
     }
 
 

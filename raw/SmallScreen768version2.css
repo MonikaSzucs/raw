@@ -361,9 +361,8 @@
         position: relative;
         left: 0;
         right: 0;
-        background-color: #E5E5E5;
         width: 100%;
-        height: auto;
+        min-height: 100vh;
     }
     .toggle-logo {
         position: fixed;
