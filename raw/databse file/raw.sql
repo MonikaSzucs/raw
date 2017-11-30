@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 29, 2017 at 06:35 AM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.8
+-- Host: localhost
+-- Generation Time: Nov 30, 2017 at 06:24 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -67,13 +65,11 @@ CREATE TABLE `group_users` (
 --
 
 INSERT INTO `group_users` (`group_id`, `user_id`) VALUES
-(44, 1),
 (46, 1),
 (46, 10),
 (48, 1),
 (48, 10),
 (50, 10),
-(51, 1),
 (51, 10),
 (52, 1),
 (53, 10),
@@ -357,7 +353,6 @@ ALTER TABLE `music_group`
 --
 ALTER TABLE `music_public`
   ADD CONSTRAINT `music_public_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
