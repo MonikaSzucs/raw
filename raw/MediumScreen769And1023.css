@@ -1328,7 +1328,12 @@ hambuger menu
       background-color: #f8f8f8;
       min-height: 100vh;
 	  padding-top: 20px;
+      height
   }
+    
+    .feedsidebar {
+        display: none;
+    }
 
 /* ------------------ Page Title */
   .Recently_Uploaded_Title {
@@ -1369,6 +1374,8 @@ hambuger menu
 	  right: 0;
 	  margin: 0 auto;
   }
+    
+    
 
 
   .circlePhotoUploadedFeed{
