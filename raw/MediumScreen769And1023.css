@@ -33,7 +33,11 @@
 	}
 
   .streaming_desktop {
-    display: none;
+    display: block;
+	}
+	
+	.streaming_desktop {
+    display: block;
 	}
 
   .streaming_tablet {

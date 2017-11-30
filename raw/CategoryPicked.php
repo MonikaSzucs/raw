@@ -145,11 +145,7 @@ if(!isset($_SESSION["user_id"]))
             </ul>
         </div>
         <div class="categoryPickedArea_desktop">
-			<div class="spaceContainerTop"><p>Category Type here</p></div>
 			
-			<a href="MobileUploadPage.php"><button id="CreateGroupProfile">Add Songs/Samples</button></a>
-        
-	
 	<?php
 	
 	$music=1;
@@ -182,7 +178,86 @@ if(!isset($_SESSION["user_id"]))
 		$group_users[] = $row['music_public_id'];
 	}
 	
-	echo  $_GET['mood'];
+	//echo  $_GET['mood'];
+	
+	echo "<div class='spaceContainerTop'><p>";
+		if($_GET['mood'] === 'g_rock'){
+			echo "Rock";
+		}
+		else if($_GET['mood'] === 'g_rnb'){
+			echo "RNB";
+		}
+		else if($_GET['mood'] === 'g_pop'){
+			echo "Pop";
+		}
+		else if($_GET['mood'] === 'g_punk'){
+			echo "Punk";
+		}
+		else if($_GET['mood'] === 'g_jazz'){
+			echo "Jazz";
+		}
+		else if($_GET['mood'] === 'g_metal'){
+			echo "Metal";
+		}
+		else if($_GET['mood'] === 'g_funk'){
+			echo "Funk";
+		}
+		else if($_GET['mood'] === 'g_country'){
+			echo "Country";
+		}
+		else if($_GET['mood'] === 'g_edm'){
+			echo "EDM";
+		}
+		else if($_GET['mood'] === 'g_classical'){
+			echo "Classical";
+		}
+		else if($_GET['mood'] === 'g_happy'){
+			echo "Happy";
+		}
+		else if($_GET['mood'] === 'g_sad'){
+			echo "Sad";
+		}
+		else if($_GET['mood'] === 'g_angry'){
+			echo "Angry";
+		}
+		else if($_GET['mood'] === 'g_chill'){
+			echo "Chill";
+		}
+		else if($_GET['mood'] === 'g_focus'){
+			echo "Focus";
+		}
+		else if($_GET['mood'] === 'g_workout'){
+			echo "Workout";
+		}
+		else if($_GET['mood'] === 'g_travel'){
+			echo "Travel";
+		}
+		else if($_GET['mood'] === 'g_guitar'){
+			echo "Guitar";
+		}
+		else if($_GET['mood'] === 'g_bass'){
+			echo "Bass";
+		}
+		else if($_GET['mood'] === 'g_synth'){
+			echo "Synth";
+		}
+		else if($_GET['mood'] === 'g_pads'){
+			echo "Pads";
+		}
+		else if($_GET['mood'] === 'g_woodwind'){
+			echo "Woodwind";
+		}
+		else if($_GET['mood'] === 'g_drums'){
+			echo "Drums";
+		}
+		else if($_GET['mood'] === 'g_strings'){
+			echo "Strings";
+		}
+		else if($_GET['mood'] === 'g_brass'){
+			echo "Brass";
+		}
+	
+	echo"</p></div>";
 	
 	//Step2 get data from database
 	$limit = 5;

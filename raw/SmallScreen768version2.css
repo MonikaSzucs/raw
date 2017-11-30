@@ -35,8 +35,10 @@
 	}
 
   .streaming_desktop {
-    display: none;
+    display: block;
 	}
+	
+
 
   .streaming_tablet {
     display: none;

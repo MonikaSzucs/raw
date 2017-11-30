@@ -1904,7 +1904,14 @@ hambuger menu
 		margin-right: -9px;
 	}
 	
-	
+	.join-Butt{
+		border: 1px solid darkgray;
+		padding: 8px;
+		border-radius: 20px;
+		background-color: white;
+		width: 55px;
+		margin-right: -9px;
+	}
 
 
 	/* Music player and wave*/
