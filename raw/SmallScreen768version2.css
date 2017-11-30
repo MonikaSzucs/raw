@@ -1077,12 +1077,7 @@ Groups small style
   /* ------------------ Page Title */
     .Recently_Uploaded_Title {
       font-family: Avenir Black;
-      width: 590px;
       font-size: 58px;
-      padding-top: 15px;
-      margin-left: 50px;
-      margin-top: 0px;
-      margin-bottom: 90px;
     }
 
     .track-display {
@@ -1098,8 +1093,8 @@ Groups small style
 
     .songpic {
         margin-top: 0px;
-        width: 250px;
-        height: 250px;
+        width: 175px;
+        height: 175px;
         background-color: aquamarine;
         border-radius: 150px;
         box-shadow: 0px 5px 5px #888888;
@@ -1132,15 +1127,14 @@ Groups small style
         font-family: Avenir Black;
         font-size: 20px;
         margin: 0 auto;
-        margin-left: 270px;
+     
       }
 
       #FeedSongName {
           margin: 0 auto;
           font-family: Avenir Medium;
           font-weight: 300;
-          font-size: 35px;
-          margin-left: 270px;
+          font-size: 25px;
 
       }
 
@@ -1151,15 +1145,14 @@ Groups small style
 
       .download_feed_button{
         font-family: Avenir Medium;
-        font-size: 24px;
+        font-size: 16px;
         color: #c5c5c5;
-        margin: 200px 0 90px 400px;
         border: 1px solid darkgray;
         padding: initial;
         border-radius: 30px;
         background-color: white;
-        width: 140px;
-        height: 60px;
+        width: 100px;
+        height: 50px;
         left: 0%;
         position: relative;
       }
@@ -1207,7 +1200,7 @@ Groups small style
         width: 60px;
         height: 60px;
         position: absolute;
-        margin: 95px;
+        margin: 60px;
         opacity: 1;
       }
 

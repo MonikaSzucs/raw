@@ -1319,16 +1319,15 @@ hambuger menu
 
   .main-songDiv_feed {
 	  width: 100%;
-        padding-bottom: 180px;
-        background-color: #f8f8f8;
-        position: absolute;
+      padding-bottom: 180px;
+      background-color: #f8f8f8;
+      min-height: 100vh;
+	  padding-top: 20px;
   }
 
 /* ------------------ Page Title */
   .Recently_Uploaded_Title {
     font-family: Avenir Black;
-    width: 590px;
-    font-size: 58px;
     margin-left: 50px;
     margin-top: 20px;
     margin-bottom: 45px;
@@ -1408,7 +1407,7 @@ hambuger menu
       background-color: white;
       width: 155px;
       height: 50px;
-      left: 450px;
+      margin-left: 60%;
       top: 15px;
       position: relative;
     }

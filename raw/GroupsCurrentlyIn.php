@@ -9,7 +9,7 @@ if(!isset($_SESSION["user_id"]))
 	header( 'Location: signout.php' ); 
 };
 
-	echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
+	//echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
 
 	/*
 	if(!isset($_SESSION["user_id"]))
@@ -133,10 +133,6 @@ if(!isset($_SESSION["user_id"]))
 				<div id="m-profile-pic-intro"></div>
 				<div id="m-view-profile-div">
 					<p id="name">Name</p>
-					<ul id="view-profile">
-						<li id="m-followers-list">
-						</li>
-					</ul>
 				</div>
 			</div>
         </div>
@@ -148,7 +144,7 @@ if(!isset($_SESSION["user_id"]))
 			<div id="m-profile-main-inner">
 				<div class="spaceContainerTop"><h1>My Groups or Joined Groups</h1></div>
 				<div>
-				test
+				
 				<?php
 				
 				$limit = 5;

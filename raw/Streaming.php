@@ -113,7 +113,10 @@ if(isset($_POST['toDo'])){
 -->
         <div id="hamburger">
             <ul id="hambul">
-                <a href="ProfileIntroPage.php"><li class="hamclass">
+				<a href="ProfileIntroPage.php"><li class="hamclass">
+                View Profile
+                </li></a>
+                <a href="GroupsCurrentlyIn.php"><li class="hamclass">
                 Profile
                 </li></a>
                 <a href="logout.php"><li class="hamclass">
@@ -151,7 +154,8 @@ if(isset($_POST['toDo'])){
 					
 					$query = "SELECT * 
 								FROM group_users
-								INNER JOIN groups on group_users.group_id = groups.group_id WHERE user_id != " . $_SESSION["user_id"] . " ORDER BY created DESC LIMIT 5";
+								INNER JOIN groups on group_users.group_id = groups.group_id 
+								WHERE user_id != " . $_SESSION["user_id"] . " ORDER BY created DESC LIMIT 5";
 					$result = mysqli_query($db, $query) or die('Error querying database.');
 				//Step3 Display the result
 
@@ -204,7 +208,7 @@ if(isset($_POST['toDo'])){
 										echo "<form action='' method='POST'>";
 											echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
 											echo "<input type='hidden' name='toDo' value='join'>";
-											echo "<input class='join-Butt' type='submit' value='join'>";
+											echo "<input class='join-Butt_streaming' type='submit' value='join'>";
 										echo "</form>";
 									}
 
