@@ -224,11 +224,14 @@ $formSuccessfullMessage = "";
 -->
         <div id="hamburger">
             <ul id="hambul">
-              <a href="ProfileIntroPage.php"> <li class="hamclass">
-                Profile
-                   </li> </a>
+							<a href="ProfileIntroPage.php"><li class="hamclass">
+											View Profile
+											</li></a>
+								<a href="UsersSounds.php"> <li class="hamclass">
+									Profile
+								 </li> </a>
                 <a href="logout.php"><li class="hamclass">
-                Sign Out
+                	Sign Out
                 </li></a>
             </ul>
         </div>

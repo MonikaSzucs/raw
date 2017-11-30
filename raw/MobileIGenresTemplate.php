@@ -1,11 +1,11 @@
-<?php 
+<?php
 
 session_start();
 //this is to make sure people can't access the pages unless they log in
 if(!isset($_SESSION["user_id"]))
 {
-	session_destroy(); 
-	header( 'Location: signout.php' ); 
+	session_destroy();
+	header( 'Location: signout.php' );
 };
 
 //Step1 connect to database
@@ -19,7 +19,7 @@ $conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE) or die('Er
 
 //Step 4 Close the conenction
 mysqli_close($conn);
-		
+
 ?>
 
 <!DOCTYPE html>
@@ -79,6 +79,9 @@ mysqli_close($conn);
 -->
         <div id="hamburger">
             <ul id="hambul">
+							<a href="ProfileIntroPage.php"><li class="hamclass">
+							    View Profile
+							    </li></a>
                 <a href="ProfileIntroPage.php"> <li class="hamclass">
                 Profile
                    </li> </a>
@@ -91,7 +94,7 @@ mysqli_close($conn);
         <h1 id="m-genresh">Genres</h1>
 
         <div id="catalogpage2">
-      
+
             <div id="m-rnb" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">RNB</p>
@@ -99,7 +102,7 @@ mysqli_close($conn);
 					<input type="submit" class="genre-tags" value="RNB"/>
 				</form>
             </div>
-            
+
             <div id="m-punk" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Punk</p>
@@ -107,7 +110,7 @@ mysqli_close($conn);
 					<input type="submit" class="genre-tags" value="Punk"/>
 				</form>
             </div>
-            
+
             <div id="m-rock" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Rock</p>
@@ -115,7 +118,7 @@ mysqli_close($conn);
 					<input type="submit" class="genre-tags" value="Rock"/>
 				</form>
             </div>
-			
+
             <div id="m-pop" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Pop</p>
@@ -123,7 +126,7 @@ mysqli_close($conn);
 					<input type="submit" class="genre-tags" value="Pop"/>
 				</form>
             </div>
-   
+
             <div id="m-jazz" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Jazz</p>
@@ -131,7 +134,7 @@ mysqli_close($conn);
 					<input type="submit" class="genre-tags" value="Jazz"/>
 				</form>
             </div>
-			
+
             <div id="m-metal" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Metal</p>
@@ -147,7 +150,7 @@ mysqli_close($conn);
 					<input type="submit" class="genre-tags" value="Funk"/>
 				</form>
             </div>
-			
+
             <div id="m-country" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Country</p>
@@ -155,7 +158,7 @@ mysqli_close($conn);
 					<input type="submit" class="genre-tags" value="Country"/>
 				</form>
             </div>
-      
+
             <div id="m-edm" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">EDM</p>
@@ -163,7 +166,7 @@ mysqli_close($conn);
 					<input type="submit" class="genre-tags" value="EDM"/>
 				</form>
             </div>
-			
+
             <div id="m-classical" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Classical</p>
@@ -171,8 +174,8 @@ mysqli_close($conn);
 					<input type="submit" class="genre-tags" value="Classical"/>
 				</form>
             </div>
-    
-            
+
+
             </div>
 
 

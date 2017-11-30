@@ -118,7 +118,10 @@ if(!isset($_SESSION["user_id"]))
 -->
         <div id="hamburger">
             <ul id="hambul">
-                  <a href="ProfileIntroPage.php"> <li class="hamclass">
+								<a href="ProfileIntroPage.php"><li class="hamclass">
+												View Profile
+												</li></a>
+                  <a href="UsersSounds.php"> <li class="hamclass">
                 Profile
                    </li> </a>
                 <a href="logout.php"><li class="hamclass">
@@ -188,15 +191,15 @@ while ($row = mysqli_fetch_array($result)) {
 				}
 
 				echo "<div class='LeaveButtonGroups'>";
-				
-				
-				
-				
+
+
+
+
 				$sql = "SELECT * FROM `group_users` WHERE user_id =" . $_SESSION["user_id"] . " AND group_id = " . $row['group_id'];
 
 				$groupsshown = mysqli_query($db, $sql);
 
-	
+
 					//if(in_array($row['group_id'], $group_users))
 					if(mysqli_num_rows($groupsshown) > 0)
 					{
@@ -219,7 +222,7 @@ while ($row = mysqli_fetch_array($result)) {
 					}
 
 				echo "</div>";
-				
+
 				if(mysqli_num_rows($groupsshown) > 0)
 					{
 						echo "<div class='EnterButtonGroups'>";
@@ -231,7 +234,7 @@ while ($row = mysqli_fetch_array($result)) {
 							}
 						echo "</div>";
 					}
-				
+
 			echo "</div>";
 		echo "</div>";
 

@@ -211,7 +211,7 @@ hambuger menu
         background-color: white;
         width: 80%;
         min-height: 100vh;
-		
+
     }
 
 
@@ -355,7 +355,7 @@ hambuger menu
 		top: -350px;
         box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
         background-color: white;
-        right: 10%;
+        right: 8.5%;
         transition: 400ms ease-in-out;
 
     }
@@ -1480,7 +1480,7 @@ hambuger menu
 		-o-border-radius: 50%;
 		border-radius: 50%;
 	}
-	
+
 	.circlePhotoUploadedStreaming{
 		width:50px;
 		height:50px;
@@ -1510,7 +1510,7 @@ hambuger menu
 			right: 0;
 			margin: 10px 25px 10px 50px;
 		}
-		
+
 		.group_container_create_streaming{
 			height: 90px;
 			left: 0;
@@ -1525,7 +1525,7 @@ hambuger menu
 			box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
 			margin-top: -10px;
 		}
-		
+
 		.group_photo_Area_Streaming{
 			width: 50px;
 			height: 50px;
@@ -1568,7 +1568,7 @@ hambuger menu
 			box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
 			padding-top: 20px;
 		}
-		
+
 		.vertical_space_group_streaming{
 			width: 70%;
 			height: 70px;
@@ -1587,7 +1587,7 @@ hambuger menu
             font-family: Avenir-Medium;
 
 		}
-		
+
 		.groups_title_generate_streaming{
 			width: 85%;
 			height: 30px;
@@ -1604,7 +1604,7 @@ hambuger menu
 			right: 30px;
 			position: relative;
 		}
-		
+
 		.LeaveButtonGroups_streaming{
 			float: right;
 			top: 17px;
@@ -1672,7 +1672,7 @@ hambuger menu
         width: 200px;
         height: 300px;
     }
-	
+
 	.listeninghdiv_streaming {
         margin: 25px;
         width: 200px;
@@ -1903,7 +1903,7 @@ hambuger menu
 		width: 55px;
 		margin-right: -9px;
 	}
-	
+
 	.join-Butt{
 		border: 1px solid darkgray;
 		padding: 8px;
