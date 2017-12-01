@@ -9,7 +9,7 @@ if(!isset($_SESSION["user_id"]))
 	header( 'Location: signout.php' );
 };
 
-	echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
+	// echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
 
 	/*
 	if(!isset($_SESSION["user_id"]))
@@ -110,8 +110,8 @@ $(document).ready(function(){
             </ul>
         </div>
 
-        <a href="UsersSounds.php"><div class="m-profile-box" >
-            <div id="m-profile-pic-intro"></div>
+        <a href="UsersSounds.php"><div class="m-profile-box-introphp" >
+            <div id="m-profile-pic-introphp"></div>
             <div id="m-view-profile-div">
                 <p id="name">
 
@@ -141,29 +141,28 @@ $(document).ready(function(){
                 <div id="m-messicon" class="m-sicon"></div>
             </div>
 
-            <div class="m-center-text" id="m-notifications-button">
-                <a href="Notifications.php">Notifications</a>
-                <div id="m-noticon" class="m-sicon"></div>
+				<a href="GroupsCurrentlyIn.php">
+					<div class="m-center-text" id="m-settings-button">My Groups
+                <div id="m-groupicon" class="m-sicon"></div>
             </div>
-			<div class="m-center-text" id="m-settings-button">
-                <a href="GroupsCurrentlyIn.php">My Groups</a>
+				</a>
+
+				<a href="SettingsPage.php">
+            <div class="m-center-text" id="m-settings-button">Settings
                 <div id="m-seticon" class="m-sicon"></div>
             </div>
-            <div class="m-center-text" id="m-settings-button">
-                <a href="SettingsPage.php">Settings</a>
-                <div id="m-seticon" class="m-sicon"></div>
-            </div>
+				</a>
 
 			<div style="height: 50px; width: 100%;"></div>
 
         </div>
 
-        <div  class="m-center-text" id="m-signout-box">
-			<a href="logout.php">
-				Sign Out
-			</a>
-             <div id="m-signicon" class="m-sicon"></div>
-        </div>
+				<a href="logout.php">
+	        <div  class="m-center-text" id="m-signout-box">
+					Sign Out
+	             <div id="m-signicon" class="m-sicon"></div>
+	        </div>
+				</a>
 
         <div id="invisdiv3"></div>
 

@@ -647,46 +647,53 @@ hambuger menu
         padding: 20px;
     }
     #m-message-button {
-        margin: 0 auto;
+        margin: 0 0 0 40px;
+        padding-left:85px;
         position: relative;
-        width: 100%;
+        width: 85%;
         height: 75px;
         background-color: white;
         border-bottom: solid #cbcbcb .50px;
         border-top: solid #cbcbcb .50px;
     }
     #m-notifications-button {
-        position: relative;
-        width: 100%;
-        height: 75px;
-        background-color: white;
-        border-bottom: solid #cbcbcb .50px;
+      margin: 0 0 0 40px;
+      padding-left:85px;
+      position: relative;
+      width: 85%;
+      height: 75px;
+      background-color: white;
+      border-bottom: solid #cbcbcb .50px;
+      border-top: solid #cbcbcb .50px;
     }
     #m-settings-button {
-        color: black;
-        position: relative;
-        width: 100%;
-        height: 75px;
-        background-color: white;
-        border-bottom: solid #cbcbcb .50px;
+      margin: 0 0 0 40px;
+      padding-left:85px;
+      position: relative;
+      width: 85%;
+      height: 75px;
+      background-color: white;
+      border-bottom: solid #cbcbcb .50px;
+      border-top: solid #cbcbcb .50px;
     }
     #m-signout-box {
-        position: relative;
-        width: 100%;
-        height: 75px;
-        background-color: white;
-        margin: 0 auto;
-        border-top: solid #cbcbcb .50px;
-        border-bottom: solid #cbcbcb .50px;
+      margin: 0 0 0 40px;
+      padding-left:85px;
+      position: relative;
+      width: 85%;
+      height: 75px;
+      background-color: white;
+      border-top: solid #cbcbcb .50px;
+      border-bottom: solid #cbcbcb .50px;
     }
     #m-messicon {
         background-image: url(imgs/messagesicon.svg);
     }
+    #m-groupicon {
+        background-image: url(SVG/Group.svg);
+    }
     #m-seticon {
         background-image: url(imgs/settingicon.svg);
-    }
-    #m-noticon {
-        background-image: url(imgs/noticon.svg);
     }
     #m-signicon {
         background-image: url(imgs/signouticon.svg)
@@ -703,8 +710,12 @@ hambuger menu
     .m-center-text {
         font-family: Avenir-Medium;
         position: relative;
-        text-align: center;
+        /*text-align: center;*/
         line-height: 75px;
+        cursor: pointer;
+    }
+    .m-center-text:visited {
+      color: black;
     }
     .m-profile-buttons {
         height: 50px;
@@ -2568,5 +2579,26 @@ hambuger menu
 
   .cb_table {
     margin: 20px auto;
+  }
+
+  .m-profile-box-introphp{
+    width: 100%;
+    height: 190px;
+    position: relative;
+    background-color: white;
+    box-shadow: 0px 5px 5px #888888;
+    padding-top:10px;
+  }
+  #m-profile-pic-introphp{
+    box-shadow: 0px 5px 5px #888888;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    position: relative;
+    float:left;
+    top: 8px;
+    left: 25px;
+    z-index: 9997;
+    margin-left: 40px;
   }
 }
