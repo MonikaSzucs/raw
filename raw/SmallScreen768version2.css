@@ -555,10 +555,10 @@
     }
     #m-genresh {
       font-family: Avenir-Black;
-        text-align: center;
-        position: relative;
-        margin: 0 auto;
-        padding: 20px;
+      text-align: center;
+      position: relative;
+      margin: 0 auto;
+      padding: 20px;
     }
     #m-message-button {
         margin: 0 auto;
@@ -1265,6 +1265,7 @@ Groups small style
     border-radius: 100%;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
 		position: relative;
+    border-style: dotted;
 
 	}
 

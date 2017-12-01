@@ -89,7 +89,7 @@ $(document).ready(function(){
         <div id="play-button" class="m-player"></div>
         <div id="next-button" class="m-player"></div>
     </div>
-    <div class="main-page">
+    <div class="main-page" style = "background-color: white">
 
 
 <!--

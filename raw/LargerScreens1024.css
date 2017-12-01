@@ -208,10 +208,9 @@ hambuger menu
         position: relative;
         left: 0;
         right: 0;
-        background-color: white;
+        background-color: transparent;
         width: 80%;
         min-height: 100vh;
-
     }
 
 
@@ -653,6 +652,7 @@ hambuger menu
     }
     #m-genresh {
         font-family: Avenir-Black;
+        font-size: 50px;
         text-align: center;
         position: relative;
         margin: 0 auto;
@@ -1289,7 +1289,7 @@ hambuger menu
 		border: #6b6b6b;
 		border-width: 3px;
 		border-radius: 100%;
-		border-style: dashed;
+		border-style: dotted;
 		box-shadow: 5px 5px 10px rgba(0, 0, 0, .15);
 	}
 	.GroupsInformation{

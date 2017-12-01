@@ -1149,7 +1149,7 @@ hambuger menu
 		border: #6b6b6b;
 		border-width: 2px;
 		border-radius: 100%;
-		border-style: dashed;
+		border-style: dotted;
 		box-shadow: 5px 5px 10px rgba(0, 0, 0, .15);
 
 	}
