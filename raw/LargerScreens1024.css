@@ -476,6 +476,7 @@ hambuger menu
     }
     .mood-divs {
         margin: 10px;
+        margin-bottom: 50px;
         width: 280px;
         height: 160px;
         position: relative;
