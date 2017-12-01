@@ -1989,6 +1989,7 @@ hambuger menu
     margin: 45px 45px 45px 45px;
     transition: 0.2s ease;
     opacity: 1;
+        cursor: pointer;
 	}
 
   .songpic:hover .play_pause_feed_desktop {
@@ -2003,8 +2004,7 @@ hambuger menu
     font-family: Avenir Medium;
     font-size: 10px;
     color: #c5c5c5;
-	float: right;
-    margin-right: 70px;
+    margin-left: 430px;
     cursor: pointer;
 	border: 1px solid darkgray;
 	padding: initial;
@@ -2013,6 +2013,13 @@ hambuger menu
 	width: 85px;
     height: 30px;
 	}
+    
+    .download_feed_button a {
+        text-decoration: none;
+        color: #c5c5c5;
+         
+        
+    }
 
 	.pagination a{
 		padding: 10px 0px 10px 20px;
