@@ -240,6 +240,7 @@ hambuger menu
     }
 
 
+
         /*Chatstyle*//*Chatstyle*//*Chatstyle*//*Chatstyle*//*Chatstyle*//*Chatstyle*/
 
 
@@ -358,6 +359,28 @@ hambuger menu
         transition: 400ms ease-in-out;
 
     }
+    
+    
+   
+    #hamburger2 {
+
+        height: 350px;
+        width: 250px;
+        position: fixed;
+        z-index: 9998;
+		top: -350px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+        background-color: white;
+        right: 35.5%;
+        transition: 400ms ease-in-out;
+
+    }
+    
+    
+    #categories {
+        list-style-image: url(SVG/DDown.svg);
+       
+    }
 
     .hamclass {
         margin: 0 auto;
@@ -376,13 +399,30 @@ hambuger menu
         top: 75px;
 
     }
+   
+    #hambul2 {
+        position: absolute;
+        width: 100%;
+        list-style: none;
+        top: 75px;
+
+    }
 
     #hambul a {
+        color: black;
+        text-decoration: none;
+    } 
+    
+    #hambul2 a {
         color: black;
         text-decoration: none;
     }
 
     #hambul a:hover {
+        color: #a34334;
+        transition: color .25s ease-in-out;
+    }
+#hambul2 a:hover {
         color: #a34334;
         transition: color .25s ease-in-out;
     }
@@ -392,9 +432,10 @@ hambuger menu
 
     nav li {
         font-size: 18px;
-        display: inline-block;
+        float: left;
         margin-left: 70px;
         font-family: Avenir-Medium;
+        list-style: none;
 
     }
     nav li:hover {
