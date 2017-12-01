@@ -117,9 +117,7 @@ if(!isset($_GET['group_id'])){
            <ul class="nav-bar">
 				<a href="Streaming.php"><li>Explore</li></a>
                 <a href="MobileGroupsTab.php"><li>Groups</li></a>
-                <a href="MobileIGenresTemplate.php"><li>Genres</li></a>
-                <a href="MobileMoodsTemplate.php"><li>Moods</li></a>
-                <a href="MobileInsturmentsTemplate.php"><li>Instruments</li></a>
+              <li id="categories" onclick="myFunction2(this)">Categories</li>
             </ul>
 
             <div class="logo-spot"></div>
@@ -151,6 +149,20 @@ if(!isset($_GET['group_id'])){
 							</li> </a>
                 <a href="logout.php"><li class="hamclass">
                 	Sign Out
+              </li></a>
+            </ul>
+        </div>
+        
+         <div id="hamburger2">
+            <ul id="hambul2">
+							<a href="MobileIGenresTemplate.php"><li class="hamclass">
+								Genres
+							</li></a>
+							<a href="MobileMoodsTemplate.php"> <li class="hamclass">
+								Moods
+							</li> </a>
+              <a href="MobileInsturmentsTemplate.php"><li class="hamclass">
+                Instruments
               </li></a>
             </ul>
         </div>
@@ -415,6 +427,7 @@ if(!isset($_GET['group_id'])){
         <a class="buttons" href="MobileMoodsTemplate.php" tooltip="Moods"></a><a class="buttons" href="#" tooltip="Compose"><span><span class="rotate"></span></span></a></nav>
 
     <script src="cmenuscript.js"></script>
+    <script src="categoriesmenu.js"></script>
 	<!--<script src="UploadPhotos.js"></script>-->
 
 

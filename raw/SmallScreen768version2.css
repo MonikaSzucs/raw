@@ -1097,7 +1097,7 @@ Groups small style
 
   /* ------------------ Page Title */
     .Recently_Uploaded_Title {
-      font-family: Avenir Black;
+      font-family: Avenir-Black;
       font-size: 58px;
     }
 
@@ -1150,7 +1150,7 @@ Groups small style
 
       #FeedArtistsName {
         color: #c5c5c5;
-        font-family: Avenir Black;
+        font-family: Avenir-Black;
         font-size: 20px;
         margin: 0 auto;
           width: 100%;
@@ -1160,7 +1160,7 @@ Groups small style
 
       #FeedSongName {
           margin: 0 auto;
-          font-family: Avenir Medium;
+          font-family: Avenir-Medium;
           font-weight: 300;
           font-size: 25px;
           width: 100%;

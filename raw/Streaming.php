@@ -88,9 +88,8 @@ if(isset($_POST['toDo'])){
             <ul class="nav-bar">
             <a href="Streaming.php"><li>Explore</li></a>
             <a href="MobileGroupsTab.php"><li>Groups</li></a>
-				<a href="MobileIGenresTemplate.php"><li>Genres</li></a>
-				<a href="MobileMoodsTemplate.php"><li>Moods</li></a>
-                <a href="MobileInsturmentsTemplate.php"><li>Instruments</li></a>
+			<li id="categories" onclick="myFunction2(this)">Categories</li>
+			
             </ul>
 
             <div class="logo-spot"></div>
@@ -125,6 +124,19 @@ if(isset($_POST['toDo'])){
             </ul>
         </div>
 
+           <div id="hamburger2">
+            <ul id="hambul2">
+							<a href="MobileIGenresTemplate.php"><li class="hamclass">
+								Genres
+							</li></a>
+							<a href="MobileMoodsTemplate.php"> <li class="hamclass">
+								Moods
+							</li> </a>
+              <a href="MobileInsturmentsTemplate.php"><li class="hamclass">
+                Instruments
+              </li></a>
+            </ul>
+        </div>
 
 		<div class="main-songDiv_feed">
 			<div class='streaming_desktop'>
@@ -442,14 +454,14 @@ if(isset($_POST['toDo'])){
 			<a class="buttons" href="ProfileIntroPagevers2.php" tooltip="Profile"></a>
 			<a class="buttons" href="MobileGroupsTab.php" tooltip="Groups"></a>
 			<a class="buttons" href="MobileInsturmentsTemplate.php" tooltip="Instruments"></a>
-			<a class="buttons" href="MobileExplorePage.php" tooltip="Explore"></a>
+			<a class="buttons" href="Streaming.php" tooltip="Explore"></a>
 			<a class="buttons" href="MobileIGenresTemplate.php" tooltip="Genres"></a>
 			<a class="buttons" href="MobileMoodsTemplate.php" tooltip="Moods"></a><a class="buttons" href="#" tooltip="Compose"><span><span class="rotate"></span></span></a></nav>
     <div class="cmenu"></div>
 
 
 <script src="cmenuscript.js"></script>
-
+<script src="categoriesmenu.js"></script>
 </body>
 
 
