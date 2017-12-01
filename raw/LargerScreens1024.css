@@ -2103,7 +2103,7 @@ hambuger menu
 
 	.User_Info_display_area{
 		width: 90%;
-		height: 300px;
+		/*height: 300px;*/
 		lefT: 0;
 		right: 0;
 		margin: 0 auto;
@@ -2111,8 +2111,8 @@ hambuger menu
 	}
 
 	.User_Info_Title_style{
-		font-size: 25px;
-		font-weight: bold;
+		font-size: 18px;
+    font-family: Avenir-Medium;
 	}
 
 	.setting_profile_image{

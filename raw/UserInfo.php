@@ -96,7 +96,7 @@ if(!isset($_SESSION["user_id"]))
         <div id="next-button" class="m-player"></div>
     </div>
     <div class="m-ivisfoot"></div>
-    <div class="main-page">
+    <div class="main-page" style = "min-height: 0">
 
         <!--
         hamburger menu
@@ -118,7 +118,6 @@ if(!isset($_SESSION["user_id"]))
 
 
         <div class="m-profile-box">
-			<div id="m-profile-inner">
 				<div class="m-profile-buttons">
 					<ul id="m-list-buttons">
 						<li><a href="UsersSounds.php">Sounds</a></li>
@@ -130,7 +129,6 @@ if(!isset($_SESSION["user_id"]))
 				<div id="m-view-profile-div">
 					<p id="name">Name</p>
 				</div>
-			</div>
         </div>
 
 
@@ -156,10 +154,11 @@ if(!isset($_SESSION["user_id"]))
 						?>
 					</div>
 
-					<br/>
 
 					<div class="User_Info_Title_style">
-						User Name:
+						<h3>
+							User Name:
+						</h3>
 
 						<?php
 						$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
@@ -167,14 +166,14 @@ if(!isset($_SESSION["user_id"]))
 						$row = mysqli_fetch_array($result);
 						echo $row['username'];
 						?>
-
 					</div>
 
 					<hr/>
-					<br/>
 
 					<div class="User_Info_Title_style">
-						Bibiliography:
+						<h3>
+							Biography:
+						</h3>
 						<?php
 						$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
 						$result = mysqli_query($db, $query) or die('Error querying database.');
@@ -184,10 +183,11 @@ if(!isset($_SESSION["user_id"]))
 					</div>
 
 					<hr/>
-					<br/>
 
 					<div class="User_Info_Title_style">
-						Skills:
+						<h3>
+							Skills:
+						</h3>
 						<?php
 						$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
 						$result = mysqli_query($db, $query) or die('Error querying database.');
@@ -197,10 +197,11 @@ if(!isset($_SESSION["user_id"]))
 					</div>
 
 					<hr/>
-					<br/>
 
 					<div class="User_Info_Title_style">
-						Hobbies:
+						<h3>
+							Hobbies:
+						</h3>
 						<?php
 						$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
 						$result = mysqli_query($db, $query) or die('Error querying database.');
@@ -209,7 +210,6 @@ if(!isset($_SESSION["user_id"]))
 						?>
 					</div>
 
-					<br/>
 				</div>
 
 
