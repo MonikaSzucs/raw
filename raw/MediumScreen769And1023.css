@@ -443,12 +443,12 @@ hambuger menu
         top: 80px;
 
     }
-    
+
         #hambul a {
         color: black;
         text-decoration: none;
     }
-    
+
     #hambul a:hover {
         color: #a34334;
         transition: color .25s ease-in-out;
@@ -2138,7 +2138,7 @@ hambuger menu
 
   	.White_Area_Top{
   		width: 100%;
-      height: 250px;
+      height: 270px;
       position: absolute;
       background-color: white;
       box-shadow: 0px 5px 5px #888888;
@@ -2147,7 +2147,7 @@ hambuger menu
     #Entered_Top_Container{
       min-width: 720px;
       width: 90%;
-      height: 200px;
+      height: 230px;
       margin-top:23px;
       margin-left: 50px;
       display: block;
@@ -2195,6 +2195,9 @@ hambuger menu
     #Top_Area_Info{
       font-family: Avenir-Medium;
       margin-top: 20px;
+      font-size: 11px;
+      height:137px;
+      width:100%;
     }
 
     #Top_Area_Title{

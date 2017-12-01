@@ -377,12 +377,12 @@ hambuger menu
         top: 75px;
 
     }
-    
+
     #hambul a {
         color: black;
         text-decoration: none;
     }
-    
+
     #hambul a:hover {
         color: #a34334;
         transition: color .25s ease-in-out;
@@ -543,17 +543,17 @@ hambuger menu
 
 	#Entered_Top_Container{
 		min-width: 720px;
-		width: 90%;
-		height: 200px;
+		width: 98%;
+		height: 220px;
 		margin-top:23px;
-		margin-left: 50px;
+		margin-left: 0.5%;
 		display: block;
 		overflow: hidden;
 	}
 
 	#Entered_Top_Info{
 		min-width: 250px;
-		width: 40%;
+		width: 50%;
 		height: 120px;
 		margin-left: 50px;
 		margin-top: 40px;
@@ -575,7 +575,8 @@ hambuger menu
 
 	#Top_Area_Info{
 		font-family: Avenir-Medium;
-        margin-top: 20px;
+    margin-top: 20px;
+    font-size: 13px;
 	}
 
 	#Top_Area_Title{
@@ -2023,12 +2024,12 @@ hambuger menu
 	width: 85px;
     height: 30px;
 	}
-    
+
     .download_feed_button a {
         text-decoration: none;
         color: #c5c5c5;
-         
-        
+
+
     }
 
 	.pagination a{
