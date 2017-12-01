@@ -35,7 +35,7 @@
   .streaming_desktop {
     display: block;
 	}
-	
+
 	.streaming_desktop {
     display: block;
 	}
@@ -428,7 +428,7 @@ hambuger menu
     .hamclass {
         margin: 0 auto;
         width: 100%;
-        margin-top: 80px;
+        margin-top: 50px;
         font-family: Avenir-Medium;
         font-size: 30px;
         left: 0;
@@ -1330,7 +1330,7 @@ hambuger menu
 	  padding-top: 20px;
       height
   }
-    
+
     .feedsidebar {
         display: none;
     }
@@ -1374,8 +1374,8 @@ hambuger menu
 	  right: 0;
 	  margin: 0 auto;
   }
-    
-    
+
+
 
 
   .circlePhotoUploadedFeed{

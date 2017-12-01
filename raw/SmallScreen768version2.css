@@ -37,11 +37,11 @@
   .streaming_desktop {
     display: block;
 	}
-    
+
     .streaming {
         margin-top: 80px;
     }
-	
+
 
 
   .streaming_tablet {
@@ -509,8 +509,8 @@
     }
 
     #m-profile-pic-intro {
-        width: 150px;
-        height: 150px;
+        width: 130px;
+        height: 130px;
         top: 10%;
     }
 
@@ -523,7 +523,7 @@
         font-family: Helvetica;
         margin-top: -100px;
     }
-    
+
     #m-view-profile-div {
       width: 50vw;
       height: 80px;
@@ -623,7 +623,7 @@
         position: relative;
     }
     #m-list-buttons li {
-        font-family: helvetica;
+        font-family: Avenir-Medium;
         display: inline-block;
         margin-left: 25px;
         margin-right: 45px;
@@ -1141,7 +1141,7 @@ Groups small style
         margin: 0 auto;
           width: 100%;
           text-align: center;
-     
+
       }
 
       #FeedSongName {
@@ -1221,7 +1221,7 @@ Groups small style
         left: 0;
         right: 0;
         bottom: 0;
-        top: 0;  
+        top: 0;
         opacity: 1;
       }
 
@@ -1312,4 +1312,18 @@ Groups small style
   .create_group_section_cb{
     height: 200px;
   }
+
+  .User_Info_display_area{
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .User_Info_Title_style{
+    font-size: 16px;
+    font-family: Avenir-Medium;
+  }
+
 }
