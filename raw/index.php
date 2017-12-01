@@ -1,4 +1,4 @@
-<?php 
+<?php
 //the session_start() should always be at the top
 
 session_start();
@@ -25,8 +25,8 @@ session_start();
 		//echo $query;
 		$result = mysqli_query($db, $query) or die('Error querying database.');
 		$rows = mysqli_fetch_array($result);
-       
-       
+
+
 		if(sizeof($rows)>0)
 		{
 			//session_unset();
@@ -34,14 +34,14 @@ session_start();
 			$_SESSION["name"] = $rows['first_name'];
 			header( 'Location: Streaming.php' ) ;
 		}
-		else 
+		else
 		{
 			$message = "Wrong credential";
 		}
-        
-       
+
+
 		mysqli_close($db);
-		
+
    }
 
 /*
@@ -52,7 +52,7 @@ session_start();
     define("DB_DATABASE", "raw");
 
     $db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
-  // you could test connection eventually using a if and else conditional statement, 
+  // you could test connection eventually using a if and else conditional statement,
   // feel free to take out the code below once you see Connected!
   if (isset($_POST['email']) && isset($_POST['password']) ) {
     echo "Connected!";
@@ -60,7 +60,7 @@ session_start();
     echo "Connection Failed";
   }
 */
-       
+
 ?>
 
 <!DOCTYPE html>
@@ -76,32 +76,31 @@ session_start();
     </head>
     <body id="wrapper">
         <div id="Color">	</div>
-		
+
 		<div id="container">
 			<div id="logoIcon"></div>
 
-			
+
 			<div class="space"></div>
-				
+
 				<form action="" method="post" id="SignIn1">
-					
+
 					<h3>Sign In!</h3>
 					<?php if(isset($message)) { ?>
 					<span id="xxx" style="color:red;"><?php echo $message; ?></span>
 					<?php } ?>
 					<br/>
-					
+
 					<input type="email" name="email" placeholder="E-mail" id="Email" style="text-indent:10px;" >
 					<div class="space2"></div>
 					<input type="password" name="password" placeholder="Password" style="text-indent:10px;" id="Password" >
-                    <a href='forget.php' id="ForgotPassword" style="color:white; text-decoration:underline; left: 0; right: 0; margin: 0 auto; text-align: center; display: block;">Forgot Password?</a> <br/>
-                    
-					<br/>
+                    <a href='forget.php' id="ForgotPassword" style="color:white; text-decoration:underline; left: 0; right: 0; margin: 0 auto; text-align: center; display: block; font-family: avenir; margin-top: 60px; text-decoration: none;">Forgot Password?</a> <br/>
+
 					<button type="submit" form="SignIn1" value="Submit" id="LogInButton">Login</button>
-					
+
 					<a href='signup.php' id="SignUp" style="text-decoration: none;" >Sign up</a>
 				</form>
 		</div>
-       
+
     </body>
 </html>

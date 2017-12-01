@@ -1,11 +1,11 @@
-<?php 
+<?php
 
 session_start();
 //this is to make sure people can't access the pages unless they log in
 if(!isset($_SESSION["user_id"]))
 {
-	session_destroy(); 
-	header( 'Location: signout.php' ); 
+	session_destroy();
+	header( 'Location: signout.php' );
 };
 
 //Step1 connect to database
@@ -19,7 +19,7 @@ $conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE) or die('Er
 
 //Step 4 Close the conenction
 mysqli_close($conn);
-		
+
 ?>
 
 <!DOCTYPE html>
@@ -69,28 +69,31 @@ mysqli_close($conn);
         <div id="next-button" class="m-player"></div>
     </div>
     <div id="mpcat" class="main-page">
-        
-                        
+
+
 <!--
         hamburger menu
-        
+
 -->
-        <div id="hamburger"> 
+        <div id="hamburger">
             <ul id="hambul">
-                <a href="ProfileIntroPage.php"> <li class="hamclass">
-                Profile
-                   </li> </a> 
-                <a href="logout.php"><li class="hamclass">
-                Sign Out
-                </li></a>               
+							<a href="ProfileIntroPage.php"><li class="hamclass">
+											View Profile
+							</li></a>
+							<a href="UsersSounds.php"> <li class="hamclass">
+								Profile
+							</li> </a>
+              <a href="logout.php"><li class="hamclass">
+              	Sign Out
+              </li></a>               
             </ul>
         </div>
-        
+
         <h1 id="m-genresh">Moods</h1>
-        
+
         <div id="catalogpage2">
-        
-      
+
+
             <div id="m-happy" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Happy</p>
@@ -98,8 +101,8 @@ mysqli_close($conn);
 					<input type="submit" class="genre-tags" value="Happy"/>
 				</form>
             </div>
-			
-			
+
+
             <div id="m-sad" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Sad</p>
@@ -107,9 +110,9 @@ mysqli_close($conn);
 					<input type="submit" class="genre-tags" value="Sad"/>
 				</form>
             </div>
-        
 
-      
+
+
             <div id="m-angry" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Angry</p>
@@ -117,16 +120,16 @@ mysqli_close($conn);
 					<input type="submit" class="genre-tags" value="Angry"/>
 				</form>
             </div>
-			
+
             <div id="m-chill" class="mood-divs">
-			
+
 				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Chill</p>
 					<input type="hidden" name="mood" value='g_chill'/>
 					<input type="submit" class="genre-tags" value="Chill"/>
 				</form>
             </div>
-      
+
             <div id="m-focus" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Focus</p>
@@ -134,7 +137,7 @@ mysqli_close($conn);
 					<input type="submit" class="genre-tags" value="Focus"/>
 				</form>
             </div>
-			
+
             <div id="m-workout" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Work Out</p>
@@ -142,9 +145,9 @@ mysqli_close($conn);
 					<input type="submit" class="genre-tags" value="Work Out"/>
 				</form>
             </div>
-        
 
-        
+
+
             <div id="m-travel" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
 					<p class="genre-tags">Travel</p>
@@ -152,8 +155,8 @@ mysqli_close($conn);
 					<input type="submit" class="genre-tags" value="Travel"/>
 				</form>
 			</div>
-     
-            
+
+
         </div>
         <div id="invisdiv3"></div>
 

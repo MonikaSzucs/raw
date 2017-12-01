@@ -19,6 +19,19 @@
     .mobileScreen {
         display: block;
     }
+
+	.setting_hide_tablet_desktop{
+	  display: none;
+	}
+
+  .setting_hide_mobile{
+	  display: block;
+	}
+
+  .mobile_wave_hide{
+    display: none;
+  }
+
     body {
         background-color: darkgrey;
         margin: 0 auto;
@@ -286,13 +299,13 @@
         position: relative;
         display: inline-block;
     }
-    
-    
+
+
        #mpcat{
         background-color: white;
         height: 100%;
     }
-    
+
     .m-player {
         vertical-align: middle;
         display: inline-block;
@@ -379,7 +392,7 @@
         text-align: center;
         position: relative;
         margin: 0 auto;
-        padding: 20px; 
+        padding: 20px;
     }
     #m-message-button {
         position: relative;
@@ -467,17 +480,17 @@
         position: absolute;
         top: 220px;
     }
-    
-    
+
+
      .group_container_create {
-			
-			height: 150px; 
+
+			height: 150px;
 			left: 0;
 			right: 0;
 			margin: 25px;;
 		}
-    
-    
+
+
       .m-groupdiv-main {
         width: 100%;
         height: auto;
@@ -688,25 +701,25 @@
         background-size: contain;
         background-repeat: no-repeat;
     }
-	
+
 	.white_background_group_Large{
 		width: 100%;
         height: 1300px;
         background-color: white;
         position: absolute;
 	}
-	
+
 	.circlePhotoUploaded{
 		width:100%;
 		height:100%;
-		
+
 		-webkit-border-radius: 50%;
 		-moz-border-radius: 50%;
 		-ms-border-radius: 50%;
 		-o-border-radius: 50%;
 		border-radius: 50%;
 	}
-	
+
 	.play_pause_feed_mobile {
     background: url(SVG/Play.svg);
     background-repeat: no-repeat;
@@ -722,5 +735,16 @@
     margin: 45px 45px 45px 45px;
 		/*margin-top: -50px;
 		margin-left: 20px;*/
+	}
+
+	.m-profile-pic-mobile_intro_settings{
+		box-shadow: 0px 5px 5px #888888;
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        margin-top: 20px;
+        margin-left: 25px;
+        z-index: 9997;
+		float: left;
 	}
 }

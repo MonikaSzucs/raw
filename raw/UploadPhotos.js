@@ -3,9 +3,11 @@ var files = document.getElementById("files");
 
 
 function handleFileSelect(evt) {
-	//console.log(files.value);
+	
+	
+	//
     var files = evt.target.files;
-
+		console.log(files.value)
     // Loop through the FileList and render image files as thumbnails.
     for (var i = 0, f; f = files[i]; i++) {
 
@@ -23,13 +25,15 @@ function handleFileSelect(evt) {
           var span = document.createElement('span');
           span.innerHTML = 
           [
-            '<img style="height: 120px; border: 1px solid #000; margin: 5px"; src="', 
+            '<img style="border-radius:50%; height: 148px; width: 148px; border: 1px solid #000;"; src="', 
             e.target.result,
             '" title="', escape(theFile.name), 
             '"/>'
           ].join('');
           
           document.getElementById('list').insertBefore(span, null);
+		  
+		  console.log(document.getElementById('list'));
         };
       })(f);
 

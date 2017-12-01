@@ -1,21 +1,21 @@
-<?php 
+<?php
 
 //the session_start() should always be at the top
 session_start();
 //this is to make sure people can't access the pages unless they log in
 if(!isset($_SESSION["user_id"]))
 {
-	session_destroy(); 
-	header( 'Location: signout.php' ); 
+	session_destroy();
+	header( 'Location: signout.php' );
 };
 
-	echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
+	//echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
 
 	/*
 	if(!isset($_SESSION["user_id"]))
 	{
-		session_destroy(); 
-		header( 'Location: signout.php' ); 
+		session_destroy();
+		header( 'Location: signout.php' );
 	};
 	*/
 
@@ -28,15 +28,22 @@ if(!isset($_SESSION["user_id"]))
 	$db = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
 
 	if(isset($_POST['toDo'])){
-		print_r($_POST);
+		if($_POST['toDo']=="join"){
+			$query = "INSERT INTO group_users (group_id, user_id)";
+			$query .= " VALUES (" . $_POST['group_id'] . ", " . $_SESSION['user_id'] . ")";
 
-		
-		$query = "INSERT INTO group_users (group_id, user_id)";
-		$query .= " VALUES (" . $_POST['group_id'] . ", " . $_SESSION['user_id'] . ")";
-		
-		echo $query;
-		$result = mysqli_query($db, $query) or die('Error querying database.');
+			echo $query;
+			$result = mysqli_query($db, $query);
 
+		} else if($_POST['toDo']=="leave"){
+			$query = "DELETE FROM group_users ";
+			$query .= " WHERE group_id = " . $_POST['group_id'] . " AND user_id = " . $_SESSION['user_id'];
+
+			//DELETE FROM group_users WHERE `group_id` = 46 AND  `user_id` = 1
+
+			echo $query;
+			$result = mysqli_query($db, $query) ;
+		}
 	}
 
 	//SELECT * FROM `group_user` WHERE `user_id` = 1
@@ -44,7 +51,7 @@ if(!isset($_SESSION["user_id"]))
 	//then put the output in the array
 
 	//mysqli_close($db);
-	
+
 
 ?>
 
@@ -97,22 +104,25 @@ if(!isset($_SESSION["user_id"]))
     </div>
     <div class="m-ivisfoot"></div>
     <div class="main-page">
-   
+
         <!--
         hamburger menu
-        
+
 -->
-        <div id="hamburger"> 
+        <div id="hamburger">
             <ul id="hambul">
-              <a href="ProfileIntroPage.php"> <li class="hamclass">
-                Profile
-                   </li> </a> 
-                <a href="logout.php"><li class="hamclass">
+							<a href="ProfileIntroPage.php"><li class="hamclass">
+								View Profile
+							</li></a>
+							<a href="UsersSounds.php"> <li class="hamclass">
+								Profile
+							</li> </a>
+              <a href="logout.php"><li class="hamclass">
                 Sign Out
-                </li></a>               
+              </li></a>               
             </ul>
         </div>
-        
+
 
         <div class="m-profile-box">
 			<div id="m-profile-inner">
@@ -126,34 +136,147 @@ if(!isset($_SESSION["user_id"]))
 				<div id="m-profile-pic-intro"></div>
 				<div id="m-view-profile-div">
 					<p id="name">Name</p>
-					<ul id="view-profile">
-						<li id="m-followers-list">
-						</li>
-					</ul>
 				</div>
 			</div>
         </div>
 
-		
-		
+
+
 
         <div class="m-profile-main">
 			<div id="m-profile-main-inner">
 				<div class="spaceContainerTop"><h1>My Groups or Joined Groups</h1></div>
-				<label class="switch">
-				  <input type="checkbox">
-				  <span class="slider round"></span>
-				</label>
-					
-					
+				<div>
+
+				<?php
+
+				$limit = 5;
+	if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+	$start_from = ($page-1) * $limit;
+
+
+	//get group?_user from data base where user id equal to session user ID
+	$query = "SELECT *
+				FROM group_users
+				INNER JOIN groups on group_users.group_id = groups.group_id WHERE user_id = " . $_SESSION["user_id"];
+	$result = mysqli_query($db, $query) or die('Error querying database.');
+	$group_users = array();
+	while ($row = mysqli_fetch_array($result)){
+		$group_users[] = $row['group_id'];
+	}
+
+	//Step2 get data from database
+
+
+
+	$query = "SELECT *
+				FROM group_users
+				INNER JOIN groups on group_users.group_id = groups.group_id WHERE user_id = " . $_SESSION["user_id"] . " LIMIT " . $limit . " OFFSET " . $start_from;
+	$result = mysqli_query($db, $query) or die('Error querying database.');
+//Step3 Display the result
+
+
+while ($row = mysqli_fetch_array($result)) {
+	echo "<div style='height: 30px; width: 100%;'></div>";
+
+	//
+	//
+	//Large screen area
+	//
+	//
+	echo "<div class='LargeScreenGroup'>";
+		echo "<div class='group_container_create'>";
+			echo "<div class='group_photo_Area'>";
+				if(empty($row['group_photo'] )){
+					echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
+				}
+				else{
+					echo "<td> <img src='" . $row['group_photo'] . "' class='circlePhotoUploaded' > </td>";
+				}
+				echo "</div>";
+			echo "<div class='vertical_space_group'>";
+				if (strlen($row['group_description'])>40){
+					echo"<div class='groups_title_generate'>" . substr($row['group_title'],0,40) . "...";
+				} else{
+					echo"<div class='groups_title_generate'>" . $row['group_title'];
+				}
+
+
+				echo "</div>";
+				echo "<hr/>";
+				if (strlen($row['group_description'])>330){
+					echo "<div class='groups_descrition_generate'>" . substr($row['group_description'],0,80) . "...</div>";
+				} else {
+					echo "<div class='groups_descrition_generate'>" . substr($row['group_description'],0,80) . "</div>";
+				}
+
+				echo "<div class='LeaveButtonGroups'>";
+
+
+
+
+				$sql = "SELECT * FROM `group_users` WHERE user_id =" . $_SESSION["user_id"] . " AND group_id = " . $row['group_id'];
+
+				$groupsshown = mysqli_query($db, $sql);
+
+
+					//if(in_array($row['group_id'], $group_users))
+					if(mysqli_num_rows($groupsshown) > 0)
+					{
+						//echo "already Joined";
+						// DELETE FROM `group_users` WHERE `group_users`.`group_id` = 46 AND `group_users`.`user_id` = 1
+
+						echo "<form action='' method='POST'>";
+							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+							echo "<input type='hidden' name='toDo' value='leave'>";
+							echo "<input class='Leave-Butt' type='submit' value='Leave'>";
+						echo "</form>";
+
+					}
+					else{
+						echo "<form action='' method='POST'>";
+							echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+							echo "<input type='hidden' name='toDo' value='join'>";
+							echo "<input class='join-Butt' type='submit' value='join'>";
+						echo "</form>";
+					}
+
+				echo "</div>";
+
+				if(mysqli_num_rows($groupsshown) > 0)
+					{
+						echo "<div class='EnterButtonGroups'>";
+							if(in_array($row['group_id'], $group_users)){
+								echo "<form action ='EnteredGroup.php?sample=1' method='GET'>";
+									echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
+									echo "<input class='Enter-Butt' type='submit' value='Enter'>";
+								echo "</form>";
+							}
+						echo "</div>";
+					}
+				echo "</div>";
+			echo "</div>";
+		echo "</div>";
+	}
+
+	$querry = "SELECT COUNT(user_id) FROM group_users WHERE user_id = " . $_SESSION["user_id"];
+	$rs_result = mysqli_query($db, $querry);
+	$row = mysqli_fetch_row($rs_result);
+	$total_records = $row[0];
+	$total_pages = ceil($total_records / $limit);
+	$pagLink = "<div class='pagination'>";
+		for ($i=1; $i<=$total_pages; $i++) {
+			$pagLink .= "<a href='GroupsCurrentlyIn.php?page=".$i."'>".$i."&nbsp;&nbsp;&nbsp;</a>";
+		};
+	echo $pagLink . "</div>";
+
+			?>
 				</div>
 			</div>
-			
-			<div id="form_output">
-
-
-			</div>
 		</div>
+		<div id="form_output">
+		</div>
+	</div>
     </div>
     <nav class="container">
         <a class="buttons" href="ProfileIntroPage.php" tooltip="Profile"></a>

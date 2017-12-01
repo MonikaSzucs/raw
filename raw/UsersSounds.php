@@ -1,21 +1,21 @@
-<?php 
+<?php
 
 //the session_start() should always be at the top
 session_start();
 //this is to make sure people can't access the pages unless they log in
 if(!isset($_SESSION["user_id"]))
 {
-	session_destroy(); 
-	header( 'Location: signout.php' ); 
+	session_destroy();
+	header( 'Location: signout.php' );
 };
 
-	echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
+	//echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
 
 	/*
 	if(!isset($_SESSION["user_id"]))
 	{
-		session_destroy(); 
-		header( 'Location: signout.php' ); 
+		session_destroy();
+		header( 'Location: signout.php' );
 	};
 	*/
 
@@ -30,10 +30,10 @@ if(!isset($_SESSION["user_id"]))
 	if(isset($_POST['toDo'])){
 		print_r($_POST);
 
-		
+
 		$query = "INSERT INTO group_users (group_id, user_id)";
 		$query .= " VALUES (" . $_POST['group_id'] . ", " . $_SESSION['user_id'] . ")";
-		
+
 		echo $query;
 		$result = mysqli_query($db, $query) or die('Error querying database.');
 
@@ -57,12 +57,40 @@ if(!isset($_SESSION["user_id"]))
     <link rel="stylesheet" href="SmallScreen768version2device.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-</head>
+	<script src="wave.js"></script>
+	</head>
 
 <body>
     <header class="main-header">
         <nav>
             <div class="header">
+			<?php
+
+			if(isset($_GET["sample"]) )
+			{
+				//not default - whatever was set
+				$x = $_GET["sample"];
+
+				if ($x == 0){
+					echo "<p >XXXVALUE" . $x . "</p>";
+					echo "<a href='UsersSounds.php?user_id=" .  $_SESSION['user_id'] ."&sample=1&page=1'>";
+				} else {
+					echo "<p >YYYVALUE" . $x . "</p>";
+					echo "<a href='UsersSounds.php?user_id=" .  $_SESSION['user_id'] ."&sample=0&page=1'>";
+
+				}
+
+				echo "<p >XVALUE" . $x . "</p>";
+
+
+
+
+			} else {
+				$x = 1;
+				echo "<a href='UsersSounds.php?user_id=" .  $_SESSION['user_id'] ."&sample=1&page=1'>";
+
+			}
+			?>
                 <div class="toggle-logo"> </div>
                 <a href="MobileUploadPage.php">
                     <div class="m-upload-button"></div>
@@ -96,22 +124,25 @@ if(!isset($_SESSION["user_id"]))
     </div>
     <div class="m-ivisfoot"></div>
     <div class="main-page">
-   
+
         <!--
         hamburger menu
-        
+
 -->
-        <div id="hamburger"> 
+        <div id="hamburger">
             <ul id="hambul">
-              <a href="ProfileIntroPage.php"> <li class="hamclass">
-                Profile
-                   </li> </a> 
-                <a href="logout.php"><li class="hamclass">
+							<a href="ProfileIntroPage.php"><li class="hamclass">
+								View Profile
+							</li></a>
+							<a href="UsersSounds.php"> <li class="hamclass">
+								Profile
+							</li> </a>
+              <a href="logout.php"><li class="hamclass">
                 Sign Out
-                </li></a>               
+              </li></a>               
             </ul>
         </div>
-        
+
 
         <div class="m-profile-box">
 			<div id="m-profile-inner">
@@ -125,29 +156,202 @@ if(!isset($_SESSION["user_id"]))
 				<div id="m-profile-pic-intro"></div>
 				<div id="m-view-profile-div">
 					<p id="name">Name</p>
-					<ul id="view-profile">
-						<li id="m-followers-list">
-						</li>
-					</ul>
 				</div>
 			</div>
         </div>
 
-		
-		
+
+
 
         <div class="m-profile-main">
 			<div id="m-profile-main-inner">
 				<div class="spaceContainerTop"><h1>User Sounds</h1></div>
-				<label class="switch">
-				  <input type="checkbox">
-				  <span class="slider round"></span>
-				</label>
-					
-					
+				<div>
+	<?php
+
+	$music=1;
+	if(isset($_GET["sample"])){
+		$sample = $_GET["sample"];
+		//console.log($sample);
+		if($sample == 1)
+		{
+			$music=0;
+			//echo "SAMPLE LINK WORKS";
+		}
+		else{
+			$music=1;
+		}
+	}
+
+
+
+	//get group?_user from data base where user id equal to session user ID
+	$query = "SELECT * FROM music_public WHERE user_id =" . $_SESSION['user_id'];
+	$result = mysqli_query($db, $query) or die('Error querying database.');
+
+	$i=1;
+	$desktop_num = 0;
+	$tablet_num = 0;
+	$mobile_num = 0;
+
+	$group_users = array();
+	while ($row = mysqli_fetch_array($result)){
+		$group_users[] = $row['music_public_id'];
+	}
+
+	//echo  $_GET['mood'];
+
+	//Step2 get data from database
+	$limit = 5;
+	if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+	$start_from = ($page-1) * $limit;
+
+	$query = "SELECT * FROM music_public WHERE music = ". $music ." AND user_id = ". $_SESSION['user_id'] ." LIMIT " . $limit  . " OFFSET " . $start_from;
+	//$query = "SELECT * FROM groups";
+	$result = mysqli_query($db, $query) or die('Error querying database.');
+//Step3 Display the result
+
+
+while ($row = mysqli_fetch_array($result))
+{
+
+				echo "<div class='streaming_desktop'>";
+                    echo "<div class='first-song'>";
+                        echo "<div class='songpic'>";
+                            if(empty($row['music_photo'] )){
+                                echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
+                            }
+                            else{
+                                echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploadedFeed' > </td>";
+                            }
+								echo "<div class='songpicfade'>";
+								echo "</div>";
+								echo "<button  id='play_pause_feed' class='play_pause_feed_desktop' onClick='pauseAllWave(".$i."); '>";
+								echo "<i class='glyphicon glyphicon-play'></i>";
+								echo "</button>";
+                        echo "</div>";
+                        echo "<div class='song-buttons'>";
+                            echo "<p id='FeedArtistsName'>Name</p>";
+                            echo "<p id='FeedSongName'>" . $row['song_title'] . "</p>";
+                        echo "</div>";
+                        echo "<div class='track-display'>";
+
+                            echo "<div id='waveform".$i."' class='wave'></div>";
+                                // echo "<div>";
+                                // echo "</div>";
+                            echo "</div>";
+
+                        echo "</div>";
+							echo "<a href='/raw/raw/raw/". $row['music_file'] . "' download='" . $row['music_file'] . "'>";
+								echo "<button class='download_feed_button'>Download</button>";
+							echo "</a>";
+
+                        echo "<script>
+                            var wavesurfer".$i." = WaveSurfer.create({
+                                container: '#waveform".$i."',
+                                waveColor: '#c5ddff',
+                                progressColor: '#75a8ff',
+								height:50,
+								hideScrollbar:true,
+								barWidth:5,
+								responsive: true
+                            });
+                            wavesurfer".$i.".load('". $row['music_file'] ."');
+							 wavesurfer".$i.".on('pause', function () {
+									pause_image_function(".$desktop_num.");
+							 });
+							 wavesurfer".$i.".on('finish', function () {
+									pause_image_function(".$desktop_num.");
+							 });
+							 wavesurfer".$i.".on('play', function () {
+									play_image_function(".$desktop_num.");
+							 });
+						</script>";
+						$i++;
+                echo "</div>";
+
+				$desktop_num++;
+
+
+}
+
+
+
+				$querry = "SELECT COUNT(user_id) FROM music_public WHERE user_id = " . $_SESSION['user_id']. " AND music = " . $music;
+				$rs_result = mysqli_query($db, $querry);
+				$row = mysqli_fetch_row($rs_result);
+				$total_records = $row[0];
+				$total_pages = ceil($total_records / $limit);
+				$pagLink = "<div class='pagination'>";
+				for ($i=1; $i<=$total_pages; $i++) {
+					$pagLink .= "<a href='UsersSounds.php?user_id=" . $_SESSION['user_id'] ."&page=".$i."'>".$i."&nbsp;&nbsp;&nbsp;</a>";
+				};
+				echo $pagLink . "</div>";
+
+	?>
+
+	<script>
+			var img = document.getElementsByClassName('play_pause_feed_desktop');
+
+				function pause_image_function(trackNum){
+					console.log('pause_image_function:'+trackNum);
+					img[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';
+				}
+				function play_image_function(trackNum){
+					console.log('play_image_function:'+trackNum);
+					img[trackNum].style.backgroundImage = 'url(SVG/Pause.svg)';
+				}
+				function pauseAllWave(i){
+					console.log('pauseAllWave:'+i);
+					console.log('i:'+i);
+					if( i === 1){
+						//play_pause_image_function(0);
+						wavesurfer1.playPause();
+						wavesurfer2.pause();
+						wavesurfer3.pause();
+						wavesurfer4.pause();
+						wavesurfer5.pause();
+					}
+					else if( i === 2){
+						//play_pause_image_function(1);
+						wavesurfer2.playPause();
+						wavesurfer1.pause();
+						wavesurfer3.pause();
+						wavesurfer4.pause();
+						wavesurfer5.pause();
+					}
+					else if( i === 3){
+						//play_pause_image_function(2);
+						wavesurfer3.playPause();
+						wavesurfer1.pause();
+						wavesurfer2.pause();
+						wavesurfer4.pause();
+						wavesurfer5.pause();
+					}
+					else if( i === 4){
+						///play_pause_image_function(3);
+						wavesurfer4.playPause();
+						wavesurfer1.pause();
+						wavesurfer2.pause();
+						wavesurfer3.pause();
+						wavesurfer5.pause();
+					}
+					else if( i === 5){
+						///play_pause_image_function(4);
+						wavesurfer5.playPause();
+						wavesurfer1.pause();
+						wavesurfer2.pause();
+						wavesurfer3.pause();
+						wavesurfer4.pause();
+					}
+				}
+
+			</script>
+
+				</div>
 				</div>
 			</div>
-			
+
 			<div id="form_output">
 
 
