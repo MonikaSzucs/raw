@@ -112,7 +112,7 @@ if(!isset($_SESSION["user_id"]))
 							</li> </a>
               <a href="logout.php"><li class="hamclass">
                 Sign Out
-              </li></a>               
+              </li></a>
             </ul>
         </div>
 
@@ -142,12 +142,32 @@ if(!isset($_SESSION["user_id"]))
 				<div class="User_Info_display_area">
 					<div class="User_Info_Title_style">
 						Name:
+						<?php
+						$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
+						$result = mysqli_query($db, $query) or die('Error querying database.');
+						$row = mysqli_fetch_array($result);
+						echo $row['first_name'];
+						?>
+						<?php
+						$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
+						$result = mysqli_query($db, $query) or die('Error querying database.');
+						$row = mysqli_fetch_array($result);
+						echo $row['last_name'];
+						?>
 					</div>
 
 					<br/>
 
 					<div class="User_Info_Title_style">
 						User Name:
+
+						<?php
+						$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
+						$result = mysqli_query($db, $query) or die('Error querying database.');
+						$row = mysqli_fetch_array($result);
+						echo $row['username'];
+						?>
+
 					</div>
 
 					<hr/>
@@ -155,6 +175,12 @@ if(!isset($_SESSION["user_id"]))
 
 					<div class="User_Info_Title_style">
 						Bibiliography:
+						<?php
+						$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
+						$result = mysqli_query($db, $query) or die('Error querying database.');
+						$row = mysqli_fetch_array($result);
+						echo $row['biography'];
+						?>
 					</div>
 
 					<hr/>
@@ -162,6 +188,12 @@ if(!isset($_SESSION["user_id"]))
 
 					<div class="User_Info_Title_style">
 						Skills:
+						<?php
+						$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
+						$result = mysqli_query($db, $query) or die('Error querying database.');
+						$row = mysqli_fetch_array($result);
+						echo $row['skills'];
+						?>
 					</div>
 
 					<hr/>
@@ -169,6 +201,12 @@ if(!isset($_SESSION["user_id"]))
 
 					<div class="User_Info_Title_style">
 						Hobbies:
+						<?php
+						$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
+						$result = mysqli_query($db, $query) or die('Error querying database.');
+						$row = mysqli_fetch_array($result);
+						echo $row['hobbies'];
+						?>
 					</div>
 
 					<br/>
