@@ -80,14 +80,14 @@ mysqli_close($conn);
         <div id="hamburger">
             <ul id="hambul">
 							<a href="ProfileIntroPage.php"><li class="hamclass">
-							    View Profile
-							    </li></a>
-                <a href="ProfileIntroPage.php"> <li class="hamclass">
-                Profile
-                   </li> </a>
-                <a href="logout.php"><li class="hamclass">
+								View Profile
+							</li></a>
+							<a href="UsersSounds.php"> <li class="hamclass">
+								Profile
+							</li> </a>
+              <a href="logout.php"><li class="hamclass">
                 Sign Out
-                </li></a>
+              </li></a>
             </ul>
         </div>
 

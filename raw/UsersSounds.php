@@ -1,12 +1,12 @@
-<?php 
+<?php
 
 //the session_start() should always be at the top
 session_start();
 //this is to make sure people can't access the pages unless they log in
 if(!isset($_SESSION["user_id"]))
 {
-	session_destroy(); 
-	header( 'Location: signout.php' ); 
+	session_destroy();
+	header( 'Location: signout.php' );
 };
 
 	//echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
@@ -14,8 +14,8 @@ if(!isset($_SESSION["user_id"]))
 	/*
 	if(!isset($_SESSION["user_id"]))
 	{
-		session_destroy(); 
-		header( 'Location: signout.php' ); 
+		session_destroy();
+		header( 'Location: signout.php' );
 	};
 	*/
 
@@ -30,10 +30,10 @@ if(!isset($_SESSION["user_id"]))
 	if(isset($_POST['toDo'])){
 		print_r($_POST);
 
-		
+
 		$query = "INSERT INTO group_users (group_id, user_id)";
 		$query .= " VALUES (" . $_POST['group_id'] . ", " . $_SESSION['user_id'] . ")";
-		
+
 		echo $query;
 		$result = mysqli_query($db, $query) or die('Error querying database.');
 
@@ -65,30 +65,30 @@ if(!isset($_SESSION["user_id"]))
         <nav>
             <div class="header">
 			<?php
-			
+
 			if(isset($_GET["sample"]) )
 			{
 				//not default - whatever was set
 				$x = $_GET["sample"];
-				
+
 				if ($x == 0){
 					echo "<p >XXXVALUE" . $x . "</p>";
 					echo "<a href='UsersSounds.php?user_id=" .  $_SESSION['user_id'] ."&sample=1&page=1'>";
 				} else {
 					echo "<p >YYYVALUE" . $x . "</p>";
 					echo "<a href='UsersSounds.php?user_id=" .  $_SESSION['user_id'] ."&sample=0&page=1'>";
-					
+
 				}
-				
+
 				echo "<p >XVALUE" . $x . "</p>";
-									
-				
-				
-				
+
+
+
+
 			} else {
 				$x = 1;
 				echo "<a href='UsersSounds.php?user_id=" .  $_SESSION['user_id'] ."&sample=1&page=1'>";
-				
+
 			}
 			?>
                 <div class="toggle-logo"> </div>
@@ -124,22 +124,25 @@ if(!isset($_SESSION["user_id"]))
     </div>
     <div class="m-ivisfoot"></div>
     <div class="main-page">
-   
+
         <!--
         hamburger menu
-        
+
 -->
-        <div id="hamburger"> 
+        <div id="hamburger">
             <ul id="hambul">
-              <a href="ProfileIntroPage.php"> <li class="hamclass">
-                Profile
-                   </li> </a> 
-                <a href="logout.php"><li class="hamclass">
+							<a href="ProfileIntroPage.php"><li class="hamclass">
+								View Profile
+							</li></a>
+							<a href="UsersSounds.php"> <li class="hamclass">
+								Profile
+							</li> </a>
+              <a href="logout.php"><li class="hamclass">
                 Sign Out
-                </li></a>               
+              </li></a>               
             </ul>
         </div>
-        
+
 
         <div class="m-profile-box">
 			<div id="m-profile-inner">
@@ -157,15 +160,15 @@ if(!isset($_SESSION["user_id"]))
 			</div>
         </div>
 
-		
-		
+
+
 
         <div class="m-profile-main">
 			<div id="m-profile-main-inner">
 				<div class="spaceContainerTop"><h1>User Sounds</h1></div>
 				<div>
 	<?php
-	
+
 	$music=1;
 	if(isset($_GET["sample"])){
 		$sample = $_GET["sample"];
@@ -179,37 +182,37 @@ if(!isset($_SESSION["user_id"]))
 			$music=1;
 		}
 	}
-	
-	
-	
+
+
+
 	//get group?_user from data base where user id equal to session user ID
 	$query = "SELECT * FROM music_public WHERE user_id =" . $_SESSION['user_id'];
 	$result = mysqli_query($db, $query) or die('Error querying database.');
-	
+
 	$i=1;
 	$desktop_num = 0;
 	$tablet_num = 0;
 	$mobile_num = 0;
-			
-	$group_users = array(); 
+
+	$group_users = array();
 	while ($row = mysqli_fetch_array($result)){
 		$group_users[] = $row['music_public_id'];
 	}
-	
+
 	//echo  $_GET['mood'];
-	
+
 	//Step2 get data from database
 	$limit = 5;
 	if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
 	$start_from = ($page-1) * $limit;
-	
+
 	$query = "SELECT * FROM music_public WHERE music = ". $music ." AND user_id = ". $_SESSION['user_id'] ." LIMIT " . $limit  . " OFFSET " . $start_from;
 	//$query = "SELECT * FROM groups";
 	$result = mysqli_query($db, $query) or die('Error querying database.');
 //Step3 Display the result
 
 
-while ($row = mysqli_fetch_array($result)) 
+while ($row = mysqli_fetch_array($result))
 {
 
 				echo "<div class='streaming_desktop'>";
@@ -266,11 +269,11 @@ while ($row = mysqli_fetch_array($result))
 						</script>";
 						$i++;
                 echo "</div>";
-				
+
 				$desktop_num++;
 
-				
-} 	
+
+}
 
 
 
@@ -284,12 +287,12 @@ while ($row = mysqli_fetch_array($result))
 					$pagLink .= "<a href='UsersSounds.php?user_id=" . $_SESSION['user_id'] ."&page=".$i."'>".$i."&nbsp;&nbsp;&nbsp;</a>";
 				};
 				echo $pagLink . "</div>";
-		
+
 	?>
-	
+
 	<script>
 			var img = document.getElementsByClassName('play_pause_feed_desktop');
-			
+
 				function pause_image_function(trackNum){
 					console.log('pause_image_function:'+trackNum);
 					img[trackNum].style.backgroundImage = 'url(SVG/Play.svg)';
@@ -344,11 +347,11 @@ while ($row = mysqli_fetch_array($result))
 				}
 
 			</script>
-					
-				</div>	
+
+				</div>
 				</div>
 			</div>
-			
+
 			<div id="form_output">
 
 

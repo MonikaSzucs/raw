@@ -5,8 +5,8 @@ session_start();
 //this is to make sure people can't access the pages unless they log in
 if(!isset($_SESSION["user_id"]))
 {
-	session_destroy(); 
-	header( 'Location: signout.php' ); 
+	session_destroy();
+	header( 'Location: signout.php' );
 };
 
 	echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
@@ -14,8 +14,8 @@ if(!isset($_SESSION["user_id"]))
 	/*
 	if(!isset($_SESSION["user_id"]))
 	{
-		session_destroy(); 
-		header( 'Location: signout.php' ); 
+		session_destroy();
+		header( 'Location: signout.php' );
 	};
 	*/
 
@@ -79,28 +79,31 @@ if(!isset($_SESSION["user_id"]))
 
     </div>
     <div class="settings_white" class="main-page">
-        
-                        
+
+
 <!--
         hamburger menu
-        
+
 -->
-        <div id="hamburger"> 
+        <div id="hamburger">
             <ul id="hambul">
-                <a href="ProfileIntroPage.php"><li class="hamclass">
-                Profile
-                </li></a>  
-                <a href="logout.php"><li class="hamclass">
+							<a href="ProfileIntroPage.php"><li class="hamclass">
+								View Profile
+							</li></a>
+							<a href="UsersSounds.php"> <li class="hamclass">
+								Profile
+							</li> </a>
+              <a href="logout.php"><li class="hamclass">
                 Sign Out
-                </li></a>               
+              </li></a>               
             </ul>
         </div>
 
         <h1 id="m-settings-h">Settings</h1>
 
 
-		
-		
+
+
 		<!---
 		//
 		//
@@ -115,15 +118,15 @@ if(!isset($_SESSION["user_id"]))
 					<p class="m-settings-info">Change Profile  Image</p>
 					<input id="files" class="m-settings-info_image_button" type="file" name="UserProfilePicture" accept="image/x-png,image/gif,image/jpeg" />
 				</div>
-				
+
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 				<hr/>
 				<br/><br/>
-				
+
 				<!--
 				//
 				//
-				Email 
+				Email
 				//
 				//
 				-->
@@ -134,7 +137,7 @@ if(!isset($_SESSION["user_id"]))
 						if (isset($_POST['email-button'])) {
 							$query = "UPDATE user SET email='". $_POST['email'] ."' WHERE user_id='" . $_SESSION["user_id"] . "';";
 							$result = mysqli_query($db, $query) or die('Error querying database.');
-						}	
+						}
 						?>
 						<span class="setting_title_items">Current Email Address:
 						<?php
@@ -144,7 +147,7 @@ if(!isset($_SESSION["user_id"]))
 								echo $row['email'];
 							?>
 						</span>
-						
+
 						<br/><br/>
 						<span class="m-settings-info_sub_titles">Change Email Address: </span>
 						<div class="m-settings-info_email_input_area">
@@ -154,7 +157,7 @@ if(!isset($_SESSION["user_id"]))
 							</form>
 						</div>
 					</div>
-					
+
 					<hr/>
 				<!--
 				//
@@ -163,7 +166,7 @@ if(!isset($_SESSION["user_id"]))
 				//
 				//
 				-->
-				
+
 					<div class="password_area_settings">
 						<?php
 							if (isset($_POST['password-button'])) {
@@ -176,11 +179,11 @@ if(!isset($_SESSION["user_id"]))
 								$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
 								$result = mysqli_query($db, $query) or die('Error querying database.');
 								$row = mysqli_fetch_array($result);
-								
+
 								echo $row['password'];
 							?>
 						</span>
-						
+
 						<br/><br/>
 						<span class="m-settings-info_sub_titles">Change Password:</span>
 						<div class="m-settings-info_password_input_area">
@@ -215,7 +218,7 @@ if(!isset($_SESSION["user_id"]))
 							echo $row['first_name'];
 						?>
 						</span>
-						
+
 						<br/><br/>
 						<span class="m-settings-info_sub_titles">Change First Name:</span>
 						<form method='post' class='change_username_form'>
@@ -223,9 +226,9 @@ if(!isset($_SESSION["user_id"]))
 							<button name="first-name-button" class="first_name-input_button">Change First Name</button>
 						</form>
 					</div>
-					
+
 					<hr/>
-				
+
 				<!--
 				//
 				//
@@ -248,7 +251,7 @@ if(!isset($_SESSION["user_id"]))
 							echo $row['last_name'];
 						?>
 						</span>
-						
+
 						<br/><br/>
 						<span class="m-settings-info_sub_titles">Change Last Name:</span>
 						<form method='post' class='change_username_form'>
@@ -256,9 +259,9 @@ if(!isset($_SESSION["user_id"]))
 							<button name="last-name-button" class="last_name-input_button">Change Last Name</button>
 						</form>
 					</div>
-					
+
 					<hr/>
-					
+
 				<!--
 				//
 				//
@@ -281,7 +284,7 @@ if(!isset($_SESSION["user_id"]))
 							echo $row['username'];
 						?>
 						</span>
-						
+
 						<br/><br/>
 						<span class="m-settings-info_sub_titles">Change Username:</span>
 						<form method='post' class='change_username_form'>
@@ -289,9 +292,9 @@ if(!isset($_SESSION["user_id"]))
 							<button name="username-button" class='username_input_button'>Change Username</button>
 						</form>
 					</div>
-					
+
 					<hr/>
-					
+
 				<!--
 				//
 				//
@@ -315,7 +318,7 @@ if(!isset($_SESSION["user_id"]))
 							echo $row['biography'];
 						?>
 						</div>
-						
+
 						<br/>
 						<span class="m-settings-info_sub_titles">Change Biography:</span>
 						<form method='post' class='change_username_form'>
@@ -324,7 +327,7 @@ if(!isset($_SESSION["user_id"]))
 						</form>
 					</div>
 
-					
+
 					<hr/>
 
 				<!--
@@ -350,7 +353,7 @@ if(!isset($_SESSION["user_id"]))
 							echo $row['hobbies'];
 						?>
 						</div>
-						
+
 						<br/>
 						<span class="m-settings-info_sub_titles">Change Hobbies:</span>
 						<form method='post' class='change_username_form'>
@@ -358,9 +361,9 @@ if(!isset($_SESSION["user_id"]))
 							<button name="hobbies-button" class="hobbies-input_button">Change Hobbies</button>
 						</form>
 					</div>
-					
+
 					<hr/>
-		
+
 				<!--
 				//
 				//
@@ -384,7 +387,7 @@ if(!isset($_SESSION["user_id"]))
 							echo $row['skills'];
 						?>
 						</div>
-						
+
 						<br/>
 						<span class="m-settings-info_sub_titles">Change Skills:</span>
 						<form method='post' class='change_username_form'>
@@ -392,22 +395,22 @@ if(!isset($_SESSION["user_id"]))
 							<button name="skills-button" class="skills-input_button">Change Skills</button>
 						</form>
 					</div>
-					
+
 				</div>
 			</div>
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
+
+
+
+
 		<!---
 		//
 		//
@@ -416,22 +419,22 @@ if(!isset($_SESSION["user_id"]))
 		//
 		-->
 		<div class="setting_hide_tablet">
-		
+
 			<div class="setting_profile_image">
 				<div class="picture_settings"></div>
 				<div class="m-profile-pic-intro_settings_change_image">
 					<span class="setting_changephoto_text">Change Profile  Image</span>
 					<input id="files" class="m-settings-info_image_button" type="file" name="UserProfilePicture" accept="image/x-png,image/gif,image/jpeg" />
 				</div>
-				
+
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 				<hr/>
 				<br/><br/>
-				
+
 				<!--
 				//
 				//
-				Email 
+				Email
 				//
 				//
 				-->
@@ -442,18 +445,18 @@ if(!isset($_SESSION["user_id"]))
 						if (isset($_POST['email-button'])) {
 							$query = "UPDATE user SET email='". $_POST['email'] ."' WHERE user_id='" . $_SESSION["user_id"] . "';";
 							$result = mysqli_query($db, $query) or die('Error querying database.');
-						}	
+						}
 						?>
 						<span class="setting_title_items">Current Email Address:
 						<?php
 								$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
 								$result = mysqli_query($db, $query) or die('Error querying database.');
 								$row = mysqli_fetch_array($result);
-								
+
 								echo $row['email'];
 							?>
 						</span>
-						
+
 						<br/><br/>
 						<span class="m-settings-info_sub_titles">Change Email Address: </span>
 						<div class="email_input_area_settings">
@@ -463,7 +466,7 @@ if(!isset($_SESSION["user_id"]))
 							</form>
 						</div>
 					</div>
-					
+
 					<hr/>
 				<!--
 				//
@@ -472,7 +475,7 @@ if(!isset($_SESSION["user_id"]))
 				//
 				//
 				-->
-				
+
 					<div class="password_area_settings">
 						<?php
 							if (isset($_POST['password-button'])) {
@@ -485,11 +488,11 @@ if(!isset($_SESSION["user_id"]))
 								$query = "SELECT * FROM user WHERE user_id=" . $_SESSION["user_id"]. ";";
 								$result = mysqli_query($db, $query) or die('Error querying database.');
 								$row = mysqli_fetch_array($result);
-								
+
 								echo $row['password'];
 							?>
 						</span>
-						
+
 						<br/><br/>
 						<span class="m-settings-info_sub_titles">Change Password:</span>
 						<div class="m-settings-info_password_input_area">
@@ -524,7 +527,7 @@ if(!isset($_SESSION["user_id"]))
 							echo $row['first_name'];
 						?>
 						</span>
-						
+
 						<br/><br/>
 						<span class="m-settings-info_sub_titles">Change First Name:</span>
 						<form method='post' class='change_username_form'>
@@ -532,9 +535,9 @@ if(!isset($_SESSION["user_id"]))
 							<button name="first-name-button" class="first_name-input_button">Change First Name</button>
 						</form>
 					</div>
-					
+
 					<hr/>
-				
+
 				<!--
 				//
 				//
@@ -557,7 +560,7 @@ if(!isset($_SESSION["user_id"]))
 							echo $row['last_name'];
 						?>
 						</span>
-						
+
 						<br/><br/>
 						<span class="m-settings-info_sub_titles">Change Last Name:</span>
 						<form method='post' class='change_username_form'>
@@ -565,9 +568,9 @@ if(!isset($_SESSION["user_id"]))
 							<button name="last-name-button" class="last_name-input_button">Change Last Name</button>
 						</form>
 					</div>
-					
+
 					<hr/>
-					
+
 				<!--
 				//
 				//
@@ -590,7 +593,7 @@ if(!isset($_SESSION["user_id"]))
 							echo $row['username'];
 						?>
 						</span>
-						
+
 						<br/><br/>
 						<span class="m-settings-info_sub_titles">Change Username:</span>
 						<form method='post' class='change_username_form'>
@@ -598,9 +601,9 @@ if(!isset($_SESSION["user_id"]))
 							<button name="username-button" class='username_input_button'>Change Username</button>
 						</form>
 					</div>
-					
+
 					<hr/>
-					
+
 				<!--
 				//
 				//
@@ -624,7 +627,7 @@ if(!isset($_SESSION["user_id"]))
 							echo $row['biography'];
 						?>
 						</div>
-						
+
 						<br/>
 						<span class="m-settings-info_sub_titles">Change Biography:</span>
 						<form method='post' class='change_username_form'>
@@ -633,7 +636,7 @@ if(!isset($_SESSION["user_id"]))
 						</form>
 					</div>
 
-					
+
 					<hr/>
 
 				<!--
@@ -659,7 +662,7 @@ if(!isset($_SESSION["user_id"]))
 							echo $row['hobbies'];
 						?>
 						</div>
-						
+
 						<br/>
 						<span class="m-settings-info_sub_titles">Change Hobbies:</span>
 						<form method='post' class='change_username_form'>
@@ -667,9 +670,9 @@ if(!isset($_SESSION["user_id"]))
 							<button name="hobbies-button" class="hobbies-input_button">Change Hobbies</button>
 						</form>
 					</div>
-					
+
 					<hr/>
-		
+
 				<!--
 				//
 				//
@@ -693,7 +696,7 @@ if(!isset($_SESSION["user_id"]))
 							echo $row['skills'];
 						?>
 						</div>
-						
+
 						<br/>
 						<span class="m-settings-info_sub_titles">Change Skills:</span>
 						<form method='post' class='change_username_form'>
@@ -701,15 +704,15 @@ if(!isset($_SESSION["user_id"]))
 							<button name="skills-button" class="skills-input_button">Change Skills</button>
 						</form>
 					</div>
-					
+
 				</div>
 			</div>
 		</div>
-		
-		
-		
+
+
+
 		</div>
-		
+
         <div id="invisdiv3"></div>
 
     </div>

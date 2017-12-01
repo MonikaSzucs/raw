@@ -1,12 +1,12 @@
-<?php 
+<?php
 
 //the session_start() should always be at the top
 session_start();
 //this is to make sure people can't access the pages unless they log in
 if(!isset($_SESSION["user_id"]))
 {
-	session_destroy(); 
-	header( 'Location: signout.php' ); 
+	session_destroy();
+	header( 'Location: signout.php' );
 };
 
 	//echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
@@ -14,8 +14,8 @@ if(!isset($_SESSION["user_id"]))
 	/*
 	if(!isset($_SESSION["user_id"]))
 	{
-		session_destroy(); 
-		header( 'Location: signout.php' ); 
+		session_destroy();
+		header( 'Location: signout.php' );
 	};
 	*/
 
@@ -51,7 +51,7 @@ if(!isset($_SESSION["user_id"]))
 	//then put the output in the array
 
 	//mysqli_close($db);
-	
+
 
 ?>
 
@@ -104,22 +104,25 @@ if(!isset($_SESSION["user_id"]))
     </div>
     <div class="m-ivisfoot"></div>
     <div class="main-page">
-   
+
         <!--
         hamburger menu
-        
+
 -->
-        <div id="hamburger"> 
+        <div id="hamburger">
             <ul id="hambul">
-              <a href="ProfileIntroPage.php"> <li class="hamclass">
-                Profile
-                   </li> </a> 
-                <a href="logout.php"><li class="hamclass">
+							<a href="ProfileIntroPage.php"><li class="hamclass">
+								View Profile
+							</li></a>
+							<a href="UsersSounds.php"> <li class="hamclass">
+								Profile
+							</li> </a>
+              <a href="logout.php"><li class="hamclass">
                 Sign Out
-                </li></a>               
+              </li></a>               
             </ul>
         </div>
-        
+
 
         <div class="m-profile-box">
 			<div id="m-profile-inner">
@@ -137,23 +140,23 @@ if(!isset($_SESSION["user_id"]))
 			</div>
         </div>
 
-		
-		
+
+
 
         <div class="m-profile-main">
 			<div id="m-profile-main-inner">
 				<div class="spaceContainerTop"><h1>My Groups or Joined Groups</h1></div>
 				<div>
-				
+
 				<?php
-				
+
 				$limit = 5;
 	if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
 	$start_from = ($page-1) * $limit;
 
 
 	//get group?_user from data base where user id equal to session user ID
-	$query = "SELECT * 
+	$query = "SELECT *
 				FROM group_users
 				INNER JOIN groups on group_users.group_id = groups.group_id WHERE user_id = " . $_SESSION["user_id"];
 	$result = mysqli_query($db, $query) or die('Error querying database.');
@@ -163,10 +166,10 @@ if(!isset($_SESSION["user_id"]))
 	}
 
 	//Step2 get data from database
-	
-	
-	
-	$query = "SELECT * 
+
+
+
+	$query = "SELECT *
 				FROM group_users
 				INNER JOIN groups on group_users.group_id = groups.group_id WHERE user_id = " . $_SESSION["user_id"] . " LIMIT " . $limit . " OFFSET " . $start_from;
 	$result = mysqli_query($db, $query) or die('Error querying database.');
@@ -208,15 +211,15 @@ while ($row = mysqli_fetch_array($result)) {
 				}
 
 				echo "<div class='LeaveButtonGroups'>";
-				
-				
-				
-				
+
+
+
+
 				$sql = "SELECT * FROM `group_users` WHERE user_id =" . $_SESSION["user_id"] . " AND group_id = " . $row['group_id'];
 
 				$groupsshown = mysqli_query($db, $sql);
 
-	
+
 					//if(in_array($row['group_id'], $group_users))
 					if(mysqli_num_rows($groupsshown) > 0)
 					{
@@ -239,7 +242,7 @@ while ($row = mysqli_fetch_array($result)) {
 					}
 
 				echo "</div>";
-				
+
 				if(mysqli_num_rows($groupsshown) > 0)
 					{
 						echo "<div class='EnterButtonGroups'>";
@@ -255,7 +258,7 @@ while ($row = mysqli_fetch_array($result)) {
 			echo "</div>";
 		echo "</div>";
 	}
-	
+
 	$querry = "SELECT COUNT(user_id) FROM group_users WHERE user_id = " . $_SESSION["user_id"];
 	$rs_result = mysqli_query($db, $querry);
 	$row = mysqli_fetch_row($rs_result);

@@ -1,12 +1,12 @@
-<?php 
+<?php
 
 //the session_start() should always be at the top
 session_start();
 //this is to make sure people can't access the pages unless they log in
 if(!isset($_SESSION["user_id"]))
 {
-	session_destroy(); 
-	header( 'Location: signout.php' ); 
+	session_destroy();
+	header( 'Location: signout.php' );
 };
 
 	//echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
@@ -14,8 +14,8 @@ if(!isset($_SESSION["user_id"]))
 	/*
 	if(!isset($_SESSION["user_id"]))
 	{
-		session_destroy(); 
-		header( 'Location: signout.php' ); 
+		session_destroy();
+		header( 'Location: signout.php' );
 	};
 	*/
 
@@ -30,10 +30,10 @@ if(!isset($_SESSION["user_id"]))
 	if(isset($_POST['toDo'])){
 		print_r($_POST);
 
-		
+
 		$query = "INSERT INTO group_users (group_id, user_id)";
 		$query .= " VALUES (" . $_POST['group_id'] . ", " . $_SESSION['user_id'] . ")";
-		
+
 		echo $query;
 		$result = mysqli_query($db, $query) or die('Error querying database.');
 
@@ -44,7 +44,7 @@ if(!isset($_SESSION["user_id"]))
 	//then put the output in the array
 
 	//mysqli_close($db);
-	
+
 
 ?>
 
@@ -97,22 +97,25 @@ if(!isset($_SESSION["user_id"]))
     </div>
     <div class="m-ivisfoot"></div>
     <div class="main-page">
-   
+
         <!--
         hamburger menu
-        
+
 -->
-        <div id="hamburger"> 
+        <div id="hamburger">
             <ul id="hambul">
-              <a href="ProfileIntroPage.php"> <li class="hamclass">
-                Profile
-                   </li> </a> 
-                <a href="logout.php"><li class="hamclass">
+							<a href="ProfileIntroPage.php"><li class="hamclass">
+											View Profile
+							</li></a>
+							<a href="UsersSounds.php"> <li class="hamclass">
+								Profile
+							</li> </a>
+              <a href="logout.php"><li class="hamclass">
                 Sign Out
-                </li></a>               
+              </li></a>               
             </ul>
         </div>
-        
+
 
         <div class="m-profile-box">
 			<div id="m-profile-inner">
@@ -130,8 +133,8 @@ if(!isset($_SESSION["user_id"]))
 			</div>
         </div>
 
-		
-		
+
+
 
         <div class="m-profile-main">
 			<div id="m-profile-main-inner">
@@ -140,41 +143,41 @@ if(!isset($_SESSION["user_id"]))
 					<div class="User_Info_Title_style">
 						Name:
 					</div>
-					
+
 					<br/>
-					
+
 					<div class="User_Info_Title_style">
 						User Name:
 					</div>
-					
+
 					<hr/>
 					<br/>
-					
+
 					<div class="User_Info_Title_style">
 						Bibiliography:
 					</div>
-					
+
 					<hr/>
 					<br/>
-					
+
 					<div class="User_Info_Title_style">
 						Skills:
 					</div>
-					
+
 					<hr/>
 					<br/>
-					
+
 					<div class="User_Info_Title_style">
 						Hobbies:
 					</div>
-					
+
 					<br/>
 				</div>
-					
-					
+
+
 				</div>
 			</div>
-			
+
 			<div id="form_output">
 
 

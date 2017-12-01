@@ -29,7 +29,7 @@ if( isset($_FILES["fileToUpload"]["name"]) && !empty($_FILES["fileToUpload"]["na
 		echo "File is not an image.";
 		$uploadOk = 0;
 	}
-	
+
 	// Check if file already exists
 	if (file_exists($target_file)) {
 		echo "Sorry, file already exists.";
@@ -46,7 +46,7 @@ if( isset($_FILES["fileToUpload"]["name"]) && !empty($_FILES["fileToUpload"]["na
 		echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
 		$uploadOk = 0;
 	}
-	
+
 	// Check if $uploadOk is set to 0 by an error
 	if ($uploadOk == 0) {
 		echo "Sorry, your file was not uploaded.";
@@ -115,9 +115,9 @@ if( isset($_FILES["userfile"]["name"]) && !empty($_FILES["userfile"]["name"])) {
     $allowed_extensions=explode(',',$ext_str);
 	$musicFileType = pathinfo($target_music_file,PATHINFO_EXTENSION);
 	if($musicFileType == "mp3" || $musicFileType == "mp4" || $musicFileType == "wav"
-	) {						
+	) {
 		$musicUploadOk = 1;
-	} else {				
+	} else {
 		$musicUploadOk = 0;
 	}
 	if ($_FILES["userfile"]["size"] > 50000000000) {
@@ -305,12 +305,15 @@ $formSuccessfullMessage = "";
 -->
         <div id="hamburger">
             <ul id="hambul">
-              <a href="ProfileIntroPage.php"> <li class="hamclass">
-                Profile 
-                   </li> </a>
-                <a href="logout.php"><li class="hamclass">
-                Sign Out
-                </li></a>
+							<a href="ProfileIntroPage.php"><li class="hamclass">
+											View Profile
+							</li></a>
+							<a href="UsersSounds.php"> <li class="hamclass">
+								Profile
+							</li> </a>
+              <a href="logout.php"><li class="hamclass">
+              	Sign Out
+              </li></a>
             </ul>
         </div>
 
@@ -337,19 +340,19 @@ $formSuccessfullMessage = "";
 
 
         <div class="upload_page_music_global_white" id="upload_page_music_global_white">
-			
+
 			<div id="m-profile-main-inner">
 
-			
+
 			<div class="TopSpace-ProfileGroupSub"></div>
 
-			
-				
+
+
 
 
 
 				<form id="contactForm" name="form" action="" method="post" enctype="multipart/form-data">
-					
+
 				<div class="image_circle_title_enter">
 					<div class="icon_upload_global_area_container">
 						<div class="ProfileIconGroups" id="list"></div>
@@ -364,7 +367,7 @@ $formSuccessfullMessage = "";
 
 						</div>
 				</div>
-				
+
 
 							<div class="upload_global_image_area">
 								<div class="upload_page_global_titles">
@@ -374,8 +377,8 @@ $formSuccessfullMessage = "";
 								<input class="file_upload_button" type="file" name="fileToUpload" id="files" accept="image/x-png,image/gif,image/jpeg"><br>
 							</div>
 
-						
-						
+
+
 							<div class="upload_global_song_area">
 								<div class="upload_page_global_titles">
 									Song or Samples Upload:
@@ -383,7 +386,7 @@ $formSuccessfullMessage = "";
 								<!-- <input class="file_upload_button" id="files" type="file" name="myMusic" accept="audio/*" /> -->
 								<input class="file_upload_button" type="file" class="form-control" name="userfile" id="userfile" accept="audio/*"/>
 							</div>
-							
+
 							<div class="upload_global_radio_button_area">
 								<div class="upload_page_global_titles">
 									Is this a song or sample?
@@ -393,7 +396,7 @@ $formSuccessfullMessage = "";
 								  <label class="label_music_sample_global_upload"><input class="input_buttons_styles_music_global" type="radio" value="0" name="music_check"><span class="music_sample_label_music_global_uploading">Sample</span></label>
 								</div>
 							</div>
-							
+
 							<div class="upload_global_genre_area">
 								<span class='music_global_upload_title_style'>
 									Genre(s)
@@ -416,7 +419,7 @@ $formSuccessfullMessage = "";
 									</tr>
 								</table>
 							</div>
-							
+
 							<div class="upload_global_moods_area">
 								<span class='music_global_upload_title_style'>
 									Mood(s)
@@ -436,7 +439,7 @@ $formSuccessfullMessage = "";
 									</tr>
 								</table>
 							</div>
-							
+
 							<div class="upload_global_instruments_area">
 								<span class='music_global_upload_title_style'>
 									Instrument(s)
@@ -465,13 +468,13 @@ $formSuccessfullMessage = "";
 					</form>
 				</div>
 			</div>
-			
+
 			<div id="form_output">
 
 			</div>
 		</div>
 		</div>
-   
+
     <nav class="container">
         <a class="buttons" href="ProfileIntroPage.php" tooltip="Profile"></a>
          <a class="buttons" href="MobileGroupsTab.php" tooltip="Groups"></a>
