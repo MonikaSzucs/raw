@@ -60,7 +60,9 @@ $(document).ready(function(){
         <nav>
             <div class="header">
                 <div class="toggle-logo"> </div>
-                <div class = "m-upload-button"></div>
+             <a href="MobileUploadPage.php">
+                    <div class="m-upload-button"></div>
+                </a>
 
                   <div id="hamb" onclick="myFunction(this)">
                     <div class="bar1"></div>

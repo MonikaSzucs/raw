@@ -9,7 +9,7 @@ if(!isset($_SESSION["user_id"]))
 	header( 'Location: signout.php' );
 };
 
-	echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
+//	echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
 
 	/*
 	if(!isset($_SESSION["user_id"]))
@@ -46,7 +46,7 @@ if(!isset($_SESSION["user_id"]))
         <nav>
             <div class="header">
                 <div class="toggle-logo"> </div>
-                <a href="MobileUploadPage.html">
+                <a href="MobileUploadPage.php">
                     <div class="m-upload-button"></div>
                 </a>
                   <div id="hamb" onclick="myFunction(this)">

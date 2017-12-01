@@ -2076,7 +2076,9 @@ hambuger menu
 	.pagination a{
 		padding: 10px 0px 10px 20px;
 		text-decoration: none !important;
-		font-size: 30px;
+		font-size: 40px;
+        font-family: Avenir-Medium;
+        color: black;
 
 	}
 
@@ -2088,6 +2090,7 @@ hambuger menu
 		margin: 0 auto;
 		bottom: 100px;
 		position: absolute;
+     
 	}
 
 	.category_form {

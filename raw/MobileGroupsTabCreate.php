@@ -10,8 +10,8 @@ if(!isset($_SESSION["user_id"]))
 
 $target_file_photo = "";
 $target_file_music = "";
-print_r($_FILES);
-	echo "TTTTTTT<br//>";
+//print_r($_FILES);
+//	echo "TTTTTTT<br//>";
 
 //group picture
 if( isset($_FILES["myImage"]["name"]) && !empty($_FILES["myImage"]["name"])) {

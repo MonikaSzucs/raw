@@ -22,17 +22,8 @@
         display: block;
     }
 
-	.LargeScreenGroup {
-		display: none;
-	}
 
-	.MediumScreenGroup{
-		display: none;
-	}
 
-	.SmallScreenGroup{
-		display: block;
-	}
 
   .streaming_desktop {
     display: block;
@@ -1084,10 +1075,7 @@ Groups small style
         position: absolute;
 	}
 
-	#CreateGroupProfile {
-		width: 100px;
-		background-color:red;
-	}
+
 
   /* ------------------ Streaming.php Styling ------------------*/
 
