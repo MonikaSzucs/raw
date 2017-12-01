@@ -2003,7 +2003,9 @@ hambuger menu
     font-family: Avenir Medium;
     font-size: 10px;
     color: #c5c5c5;
-	margin-left: 430px;
+	float: right;
+    margin-right: 70px;
+    cursor: pointer;
 	border: 1px solid darkgray;
 	padding: initial;
 	border-radius: 20px;
