@@ -568,7 +568,7 @@ hambuger menu
         height: 150px;
         border-radius: 100%;
         position: absolute;
-        top: 20%;
+        top: 10%;
         left: 25px;
         z-index: 9997;
 		margin-left: 20px;
@@ -589,7 +589,7 @@ hambuger menu
         width: 40%;
         height: 190px;
         position: relative;
-        margin-top: 90px;
+        margin-top: 70px;
         margin-left: 220px;
         /*display: inline-grid;*/
         z-index: 9996;
@@ -2188,6 +2188,19 @@ hambuger menu
     }
 
     #Top_Area_Title{
+      font-family: Avenir-Medium;
+    }
+
+    .User_Info_display_area{
+      width: 90%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+
+    .User_Info_Title_style{
+      font-size: 16px;
       font-family: Avenir-Medium;
     }
 
