@@ -13,7 +13,7 @@ if(!isset($_GET['group_id'])){
 	header( 'Location: MobileGroupsTab.php' );
 }
 
-	echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
+	///echo "session_user_id" . "<br/>" . $_SESSION["user_id"];
 
 	/*
 	if(!isset($_SESSION["user_id"]))
@@ -31,7 +31,7 @@ if(!isset($_GET['group_id'])){
 
 	$db = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
 
-	print_r($_GET);
+	///print_r($_GET);
 
 ?>
 

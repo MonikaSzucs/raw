@@ -852,7 +852,8 @@ hambuger menu
         background-color: white;
         position: absolute;
         padding-bottom: 170px;
-		top: 275px
+		top: 275px;
+		box-shadow: 0px 5px 5px #888888;
 	}
 
 	.upload_page_music_global_white{
