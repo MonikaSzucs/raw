@@ -163,11 +163,8 @@ if(isset($_POST['toDo'])){
 					//Step2 get data from database
 					
 					
-					
-					$query = "SELECT * 
-								FROM group_users
-								INNER JOIN groups on group_users.group_id = groups.group_id 
-								WHERE user_id != " . $_SESSION["user_id"] . " ORDER BY created DESC LIMIT 5";
+					$sId = (int)$_SESSION['user_id'];
+					$query = "SELECT * FROM group_users gu INNER JOIN groups g on gu.group_id = g.group_id WHERE gu.group_id NOT IN (SELECT group_id FROM group_users WHERE user_id != " . $sId . ") ORDER BY g.created DESC LIMIT 5;";
 					$result = mysqli_query($db, $query) or die('Error querying database.');
 				//Step3 Display the result
 
@@ -204,7 +201,7 @@ if(isset($_POST['toDo'])){
 
 								$groupsshown = mysqli_query($db, $sql);
 									//if(in_array($row['group_id'], $group_users))
-									if(mysqli_num_rows($groupsshown) > 0)
+									if(mysqli_num_rows($groupsshown) == 0)
 									{
 										//echo "already Joined";
 										// DELETE FROM `group_users` WHERE `group_users`.`group_id` = 46 AND `group_users`.`user_id` = 1
@@ -226,17 +223,6 @@ if(isset($_POST['toDo'])){
 
 								echo "</div>";
 								
-								if(mysqli_num_rows($groupsshown) > 0)
-									{
-										echo "<div class='EnterButtonGroups'>";
-											if(in_array($row['group_id'], $group_users)){
-												echo "<form action ='EnteredGroup.php?sample=1' method='GET'>";
-													echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
-													echo "<input class='Enter-Butt' type='submit' value='Enter'>";
-												echo "</form>";
-											}
-										echo "</div>";
-									}
 								echo "</div>";
 							echo "</div>";
 						echo "</div>";

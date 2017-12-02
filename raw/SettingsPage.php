@@ -26,8 +26,63 @@ if(!isset($_SESSION["user_id"]))
 	define('DB_DATABASE', 'raw');
 
 	$db = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
+	
+	if (isset($_POST['picture-button'])) {
+		
+		if( isset($_FILES["fileToUpload"]["name"]) && !empty($_FILES["fileToUpload"]["name"])) {
+			$target_file = "ProfilePictures/".time().basename($_FILES["fileToUpload"]["name"]);
+			$uploadOk = 1;
+			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+			$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+
+			if($check !== false) {
+				echo "File is an image - " . $check["mime"] . ".";
+				$uploadOk = 1;
+			} else {
+				echo "File is not an image.";
+				$uploadOk = 0;
+			}
+
+			// Check if file already exists
+			if (file_exists($target_file)) {
+				echo "Sorry, file already exists.";
+				$uploadOk = 0;
+			}
+			// Check file size
+			if ($_FILES["fileToUpload"]["size"] > 50000000) {
+				echo "Sorry, your file is too large.";
+				$uploadOk = 0;
+			}
+			// Allow certain file formats
+			if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+			&& $imageFileType != "gif" ) {
+				echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+				$uploadOk = 0;
+			}
+
+			// Check if $uploadOk is set to 0 by an error
+			if ($uploadOk == 0) {
+				echo "Sorry, your file was not uploaded.";
+				// if everything is ok, try to upload file
+			} else {
+				if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+					echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+				} else {
+					echo "Sorry, there was an error uploading your file.";
+					}
+			}
+			
+			$query = "UPDATE user SET Profile_Picture='". $target_file ."' WHERE user_id='" . $_SESSION["user_id"] . "';";
+			$result = mysqli_query($db, $query) or die('Error querying database.');	
+			
+		}
+			
+	}
 
 
+	
+	
+	
 ?>
 
 <!DOCTYPE html>
@@ -124,11 +179,21 @@ if(!isset($_SESSION["user_id"]))
 		//
 		-->
 			<div class="setting_profile_image">
-				<div class="m-profile-pic-intro_settings"></div>
-				<div class="m-profile-pic-intro_settings_change_image">
-					<p class="m-settings-info">Change Profile  Image</p>
-					<input id="files" class="m-settings-info_image_button" type="file" name="UserProfilePicture" accept="image/x-png,image/gif,image/jpeg" />
+				<form method='post' class='change_picture_form' enctype="multipart/form-data">
+				<div class="m-profile-pic-intro_settings">
+					<div class="ProfileIconGroups" id="list"></div>
 				</div>
+				<div class="m-profile-pic-intro_settings_change_image">
+				
+				
+				
+					<p class="m-settings-info">Change Profile  Image</p>
+					<input id="files" class="m-settings-info_image_button" type="file" name="fileToUpload" accept="image/x-png,image/gif,image/jpeg" />
+					<button name="picture-button" class="picture-input_button">Change Picture</button>
+					</form>
+				</div>
+				
+				
 
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 				<hr/>
@@ -198,7 +263,7 @@ if(!isset($_SESSION["user_id"]))
 						<br/><br/>
 						<span class="m-settings-info_sub_titles">Change Password:</span>
 						<div class="m-settings-info_password_input_area">
-							<form method='post' class='change_username_form'>
+							<form method='post' class='change_username_form' >
 								<input class="m-password-input" type="text" name="password" placeholder="Type New Password Here">
 								<button name="password-button"  class="password-input_button">Change Password</button>
 							</form>
@@ -426,6 +491,7 @@ if(!isset($_SESSION["user_id"]))
         <a class="buttons" href="MobileMoodsTemplate.html" tooltip="Moods"></a><a class="buttons" href="#"><span><span class="rotate"></span></span></a></nav>
 
     <script src="cmenuscript.js"></script>
+	<script src="UploadPhotos.js"></script>
 <script src="categoriesmenu.js"></script>
 
 </body>
