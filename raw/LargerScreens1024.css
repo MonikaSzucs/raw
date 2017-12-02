@@ -721,7 +721,6 @@ hambuger menu
         width: 100%;
 		position: relative;
 		top: 30px;
-		background-color: #f8f8f8;
 		min-height: 288px;
     }
 	
@@ -734,12 +733,11 @@ hambuger menu
         padding: 20px;
     }
     #m-message-button {
-        margin: 0 0 0 40px;
+        margin: 0 auto;
         padding-left:85px;
         position: relative;
         width: 85%;
         height: 75px;
-        background-color: white;
         border-bottom: solid #cbcbcb .50px;
         border-top: solid #cbcbcb .50px;
     }
@@ -754,22 +752,20 @@ hambuger menu
       border-top: solid #cbcbcb .50px;
     }
     #m-settings-button {
-      margin: 0 0 0 40px;
+      margin: 0 auto;
       padding-left:85px;
       position: relative;
       width: 85%;
       height: 75px;
-      background-color: white;
       border-bottom: solid #cbcbcb .50px;
       border-top: solid #cbcbcb .50px;
     }
     #m-signout-box {
-      margin: 0 0 0 40px;
+      margin: 0 auto;
       padding-left:85px;
       position: relative;
       width: 85%;
       height: 75px;
-      background-color: white;
       border-top: solid #cbcbcb .50px;
       border-bottom: solid #cbcbcb .50px;
     }

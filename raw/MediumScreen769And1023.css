@@ -626,6 +626,10 @@ hambuger menu
         position: relative;
         font-family: Avenir-Medium;
     }
+	
+	#m-groupicon{
+		background-image: url(SVG/Group.svg);
+	}
 
     #view-profile {
         font-family: Avenir-medium;
@@ -635,11 +639,9 @@ hambuger menu
     #m-view-profile-div {
         color: black;
         width: 40%;
-        height: 190px;
+
         position: relative;
-        margin-top: 70px;
-        margin-left: 220px;
-        /*display: inline-grid;*/
+        
         z-index: 9996;
     }
 
@@ -662,7 +664,6 @@ hambuger menu
         position: relative;
         width: 100vw;
         height: 75px;
-        background-color: white;
         border-bottom: solid #cbcbcb .50px;
         border-top: solid #cbcbcb .50px;
     }
@@ -691,14 +692,12 @@ hambuger menu
         position: relative;
         width: 100vw;
         height: 75px;
-        background-color: white;
         border-bottom: solid #cbcbcb .50px;
     }
     #m-signout-box {
         position: relative;
         width: 100vw;
         height: 75px;
-        background-color: white;
         margin: 0 auto;
         border-top: solid #cbcbcb .50px;
         border-bottom: solid #cbcbcb .50px;
@@ -1159,7 +1158,7 @@ hambuger menu
     top: 20px;
     position: absolute;
     font-family: avenir-medium;
-    font-size: 50px;
+    font-size: 30px;
     margin: 15px;
 	width: 500px;
 	}
@@ -1378,10 +1377,10 @@ hambuger menu
 
 /* ------------------ Page Title */
   .Recently_Uploaded_Title {
-    font-family: Avenir Black;
-    margin-left: 50px;
-    margin-top: 20px;
-    margin-bottom: 45px;
+       font-size: 40px;
+    padding-left: 50px;
+    font-family: Avenir-Black;
+	margin-top: 40px;
   }
 
 
