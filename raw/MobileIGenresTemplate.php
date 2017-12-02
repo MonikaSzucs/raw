@@ -110,7 +110,7 @@ mysqli_close($conn);
 
             <div id="m-rnb" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
-					<p class="genre-tags">RNB</p>
+					
 					<input type="hidden" name="mood" value='g_rnb'/>
 					<input type="submit" class="genre-tags" value="RNB"/>
 				</form>
@@ -118,7 +118,7 @@ mysqli_close($conn);
 
             <div id="m-punk" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
-					<p class="genre-tags">Punk</p>
+					
 					<input type="hidden" name="mood" value='g_punk'/>
 					<input type="submit" class="genre-tags" value="Punk"/>
 				</form>
@@ -126,7 +126,7 @@ mysqli_close($conn);
 
             <div id="m-rock" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
-					<p class="genre-tags">Rock</p>
+					
 					<input type="hidden" name="mood" value='g_rock'/>
 					<input type="submit" class="genre-tags" value="Rock"/>
 				</form>
@@ -134,7 +134,7 @@ mysqli_close($conn);
 
             <div id="m-pop" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
-					<p class="genre-tags">Pop</p>
+					
 					<input type="hidden" name="mood" value='g_pop'/>
 					<input type="submit" class="genre-tags" value="Pop"/>
 				</form>
@@ -142,7 +142,7 @@ mysqli_close($conn);
 
             <div id="m-jazz" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
-					<p class="genre-tags">Jazz</p>
+				
 					<input type="hidden" name="mood" value='g_jazz'/>
 					<input type="submit" class="genre-tags" value="Jazz"/>
 				</form>
@@ -150,7 +150,7 @@ mysqli_close($conn);
 
             <div id="m-metal" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
-					<p class="genre-tags">Metal</p>
+					
 					<input type="hidden" name="mood" value='g_metal'/>
 					<input type="submit" class="genre-tags" value="Metal"/>
 				</form>
@@ -158,7 +158,7 @@ mysqli_close($conn);
 
             <div id="m-funk" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
-					<p class="genre-tags">Funk</p>
+					
 					<input type="hidden" name="mood" value='g_funk'/>
 					<input type="submit" class="genre-tags" value="Funk"/>
 				</form>
@@ -166,7 +166,7 @@ mysqli_close($conn);
 
             <div id="m-country" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
-					<p class="genre-tags">Country</p>
+					
 					<input type="hidden" name="mood" value='g_country'/>
 					<input type="submit" class="genre-tags" value="Country"/>
 				</form>
@@ -174,7 +174,7 @@ mysqli_close($conn);
 
             <div id="m-edm" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
-					<p class="genre-tags">EDM</p>
+					
 					<input type="hidden" name="mood" value='g_edm'/>
 					<input type="submit" class="genre-tags" value="EDM"/>
 				</form>
@@ -182,7 +182,7 @@ mysqli_close($conn);
 
             <div id="m-classical" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
-					<p class="genre-tags">Classical</p>
+					
 					<input type="hidden" name="mood" value='g_classical'/>
 					<input type="submit" class="genre-tags" value="Classical"/>
 				</form>
