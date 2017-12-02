@@ -1403,6 +1403,18 @@ hambuger menu
 		margin: 10px 0px 0 20px;
 		background-color: white;
 	}
+	
+	.picture-input_button{
+		position: relative;
+		bottom: 26px;
+		color: black;
+		border: 1px solid darkgray;
+		padding: 10px;
+		border-radius: 20px;
+		margin-top: 20px;
+		background-color: white;
+		width: 120px;
+	}
 
 	.group_container{
 		width: 90%;

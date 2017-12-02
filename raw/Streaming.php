@@ -223,17 +223,6 @@ if(isset($_POST['toDo'])){
 
 								echo "</div>";
 								
-								if(mysqli_num_rows($groupsshown) > 0)
-									{
-										echo "<div class='EnterButtonGroups'>";
-											if(in_array($row['group_id'], $group_users)){
-												echo "<form action ='EnteredGroup.php?sample=1' method='GET'>";
-													echo "<input type='hidden' name='group_id' value='" . $row['group_id'] . "'>";
-													echo "<input class='Enter-Butt' type='submit' value='Enter'>";
-												echo "</form>";
-											}
-										echo "</div>";
-									}
 								echo "</div>";
 							echo "</div>";
 						echo "</div>";
