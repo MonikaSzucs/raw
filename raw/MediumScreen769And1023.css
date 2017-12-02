@@ -1825,11 +1825,10 @@ hambuger menu
         border-style: none;
         left: 15px;
         border-radius: 5px;
-        width: 60%;
+        width: 70%;
         height: 30px;
 		padding-left: 20px;
 		position: relative;
-		bottom: 15px;
 	}
 
 	.password_settings{
@@ -1860,7 +1859,31 @@ hambuger menu
 		bottom: 15px;
         left: 15px;
         border-radius: 5px;
-        width: 60%;
+        width: 70%;
+        height: 30px;
+		padding-left: 20px;
+	}
+	
+	.m-username-input{
+		background-color: #ebebeb;
+        border-style: none;
+        position: relative;
+		bottom: 15px;
+        left: 15px;
+        border-radius: 5px;
+        width: 70%;
+        height: 30px;
+		padding-left: 20px;
+	}
+	
+	.m-last-name-input{
+		background-color: #ebebeb;
+        border-style: none;
+        position: relative;
+		bottom: 15px;
+        left: 15px;
+        border-radius: 5px;
+        width: 70%;
         height: 30px;
 		padding-left: 20px;
 	}
