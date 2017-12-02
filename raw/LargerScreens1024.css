@@ -1358,8 +1358,8 @@ hambuger menu
 
 	.ProfileIconGroups{
 		float: left;
-		width: 150px;
-		height: 150px;
+		width: 145px;
+		height: 145px;
 		top: 0;
 		bottom: 0;
 		margin: auto;
@@ -1370,18 +1370,7 @@ hambuger menu
 		box-shadow: 5px 5px 10px rgba(0, 0, 0, .15);
 	}
 	
-	.picture-input_button{
-		position: relative;
-		bottom: 26px;
-		color: black;
-		border: 1px solid darkgray;
-		padding: 10px;
-		border-radius: 20px;
-		margin-top: 20px;
-		background-color: white;
-		width: 150px;
-}
-	}
+	
 	
 	.GroupsInformation{
 		float: left;
@@ -2239,8 +2228,8 @@ hambuger menu
 
 	.m-profile-pic-intro_settings {
     box-shadow: 0px 5px 5px #888888;
-    width: 154px;
-    height: 154px;
+    width: 150px;
+    height: 150px;
     border-radius: 100%;
     position: relative;
     margin: 40px 0 0 50px;

@@ -1864,29 +1864,7 @@ hambuger menu
 		padding-left: 20px;
 	}
 	
-	.m-username-input{
-		background-color: #ebebeb;
-        border-style: none;
-        position: relative;
-		bottom: 15px;
-        left: 15px;
-        border-radius: 5px;
-        width: 70%;
-        height: 30px;
-		padding-left: 20px;
-	}
 	
-	.m-last-name-input{
-		background-color: #ebebeb;
-        border-style: none;
-        position: relative;
-		bottom: 15px;
-        left: 15px;
-        border-radius: 5px;
-        width: 70%;
-        height: 30px;
-		padding-left: 20px;
-	}
 
 	.m-first_name-input_button{
 		width: 180px;
