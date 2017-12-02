@@ -348,7 +348,7 @@ if(isset($_POST['toDo'])){
 						///Make sure you change this directory area when we configure it for when we host it
 							
 								echo "<button class='download_feed_button'>";
-                                    echo "<a href='/raw/raw/raw/". $row['music_file'] . "' download='" . $row['music_file'] . "'>";
+                                    echo "<a class='download_music_button' href='/raw/raw/raw/". $row['music_file'] . "' download='" . $row['music_file'] . "'>";
                                 echo "Download";
                                     echo "</a>";
                                 echo "</button>";

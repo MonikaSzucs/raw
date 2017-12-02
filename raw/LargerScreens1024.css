@@ -371,7 +371,7 @@ hambuger menu
 		top: -350px;
         box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
         background-color: white;
-        right: 35.5%;
+        left: 420px;
         transition: 400ms ease-in-out;
 
     }
@@ -391,6 +391,39 @@ hambuger menu
         left: 0;
         font-family: Avenir-Medium;
     }
+	
+	.m-last-name-input{
+		background-color: #ebebeb;
+		border-style: none;
+		position: absolute;
+		left: 30px;
+		border-radius: 5px;
+		width: 70%;
+		height: 30px;
+		padding-left: 20px;
+	}
+	
+	.m-biography-input{
+		background-color: #ebebeb;
+		border-style: none;
+		position: absolute;
+		left: 30px;
+		border-radius: 5px;
+		width: 70%;
+		height: 30px;
+		padding-left: 20px;
+	}
+	
+	.m-username-input{
+		background-color: #ebebeb;
+		border-style: none;
+		position: absolute;
+		left: 30px;
+		border-radius: 5px;
+		width: 70%;
+		height: 30px;
+		padding-left: 20px;
+	}
 
     #hambul {
         position: absolute;
