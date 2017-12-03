@@ -71,15 +71,57 @@ session_start();
         <link rel="stylesheet"  media="(min-width: 1024px)" href="D-StartUpPage.css?v=1">
 		<link rel="stylesheet"  media="(min-width: 500px) and (max-width: 1024px)"  href="T-StartUpPage.css?v=1">
 		<link rel="stylesheet"  media="(max-width: 500px)"  href="M-StartUpPage2.css?v=1">
-		<script src="index.js" type="text/javascript"></script>
+    <script src = "index.js" type="text/javascript"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      #lottie {
+        background-color: transparent;
+        width: 100%;
+        height: 80%;
+        display: block;
+        overflow: hidden;
+        transform: translate3d(0,-60px,0);
+        text-align: center;
+        opacity: 1;
+        position: absolute;
+      }
+    </style>
+
     </head>
     <body id="wrapper">
+      <script src = "bodymovin.js" type="text/javascript"></script>
         <div id="Color">	</div>
 
 		<div id="container">
-			<div id="logoIcon"></div>
 
+<!--    RAW LOGO                                     -->
+
+
+    <div id="lottie"></div>
+    <script>
+    // var params = {
+    //   container: document.getElementById('lottie'),
+    //   renderer: 'svg',
+    //   loop: true,
+    //   autoplay: true,
+    //   path: 'JS/data.json'
+    // };
+    //
+    // var anim;
+    //
+    // anim = bodymovin.loadAnimation(params);
+
+    var anim = bodymovin.loadAnimation({
+      container: document.getElementById('lottie'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'JS/data.json'
+    })
+  </script>
+
+
+<!--    RAW LOGO                                     -->
 
 			<div class="space"></div>
 
