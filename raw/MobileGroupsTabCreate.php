@@ -357,6 +357,7 @@ $formSuccessfullMessage = "";
 							</div>
 
 							<hr>
+							
 
 							<div class = "create_group_section_file">
 

@@ -226,6 +226,19 @@ hambuger menu
 		margin-left: 50px;
 		width: 600px;
 	}
+	
+	.picture-input_button{
+		position: relative;
+		bottom: 26px;
+		color: black;
+		border: 1px solid darkgray;
+		padding: 10px;
+		border-radius: 20px;
+		margin-top: 20px;
+		background-color: white;
+		width: 120px;
+		margin-right: 40px;
+	}
 
     	.group_container{
 		width: 90%;
@@ -1722,8 +1735,8 @@ hambuger menu
 
 	.m-profile-pic-intro_settings {
         box-shadow: 0px 5px 5px #888888;
-        width: 200px;
-        height: 200px;
+        width: 151px;
+        height: 151px;
         border-radius: 100%;
         margin-top: 20px;
         margin-left: 25px;
@@ -1861,7 +1874,6 @@ hambuger menu
 		background-color: #ebebeb;
         border-style: none;
         position: relative;
-		bottom: 15px;
         left: 15px;
         border-radius: 5px;
         width: 70%;
@@ -1906,7 +1918,7 @@ hambuger menu
 	}
 
 	.settings_white{
-		height: 1900px;
+		height: 2000px;
 		width: 100%;
 		left: 0;
 		right: 0;
@@ -1982,14 +1994,12 @@ hambuger menu
 		width: 100%;
 		height: 125px;
 		margin-top: 40px;
-		background-color:blue;
 	}
 
 	.m-settings-info_password_input_area{
 		width: 100%;
 		height: 50px;
 		position: absolute;
-		background-color:orange;
 	}
 	
 	.download_music_button{
@@ -1999,23 +2009,184 @@ hambuger menu
 
 	.password-input_button{
 		position: relative;
-		bottom: 26px;
+		bottom: 22px;
 		color:black;
 		border: 1px solid darkgray;
 		padding: 10px;
 		border-radius: 20px;
 		margin-top: 20px;
 		background-color: white;
-		width: 120px;
+		width: 150px;
+		margin-right: 40px;
+		
+	}
+	
+	.last_name-input_button{
+		position: relative;
+		bottom: 22px;
+		color:black;
+		border: 1px solid darkgray;
+		padding: 10px;
+		border-radius: 20px;
+		margin-top: 20px;
+		background-color: white;
+		width: 150px;
 		margin-right: 40px;
 	}
 	
+	.username_input_button{
+		position: relative;
+		bottom: 22px;
+		color:black;
+		border: 1px solid darkgray;
+		padding: 10px;
+		border-radius: 20px;
+		margin-top: 20px;
+		background-color: white;
+		width: 150px;
+		margin-right: 40px;
+	}
 	
-
+	.first_name_area_settings{
+		width: 100%;
+		height: 125px;
+		margin-top: 40px;
+	}
+	
+	.username_area_settings{
+		width: 100%;
+		height: 125px;
+		margin-top: 40px;
+	}
+	
+	.m-username-input{
+		background-color: #ebebeb;
+        border-style: none;
+        position: relative;
+        left: 15px;
+        border-radius: 5px;
+        width: 70%;
+        height: 30px;
+		padding-left: 20px;
+	}
+	
+	.biography_area_settings{
+		width: 100%;
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+	
+	.biography_pulled{
+		width: 70%;
+		margin-left: 30px;
+	}
+	
+	.biography-input_button{
+		position: relative;
+		bottom: 22px;
+		color:black;
+		border: 1px solid darkgray;
+		padding: 10px;
+		border-radius: 20px;
+		margin-top: 20px;
+		background-color: white;
+		width: 150px;
+		margin-right: 40px;
+	}
+	
+	.m-biography-input{
+		background-color: #ebebeb;
+        border-style: none;
+        position: relative;
+        left: 15px;
+        border-radius: 5px;
+        width: 70%;
+        height: 30px;
+		padding-left: 20px;
+	}
+	
+	.last_name_area_settings{
+		width: 100%;
+		height: 125px;
+		margin-top: 40px;
+	}
+	
+	.m-last-name-input{
+		background-color: #ebebeb;
+		border-style: none;
+		position: relative;
+		left: 15px;
+		border-radius: 5px;
+		width: 70%;
+		height: 30px;
+		padding-left: 20px;
+	}
+	
+	.hobbies_area_settings{
+		width: 100%;
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+	
+	.hobbies_pulled{
+		width: 70%;
+		margin-left: 30px;
+	}
+	
+	.first_name-input_button{
+		position: relative;
+		bottom: 22px;
+		color:black;
+		border: 1px solid darkgray;
+		padding: 10px;
+		border-radius: 20px;
+		margin-top: 20px;
+		background-color: white;
+		width: 150px;
+		margin-right: 40px;
+	}
+	
+	.hobbies-input_button{
+		position: relative;
+		bottom: 22px;
+		color:black;
+		border: 1px solid darkgray;
+		padding: 10px;
+		border-radius: 20px;
+		margin-top: 20px;
+		background-color: white;
+		width: 150px;
+		margin-right: 40px;
+	}
+	
 	.song-buttons{
 		padding-top:50px;
 	}
+	
+	.skills_area_settings{
+		width: 100%;
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
 
+	.skills_pulled{	
+		width: 70%;
+		margin-left: 30px;
+	}
+	
+	.skills-input_button{
+		position: relative;
+		bottom: 22px;
+		color:black;
+		border: 1px solid darkgray;
+		padding: 10px;
+		border-radius: 20px;
+		margin-top: 20px;
+		background-color: white;
+		width: 150px;
+		margin-right: 40px;
+	}
+	
 	.play_pause_feed_desktop {
      background: url(SVG/Play.svg);
       background-repeat: no-repeat;
