@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2017 at 10:31 PM
+-- Generation Time: Dec 03, 2017 at 08:27 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -50,7 +50,17 @@ INSERT INTO `groups` (`group_id`, `group_title`, `group_description`, `group_pho
 (53, 'Hanna2', 'H2', 'UserPictures/1511845051pexels-photo-640781.jpeg', '2017-11-27 20:57:31'),
 (54, 'Hanna 4444444', '4444444', 'UserPictures/1511845123pexels-photo-660282.jpeg', '2017-11-27 20:58:43'),
 (55, 'User3 Test', 'testttttt', 'UserPictures/1511847059pexels-photo-185662.jpeg', '2017-11-27 21:30:59'),
-(56, 'Dec2 test', 'testtttt', 'UserPictures/1512225108Koala.jpg', '2017-12-02 06:31:48');
+(56, 'Dec2 test', 'testtttt', 'UserPictures/1512225108Koala.jpg', '2017-12-02 06:31:48'),
+(57, 'Dec 2 Test new', '', 'UserPictures/1512277530Jellyfish.jpg', '2017-12-02 21:05:30'),
+(58, 'test', 'estestest', '', '2017-12-02 21:26:32'),
+(59, 'dec2testsetest', 'testestest', 'UserPictures/1512278916Chrysanthemum.jpg', '2017-12-02 21:28:36'),
+(60, 'dec22222222', 'test', 'UserPictures/1512279283Tulips.jpg', '2017-12-02 21:34:43'),
+(61, 'reddddd', 'drererdsdf', 'UserPictures/1512280022Lighthouse.jpg', '2017-12-02 21:47:02'),
+(62, 'testttingg', 'tttttttt', 'UserPictures/1512283005Koala.jpg', '2017-12-02 22:36:45'),
+(63, 'Dec2 Testing new', 'teststestestest', 'UserPictures/1512283084Penguins.jpg', '2017-12-02 22:38:04'),
+(64, 'Try to add a new one', 'new', 'UserPictures/1512283887Tulips.jpg', '2017-12-02 22:51:27'),
+(65, 'newwwwwwwwwwwwwwwww', 'wwwwwwwww', 'UserPictures/1512283926Jellyfish.jpg', '2017-12-02 22:52:06'),
+(66, 'new2', 'desc', 'UserPictures/1512284247Hydrangeas.jpg', '2017-12-02 22:57:27');
 
 -- --------------------------------------------------------
 
@@ -69,18 +79,29 @@ CREATE TABLE `group_users` (
 
 INSERT INTO `group_users` (`group_id`, `user_id`) VALUES
 (44, 1),
-(46, 1),
 (46, 10),
 (48, 1),
 (48, 10),
+(50, 1),
 (50, 10),
+(51, 1),
 (51, 10),
 (52, 1),
 (53, 10),
 (54, 1),
 (54, 10),
 (55, 29),
-(56, 1);
+(56, 1),
+(57, 10),
+(58, 1),
+(59, 1),
+(60, 1),
+(61, 1),
+(62, 1),
+(63, 1),
+(64, 1),
+(65, 1),
+(66, 1);
 
 -- --------------------------------------------------------
 
@@ -160,7 +181,29 @@ INSERT INTO `music_group` (`group_id`, `music_id`, `music_file`, `music`, `music
 (54, 53, 'UsersSongs/1511845123Marvin_s_Dance.mp3', 1, '2017-11-27 20:58:43', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
 (54, 54, 'UsersSongs/1511845156Where_She_Walks.mp3', 0, '2017-11-27 20:59:16', 'sample Hanna', 'UserPictures/1511845156pexels-photo-96857.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
 (55, 55, 'UsersSongs/1511847059Strolling_Through.mp3', 1, '2017-11-27 21:30:59', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
-(56, 56, 'UsersSongs/1512225108Kalimba.mp3', 1, '2017-12-02 06:31:48', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1);
+(56, 56, 'UsersSongs/1512225108Kalimba.mp3', 1, '2017-12-02 06:31:48', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1),
+(44, 57, 'UsersSongs/1512258074Maid with the Flaxen Hair.mp3', 1, '2017-12-02 15:41:14', 'new song dec2', 'UserPictures/1512258074Koala.jpg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0),
+(44, 58, 'UsersSongs/1512258179Maid with the Flaxen Hair.mp3', 1, '2017-12-02 15:42:59', 'new song dec2', 'UserPictures/1512258179Koala.jpg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0),
+(44, 59, 'UsersSongs/1512258200Sleep Away.mp3', 1, '2017-12-02 15:43:20', 'new song dec222', 'UserPictures/1512258200Penguins.jpg', 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0),
+(44, 60, 'UsersSongs/1512258251Sleep Away.mp3', 1, '2017-12-02 15:44:11', 'new song dec222', 'UserPictures/1512258251Penguins.jpg', 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0),
+(44, 61, 'UsersSongs/1512259197Sleep Away.mp3', 1, '2017-12-02 15:59:57', 'new song dec222', 'UserPictures/1512259197Penguins.jpg', 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0),
+(44, 62, 'UsersSongs/1512259219Sleep Away.mp3', 1, '2017-12-02 16:00:19', 'new song dec222', 'UserPictures/1512259219Penguins.jpg', 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0),
+(44, 63, 'UsersSongs/1512259232Sleep Away.mp3', 1, '2017-12-02 16:00:32', 'new song dec222', 'UserPictures/1512259232Penguins.jpg', 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0),
+(44, 64, 'UsersSongs/1512259270Sleep Away.mp3', 1, '2017-12-02 16:01:10', 'new song dec222', 'UserPictures/1512259270Penguins.jpg', 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0),
+(44, 65, 'UsersSongs/1512259649Sleep Away.mp3', 1, '2017-12-02 16:07:29', 'new song dec222', 'UserPictures/1512259649Penguins.jpg', 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0),
+(44, 66, 'UsersSongs/1512259650Sleep Away.mp3', 1, '2017-12-02 16:07:30', 'new song dec222', 'UserPictures/1512259650Penguins.jpg', 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0),
+(44, 67, 'UsersSongs/1512259767Sleep Away.mp3', 1, '2017-12-02 16:09:27', 'new song dec222', 'UserPictures/1512259767Penguins.jpg', 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0),
+(44, 68, 'UsersSongs/1512259838Sleep Away.mp3', 1, '2017-12-02 16:10:38', 'new song dec222', 'UserPictures/1512259838Penguins.jpg', 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0),
+(57, 69, 'UsersSongs/1512277530Kalimba.mp3', 1, '2017-12-02 21:05:30', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(58, 70, '', 1, '2017-12-02 21:26:32', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(59, 71, 'UsersSongs/1512278916Kalimba.mp3', 1, '2017-12-02 21:28:36', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(60, 72, 'UsersSongs/1512279283Maid with the Flaxen Hair.mp3', 1, '2017-12-02 21:34:43', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(61, 73, 'UsersSongs/1512280022Maid with the Flaxen Hair.mp3', 1, '2017-12-02 21:47:02', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(62, 74, 'UsersSongs/1512283005Sleep Away.mp3', 1, '2017-12-02 22:36:45', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(63, 75, 'UsersSongs/1512283084Sleep Away.mp3', 1, '2017-12-02 22:38:04', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(64, 76, 'UsersSongs/1512283887Sleep Away.mp3', 1, '2017-12-02 22:51:27', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(65, 77, 'UsersSongs/1512283926Sleep Away.mp3', 1, '2017-12-02 22:52:06', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(66, 78, 'UsersSongs/1512284247Kalimba.mp3', 1, '2017-12-02 22:57:27', '', 'UserPictures/21512284247Hydrangeas.jpg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -244,7 +287,8 @@ INSERT INTO `music_public` (`music_public_id`, `user_id`, `song_title`, `music_f
 (46, 1, 'sample', 'GlobalSongs/1511332997Trips.mp3', 0, '2017-11-21 22:43:17', 'GlobalPictures/1511332997126443.png', 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
 (47, 1, 'Country song 1', 'GlobalSongs/1511921590Trips.mp3', 1, '2017-11-28 18:13:10', 'GlobalPictures/1511921590guitar-classical-guitar-acoustic-guitar-electric-guitar.jpg', 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1),
 (48, 1, 'Country sample1', 'GlobalSongs/1511921634Garden_Walk.mp3', 0, '2017-11-28 18:13:54', 'GlobalPictures/1511921634Desert.jpg', 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1),
-(49, 1, 'test Dec2', 'GlobalSongs/1512225292Maid with the Flaxen Hair.mp3', 1, '2017-12-02 06:34:52', 'GlobalPictures/1512225292Lighthouse.jpg', 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0);
+(49, 1, 'test Dec2', 'GlobalSongs/1512225292Maid with the Flaxen Hair.mp3', 1, '2017-12-02 06:34:52', 'GlobalPictures/1512225292Lighthouse.jpg', 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0),
+(50, 10, 'test New song', 'GlobalSongs/1512271041Sleep Away.mp3', 1, '2017-12-02 19:17:21', 'GlobalPictures/1512271041Penguins.jpg', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -324,17 +368,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 --
 -- AUTO_INCREMENT for table `music_group`
 --
 ALTER TABLE `music_group`
-  MODIFY `music_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `music_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 --
 -- AUTO_INCREMENT for table `music_public`
 --
 ALTER TABLE `music_public`
-  MODIFY `music_public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `music_public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 --
 -- AUTO_INCREMENT for table `user`
 --
