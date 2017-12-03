@@ -2,65 +2,68 @@
 
 session_start();
 //this is to make sure people can't access the pages unless they log in
+
 if(!isset($_SESSION["user_id"]))
 {
 	session_destroy();
 	header( 'Location: signout.php' );
 };
 
+
+
 $target_file_photo = "";
 $target_file_music = "";
-print_r($_FILES);
-	echo "TTTTTTT<br//>";
+///print_r($_FILES);
+	//echo "TTTTTTT<br//>";
 
 //group picture
 //the ifseet means this will only work when you click form submit
 if( isset($_FILES["myImage"]["name"]) && !empty($_FILES["myImage"]["name"])) {
-	echo "1<br//>";
+	//echo "1<br//>";
 	$target_file_photo .= "UserPictures/".time().basename($_FILES["myImage"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = pathinfo($target_file_photo,PATHINFO_EXTENSION);
     $check = getimagesize($_FILES["myImage"]["tmp_name"]);
     if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
+        //echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
-		echo "1<br//>";
+		///echo "1<br//>";
     } else {
-        echo "File is not an image.";
+        //echo "File is not an image.";
         $uploadOk = 0;
     }
 	// Check if file already exists
 	if (file_exists($target_file_photo)) {
-		echo "Sorry, file already exists.";
+		///echo "Sorry, file already exists.";
 		$uploadOk = 0;
 	}
 	// Check file size
 	if ($_FILES["myImage"]["size"] > 5000000) {
-		echo "Sorry, your file is too large.";
+		///echo "Sorry, your file is too large.";
 		$uploadOk = 0;
 	}
 	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"&& $imageFileType != "gif" ) {
-		echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+		//echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
 		$uploadOk = 0;
 	}
 
 	// Check if $uploadOk is set to 0 by an error
 	if ($uploadOk == 0) {
-		echo "Sorry, your file was not uploaded.";
+		//echo "Sorry, your file was not uploaded.";
 	// if everything is ok, try to upload file
 	} else {
 		if (move_uploaded_file($_FILES["myImage"]["tmp_name"], $target_file_photo)) {
-			echo "The file ". basename( $_FILES["myImage"]["name"]). " has been uploaded.";
+			////echo "The file ". basename( $_FILES["myImage"]["name"]). " has been uploaded.";
 		} else {
 			$target_file_photo = "";
-			echo "Sorry, there was an error uploading your photo file.";
+			///echo "Sorry, there was an error uploading your photo file.";
 		}
 	}
 }
 
 //music files
 if( isset($_FILES["myMusic"]["name"]) && !empty($_FILES["myMusic"]["name"])) {
-	echo "1<br//>";
+	///echo "1<br//>";
 	$target_file_music .= "UsersSongs/". time().basename($_FILES["myMusic"]["name"]);
 	$uploadOk = 1;
 	$valid_extension = array('.mp3', '.mp4', '.wav');
@@ -68,27 +71,27 @@ if( isset($_FILES["myMusic"]["name"]) && !empty($_FILES["myMusic"]["name"])) {
 
 	if( in_array( $file_extension, $valid_extension ) &&  $_FILES["myMusic"]["size"] < 50000000 ){
         $uploadOk = 1;
-		echo "1<br//>";
+		//echo "1<br//>";
     } else {
-        echo "File is not an audio file.";
+        ////echo "File is not an audio file.";
         $uploadOk = 0;
     }
 
 	// Check if $uploadOk is set to 0 by an error
 	if ($uploadOk == 0) {
-		echo "Sorry, your file was not uploaded.";
+		//echo "Sorry, your file was not uploaded.";
 	// if everything is ok, try to upload file
 	} else {
 		if(move_uploaded_file($_FILES["myMusic"]["tmp_name"], $target_file_music)){
-			echo "The file " . basename( $_FILES["myMusic"]["name"]). " has been uploaded.";
+			//echo "The file " . basename( $_FILES["myMusic"]["name"]). " has been uploaded.";
 		} else {
 			$target_file_music = "";
-			echo "Sorry, there was an error uploading your audio file.";
+			//echo "Sorry, there was an error uploading your audio file.";
 		}
 	}
 }
 
-
+$loggedin = "";
 
 $formErrorMessage = "";
 $formSuccessfullMessage = "";
@@ -103,9 +106,8 @@ $formSuccessfullMessage = "";
 		define('DB_PASSWORD', '');
 		define('DB_DATABASE', 'raw');
 		$conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
-
-
-
+		$loggedin = $conn;
+        
 		$user_id= $_SESSION["user_id"];
 
 		//add genre to the group
@@ -148,7 +150,7 @@ $formSuccessfullMessage = "";
 			$query = "INSERT INTO music_group(group_id, music_file, music, music_title, music_photo, g_rnb, g_rock, g_pop, g_punk, g_jazz, g_metal, g_funk, g_country, g_edm, g_classical, g_happy, g_sad, g_angry, g_chill, g_focus, g_workout, g_travel, g_guitar, g_bass, g_synth, g_pads, g_woodwind, g_drums, g_strings, g_brass) ";
 			$query .= "VALUES ( '" . $_GET['group_id'] . "', '" .  $target_file_music . "', '" . $_POST['music_check']. "', '" . $TitleSongSample . "', '" . $target_file_photo . "', '" . $g_rnb."' , '".$g_rock."', '".$g_pop."', '".$g_punk."', '".$g_jazz."', '".$g_metal."', '".$g_funk."', '".$g_country."', '".$g_edm."', '".$g_classical."', '".$g_happy."', '".$g_sad."', '".$g_angry."', '".$g_chill."', '".$g_focus."', '".$g_workout."', '".$g_travel."', '".$g_guitar."', '".$g_bass."', '".$g_synth."', '".$g_pads."', '".$g_woodwind."', '".$g_drums."', '".$g_strings."', '".$g_brass."') ";
 
-			echo $query;
+			//echo $query;
 			//step 3
 			if($result = mysqli_query($conn, $query) )
 			{
@@ -158,12 +160,6 @@ $formSuccessfullMessage = "";
 				echo "Error: " . $query . "<br>" . mysqli_error($conn);
 			}
 		}
-
-
-		//Step 4 Close the conenction
-		mysqli_close($conn);
-
-
 	}
  ?>
 
@@ -256,13 +252,35 @@ $formSuccessfullMessage = "";
 							<form action="EnteredGroup.php" method="get">
 								<input type="hidden" name="group_id" value="<?php echo $_GET['group_id']?>"/>
 							</form>
-							<p id="name">Name</p>
+							<p id="name">Name
+							
+							
+							<?php
+								define('DB_HOST', 'localhost');
+								define('DB_USER', 'root');
+								define('DB_PASSWORD', '');
+								define('DB_DATABASE', 'raw');
+
+								$db = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
+								
+											
+								//get group?_user from data base where user id equal to session user ID
+								$query = "SELECT group_title FROM `groups` WHERE group_id =" . $_GET['group_id'];
+								$result = mysqli_query($db, $query);
+
+								$first_name = array();
+								while ($row = mysqli_fetch_array($result)){
+									$first_name[] = $row['group_title'];
+								}
+
+								echo $first_name[0];
+							?>
+							</p>
 							<!-- <ul id="view-profile">
 								<li id="m-followers-list"></li>
 							</ul> -->
 						</div>
-						<input type="submit" id="BackButtonCreation" value="Back"/>
-					</div>
+						</div>
         </div>
 
 
@@ -415,5 +433,9 @@ $formSuccessfullMessage = "";
 
 
 </body>
+<?php
+	//Step 4 Close the conenction
+		mysqli_close($conn);
 
+?>
 </html>

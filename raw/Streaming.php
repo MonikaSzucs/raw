@@ -164,7 +164,7 @@ if(isset($_POST['toDo'])){
 					
 					
 					$sId = (int)$_SESSION['user_id'];
-					$query = "SELECT * FROM group_users gu INNER JOIN groups g on gu.group_id = g.group_id WHERE gu.group_id NOT IN (SELECT group_id FROM group_users WHERE user_id != " . $sId . ") ORDER BY g.created DESC LIMIT 5;";
+					$query = "SELECT * FROM group_users gu INNER JOIN groups g on gu.group_id = g.group_id WHERE gu.group_id NOT IN (SELECT group_id FROM group_users WHERE user_id = " . $sId . ") ORDER BY g.created DESC LIMIT 5;";
 					$result = mysqli_query($db, $query) or die('Error querying database.');
 				//Step3 Display the result
 
@@ -201,7 +201,7 @@ if(isset($_POST['toDo'])){
 
 								$groupsshown = mysqli_query($db, $sql);
 									//if(in_array($row['group_id'], $group_users))
-									if(mysqli_num_rows($groupsshown) == 0)
+									if(mysqli_num_rows($groupsshown) > 0)
 									{
 										//echo "already Joined";
 										// DELETE FROM `group_users` WHERE `group_users`.`group_id` = 46 AND `group_users`.`user_id` = 1
