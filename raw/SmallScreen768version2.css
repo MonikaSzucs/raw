@@ -549,11 +549,9 @@
     }
 
     #m-view-profile-div {
-      width: 50vw;
+      width: 70%;
       height: 80px;
       position: relative;
-      top: 55px;
-      left: 220px;
       margin: 0 0px 0 0;
     }
 

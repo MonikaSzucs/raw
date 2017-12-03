@@ -161,7 +161,7 @@ if(!isset($_SESSION["user_id"]))
 	}
 
 	//Step2 get data from database
-	$query = "SELECT * FROM groups LIMIT " . $limit . " OFFSET " . $start_from;
+	$query = "SELECT * FROM groups ORDER BY created DESC LIMIT " . $limit . " OFFSET " . $start_from;
 	$result = mysqli_query($db, $query) or die('Error querying database.');
 //Step3 Display the result
 

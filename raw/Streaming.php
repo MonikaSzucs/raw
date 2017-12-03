@@ -316,7 +316,7 @@ if(isset($_POST['toDo'])){
 								
 									
 									while ($Nrow = mysqli_fetch_array($names)) {
-										 echo $Nrow['first_name'];
+										 echo $Nrow['first_name'] . " ";
 										 echo $Nrow['last_name'];
 									}
 							echo "</p>";

@@ -247,12 +247,12 @@ $formSuccessfullMessage = "";
         <div class="m-profile-box">
 					<div id="m-profile-inner">
 						<!-- <div class="m-profile-buttons"></div> -->
-						<div id="m-profile-pic-intro"></div>
+
 						<div id="m-view-profile-div">
 							<form action="EnteredGroup.php" method="get">
 								<input type="hidden" name="group_id" value="<?php echo $_GET['group_id']?>"/>
 							</form>
-							<p id="name">Name
+							<p id="name" class="GroupTitle"><b>Add To:</b>
 							
 							
 							<?php
@@ -261,12 +261,12 @@ $formSuccessfullMessage = "";
 								define('DB_PASSWORD', '');
 								define('DB_DATABASE', 'raw');
 
-								$db = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
+								$conn = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE) or die('Error connecting to MySQL server.');
 								
 											
 								//get group?_user from data base where user id equal to session user ID
 								$query = "SELECT group_title FROM `groups` WHERE group_id =" . $_GET['group_id'];
-								$result = mysqli_query($db, $query);
+								$result = mysqli_query($conn, $query);
 
 								$first_name = array();
 								while ($row = mysqli_fetch_array($result)){

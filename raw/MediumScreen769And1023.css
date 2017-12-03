@@ -221,6 +221,11 @@ hambuger menu
         color: white;
     }
 
+	.GroupTitle{
+		margin-top:100px;
+		margin-left: 50px;
+		width: 600px;
+	}
 
     	.group_container{
 		width: 90%;

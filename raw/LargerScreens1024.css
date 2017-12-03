@@ -688,12 +688,22 @@ hambuger menu
       width: auto;
       height: 100px;
       position: relative;
-      margin: -20px 0 0 50px;
+      margin-left: 60px;
       top: 50px;
       z-index: 9996;
       float: left;
     }
 
+	.personal_pic{
+		
+		width: 150px;
+		height: 150px;
+		border-radius: 150px;
+		box-shadow: 0px 5px 5px #888888;
+		z-index: 9997;
+		position: absolute;
+	}
+	
     .SongInformation{
       float: left;
       width: 70%;
@@ -2140,6 +2150,11 @@ hambuger menu
 		position: absolute;
      
 	}
+	
+	.GroupTitle{
+		font-size: 35px;
+	}
+	
 
 	.category_form {
 		background-color: transparent;
@@ -2256,6 +2271,7 @@ hambuger menu
 		float: left;
 	}
 
+	
   #m-profile-inner{
     min-width: 720px;
     width: 90%;

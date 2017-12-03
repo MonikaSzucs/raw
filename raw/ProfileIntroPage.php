@@ -125,7 +125,30 @@ $(document).ready(function(){
         </div>
 
         <a href="UsersSounds.php"><div class="m-profile-box-introphp" >
-            <div id="m-profile-pic-introphp"></div>
+            <div id="m-profile-pic-introphp">
+			
+			<?php
+			
+			
+			/*
+			////Need to fix this area
+			$query = "SELECT Profile_Picture FROM user WHERE user_id =" . $_SESSION['user_id'];
+			$result = mysqli_query($db, $query) or die('Error querying database.');
+			
+			
+			
+			echo "<div class='personal_pic'>";
+			echo $row['Profile_Picture'];
+                if(empty($row['music_photo'] )){
+					echo "<img src='./SVG/EmptyPicture.svg' class='circlePhoto_group_Auto' /> ";
+                }
+                else{
+                   echo "<td> <img src='" . $row['music_photo'] . "' class='circlePhotoUploadedFeed' > </td>";
+				}					
+            echo "</div>";
+			*/
+			?>
+			</div>
             <div id="m-view-profile-div">
                 <p id="name">
 

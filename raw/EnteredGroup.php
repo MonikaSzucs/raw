@@ -287,7 +287,22 @@ if(!isset($_GET['group_id'])){
 								echo "</div>";
 
 								echo "<div class='song-buttons'>";
-									echo "<p id='FeedArtistsName'>First Name Last Name";
+									echo "<p id='FeedArtistsName'>";
+							
+									/*
+
+										$query2 = "SELECT first_name,last_name FROM groups INNER JOIN group_users on groups.group_id = group_users.group_id INNER JOIN user on group_users.user_id = user.user_id WHERE user_id=" . $row['user_id'];
+										$names = mysqli_query($db, $query2) or die('Error querying database.');
+										
+										
+											
+											while ($Nrow = mysqli_fetch_array($names)) {
+												 echo $Nrow['first_name'] . " ";
+												 echo $Nrow['last_name'];
+											}
+									
+									*/	
+										
 									echo "</p>";
 								echo "</div>";
 								echo "<div class='track-display'>";
