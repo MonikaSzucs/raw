@@ -51,9 +51,7 @@ mysqli_close($conn);
             <ul class="nav-bar">
                <a href="Streaming.php"><li>Explore</li></a>
                  <a href="MobileGroupsTab.php"><li>Groups</li></a>
-                <a href="MobileIGenresTemplate.php"><li>Genres</li></a>
-                <a href="MobileMoodsTemplate.php"><li>Moods</li></a>
-                <a href="MobileInsturmentsTemplate.php"><li>Instruments</li></a>
+               <li id="categories" onclick="myFunction2(this)">Categories</li>
             </ul>
 
             <div class="logo-spot"></div>
@@ -88,6 +86,20 @@ mysqli_close($conn);
               </li></a>               
             </ul>
         </div>
+        
+        <div id="hamburger2">
+            <ul id="hambul2">
+							<a href="MobileIGenresTemplate.php"><li class="hamclass">
+								Genres
+							</li></a>
+							<a href="MobileMoodsTemplate.php"> <li class="hamclass">
+								Moods
+							</li> </a>
+              <a href="MobileInsturmentsTemplate.php"><li class="hamclass">
+                Instruments
+              </li></a>
+            </ul>
+        </div>
 
         <h1 id="m-genresh">Moods</h1>
 
@@ -96,7 +108,7 @@ mysqli_close($conn);
 
             <div id="m-happy" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
-					<p class="genre-tags">Happy</p>
+					
 					<input type="hidden" name="mood" value='g_happy'/>
 					<input type="submit" class="genre-tags" value="Happy"/>
 				</form>
@@ -105,7 +117,7 @@ mysqli_close($conn);
 
             <div id="m-sad" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
-					<p class="genre-tags">Sad</p>
+					
 					<input type="hidden" name="mood" value='g_sad'/>
 					<input type="submit" class="genre-tags" value="Sad"/>
 				</form>
@@ -115,7 +127,7 @@ mysqli_close($conn);
 
             <div id="m-angry" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
-					<p class="genre-tags">Angry</p>
+				
 					<input type="hidden" name="mood" value='g_angry'/>
 					<input type="submit" class="genre-tags" value="Angry"/>
 				</form>
@@ -124,7 +136,7 @@ mysqli_close($conn);
             <div id="m-chill" class="mood-divs">
 
 				<form action="CategoryPicked.php" method="get" class="category_form">
-					<p class="genre-tags">Chill</p>
+					
 					<input type="hidden" name="mood" value='g_chill'/>
 					<input type="submit" class="genre-tags" value="Chill"/>
 				</form>
@@ -132,7 +144,7 @@ mysqli_close($conn);
 
             <div id="m-focus" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
-					<p class="genre-tags">Focus</p>
+				
 					<input type="hidden" name="mood" value='g_focus'/>
 					<input type="submit" class="genre-tags" value="Focus"/>
 				</form>
@@ -140,7 +152,7 @@ mysqli_close($conn);
 
             <div id="m-workout" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
-					<p class="genre-tags">Work Out</p>
+				
 					<input type="hidden" name="mood" value='g_workout'/>
 					<input type="submit" class="genre-tags" value="Work Out"/>
 				</form>
@@ -150,7 +162,7 @@ mysqli_close($conn);
 
             <div id="m-travel" class="mood-divs">
 				<form action="CategoryPicked.php" method="get" class="category_form">
-					<p class="genre-tags">Travel</p>
+				
 					<input type="hidden" name="mood" value='g_travel'/>
 					<input type="submit" class="genre-tags" value="Travel"/>
 				</form>
@@ -173,6 +185,7 @@ mysqli_close($conn);
 
 
 <script src="cmenuscript.js"></script>
+    <script src="categoriesmenu.js"></script>
 
 </body>
 

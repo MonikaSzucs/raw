@@ -86,9 +86,8 @@ if(!isset($_SESSION["user_id"]))
            <ul class="nav-bar">
               <a href="Streaming.php"><li>Explore</li></a>
                 <a href="MobileGroupsTab.php"><li>Groups</li></a>
-                <a href="MobileIGenresTemplate.php"><li>Genres</li></a>
-                <a href="MobileMoodsTemplate.php"><li>Moods</li></a>
-                <a href="MobileInsturmentsTemplate.php"><li>Instruments</li></a>
+                <li id="categories" onclick="myFunction2(this)">Categories</li>
+           
             </ul>
             <div class="logo-spot"></div>
 
@@ -120,6 +119,20 @@ if(!isset($_SESSION["user_id"]))
               <a href="logout.php"><li class="hamclass">
                 Sign Out
               </li></a>               
+            </ul>
+        </div>
+        
+        <div id="hamburger2">
+            <ul id="hambul2">
+							<a href="MobileIGenresTemplate.php"><li class="hamclass">
+								Genres
+							</li></a>
+							<a href="MobileMoodsTemplate.php"> <li class="hamclass">
+								Moods
+							</li> </a>
+              <a href="MobileInsturmentsTemplate.php"><li class="hamclass">
+                Instruments
+              </li></a>
             </ul>
         </div>
 
@@ -288,6 +301,7 @@ while ($row = mysqli_fetch_array($result)) {
 
     <script src="cmenuscript.js"></script>
 	<script src="UploadPhotos.js"></script>
+    <script src="categoriesmenu.js"></script>
 
 
 

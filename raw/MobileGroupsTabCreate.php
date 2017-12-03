@@ -10,8 +10,8 @@ if(!isset($_SESSION["user_id"]))
 
 $target_file_photo = "";
 $target_file_music = "";
-print_r($_FILES);
-	echo "TTTTTTT<br//>";
+//print_r($_FILES);
+//	echo "TTTTTTT<br//>";
 
 //group picture
 if( isset($_FILES["myImage"]["name"]) && !empty($_FILES["myImage"]["name"])) {
@@ -247,9 +247,7 @@ $formSuccessfullMessage = "";
            <ul class="nav-bar">
               <a href="Streaming.php"><li>Explore</li></a>
                 <a href="MobileGroupsTab.php"><li>Groups</li></a>
-                <a href="MobileIGenresTemplate.php"><li>Genres</li></a>
-                <a href="MobileMoodsTemplate.php"><li>Moods</li></a>
-                <a href="MobileInsturmentsTemplate.php"><li>Instruments</li></a>
+             <li id="categories" onclick="myFunction2(this)">Categories</li>
             </ul>
             <div class="logo-spot"></div>
 
@@ -280,6 +278,20 @@ $formSuccessfullMessage = "";
 							</li> </a>
               <a href="logout.php"><li class="hamclass">
               	Sign Out
+              </li></a>
+            </ul>
+        </div>
+        
+        <div id="hamburger2">
+            <ul id="hambul2">
+							<a href="MobileIGenresTemplate.php"><li class="hamclass">
+								Genres
+							</li></a>
+							<a href="MobileMoodsTemplate.php"> <li class="hamclass">
+								Moods
+							</li> </a>
+              <a href="MobileInsturmentsTemplate.php"><li class="hamclass">
+                Instruments
               </li></a>
             </ul>
         </div>
@@ -463,6 +475,7 @@ $formSuccessfullMessage = "";
 
     <script src="cmenuscript.js"></script>
 	<script src="UploadPhotos.js"></script>
+    <script src="categoriesmenu.js"></script>
 
 
 

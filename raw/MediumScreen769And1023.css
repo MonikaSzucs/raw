@@ -17,14 +17,12 @@
 
 /*MEDIA ------------------------------------------------------------------------------*/
 
-@media (max-width: 1023px) {
+@media (max-width: 1023.9px) {
     .mobileScreen {
         display: block;
     }
 
-	.LargeScreenGroup {
-		display: none;
-	}
+
 
 	.MediumScreenGroup{
 	display: block;
@@ -35,20 +33,53 @@
 	}
 
   .streaming_desktop {
-    display: none;
-  }
+    display: block;
+	}
+
+	.streaming_desktop {
+    display: block;
+	}
 
   .streaming_tablet {
     display: block;
-  }
+	}
 
   .streaming_mobile {
+    display: none;
+	}
+
+  .setting_break_mobile{
+	  display: none;
+	}
+
+  .setting_hide_desktop{
+	  display: none;
+	}
+
+	.setting_hide_mobile{
+	  display: none;
+	}
+
+	.setting_hide_tablet{
+		display: block;
+	}
+
+  .upload_global_music_samples_desktop{
+    display: none;
+  }
+
+  .upload_global_music_samples_tablet{
+    display: block;
+  }
+
+  .upload_global_music_samples_mobile{
     display: none;
   }
 
 
+
     body {
-        background-color: darkgrey;
+        background-color: white;
         margin: 0 auto;
         max-width: 100vw;
     }
@@ -73,6 +104,7 @@
         cursor: pointer;
         position: fixed;
         z-index: 9999;
+		margin-right: 30px;
     }
 
     .bar1,
@@ -111,6 +143,7 @@ hambuger menu
 
 
 
+
     .genre-tags {
         font-family: helvetica;
         font-size: 14px;
@@ -124,6 +157,7 @@ hambuger menu
         position: absolute;
         color: white;
         line-height: 180px;
+		background-color: transparent;
     }
     .m-player {
         vertical-align: middle;
@@ -160,7 +194,7 @@ hambuger menu
         background-size: 35px 35px;
         position: fixed;
         top: 12px;
-        right: 140px;
+        right: 142px;
         background-image: url(imgs/uploadicon.svg);
         background-repeat: no-repeat;
         background-position: center;
@@ -177,7 +211,8 @@ hambuger menu
         right: 0;
         background-color: white;
         width: 100%;
-        height: auto;
+        padding-bottom: 50px;
+		min-height: 100vh;
     }
    .m-settings-box a {
         color: black;
@@ -196,17 +231,16 @@ hambuger menu
 
 
     .group_container_create {
-
-			height: 150px;
-			left: 0;
-			right: 0;
-			margin: 0 auto;
+      height: 150px;
+      margin: 0 auto;
+      display: table;
 		}
 
     	.group_photo_Area {
 			width: 150px;
 			height: 150px;
 			float: left;
+      margin: -18px 0 0 0;
 			border-radius: 100%;
 			box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
 		}
@@ -223,45 +257,43 @@ hambuger menu
 			border-radius: 50%;
 		}
 
-    	.circlePhotoUploaded{
-		width:100%;
-		height:100%;
-		-webkit-border-radius: 50%;
-		-moz-border-radius: 50%;
-		-ms-border-radius: 50%;
-		-o-border-radius: 50%;
-		border-radius: 50%;'
+  	.circlePhotoUploaded{
+  		width:100%;
+  		height:100%;
+  		-webkit-border-radius: 50%;
+  		-moz-border-radius: 50%;
+  		-ms-border-radius: 50%;
+  		-o-border-radius: 50%;
+  		border-radius: 50%;'
 	}
 
-    	.groups_title_generate{
-			width: 85%;
-			height: 30px;
-			margin-left: 15px;
-			margin-top: 5px;
-			line-height: 30px;
-            font-family: Avenir-Black;
-            font-size: 18px;
-            overflow: auto;
+  	.groups_title_generate{
+      width: 85%;
+      height: 30px;
+      padding: 10px 0px 0px 10px;
+      margin-left: 15px;
+      margin-top: 5px;
+      line-height: 30px;
+      font-family: Avenir-Black;
+      font-size: 18px;
+      overflow: auto;
+		}
 
+  	.groups_descrition_generate{
+      width: 80%;
+      height: 50px;
+      padding: 0px 0px 0px 10px;
+      margin-left: 15px;
+      overflow: auto;
+      font-family: Avenir-Light;
 		}
 
 
-    	.groups_descrition_generate{
-			width: 85%;
-			height: 50px;
-			margin-left: 15px;
-            overflow: auto;
-            font-family: Avenir-Light;
-
-		}
-
-
-    	.spaceContainerTop p{
-		font-size:30px;
-		padding-left: 50px;
-        font-family: Avenir-Black;
-
-	}
+  	.spaceContainerTop p{
+      font-size:40px;
+      padding-left: 50px;
+      font-family: Avenir-Black;
+  	}
 
     .toggle-logo {
         position: fixed;
@@ -299,31 +331,35 @@ hambuger menu
         background-color: white;
     }
 
+	/*
     form {
-
         margin: 0 auto;
-
         position: relative;
-        width: 100%;
+        width: 75%;
+        height: 0px;
     }
+	*/
+
     .Leave-Butt {
         font-family: Avenir-Light;
         margin: 20px;
         padding: 5px;
         border: .5px solid darkgray;
-        width: 60%;
+        width: 71%;
         border-radius: 5px;
         background-color: white;
     }
+
     .Enter-Butt {
         font-family: Avenir-Light;
         margin: 20px;
         padding: 5px;
         border: .5px solid darkgray;
-        width: 60%;
+        width: 71%;
         border-radius: 5px;
-        background-color: white;
-    }
+        background-color:white;
+      }
+
 
     form input [type=text] {
         padding: 1px;
@@ -388,11 +424,25 @@ hambuger menu
         transition: 400ms ease-in-out;
 
     }
+    
+     #hamburger2 {
+
+        height: 350px;
+        width: 250px;
+        position: fixed;
+        z-index: 9998;
+		top: -350px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+        background-color: white;
+        right: 35.5%;
+        transition: 400ms ease-in-out;
+
+    }
 
     .hamclass {
         margin: 0 auto;
         width: 100%;
-        margin-top: 80px;
+        margin-top: 10px;
         font-family: Avenir-Medium;
         font-size: 30px;
         left: 0;
@@ -404,20 +454,54 @@ hambuger menu
         position: absolute;
         width: 100%;
         list-style: none;
-        top: 20px;
+        top: 80px;
 
+    }
+    
+     #hambul2 {
+        position: absolute;
+        width: 100%;
+        list-style: none;
+        top: 75px;
+
+    }
+
+        #hambul a {
+        color: black;
+        text-decoration: none;
+    }
+    
+    #hambul2 a {
+        color: black;
+        text-decoration: none;
+    }
+
+    #hambul a:hover {
+        color: #a34334;
+        transition: color .25s ease-in-out;
+    }
+    #hambul2 a:hover {
+        color: #a34334;
+        transition: color .25s ease-in-out;
     }
 
     /*    hamburger menu*/
 
 
     nav li {
-        font-size: 12px;
-        display: inline-block;
-        margin-left: 20px;
+           font-size: 18px;
+        float: left;
+        margin-left: 30px;
         font-family: Avenir-Medium;
-        font-size: large;
+        list-style: none;
     }
+    
+    
+       #categories {
+        list-style-image: url(SVG/DDown.svg);
+       
+    }
+    
     nav li:hover {
         cursor: pointer;
         text-decoration: underline;
@@ -519,8 +603,8 @@ hambuger menu
     }
     .m-profile-box {
         width: 100vw;
-        height: 200px;
-        position: relative;
+        height: 250px;
+        position: absolute;
         background-color: white;
         box-shadow: 0px 5px 5px #888888;
     }
@@ -528,11 +612,11 @@ hambuger menu
     #m-profile-pic-intro {
         box-shadow: 0px 5px 5px #888888;
         background-color: white;
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         border-radius: 100%;
         position: absolute;
-        top: 20%;
+        top: 10%;
         left: 25px;
         z-index: 9997;
 		margin-left: 20px;
@@ -541,24 +625,24 @@ hambuger menu
     #name {
         position: relative;
         font-family: Avenir-Medium;
-        margin-top: 50px;
     }
+	
+	#m-groupicon{
+		background-image: url(SVG/Group.svg);
+	}
+
     #view-profile {
         font-family: Avenir-medium;
         margin-top: -100px;
     }
+
     #m-view-profile-div {
         color: black;
-        background-color: white;
-        width: 100%;
-        height: 200px;
-        position: absolute;
-        margin: auto 0;
-        align-items: center;
-        justify-content: center;
-        display: inline-grid;
-        z-index: 9996;
+        width: 40%;
 
+        position: relative;
+        
+        z-index: 9996;
     }
 
     .m-settings-box {
@@ -567,6 +651,7 @@ hambuger menu
         position: relative;
         top: 30px;
     }
+
     #m-genresh {
         font-family: Avenir-Black;
         text-align: center;
@@ -579,7 +664,6 @@ hambuger menu
         position: relative;
         width: 100vw;
         height: 75px;
-        background-color: white;
         border-bottom: solid #cbcbcb .50px;
         border-top: solid #cbcbcb .50px;
     }
@@ -608,14 +692,12 @@ hambuger menu
         position: relative;
         width: 100vw;
         height: 75px;
-        background-color: white;
         border-bottom: solid #cbcbcb .50px;
     }
     #m-signout-box {
         position: relative;
         width: 100vw;
         height: 75px;
-        background-color: white;
         margin: 0 auto;
         border-top: solid #cbcbcb .50px;
         border-bottom: solid #cbcbcb .50px;
@@ -648,7 +730,7 @@ hambuger menu
         line-height: 75px;
     }
     .m-profile-buttons {
-        width: 100vw;
+        width: 100%;
         height: 50px;
         bottom: 0px;
         position: absolute;
@@ -679,7 +761,7 @@ hambuger menu
         height: 100vh;
         background-color: white;
         position: absolute;
-        top: 220px;
+        top: 275px;
     }
 
     .m-groupdiv-main {
@@ -689,12 +771,31 @@ hambuger menu
         position: absolute;
     }
 
+    .SongInformation{
+      position: relative;
+      float: left;
+      left: 0px;
+      width: 70%;
+      font-family: Avenir-Medium;
+      border-radius: 10px;
+      border: 1px solid #ececec;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+    }
+
+    #m-profile-inner{
+      min-width: 720px;
+      width: 90%;
+      height: 200px;
+    }
+
+
 	#m-profile-main-inner{
-		width: 870px;
+		width: 100%;
 		background-color:white;
 		left: 0;
 		right: 0;
 		margin: auto;
+		padding-bottom: 170px;
 	}
 
     #lname {
@@ -1021,7 +1122,7 @@ hambuger menu
     .Profile-sub-container{
 		width: 98%;
 		padding: 20px;
-		height: 1790px;
+		height: 2690px;
 		background-color: white;
 		left: 0;
 		right: 0;
@@ -1049,29 +1150,32 @@ hambuger menu
 	.spaceContainerTop{
 		width: 100%;
 		height: 60px;
+		margin-top: 40px;
 	}
 
 	.spaceContainerTop h1 {
-		left: 35px;
-		top: 20px;
-		position: relative;
-        font-family: helvetica;
-
+    left: 35px;
+    top: 20px;
+    position: absolute;
+    font-family: avenir-medium;
+    font-size: 30px;
+    margin: 15px;
+	width: 500px;
 	}
 
 
 	#CreateGroupProfile{
-		width: 200px;
-		height: 50px;
-		border: 2px solid darkgray;
-		background-color: #ffffff;
-		border-radius: 25px;
-		position: absolute;
-		top: 10px;
-		right: 40px;
+    width: 200px;
+    height: 50px;
+    border: 2px solid darkgray;
+    background-color: #ffffff;
+    border-radius: 25px;
+    position: relative;
+    top: -40px;
+    left: 70%;
     font-family: Avenir-Medium;
     font-size: 18px;
-    color: darkgray
+    color: darkgray;
 	}
 
 	.ProfileIconGroups{
@@ -1080,15 +1184,17 @@ hambuger menu
 		height: 150px;
 		top: 0;
 		bottom: 0;
-		margin: auto;
-        border-radius: 100%;
-        box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
-		margin-left: 10px;
+		border: #6b6b6b;
+		border-width: 2px;
+		border-radius: 100%;
+		border-style: dotted;
+		box-shadow: 5px 5px 10px rgba(0, 0, 0, .15);
+
 	}
 	.GroupsInformation{
 		float: left;
 		width: 70%;
-		height: 150px;
+		height: 250px;
 		font-family: Avenir-Medium;
 		border-radius: 10px;
 		border: 1px solid #ececec;
@@ -1099,6 +1205,7 @@ hambuger menu
 	.TopSpace-ProfileGroupSub{
 		height: 55px;
 		width: 100%;
+    display: none;
 	}
 
 	.vertical-space{
@@ -1108,26 +1215,26 @@ hambuger menu
 	}
 
 
-    	.vertical_space_group {
-			width: 550px;
-			height: 115px;
-			margin-top: 10px;
-			margin-left: 190px;
-			border-radius: 15px;
-			box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
-		}
+  .vertical_space_group {
+    width: 520px;
+    height: 115px;
+    margin-left: 190px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+  }
 
 	.GroupsInformation-Title{
-		width: 100%;
-		height: 40%;
-		background-color: white;
-		border-bottom: 2px solid grey;
-
+    width: auto;
+    height: auto;
+    background-color: white;
+    margin: 20px 20px 20px 20px;
+    font-family: avenir medium;
+    font-size: 20px;
 	}
 
 	.horizontal-GroupSpace{
-		height: 10px;
-		width: 100%;
+    display:none;
+
 
 	}
 
@@ -1138,24 +1245,56 @@ hambuger menu
 	}
 
 	.GroupsInformation-Title textarea{
-		width: 94%;
-		height: 30px;
-        border: 1px solid #E5E5E5;
-		margin-left: 20px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #E5E5E5;
+    margin: 5px 0 0 0;
+    border-radius: 10px;
+    outline: none;
+    resize: none;
+    font-family: avenir light;
+    font-size: 25px;
+	}
+
+  .create_group_section_tnd_AddSongPage {
+    margin: 25px 0 25px 0;
+    height: 150px;
+    position:relative;
+  }
+
+  .upload_page_global_titles {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 30px;
+    margin: 15px 0 0 0;
+    font-family: avenir medium;
+    font-weight: bold;
+    font-size: 30px;
+  }
+
+	.categories_label_music_global_uploading{
+		position: relative;
+		top: -10px;
+		padding-left: 10px;
+		padding-right: 0px;
+    font-family: avenir medium;
+		font-size:15px;
 	}
 
 	#CreateGroupProfileSubmit{
-		width: 200px;
-		height: 50px;
-		  border: 2px solid darkgray;
-		background-color: #ffffff;
-		border-radius: 25px;
-		position: absolute;
-		left: 0;
-		right: 0;
-		margin: 0 auto;
-        font-size: 18px;
-        color: darkgray;
+    width: 200px;
+    height: 50px;
+    border: 2px solid darkgray;
+    background-color: #ffffff;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-family: Avenir-Light;
+    font-size: 18px;
+    color: darkgray;
 	}
 	.GroupsInformation-Description textarea{
 		width: 94%;
@@ -1175,9 +1314,11 @@ hambuger menu
 		top: 300px;
 	}
 
+	/*
 	input{
 		margin-top: 30px;
 	}
+	*/
 
 	.M_group_container_create{
 		height: 150px;
@@ -1195,14 +1336,7 @@ hambuger menu
 			box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
 	}
 
-	.M_Leave-Butt{
-		border: 1px solid darkgray;
-		padding: 10px;
-		border-radius: 20px;
-		margin-top: 15px;
-		background-color: white;
-		width: 75px;
-	}
+
 
 	.M_Enter-Butt{
 		border: 1px solid darkgray;
@@ -1214,46 +1348,50 @@ hambuger menu
 		width: 75px;
 	}
 
-	.M_join-Butt{
-		border: 1px solid darkgray;
-		padding: 10px;
-		border-radius: 20px;
-		margin-top: 15px;
-		margin-right: -6px;
-		background-color: white;
-		width: 75px;
-	}
-
-
-
+   .join-Butt {
+        font-family: Avenir-Light;
+        margin: 20px;
+        padding: 5px;
+        border: .5px solid darkgray;
+        width: 71%;
+        border-radius: 5px;
+        background-color: white;
+    }
 
 /*  groups page css  end*/
 
 /* ------------------ Streaming.php Styling ------------------*/
 
-  /*.main-songDiv_feed {
-    height: 0px;
-  }*/
+  .main-songDiv_feed {
+	  width: 100%;
+      padding-bottom: 180px;
+      background-color: #f8f8f8;
+      min-height: 100vh;
+	  padding-top: 20px;
+      height
+  }
+
+    .feedsidebar {
+        display: none;
+    }
 
 /* ------------------ Page Title */
   .Recently_Uploaded_Title {
-    font-family: Avenir Black;
-    width: 590px;
-    font-size: 58px;
-    margin-left: 50px;
-    margin-top: 20px;
-    margin-bottom: 45px;
+       font-size: 40px;
+    padding-left: 50px;
+    font-family: Avenir-Black;
+	margin-top: 40px;
   }
 
 
   .track-display {
-      margin: 30px 0 0 100px;
-      width: 72vw;
+      margin: 10px 0 0 100px;
+      width: 400px;
       height: 80px;
-      background-color: red;
       position: relative;
+	  background-color: #ffffff;
       left: 40px;
-      box-shadow: 2px 5px 5px #888888;
+      box-shadow: 2px 2px 10px #888888;
       border-radius: 45px;
   }
 
@@ -1268,54 +1406,29 @@ hambuger menu
       position: absolute;
   }
 
-  .songpic_fade {
-    background-color: black;
-    height: 200px;
-    width: 200px;
-    border-radius: 190px;
-    position: absolute;
-    opacity: 0;
-  }
-
-  .songpic:hover .songpic_fade {
-    opacity: 0.5;
-    transition: .5s ease;
-  }
-
-  .circlePhotoUploadedFeed{
-    width:100%;
-    height:100%;
-    position: absolute;
-    z-index: -1;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
-  }
-
-  .play_pause_feed{
-    background: url(SVG/Play.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 15px;
-    border: 1px solid white;
-    padding: 10px;
-    border-radius: 20px;
-    background-color: #a34334;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    margin: 80px;
-    opacity:0;
-  }
-
   .first-song {
       left: 0;
-      padding-left: 50px;
-      width: 80vw;
+      /*padding-left: 50px;*/
+      width: 600px;
       margin-top: 15px;
+	  right: 0;
+	  margin: 0 auto;
   }
+
+
+
+
+  .circlePhotoUploadedFeed{
+		width:100%;
+		height:100%;
+    position: absolute;
+    z-index: -1;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		-ms-border-radius: 50%;
+		-o-border-radius: 50%;
+		border-radius: 50%;
+	}
 
   #FeedArtistsName{
       color: #c5c5c5;
@@ -1323,13 +1436,14 @@ hambuger menu
       font-size: 18px;
       margin: 0 auto;
       margin-left: 230px;
+      width: 350px;
   }
 
     #FeedSongName {
         margin: 0 auto;
         font-family: Avenir Medium;
         font-weight: 300;
-        font-size: 30px;
+        font-size: 20px;
         margin-left: 230px;
 
     }
@@ -1344,8 +1458,9 @@ hambuger menu
       border-radius: 20px;
       background-color: white;
       width: 155px;
-      height: 70px;
-      left:74%;
+      height: 50px;
+      margin-left: 60%;
+      top: 15px;
       position: relative;
     }
 
@@ -1361,12 +1476,13 @@ hambuger menu
   	}
 
   	.wave {
-  		height: 10px !important;
+  		/*height: 10px !important;*/
   		display: block;
-  		width: 30vw;
-  		float: left;
-  		margin-top: -20px;
-  		margin-left: 9vw;
+  		width: 300px;
+  		float: right;
+		height: 30px;
+  		margin-right: 20px;
+  		margin-top: 15px;
   	}
 
   	.btn_play_pause{
@@ -1376,6 +1492,23 @@ hambuger menu
   		margin-left: 50px;
   	}
 
+    .play_pause_feed{
+      background: url(SVG/Play.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 15px;
+      border: 1px solid white;
+      padding: 10px;
+      border-radius: 20px;
+      background-color: #a34334;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      margin: 80px;
+      /*margin-top: -50px;
+      margin-left: 20px;*/
+    }
+
 
     /* ------------------ END of Music Player ------------------*/
 
@@ -1384,15 +1517,18 @@ hambuger menu
 
 	.white_background_group_Large{
 		width: 100%;
-        height: 1300px;
         background-color: white;
         position: absolute;
+        padding-bottom: 150px;
 	}
 
 	.pagination a{
 		padding: 10px 0px 10px 20px;
 		text-decoration: none !important;
 		font-size: 30px;
+        font-family: Avenir-Medium;
+        font-size: 40px;
+        color: black;
 
 	}
 
@@ -1402,8 +1538,8 @@ hambuger menu
 		left: 0;
 		right: 0;
 		margin: 0 auto;
-		bottom: 100px;
 		position: absolute;
+		padding-top: 80px;
 	}
 
 	.play_pause_feed_tablet {
@@ -1415,34 +1551,31 @@ hambuger menu
 		padding: 10px;
 		border-radius: 30px;
 		background-color: #a34334;
-		width: 60px;
-    height: 60px;
+		width: 50px;
+    height: 50px;
     position: absolute;
-    margin: 70px;
-    opacity: 0;
-    transition: .2s ease;
-  }
-
-  .songpic:hover .play_pause_feed_tablet{
-    opacity:1;
-  }
+    margin: 75px;
+		/*margin-top: -50px;
+		margin-left: 20px;*/
+	}
 
 	.group_upload_title_style {
 		font-size: 25px;
 		font-weight: bold;
+    font-family: Avenir-Medium;
 	}
 
 	.file_upload_button{
-		margin: 20px;
-        padding: 10px;
-        border: 1px solid darkgray;
-        width: 90%;
-		padding: 10px;
-		font-size: 20px;
-        border-radius: 10px;
-		background-color: #f0f0f0;
-        height: 70px;
-        font-family: Avenir-Medium;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid darkgray;
+    width: 90%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: white;
+    height: 70px;
+    font-family: Avenir Light;
 	}
 
 	.label_groups_music_sample{
@@ -1453,6 +1586,39 @@ hambuger menu
 		vertical-align: middle;
 		font-size: 23px;
 	}
+
+  .input_buttons_styles_music_global{
+    -webkit-appearance: none;
+    background-color: #E5E5E5;
+    border: 5px solid #E5E5E5;
+    border-radius: 20px;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+  }
+
+  .input_buttons_styles_music_global:checked {
+    background: #A43433;
+    border: 5px solid #E5E5E5;
+    outline:none;
+  }
+
+  .music_sample_label_music_global_uploading{
+    position: relative;
+    top: -5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: Avenir Light;
+    font-size: 20px;
+  }
+
+  .music_global_upload_title_style {
+    font-family: Avenir;
+    font-size: 30px;
+    font-weight: bold;
+  }
 
 	.input_buttons_styles_groups_create{
 		-webkit-appearance: none;
@@ -1475,14 +1641,37 @@ hambuger menu
 		position: relative;
 		top: -6px;
 		padding-left: 15px;
+    font-family: Avenir-Light;
+
 	}
 
 	.categories_label_groups_uploading{
 		position: relative;
 		top: -10px;
 		padding-left: 10px;
-		font-size:18px;
+    font-family: Avenir-Light;
+		font-size: 18px;
 	}
+
+  .input_checkbox_style_music_global_create{
+    -webkit-appearance: none;
+    background-color: #E5E5E5;
+    border: 5px solid #E5E5E5;
+    border-radius: 5px;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    outline: none;
+  }
+
+  .input_checkbox_style_music_global_create:checked {
+    background: #A43433;
+    border: 5px solid #E5E5E5;
+    border-radius: 10px;
+    outline: none;
+  }
 
 	.input_checkbox_style_group_create{
 		-webkit-appearance: none;
@@ -1501,4 +1690,577 @@ hambuger menu
 
 		border: 5px solid #E5E5E5;
 	}
+
+  #buttonAreaCreate_buttonSubmit{
+    width: 80%;
+    height: 50px;
+    position: absolute;
+    margin-top: 20px;
+  }
+
+  #Create_music_global_upload_button{
+    width: 200px;
+    height: 50px;
+      border: 2px solid darkgray;
+    background-color: #ffffff;
+    border-radius: 25px;
+    position: relative;
+    left: 35%;
+    right: 65%;
+    margin: 0 auto;
+    font-family: Avenir-Medium;
+    font-size: 18px;
+    color: darkgray;
+    bottom: 0;
+	margin-top: 45px;
+  }
+
+	.m-profile-pic-intro_settings {
+        box-shadow: 0px 5px 5px #888888;
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        margin-top: 20px;
+        margin-left: 25px;
+        z-index: 9997;
+		float: left;
+    }
+
+	.picture_settings {
+        box-shadow: 0px 5px 5px #888888;
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        margin-top: 20px;
+        margin-left: 25px;
+        z-index: 9997;
+		float: left;
+    }
+
+	.m-main-pagesettings_white{
+		height: 2500px;
+		width: 99%;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		position: absolute;
+		background-color: white;
+	}
+
+	.m-profile-pic-intro_settings_change_image{
+		width: 500px;
+        height: 100px;
+        border-radius: 100%;
+        margin-top: 40px;
+        margin-left: 25px;
+        z-index: 9997;
+		float: left;
+	}
+    
+       .m-profile-box {
+        width: 100%;
+        height: 250px;
+        position: absolute;
+        background-color: white;
+        box-shadow: 0px 5px 5px #888888;
+    }
+
+	.m-settings-info_Email_Area{
+		width: 100%;
+		height: 1550px;
+		position: absolute;
+		margin-left: 20px;
+	}
+
+	.m-profile-pic-intro_settings_change_image input {
+		margin-left: 30px;
+	}
+
+	.m-settings-info{
+		font-family: Helvetica;
+        position: relative;
+        margin-left: 15px;
+		font-weight: bold;
+		font-size: 25px;
+	}
+
+	.setting_changephoto_text{
+		font-family: Helvetica;
+        position: relative;
+        margin-left: 15px;
+		font-weight: bold;
+		font-size: 25px;
+	}
+
+	.m-settings-info_sub_titles{
+		font-size: 25px;
+		margin-left: 15px;
+	}
+
+	
+
+	#m-email-input{
+		background-color: #ebebeb;
+        border-style: none;
+        position: absolute;
+        left: 15px;
+        border-radius: 5px;
+        width: 71%;
+        height: 30px;
+		padding-left: 20px;
+		bottom: 10px;
+	}
+
+	.m-email-input_button{
+		width: 120px;
+		height: 50px;
+		background-color: #ebebeb;
+		float: right;
+		margin-right: 40px;
+		position: relative;
+	}
+
+	.m-password-input{
+		background-color: #ebebeb;
+        border-style: none;
+        left: 15px;
+        border-radius: 5px;
+        width: 70%;
+        height: 30px;
+		padding-left: 20px;
+		position: relative;
+	}
+
+	.password_settings{
+		background-color: #ebebeb;
+        border-style: none;
+        left: 15px;
+        border-radius: 5px;
+        width: 60%;
+        height: 30px;
+		padding-left: 20px;
+		position: relative;
+		margin-top: 5px;
+	}
+
+	.m-password-input_button{
+		width: 180px;
+		height: 50px;
+		background-color: #ebebeb;
+		float: right;
+		margin-right: 40px;
+		position: relative;
+	}
+
+	.m-first_name-input{
+		background-color: #ebebeb;
+        border-style: none;
+        position: relative;
+		bottom: 15px;
+        left: 15px;
+        border-radius: 5px;
+        width: 70%;
+        height: 30px;
+		padding-left: 20px;
+	}
+	
+	
+
+	.m-first_name-input_button{
+		width: 180px;
+		height: 50px;
+		background-color: #ebebeb;
+		float: right;
+		margin-right: 40px;
+		position: relative;
+	}
+
+  .UploadNewSongAreaTitle{
+    float: left;
+    width: 70%;
+    height: auto;
+    font-family: Avenir-Medium;
+    border-radius: 10px;
+    border: 1px solid #dedede;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .15);
+  }
+
+	#BackButtonCreation{
+		width: 200px;
+		height: 50px;
+		border: 2px solid darkgray;
+		background-color: #ffffff;
+		border-radius: 25px;
+		position: absolute;
+		top: 170px;
+		right: 50px;
+		font-family: Avenir-Medium;
+		font-size: 18px;
+		color: darkgray;
+    margin: 0 0 0 0;
+	}
+
+	.settings_white{
+		height: 1900px;
+		width: 100%;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		position: absolute;
+		background-color: white;
+	}
+
+	.setting_change_area{
+		width: 100%;
+		height: 1550px;
+		position: absolute;
+		margin-left: 20px;
+	}
+
+	.email_area_settings{
+		width: 100%;
+		height: 150px;
+		margin-bottom: 15px;
+	}
+
+	.setting_title_items{
+		font-family: Helvetica;
+        margin-left: 30px;
+		font-weight: bold;
+		font-size: 20px;
+	}
+
+	.m-settings-info_sub_titles{
+		font-size: 18px;
+		margin-left: 30px;
+		font-style: italic;
+	}
+
+	.m-settings-info_email_input_area{
+		width: 100%;
+		height: 50px;
+		position: absolute;
+	}
+
+	.email_input_area_settings {
+		width: 100%;
+		height: 50px;
+		position: absolute;
+		margin-top:5px;
+	}
+
+	#email-input {
+        background-color: #ebebeb;
+        border-style: none;
+        position: absolute;
+        left: 30px;
+        border-radius: 5px;
+        width:70%;
+        height: 30px;
+		padding-left: 20px;
+    }
+
+	.email-input_button{
+		position: relative;
+		bottom: 26px;
+		color:black;
+		border: 1px solid darkgray;
+		padding: 10px;
+		border-radius: 20px;
+		margin-top: 20px;
+		background-color: white;
+		width: 120px;
+		margin-right: 40px;
+	}
+
+	.password_area_settings{
+		width: 100%;
+		height: 125px;
+		margin-top: 40px;
+		background-color:blue;
+	}
+
+	.m-settings-info_password_input_area{
+		width: 100%;
+		height: 50px;
+		position: absolute;
+		background-color:orange;
+	}
+	
+	.download_music_button{
+		text-decoration: none;
+		color: darkgray;
+	}
+
+	.password-input_button{
+		position: relative;
+		bottom: 26px;
+		color:black;
+		border: 1px solid darkgray;
+		padding: 10px;
+		border-radius: 20px;
+		margin-top: 20px;
+		background-color: white;
+		width: 120px;
+		margin-right: 40px;
+	}
+	
+	
+
+	.song-buttons{
+		padding-top:50px;
+	}
+
+	.play_pause_feed_desktop {
+     background: url(SVG/Play.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 15px;
+      border: 1px solid white;
+      padding: 10px;
+      border-radius: 20px;
+      background-color: #a34334;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      margin: 80px;
+
+    opacity: 1;
+	}
+
+	.Upload_Global_Main_Title{
+		width: 100%;
+        height: 150px;
+        position: relative;
+        background-color: white;
+        box-shadow: 0px 2px 2px #888888;
+	}
+
+	.upload_page_music_global_white{
+		width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 170px;
+	}
+
+	#contactForm{
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 20px;
+		width:85%;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+	}
+
+	.upload_global_image_area{
+		float:left;
+		margin-top: 30px;
+		width: 100%;
+		border-bottom: solid 1px #DCDCDC;
+		padding-bottom: 20px;
+
+	}
+
+	.UploadNewSongAreaTitle{
+		float: left;
+    width: 70%;
+    height: 120px;
+    margin-top: 20px;
+    font-family: Avenir-Medium;
+    border-radius: 10px;
+    border: 1px solid #dedede;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .15);
+	margin-left: 30px;
+	}
+
+	.image_circle_title_enter{
+		float:left;
+		margin-top: 20px;
+		width: 100%;
+	}
+
+	.upload_global_song_area{
+		float:left;
+		margin-top: 30px;
+		width: 100%;
+		border-bottom: solid 1px #DCDCDC;
+		padding-bottom: 20px;
+	}
+
+	.upload_global_radio_button_area{
+		float:left;
+		margin-top: 30px;
+		width: 100%;
+		border-bottom: solid 1px #DCDCDC;
+		padding-bottom: 30px;
+	}
+
+	.upload_global_genre_area{
+		float:left;
+		margin-top: 30px;
+		width: 100%;
+		border-bottom: solid 1px #DCDCDC;
+		padding-bottom: 30px;
+	}
+
+	.upload_global_moods_area{
+		float:left;
+		margin-top: 30px;
+		width: 100%;
+		border-bottom: solid 1px #DCDCDC;
+		padding-bottom: 30px;
+	}
+
+	.upload_global_instruments_area{
+		float:left;
+		margin-top: 30px;
+		width: 100%;
+		border-bottom: solid 1px #DCDCDC;
+		padding-bottom: 30px;
+	}
+
+	.streaming{
+		margin-top: 50px;
+	}
+
+
+    .create_group_section_file {
+      margin: 25px 0 25px 0;
+      height:150px;
+      position:relative;
+    }
+
+    .create_group_section_tnd {
+      margin: 25px 0 25px 0;
+      height: 280px;
+      position:relative;
+    }
+
+    .create_group_section_ss {
+      margin: 45px 0 25px 0;
+      height: 90px;
+      position:relative;
+    }
+
+    .create_group_section_cb {
+      margin: 25px 0 25px 0;
+      height: 150px;
+      position:relative;
+    }
+
+    .cb_table {
+      margin: 20px auto;
+    }
+
+    #Entered_Back{
+  		width: 200px;
+  		height: 50px;
+  		border: 2px solid darkgray;
+  		background-color: white;
+  		border-radius: 25px;
+  		position: relative;
+  		right: 50px;
+  		font-family: Avenir-Medium;
+  		font-size: 18px;
+  		color: darkgray;
+  	}
+
+    #Entered_Add_Music{
+      width: 200px;
+      height:50px;
+      border: 2px solid darkgray;
+      background-color: #ffffff;
+      border-radius: 25px;
+      position: relative;
+      right: 50px;
+      top: 20px;
+      font-family: Avenir-Medium;
+      font-size: 18px;
+      color: darkgray
+    }
+
+  	.White_Area_Top{
+  		width: 100%;
+      height: 270px;
+      position: absolute;
+      background-color: white;
+      box-shadow: 0px 5px 5px #888888;
+  	}
+
+    #Entered_Top_Container{
+      min-width: 720px;
+      width: 90%;
+      height: 230px;
+      margin-top:23px;
+      margin-left: 50px;
+      display: block;
+      overflow: hidden;
+    }
+
+  	.groups_inside_bottom_area{
+  		width: 100%;
+          background-color: white;
+          position: absolute;
+          padding-bottom: 150px;
+  		top: 275px
+		
+  	}
+
+    #Entered_Groups_Profile_Pic {
+      box-shadow: 0px 5px 5px #888888;
+      width: 150px;
+      height: 150px;
+      border-radius: 100%;
+      top: 20px;
+      position: relative;
+      float: left;
+      left: 25px;
+      z-index: 9997;
+      background-color: white;
+    }
+
+  	#Entered_Top_Button{
+  		width: 150px;
+  		height: 120px;
+  		margin-left: 50px;
+  		margin-top: 40px;
+  		float: right;
+  	}
+
+    #Entered_Top_Info{
+  		min-width: 250px;
+  		width: 40%;
+  		height: 120px;
+  		margin-left: 7%;
+  		margin-top: 40px;
+  		float: left;
+  	}
+
+    #Top_Area_Info{
+      font-family: Avenir-Medium;
+      margin-top: 20px;
+      font-size: 11px;
+      height:137px;
+      width:100%;
+    }
+
+    #Top_Area_Title{
+      font-family: Avenir-Medium;
+    }
+
+    .User_Info_display_area{
+      width: 90%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+
+    .User_Info_Title_style{
+      font-size: 16px;
+      font-family: Avenir-Medium;
+    }
+
+
 }

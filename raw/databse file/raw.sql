@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 30, 2017 at 06:29 PM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Host: 127.0.0.1
+-- Generation Time: Dec 02, 2017 at 10:31 PM
+-- Server version: 10.1.26-MariaDB
+-- PHP Version: 7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -47,7 +49,8 @@ INSERT INTO `groups` (`group_id`, `group_title`, `group_description`, `group_pho
 (52, 'greoup raw', 'grourpw raw', 'UserPictures/1511322158pexels-photo-167491.jpeg', '2017-11-21 19:42:38'),
 (53, 'Hanna2', 'H2', 'UserPictures/1511845051pexels-photo-640781.jpeg', '2017-11-27 20:57:31'),
 (54, 'Hanna 4444444', '4444444', 'UserPictures/1511845123pexels-photo-660282.jpeg', '2017-11-27 20:58:43'),
-(55, 'User3 Test', 'testttttt', 'UserPictures/1511847059pexels-photo-185662.jpeg', '2017-11-27 21:30:59');
+(55, 'User3 Test', 'testttttt', 'UserPictures/1511847059pexels-photo-185662.jpeg', '2017-11-27 21:30:59'),
+(56, 'Dec2 test', 'testtttt', 'UserPictures/1512225108Koala.jpg', '2017-12-02 06:31:48');
 
 -- --------------------------------------------------------
 
@@ -65,6 +68,7 @@ CREATE TABLE `group_users` (
 --
 
 INSERT INTO `group_users` (`group_id`, `user_id`) VALUES
+(44, 1),
 (46, 1),
 (46, 10),
 (48, 1),
@@ -73,8 +77,10 @@ INSERT INTO `group_users` (`group_id`, `user_id`) VALUES
 (51, 10),
 (52, 1),
 (53, 10),
+(54, 1),
 (54, 10),
-(55, 29);
+(55, 29),
+(56, 1);
 
 -- --------------------------------------------------------
 
@@ -153,7 +159,8 @@ INSERT INTO `music_group` (`group_id`, `music_id`, `music_file`, `music`, `music
 (53, 52, '', 1, '2017-11-27 20:57:31', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
 (54, 53, 'UsersSongs/1511845123Marvin_s_Dance.mp3', 1, '2017-11-27 20:58:43', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
 (54, 54, 'UsersSongs/1511845156Where_She_Walks.mp3', 0, '2017-11-27 20:59:16', 'sample Hanna', 'UserPictures/1511845156pexels-photo-96857.jpeg', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(55, 55, 'UsersSongs/1511847059Strolling_Through.mp3', 1, '2017-11-27 21:30:59', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
+(55, 55, 'UsersSongs/1511847059Strolling_Through.mp3', 1, '2017-11-27 21:30:59', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0),
+(56, 56, 'UsersSongs/1512225108Kalimba.mp3', 1, '2017-12-02 06:31:48', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -236,7 +243,8 @@ INSERT INTO `music_public` (`music_public_id`, `user_id`, `song_title`, `music_f
 (45, 1, 'New Raw folder path', 'GlobalSongs/1511320722Marvin_s_Dance.mp3', 1, '2017-11-21 19:18:42', 'GlobalPictures/1511320722setC.png', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0),
 (46, 1, 'sample', 'GlobalSongs/1511332997Trips.mp3', 0, '2017-11-21 22:43:17', 'GlobalPictures/1511332997126443.png', 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
 (47, 1, 'Country song 1', 'GlobalSongs/1511921590Trips.mp3', 1, '2017-11-28 18:13:10', 'GlobalPictures/1511921590guitar-classical-guitar-acoustic-guitar-electric-guitar.jpg', 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1),
-(48, 1, 'Country sample1', 'GlobalSongs/1511921634Garden_Walk.mp3', 0, '2017-11-28 18:13:54', 'GlobalPictures/1511921634Desert.jpg', 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1);
+(48, 1, 'Country sample1', 'GlobalSongs/1511921634Garden_Walk.mp3', 0, '2017-11-28 18:13:54', 'GlobalPictures/1511921634Desert.jpg', 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1),
+(49, 1, 'test Dec2', 'GlobalSongs/1512225292Maid with the Flaxen Hair.mp3', 1, '2017-12-02 06:34:52', 'GlobalPictures/1512225292Lighthouse.jpg', 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -248,6 +256,7 @@ CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `first_name` varchar(15) NOT NULL,
   `last_name` varchar(250) DEFAULT NULL,
+  `Profile_Picture` varchar(250) DEFAULT NULL,
   `username` varchar(15) NOT NULL,
   `password` varchar(64) NOT NULL,
   `email` varchar(40) NOT NULL,
@@ -260,10 +269,10 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `username`, `password`, `email`, `biography`, `hobbies`, `skills`) VALUES
-(1, 'name1', 'lastname1', 'username1', '111', '123@hotmail.ca', 'testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography ', 'hobbie 1, hobbie 2, hobbie 3,', 'skills 1, skill 2, skill 3,'),
-(10, 'Hanna', NULL, 'test', '1234', 'hanna123@hotmail.ca', NULL, NULL, NULL),
-(29, 'Monika', NULL, 'Szucs', 'sept29', '2145@hotmail.ca', NULL, NULL, NULL);
+INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `Profile_Picture`, `username`, `password`, `email`, `biography`, `hobbies`, `skills`) VALUES
+(1, 'Monika', 'Szucs', 'ProfilePictures/1512247013Lighthouse.jpg', 'username1', '111', '123@hotmail.ca', 'testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography testing biography ', 'hobbie 1, hobbie 2, hobbie 3,', 'skills 1, skill 2, skill 3,'),
+(10, 'Hanna', NULL, NULL, 'test', '1234', 'hanna123@hotmail.ca', NULL, NULL, NULL),
+(29, 'Monika', NULL, NULL, 'Szucs', 'sept29', '2145@hotmail.ca', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -315,17 +324,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 --
 -- AUTO_INCREMENT for table `music_group`
 --
 ALTER TABLE `music_group`
-  MODIFY `music_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `music_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 --
 -- AUTO_INCREMENT for table `music_public`
 --
 ALTER TABLE `music_public`
-  MODIFY `music_public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `music_public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 --
 -- AUTO_INCREMENT for table `user`
 --
@@ -353,6 +362,7 @@ ALTER TABLE `music_group`
 --
 ALTER TABLE `music_public`
   ADD CONSTRAINT `music_public_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
