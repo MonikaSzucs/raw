@@ -7,7 +7,7 @@ if(!isset($_SESSION["user_id"]))
 	session_destroy();
 	header( 'Location: signout.php' );
 };
-
+$target_file_song_pic = "";
 $target_file_photo = "";
 $target_file_music = "";
 //print_r($_FILES);
@@ -52,6 +52,50 @@ if( isset($_FILES["myImage"]["name"]) && !empty($_FILES["myImage"]["name"])) {
 			echo "The file ". basename( $_FILES["myImage"]["name"]). " has been uploaded.";
 		} else {
 			$target_file_photo = "";
+			echo "Sorry, there was an error uploading your photo file.";
+		}
+	}
+}
+
+//song picture
+if( isset($_FILES["myIndiv"]["name"]) && !empty($_FILES["myIndiv"]["name"])) {
+	echo "1<br//>";
+	$target_file_song_pic .= "UserPictures/2".time().basename($_FILES["myIndiv"]["name"]);
+	$uploadOk = 1;
+	$imageFileType = pathinfo($target_file_song_pic,PATHINFO_EXTENSION);
+    $check = getimagesize($_FILES["myIndiv"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+		echo "1<br//>";
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+	// Check if file already exists
+	if (file_exists($target_file_song_pic)) {
+		echo "Sorry, file already exists.";
+		$uploadOk = 0;
+	}
+	// Check file size
+	if ($_FILES["myIndiv"]["size"] > 5000000) {
+		echo "Sorry, your file is too large.";
+		$uploadOk = 0;
+	}
+	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"&& $imageFileType != "gif" ) {
+		echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+		$uploadOk = 0;
+	}
+
+	// Check if $uploadOk is set to 0 by an error
+	if ($uploadOk == 0) {
+		echo "Sorry, your file was not uploaded.";
+	// if everything is ok, try to upload file
+	} else {
+		if (move_uploaded_file($_FILES["myIndiv"]["tmp_name"], $target_file_song_pic)) {
+			echo "The file ". basename( $_FILES["myIndiv"]["name"]). " has been uploaded.";
+		} else {
+			$target_file_song_pic = "";
 			echo "Sorry, there was an error uploading your photo file.";
 		}
 	}
@@ -127,13 +171,19 @@ $formSuccessfullMessage = "";
 			else{
 				$query = "INSERT INTO groups (group_title, group_description, group_photo) ";
 				$query .= " VALUES ( '" . $TitleGroups . "', '" . $TextAreaGroups . "', '".$target_file_photo."')";
-
+				
+			
+				
 				///echo $query;
 
 				//Step 3 run the sql query
 				if($result = mysqli_query($conn, $query)){
 					if(sizeof($result)>0)
 					{
+						
+						
+						
+						
 						$formSuccessfullMessage = "Groups is created!";
 						$group_id = mysqli_insert_id($conn);
 						echo "the last primary key of group is : ". $group_id;
@@ -187,8 +237,8 @@ $formSuccessfullMessage = "";
 
 						if(isset($target_file_music))
 						{
-							$query = "INSERT INTO music_group(group_id, music_file, music, g_rnb, g_rock, g_pop, g_punk, g_jazz, g_metal, g_funk, g_country, g_edm, g_classical, g_happy, g_sad, g_angry, g_chill, g_focus, g_workout, g_travel, g_guitar, g_bass, g_synth, g_pads, g_woodwind, g_drums, g_strings, g_brass) ";
-							$query .= "VALUES ( '" . $group_id . "', '" .  $target_file_music . "', '" . $_POST['music_check']. "', '".$g_rnb."' , '".$g_rock."', '".$g_pop."', '".$g_punk."', '".$g_jazz."', '".$g_metal."', '".$g_funk."', '".$g_country."', '".$g_edm."', '".$g_classical."', '".$g_happy."', '".$g_sad."', '".$g_angry."', '".$g_chill."', '".$g_focus."', '".$g_workout."', '".$g_travel."', '".$g_guitar."', '".$g_bass."', '".$g_synth."', '".$g_pads."', '".$g_woodwind."', '".$g_drums."', '".$g_strings."', '".$g_brass."') ";
+							$query = "INSERT INTO music_group(group_id, music_file, music, music_photo, g_rnb, g_rock, g_pop, g_punk, g_jazz, g_metal, g_funk, g_country, g_edm, g_classical, g_happy, g_sad, g_angry, g_chill, g_focus, g_workout, g_travel, g_guitar, g_bass, g_synth, g_pads, g_woodwind, g_drums, g_strings, g_brass) ";
+							$query .= "VALUES ( '" . $group_id . "', '" .  $target_file_music . "', '" . $_POST['music_check']. "', '" . $target_file_song_pic . "', '" .$g_rnb."' , '".$g_rock."', '".$g_pop."', '".$g_punk."', '".$g_jazz."', '".$g_metal."', '".$g_funk."', '".$g_country."', '".$g_edm."', '".$g_classical."', '".$g_happy."', '".$g_sad."', '".$g_angry."', '".$g_chill."', '".$g_focus."', '".$g_workout."', '".$g_travel."', '".$g_guitar."', '".$g_bass."', '".$g_synth."', '".$g_pads."', '".$g_woodwind."', '".$g_drums."', '".$g_strings."', '".$g_brass."') ";
 
 							if($result = mysqli_query($conn, $query) )
 							{
@@ -358,6 +408,15 @@ $formSuccessfullMessage = "";
 
 							<hr>
 							
+							<div class="create_group_section_file">
+								<span class='group_upload_title_style'>
+									Upload a Song or Sample Image Image:
+								</span>
+
+								<input class="file_upload_button" type="file" name="myIndiv" accept="image/x-png,image/gif,image/jpeg"  />
+							</div>
+
+							<hr>
 
 							<div class = "create_group_section_file">
 
