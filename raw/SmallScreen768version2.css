@@ -28,10 +28,14 @@
   .streaming_desktop {
     display: block;
     position: relative;
-    margin: 50px 0 110px 0px;	}
+	/*
+    margin: 50px 0 10px 0px;
+	*/	
+	}
 
     .streaming {
-        margin-top: 80px;
+        margin-top: 50px;
+		margin-bottom: 100px;
     }
 
   .pagination{
@@ -168,6 +172,11 @@
         background-image: url("imgs/cmenuicon.svg");
         transform: rotate(90deg);
     }
+	
+	#text_streaming_title{
+		font-size: 20px;
+	}
+	
     .buttons {
         display: block;
         width: 35px;
@@ -376,7 +385,7 @@
         background-size: 35px 35px;
         position: fixed;
         top: 12px;
-        right:110px;
+        right:95px;
         background-image: url(imgs/uploadicon.svg);
         background-repeat: no-repeat;
         background-position: center;
@@ -393,6 +402,7 @@
         right: 0;
         width: 100%;
         min-height: 100vh;
+		margin-bottom: 0px;
     }
     .toggle-logo {
         position: fixed;
@@ -424,7 +434,7 @@
         display: inline-block;
     }
     .logo-spot {
-        width: 150px;
+        width: 100px;
         height: 80px;
         z-index: 9999;
         position: fixed;
@@ -1123,12 +1133,19 @@ Groups small style
 
     .main-songDiv_feed {
    background-color: white;
+   width: 100%;
+    padding-bottom: 100px;
+    background-color: #f8f8f8;
+    min-height: 100vh;
+    padding-top: 20px;
+   
     }
 
   /* ------------------ Page Title */
     .Recently_Uploaded_Title {
       font-family: Avenir-Black;
-      font-size: 58px;
+      font-size: 30px;
+	  margin-top: 20px;
     }
 
     .track-display {
@@ -1144,8 +1161,8 @@ Groups small style
 
     .songpic {
         margin-top: 0px;
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
         background-color: aquamarine;
         border-radius: 150px;
         box-shadow: 0px 5px 5px #888888;
@@ -1296,7 +1313,7 @@ Groups small style
     box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
 		position: relative;
     border-style: dotted;
-
+	margin-bottom: 25px;
 	}
 
 	.setting_mobile_container{
@@ -1309,7 +1326,8 @@ Groups small style
 	}
 
 	.spaceContainerTop h1{
-		font-size: 40px;
+		font-size: 24px;
+		padding-top: 20px;
 	}
       /* ------------------ END of Music Player ------------------*/
 
@@ -1341,11 +1359,11 @@ Groups small style
   }
 
   .UploadNewSongAreaTitle{
-	  min-width: 300px;
+	  min-width: 200px;
   }
 
   .icon_upload_global_area_container{
-	  min-width: 300px;
+	  min-width: 200px;
   }
 
   /*Entered Group.php*/

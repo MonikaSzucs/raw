@@ -100,9 +100,6 @@ if(isset($_POST['toDo'])){
     <div class="invisdiv"></div>
 
     <div class="track-player">
-        <div id="last-button" class="m-player"></div>
-        <div id="play-button" class="m-player"></div>
-        <div id="next-button" class="m-player"></div>
     </div>
     <div class="main-page">
 
@@ -141,7 +138,7 @@ if(isset($_POST['toDo'])){
 		<div class="main-songDiv_feed">
 			<div class='streaming_desktop'>
 				<div class="feedsidebar">
-					<div class="whotofollowdiv">  <h3 class="wtftext">Recent Groups Created</h3>
+					<div class="whotofollowdiv">  <span id="text_streaming_title">Recent Groups Created</span>
 					<div class="personfollow">
 					
 					<div>

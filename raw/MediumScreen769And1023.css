@@ -211,7 +211,7 @@ hambuger menu
         right: 0;
         background-color: white;
         width: 100%;
-        padding-bottom: 50px;
+        padding-bottom: 0px;
 		min-height: 100vh;
     }
    .m-settings-box a {
@@ -1396,9 +1396,9 @@ hambuger menu
 /* ------------------ Page Title */
   .Recently_Uploaded_Title {
        font-size: 40px;
-    padding-left: 50px;
+    padding-left: 20px;
     font-family: Avenir-Black;
-	margin-top: 40px;
+	margin-top: 20px;
   }
 
 
@@ -2298,6 +2298,7 @@ hambuger menu
 
 	.streaming{
 		margin-top: 50px;
+	
 	}
 
 
